@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="360" viewBox="0 0 1920 360">
+  <defs>
+    <rect id="bg2-a" width="1920" height="360"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="bg2-b" fill="#fff">
+      <use xlink:href="#bg2-a"/>
+    </mask>
+    <use fill="#2F5BEA" xlink:href="#bg2-a"/>
+    <path stroke="#FFF" stroke-linecap="round" stroke-width="6" d="M1258,362.816406 C1260.97656,359.714844 1314.88672,280.578125 1438.06641,282.855469 C1520.1862,284.373698 1576.14063,251.755208 1605.92969,185" mask="url(#bg2-b)" opacity=".038"/>
+    <path stroke="#FFF" stroke-linecap="round" stroke-width="5" d="M247.21875,104.074219 C300.739583,89.2799479 333.535156,99.2252604 345.605469,133.910156 C363.710938,185.9375 411.238281,158.097656 439.742188,165.367187 C468.246094,172.636719 471.992188,205.234375 474.84375,222.832031" mask="url(#bg2-b)" opacity=".101"/>
+    <circle cx="1217.5" cy="141.5" r="13.5" stroke="#FFF" stroke-width="5" mask="url(#bg2-b)" opacity=".041"/>
+    <rect width="27" height="27" x="605.096" y="45.096" stroke="#FFF" stroke-width="5" mask="url(#bg2-b)" opacity=".123" transform="rotate(15 618.596 58.596)"/>
+  </g>
+</svg>

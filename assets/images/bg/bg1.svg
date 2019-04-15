@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="642" viewBox="0 0 1920 642">
+  <defs>
+    <rect id="bg1-a" width="1920" height="642"/>
+    <radialGradient id="bg1-c" cx="119.889%" cy="147.24%" r="389.014%" fx="119.889%" fy="147.24%" gradientTransform="scale(-.31039 -1) rotate(4.345 37.48 -66.708)">
+      <stop offset="0%" stop-color="#D1DCFF"/>
+      <stop offset="100%" stop-color="#F0F3FF"/>
+    </radialGradient>
+    <radialGradient id="bg1-d" cx="119.889%" cy="147.24%" r="236.523%" fx="119.889%" fy="147.24%" gradientTransform="scale(-.51303 -1) rotate(7.158 22.97 -28.264)">
+      <stop offset="0%" stop-color="#D1DCFF"/>
+      <stop offset="100%" stop-color="#F0F3FF"/>
+    </radialGradient>
+    <radialGradient id="bg1-e" cx="119.889%" cy="147.24%" r="302.165%" fx="119.889%" fy="147.24%" gradientTransform="scale(-.40036 -1) rotate(5.598 29.22 -42.888)">
+      <stop offset="0%" stop-color="#D1DCFF"/>
+      <stop offset="100%" stop-color="#F0F3FF"/>
+    </radialGradient>
+    <radialGradient id="bg1-f" cx="119.889%" cy="147.24%" r="773.338%" fx="119.889%" fy="147.24%" gradientTransform="scale(-.1558 -1) rotate(2.184 73.99 -233.277)">
+      <stop offset="0%" stop-color="#D1DCFF"/>
+      <stop offset="100%" stop-color="#F0F3FF"/>
+    </radialGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="bg1-b" fill="#fff">
+      <use xlink:href="#bg1-a"/>
+    </mask>
+    <use fill="#FFF" xlink:href="#bg1-a"/>
+    <g mask="url(#bg1-b)">
+      <g transform="translate(-925 -40)">
+        <path fill="url(#bg1-c)" fill-opacity=".16" d="M0.175398633,113.253759 C14.0877449,115.62861 313.686469,313.454214 762.02615,320.989886 C1210.36583,328.521185 1359.8503,67.5498861 1753.17913,74.1583599 C2146.50797,80.7712073 2257.8461,429.66451 3044.50815,442.885831 L3034.82506,1018.95581 L77.8763554,969.267608 L0.175398633,113.253759 Z"/>
+        <path fill="url(#bg1-d)" fill-opacity=".16" d="M83.8244191,146.265513 C94.0935763,149.987426 295.081276,375.432164 635.42861,427.040364 C975.767198,478.652938 1125.38287,234.878542 1423.96692,280.158178 C1722.55098,325.429066 1759.47271,681.976128 2356.64082,772.526651 L2270.26269,1342.16747 L25.585877,1001.7939 L83.8244191,146.265513 Z"/>
+        <path fill="url(#bg1-e)" fill-opacity=".2" d="M1570.28492,456.916264 C1581.02642,458.893121 1816.42542,648.129021 2160.6215,642.928838 C2504.81759,637.737403 2612.202,372.637449 2914.16683,368.075809 C3216.13166,363.518542 3311.31818,709.101048 3915.24346,699.982141 L3923.94251,1276.06961 L1653.85522,1310.34096 L1570.28492,456.916264 Z"/>
+        <g fill="#F6F8F9" fill-rule="nonzero" transform="translate(895 20)">
+          <rect width="981.75" height="1.238" x="1.238" y="2.063" transform="translate(8.25 144.375)"/>
+          <rect width="981.75" height="1.238" x="1.238" y="2.063" transform="translate(8.25 284.625)"/>
+          <rect width="981.75" height="1.238" x="1.238" y="2.063" transform="translate(8.25 424.875)"/>
+          <rect width="981.75" height="1.238" x="1.238" y="2.475" transform="translate(8.25 565.125)"/>
+          <rect width="1.238" height="842.325" x=".825" y="2.475" transform="translate(148.5 4.125)"/>
+          <rect width="1.238" height="842.325" x=".412" y="2.475" transform="translate(288.75 4.125)"/>
+          <rect width="1.238" height="842.325" x=".412" y="2.475" transform="translate(429 4.125)"/>
+          <rect width="1.238" height="842.325" x=".412" y="2.475" transform="translate(569.25 4.125)"/>
+          <rect width="1.238" height="842.325" x=".412" y="2.475" transform="translate(709.5 4.125)"/>
+          <rect width="1.238" height="842.325" x=".412" y="2.475" transform="translate(849.75 4.125)"/>
+          <rect width="1.238" height="842.325" x=".412" y="2.475" transform="translate(990 4.125)"/>
+          <rect width="1.238" height="842.325" x=".825" y="2.475" transform="translate(990 4.125)"/>
+          <rect width="981.75" height="1.238" x="1.238" y="2.063" transform="translate(990 144.375)"/>
+          <rect width="981.75" height="1.238" x="1.238" y="2.063" transform="translate(990 284.625)"/>
+          <rect width="981.75" height="1.238" x="1.238" y="2.063" transform="translate(990 424.875)"/>
+          <rect width="981.75" height="1.238" x="1.238" y="2.475" transform="translate(990 565.125)"/>
+          <rect width="1.238" height="842.325" x=".825" y="2.475" transform="translate(1130.25 4.125)"/>
+          <rect width="1.238" height="842.325" x=".825" y="2.475" transform="translate(1270.5 4.125)"/>
+          <rect width="1.238" height="842.325" x=".825" y="2.475" transform="translate(1410.75 4.125)"/>
+          <rect width="1.238" height="842.325" x=".412" y="2.475" transform="translate(1551 4.125)"/>
+          <rect width="1.238" height="842.325" x=".412" y="2.475" transform="translate(1691.25 4.125)"/>
+          <rect width="1.238" height="842.325" x=".412" y="2.475" transform="translate(1831.5 4.125)"/>
+          <g transform="translate(0 561)">
+            <circle cx="149.738" cy="7.013" r="6.188"/>
+            <circle cx="289.988" cy="7.013" r="6.188"/>
+            <circle cx="430.238" cy="7.013" r="6.188"/>
+            <circle cx="570.487" cy="7.013" r="6.188"/>
+            <circle cx="710.737" cy="7.013" r="6.188"/>
+            <circle cx="850.987" cy="7.013" r="6.188"/>
+            <circle cx="991.237" cy="7.013" r="6.188"/>
+          </g>
+          <g transform="translate(0 420.75)">
+            <circle cx="149.738" cy="7.013" r="6.188"/>
+            <circle cx="289.988" cy="7.013" r="6.188"/>
+            <circle cx="430.238" cy="7.013" r="6.188"/>
+            <circle cx="570.487" cy="7.013" r="6.188"/>
+            <circle cx="710.737" cy="7.013" r="6.188"/>
+            <circle cx="850.987" cy="7.013" r="6.188"/>
+            <circle cx="991.237" cy="7.013" r="6.188"/>
+          </g>
+          <g transform="translate(0 280.5)">
+            <circle cx="149.738" cy="6.6" r="6.188"/>
+            <circle cx="289.988" cy="6.6" r="6.188"/>
+            <circle cx="430.238" cy="6.6" r="6.188"/>
+            <circle cx="570.487" cy="6.6" r="6.188"/>
+            <circle cx="710.737" cy="6.6" r="6.188"/>
+            <circle cx="850.987" cy="6.6" r="6.188"/>
+            <circle cx="991.237" cy="6.6" r="6.188"/>
+          </g>
+          <g transform="translate(0 140.25)">
+            <circle cx="149.738" cy="6.6" r="6.188"/>
+            <circle cx="289.988" cy="6.6" r="6.188"/>
+            <circle cx="430.238" cy="6.6" r="6.188"/>
+            <circle cx="570.487" cy="6.6" r="6.188"/>
+            <circle cx="710.737" cy="6.6" r="6.188"/>
+            <circle cx="850.987" cy="6.6" r="6.188"/>
+            <circle cx="991.237" cy="6.6" r="6.188"/>
+          </g>
+          <g transform="translate(981.75)">
+            <g transform="translate(0 561)">
+              <circle cx="9.488" cy="7.013" r="6.188"/>
+              <circle cx="149.738" cy="7.013" r="6.188"/>
+              <circle cx="289.988" cy="7.013" r="6.188"/>
+              <circle cx="430.238" cy="7.013" r="6.188"/>
+              <circle cx="570.487" cy="7.013" r="6.188"/>
+              <circle cx="711.15" cy="7.013" r="6.188"/>
+              <circle cx="851.4" cy="7.013" r="6.188"/>
+            </g>
+            <g transform="translate(0 420.75)">
+              <circle cx="9.488" cy="7.013" r="6.188"/>
+              <circle cx="149.738" cy="7.013" r="6.188"/>
+              <circle cx="289.988" cy="7.013" r="6.188"/>
+              <circle cx="430.238" cy="7.013" r="6.188"/>
+              <circle cx="570.487" cy="7.013" r="6.188"/>
+              <circle cx="711.15" cy="7.013" r="6.188"/>
+              <circle cx="851.4" cy="7.013" r="6.188"/>
+            </g>
+            <g transform="translate(0 280.5)">
+              <circle cx="9.488" cy="6.6" r="6.188"/>
+              <circle cx="149.738" cy="6.6" r="6.188"/>
+              <circle cx="289.988" cy="6.6" r="6.188"/>
+              <circle cx="430.238" cy="6.6" r="6.188"/>
+              <circle cx="570.487" cy="6.6" r="6.188"/>
+              <circle cx="711.15" cy="6.6" r="6.188"/>
+              <circle cx="851.4" cy="6.6" r="6.188"/>
+            </g>
+            <g transform="translate(0 140.25)">
+              <circle cx="9.488" cy="6.6" r="6.188"/>
+              <circle cx="149.738" cy="6.6" r="6.188"/>
+              <circle cx="289.988" cy="6.6" r="6.188"/>
+              <circle cx="430.238" cy="6.6" r="6.188"/>
+              <circle cx="570.487" cy="6.6" r="6.188"/>
+              <circle cx="711.15" cy="6.6" r="6.188"/>
+              <circle cx="851.4" cy="6.6" r="6.188"/>
+            </g>
+          </g>
+        </g>
+        <path fill="url(#bg1-f)" d="M925,550.046575 L925,694.134247 L2845,694.134247 L2845,547.464658 C2651.7726,600.466301 2390.42027,659.043836 2175.30137,659.043836 L2175.30137,659.043836 C1784.59452,659.043836 1632.17808,395 1329.49315,395 L1329.49315,395 C1189.10082,395 1071.32329,469.81863 925,550.046575"/>
+        <path stroke="#2F5BEA" d="M3216.83187,448.386478 C3216.83187,448.386478 2585.39242,657.285977 2171.82267,657.285977 C1758.24417,657.285977 1667.8511,379.555134 1351.30039,379.555134 C1034.74531,379.555134 700.179845,756.071945 700.179845,756.071945"/>
+      </g>
+    </g>
+  </g>
+</svg>

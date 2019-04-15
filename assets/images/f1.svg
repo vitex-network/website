@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52">
+  <g fill="none" fill-rule="evenodd">
+    <g transform="translate(7.581 7.556)">
+      <ellipse cx="5.023" cy="5" fill="#FF8875" rx="5.023" ry="5"/>
+      <ellipse cx="21.767" cy="5" fill="#C2D0FF" rx="5.023" ry="5"/>
+      <ellipse cx="37.395" cy="5" fill="#C2D0FF" rx="5.023" ry="5"/>
+      <ellipse cx="5.023" cy="22.778" fill="#C2D0FF" rx="5.023" ry="5"/>
+      <ellipse cx="21.767" cy="22.778" fill="#FF8875" rx="5.023" ry="5"/>
+      <ellipse cx="37.395" cy="22.778" fill="#C2D0FF" rx="5.023" ry="5"/>
+      <ellipse cx="5.023" cy="39.444" fill="#C2D0FF" rx="5.023" ry="5"/>
+      <ellipse cx="21.767" cy="39.444" fill="#C2D0FF" rx="5.023" ry="5"/>
+      <ellipse cx="37.395" cy="39.444" fill="#FF8875" rx="5.023" ry="5"/>
+    </g>
+    <g stroke="#111" stroke-width="2" transform="translate(2 2)">
+      <path d="M5.02325581 10L5.02325581 16.6666667M10.0465116 22.7777778L15.627907 22.7777778M24.5581395 25.5555556L33.4883721 35.5555556M32.372093 39.4444444L26.7906977 39.4444444"/>
+      <ellipse cx="5.023" cy="5" stroke-linecap="square" rx="5.023" ry="5"/>
+      <ellipse cx="21.767" cy="5" stroke-linecap="square" rx="5.023" ry="5"/>
+      <ellipse cx="37.395" cy="5" stroke-linecap="square" rx="5.023" ry="5"/>
+      <ellipse cx="5.023" cy="22.778" stroke-linecap="square" rx="5.023" ry="5"/>
+      <ellipse cx="21.767" cy="22.778" stroke-linecap="square" rx="5.023" ry="5"/>
+      <ellipse cx="37.395" cy="22.778" stroke-linecap="square" rx="5.023" ry="5"/>
+      <ellipse cx="5.023" cy="39.444" stroke-linecap="square" rx="5.023" ry="5"/>
+      <ellipse cx="21.767" cy="39.444" stroke-linecap="square" rx="5.023" ry="5"/>
+      <ellipse cx="37.395" cy="39.444" stroke-linecap="square" rx="5.023" ry="5"/>
+    </g>
+  </g>
+</svg>

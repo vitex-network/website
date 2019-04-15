@@ -3,21 +3,15 @@ module.exports = {
     weibo: 'https://weibo.com/u/6572727462',
     viteNet: {
       zh: 'https://vite.net/zh',
-      en: 'https://vite.net',
-      ru: 'https://vite.net',
-      vi: 'https://vite.net'
+      en: 'https://vite.net'
     },
     explorer: {
       zh: 'https://explorer.vite.net/zh',
-      en: 'https://explorer.vite.net',
-      ru: 'https://explorer.vite.net',
-      vi: 'https://explorer.vite.net'
+      en: 'https://explorer.vite.net'
     },
     webWallet: {
       zh: 'https://wallet.vite.net',
-      en: 'https://wallet.vite.net',
-      ru: 'https://wallet.vite.net',
-      vi: 'https://wallet.vite.net'
+      en: 'https://wallet.vite.net'
     },
     news: {
       rss: {
@@ -63,8 +57,6 @@ module.exports = {
     introduction: {
       en: 'https://vite.wiki/introduction/',
       zh: 'https://vite.wiki/zh/introduction/',
-      ru: 'https://vite.wiki/introduction/',
-      vi: 'https://vite.wiki/introduction/'
     },
     wiki: {
       en: 'https://vite.wiki/introduction/',
@@ -105,21 +97,6 @@ module.exports = {
       medium: 'https://medium.com/vitelabs',
       bitcointalk: 'https://bitcointalk.org/index.php?topic=5056409',
       forum: 'https://forum.vite.net'
-    },
-    vote: {
-      specific: {
-        en: '/regSpecificEn',
-        zh: '/regSpecificCh',
-        ru: '/regSpecificEn',
-        vi: '/regSpecificEn'
-      },
-      apply: {
-        en: 'https://docs.google.com/forms/d/e/1FAIpQLScixWTDuId0MCJQGi0jVI3LCivQ-r5fNUMFCnLf-uodIc_EsA/viewform',
-        zh: 'https://www.jiandaoyun.com/f/5bdbef8be1613237783c264b',
-        ru: 'https://docs.google.com/forms/d/e/1FAIpQLScixWTDuId0MCJQGi0jVI3LCivQ-r5fNUMFCnLf-uodIc_EsA/viewform',
-        vi: 'https://docs.google.com/forms/d/e/1FAIpQLScixWTDuId0MCJQGi0jVI3LCivQ-r5fNUMFCnLf-uodIc_EsA/viewform'
-      }
-
     }
   }
 };

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="116" height="116" viewBox="0 0 116 116">
+  <g fill="none" fill-rule="evenodd">
+    <path stroke="#C0C6D3" stroke-dasharray="0 11" stroke-linecap="round" stroke-width="3" d="M58,114 C88.927946,114 114,88.927946 114,58 C114,27.072054 88.927946,2 58,2 C27.072054,2 2,27.072054 2,58 C2,88.927946 27.072054,114 58,114 Z"/>
+    <circle cx="58" cy="58" r="49" fill="#545F75"/>
+    <g transform="translate(40 40)">
+      <path stroke="#FFF" stroke-linecap="round" stroke-width="3" d="M2.92307692 7.27650728L35.0769231 7.27650728M5.84615385 1.45530146L32.1538462 1.45530146M35.0769231 33.4719335L2.92307692 33.4719335C2.11630769 33.4719335 1.46153846 32.8199584 1.46153846 32.016632L1.46153846 14.5530146C1.46153846 13.7496881 2.11630769 13.0977131 2.92307692 13.0977131L35.0769231 13.0977131C35.8836923 13.0977131 36.5384615 13.7496881 36.5384615 14.5530146L36.5384615 32.016632C36.5384615 32.8199584 35.8836923 33.4719335 35.0769231 33.4719335z"/>
+      <ellipse cx="35.077" cy="14.553" fill="#FFF" fill-rule="nonzero" rx="2.923" ry="2.911"/>
+      <ellipse cx="2.923" cy="14.553" fill="#FFF" fill-rule="nonzero" rx="2.923" ry="2.911"/>
+      <ellipse cx="2.923" cy="32.017" fill="#FFF" fill-rule="nonzero" rx="2.923" ry="2.911"/>
+      <ellipse cx="35.077" cy="32.017" fill="#FFF" fill-rule="nonzero" rx="2.923" ry="2.911"/>
+      <ellipse cx="30.692" cy="23.285" fill="#FFF" fill-rule="nonzero" rx="1.462" ry="1.455"/>
+      <ellipse cx="7.308" cy="23.285" fill="#FFF" fill-rule="nonzero" rx="1.462" ry="1.455"/>
+      <ellipse cx="19" cy="23.649" fill="#FFF" fill-rule="nonzero" rx="5.7" ry="5.676"/>
+    </g>
+  </g>
+</svg>
