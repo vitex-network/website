@@ -1,0 +1,46 @@
+{
+  "name": "vitex-page",
+  "scripts": {
+    "dev": "HOST=0.0.0.0 nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "p": "npm run build && npm run generate",
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.4",
+    "@fortawesome/fontawesome-free-brands": "^5.0.8",
+    "@fortawesome/fontawesome-free-solid": "^5.0.9",
+    "@fortawesome/vue-fontawesome": "^0.0.22",
+    "@nuxtjs/axios": "^5.1.1",
+    "@nuxtjs/google-analytics": "^2.0.2",
+    "@nuxtjs/pwa": "^2.0.5",
+    "@nuxtjs/sitemap": "^0.1.1",
+    "@nuxtjs/webpackmonitor": "^0.1.0",
+    "animate-canvas-line": "^1.1.0",
+    "babel-polyfill": "^6.26.0",
+    "headroom.js": "^0.9.4",
+    "is-mobile": "^2.0.0",
+    "ismobilejs": "^0.4.1",
+    "nuxt": "^1.4.0",
+    "nuxt-i18n": "2.9.5",
+    "scrollmonitor": "^1.2.4",
+    "three": "^0.92.0",
+    "v-tooltip": "^2.0.0-rc.32",
+    "vue-i18n": "^7.6.0",
+    "xui-module": "^0.1.5"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.18.2",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-html": "^4.0.2",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.7"
+  }
+}

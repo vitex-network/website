@@ -1,0 +1,36 @@
+
+
+$gap: 64px;
+// $tablet: 770px;
+// $desktop: 961px + (2 * $gap);
+
+@import "vars";
+@import "~bulma/sass/utilities/functions";
+
+@import "~bulma";
+
+a {
+  color: rgba(21,128,227,1);
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    color: rgba(21,128,227,1);
+  }
+}
+
+
+
+.container {
+  @include desktop {
+    // max-width: 900px;
+    // width: 900px;
+  }
+  @include widescreen {
+    max-width: 1040px;
+    width: 1040px;
+  }
+  @include fullhd {
+    max-width: 1100px;
+    width: 1100px;
+  }
+}
