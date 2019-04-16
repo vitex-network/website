@@ -14,8 +14,7 @@
       role="menu"
     >
       <div class="dropdown-content">
-        <a class="dropdown-item" target="_blank" :href="url.blog">{{$t('about.blog')}}</a>
-        <whitepaper></whitepaper>
+        <a class="dropdown-item" target="_blank" :href="url.blog">{{$t('about.api')}}</a>
       </div>
     </div>
   </div>
@@ -25,7 +24,9 @@
 import config from '~/config';
 
 export default {
-  components: { whitepaper },
+  components: {
+
+  },
   props: {
     isFooter: {
       type: Boolean,

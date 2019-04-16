@@ -1,25 +1,21 @@
 <template>
-  <div
-      class="public"
-      :class="`is-${routeName}-public`"
-  >
+  <div class="public">
     <div
         class="navbar headroom"
-        :class="`is-${routeName}-page`"
         v-headroom
     >
       <div
-          class="container is-widescreen"
+          class="columns is-widescreen navbar"
           :class="{ 'is-open': navbarActive }"
           @click="onNavClick"
       >
-        <div class="navbar-brand">
+        <div class="column is-1 navbar-brand">
           <div @click="onLogoClick">
             <nuxt-link
                 class="navbar-item nav-item nav-item-logo"
                 :to="localePath('index')"
             >
-              <logo-without-words class="logo"></logo-without-words>
+              <logo class="logo"></logo>
             </nuxt-link>
           </div>
           <div
@@ -33,7 +29,7 @@
         </div>
 
         <div
-            class="navbar-menu"
+            class="navbar-menu column is-6 is-offset-3"
             :class="{ 'is-active': navbarActive, collapsing: collapsing }"
         >
           <div
@@ -45,8 +41,25 @@
                 class="nav-item text-hover-transition"
                 target="_blank"
             >
-              {{$t(`nav.production`)}}
+              {{$t(`nav.trade`)}}
             </a>
+            <a
+                href="http://vite.net/"
+                class="nav-item text-hover-transition"
+                target="_blank"
+            >
+              {{$t(`nav.mine`)}}
+            </a>
+            <a
+                href="http://vite.net/"
+                class="nav-item text-hover-transition"
+                target="_blank"
+            >
+              {{$t(`nav.market`)}}
+            </a>
+            <div class="nav-item">
+              <about></about>
+            </div>
             <nuxt-link
                 :key="item"
                 :to="localePath(item)"
@@ -56,6 +69,13 @@
             >
               {{$t(`nav.${item}`)}}
             </nuxt-link>
+            <a
+                href="http://vite.net/"
+                class="nav-item text-hover-transition"
+                target="_blank"
+            >
+              {{$t(`nav.wallet`)}}
+            </a>
           </div>
           <div
               ref="navbarEnd"
@@ -68,45 +88,30 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      <div
-          :class="{'airdrop-hide' : routeName === 'airdrop'}"
-          class="img-text"
-          @click="openAirdropPage"
-      >
-        <div
-            class="act"
-            v-html="$t('home.acttext')"
-        ></div>
-        <div></div>
-      </div>
-    </div>
     <div
         class="nuxt-content"
-        :class="`is-${routeName}-page`"
     >
       <nuxt :keep-alive="true"></nuxt>
     </div>
-    <v-footer></v-footer>
   </div>
 </template>
 
 <script type="text/babel">
-  import LangSelect from '~/components/navbar/LangSelect.vue';
-  import Logo from '~/components/navbar/Logo.vue';
-  import Footer from '~/components/Footer.vue';
   import config from '~/config';
-  import about from '~/components/navbar/About.vue';
+  import Logo from '~/components/Logo';
+  import LangSelect from '~/components/LangSelect';
+  import About from '~/components/About';
+
 
   export default {
     components: {
-      LangSelect,
       Logo,
-      VFooter: Footer,
-      about,
+      LangSelect,
+      About
     },
     head() {
       let {routeName} = this;
+      console.log(routeName);
       let title = this.$t(`nav.${routeName}`) + ' - ' + this.$t('head.title');
 
       let description = this.$t(`head.description.${routeName}`);
@@ -172,7 +177,7 @@
     data: function () {
       return {
         navbarActive: false,
-        navs: ['team', 'community'],
+        navs: ['faq'],
         collapsing: false,
         urls: config.urls
       };
@@ -236,33 +241,11 @@
   @import "assets/vars.scss";
 
   .public {
-    background: no-repeat url("~assets/images/bg/bg1.svg") 0% 100%;
-  }
-
-  .img-text {
-    position: absolute;
-    cursor: pointer;
-    right: 0;
-    top: 79px;
-    z-index: 999;
-    width: 153px;
-    height: 131px;
-    text-align: center;
-    color: white;
-    font-family: $font-family-title;
-    font-size: 13px;
-    padding-top: 30px;
-    @include touch {
-      top: 0px;
-    }
-    .act {
-      max-width: 130px;
-      margin: 10px;
-    }
+    width: 100%;
+    background: no-repeat url("~assets/images/bg/bg1.svg");
   }
 
   .nuxt-content {
-    margin-top: 72px;
     padding-bottom: 100px;
     @include touch {
       padding-bottom: 50px;
@@ -270,10 +253,10 @@
   }
 
   .navbar {
+    width: 100%;
     border-bottom: 1px solid transparent;
     z-index: 222222;
-    background: #fff;
-
+    background: transparent;
     &.headroom--not-top {
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       background: white;
@@ -297,6 +280,7 @@
       padding: 0.5rem 18px;
       color: $common-text-color;
       font-family: $font-family-light;
+      font-size: 14px;
       &:hover {
         color: $common-active-color;
       }
@@ -305,9 +289,12 @@
       }
     }
     .nav-item-logo {
-      padding: 0 57px 0 0;
+      max-width: 180px;
+      padding: 0;
     }
     .navbar-menu {
+      display: flex;
+      margin-left: 30%;
       @include desktop {
         height: auto !important;
       }
@@ -325,7 +312,7 @@
         min-height: 40px;
         height: 40px;
         .logo {
-          height: 22px;
+          max-height: 20px;
           transition: transform 0.4s ease-in-out;
         }
         .navbar-burger {
@@ -372,10 +359,14 @@
       .navbar-menu {
         padding: 0 32px;
         transition: all 0.5s ease-in-out;
+        text-align: center;
         &:not(.is-active) {
           height: 0;
           overflow-y: hidden;
           display: block;
+        }
+        .navbar-start{
+          height: 100%;
         }
         .navbar-end {
           padding: 0.5rem 0;

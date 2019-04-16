@@ -29,7 +29,7 @@
         return this.$i18n.locales;
       }
     }
-};
+  };
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
@@ -44,6 +44,7 @@
         border-radius: 0.35rem;
         height: (40rem/16);
         border: transparent;
+        font-size: 14px;
         font-family: $font-family-light;
         &:focus {
           border: none;

@@ -1,143 +1,14 @@
 <template>
   <section>
     <footer class="footer">
-      <div clss="ft-container">
+      <div class="ft-container">
         <div class="is-flex whole-footer">
           <div class="icon-wrapper is-one-third is-hidden-touch">
-            <logo-without-words></logo-without-words>
+            <logo></logo>
           </div>
           <div class="footer-tab">
             <div class="">
-              <div class="is-flex footer-nav">
-                <div
-                  v-for="(item, index) in navs"
-                  :key="index"
-                  class="nav-item"
-                >
-                  <nuxt-link
-                    :key="item"
-                    :to="localePath(item)"
-                    class="text-hover-transition"
-                  >
-                    {{$t(`nav.${item}`)}}
-                  </nuxt-link>
-                </div>
-                <voteNotice
-                  class="nav-item"
-                  :is-footer="true"
-                ></voteNotice>
-                <div class="nav-item">
-                  <nuxt-link
-                    :to="localePath('partnership')"
-                    class="text-hover-transition"
-                  >
-                    {{$t('nav.partnership')}}
-                  </nuxt-link>
-                </div>
-                <Media
-                  class="nav-item"
-                  :is-footer="true"
-                ></Media>
-                <Exchange
-                  class="nav-item"
-                  :is-footer="true"
-                ></Exchange>
-                <div class="nav-item">
-                  <nuxt-link
-                    :to="localePath('faq')"
-                    class="text-hover-transition"
-                  >
-                    {{$t('nav.faq')}}
-                  </nuxt-link>
-                </div>
-                <about
-                  class="nav-item"
-                  :is-footer="true"
-                ></about>
-                <div class="nav-item">
-                  <a
-                    :href="urls.wiki[$i18n.locale]"
-                    class="text-hover-transition"
-                    target="_blank"
-                  >
-                    {{$t(`nav.wiki`)}}
-                  </a>
-                </div>
-              </div>
-              <div class="social-icons">
-                <div class="icons mt40">
-                  <div class="icon-links-wrapper">
-                    <a
-                      :href="urls.github"
-                      target="_blank"
-                      class="text-hover-transition"
-                    >
-                      <fa-icon
-                        class="icon"
-                        :icon="['fab', 'github']"
-                      ></fa-icon>
-                    </a>
-                    <a
-                      :href="urls.discord"
-                      target="_blank"
-                      class="text-hover-transition"
-                    >
-                      <fa-icon
-                        class="icon"
-                        :icon="['fab', 'discord']"
-                      ></fa-icon>
-                    </a>
-                    <a
-                      :href="urls.twitter"
-                      target="_blank"
-                      class="text-hover-transition"
-                    >
-                      <fa-icon
-                        class="icon"
-                        :icon="['fab', 'twitter']"
-                      ></fa-icon>
-                    </a>
-                    <telegram></telegram>
-                    <a
-                      :href="urls.reddit"
-                      target="_blank"
-                      class="text-hover-transition"
-                    >
-                      <fa-icon
-                        class="icon"
-                        :icon="['fab', 'reddit']"
-                      /></a>
-                    <a
-                      :href="urls.youtube"
-                      target="_blank"
-                      class="text-hover-transition"
-                    >
-                      <fa-icon
-                        class="icon"
-                        :icon="['fab', 'youtube']"
-                      /></a>
-                    <a
-                      :href="urls.forum"
-                      target="_blank"
-                      class="text-hover-transition"
-                    >
-                      <img
-                        class="icon forum"
-                        src="~/assets/images/social/forum.svg"
-                      /></a>
-                    <a
-                      :href="urls.weibo"
-                      target="_blank"
-                      class="text-hover-transition"
-                    >
-                      <fa-icon
-                        class="icon"
-                        :icon="['fab', 'weibo']"
-                      /></a>
-                    <wechat></wechat>
-                  </div>
-                </div>
-              </div>
+
               <div class="">
                 <div class="copyright mt40">
                   <span>
@@ -154,7 +25,7 @@
 </template>
 
 <script type="text/babel">
-import LogoWithoutWords from '~/components/navbar/Logo.vue';
+import Logo from '~/components/navbar/Logo';
 import Wechat from '~/components/navbar/Wechat';
 import Telegram from '~/components/navbar/Telegram';
 import config from '~/config.js';
@@ -162,12 +33,9 @@ import about from '~/components/navbar/About';
 
 export default {
   components: {
-    LogoWithoutWords,
+    Logo,
     Wechat,
     Telegram,
-    Exchange,
-    Media,
-    voteNotice,
     about
   },
   data: function () {
@@ -175,9 +43,9 @@ export default {
     return {
       urls,
       aboutList: ['tokenUrl'],
-      learnList: ['whitePaper', 'document', 'introduction'],
+      learnList: ['document', 'introduction'],
       mediumList: ['medium', 'btt', 'blog'],
-      urlShouldTranslate: ['whitePaper', 'telegram', 'introduction'],
+      urlShouldTranslate: ['telegram', 'introduction'],
       navs: ['team', 'community']
     };
   },
@@ -197,7 +65,7 @@ export default {
 
 .footer {
   min-height: 315px;
-  background: url("~assets/images/bg/bg2.svg") 100% no-repeat;
+  background: url("~assets/images/bg/bg2.svg") no-repeat;
   z-index: 3;
   padding: 0;
   .ft-container {

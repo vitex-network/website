@@ -1,4 +1,4 @@
-const hostname = '127.0.0.1';
+const hostname = 'https://www.vite.org';
 const routes = [
   {
     url: '/',
@@ -15,9 +15,22 @@ const routes = [
         title: 'Vite logo for appstore'
       }
     ]
+  },
+  {
+    url: '/faq',
+    priority: 0.3
   }
 ];
-
+const whitepaperUrls = [
+  {
+    lang: 'en',
+    url: 'https://www.vite.org/whitepaper/vite_en.pdf'
+  },
+  {
+    lang: 'zh',
+    url: 'https://www.vite.org/whitepaper/vite_cn.pdf'
+  }
+];
 const sitemapUrls = [];
 const locales = [
   {
@@ -55,9 +68,16 @@ routes.forEach((route) => {
   });
 });
 
+whitepaperUrls.forEach(({lang, url}) => {
+  sitemapUrls.push({
+    url,
+    links: whitepaperUrls
+  });
+});
+
 module.exports = {
   head: {
-    title: 'A completely decentralized dag exchange',
+    title: 'A completely decentralized exchange',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
@@ -84,6 +104,7 @@ module.exports = {
     middleware: 'i18n'
   },
   modules: [
+    // '@nuxtjs/webpackmonitor',
     '@nuxtjs/pwa',
     ['nuxt-i18n', {
       locales,
@@ -105,7 +126,7 @@ module.exports = {
       }
     }],
     ['@nuxtjs/google-analytics', {
-      id: ''
+      id: 'UA-118987496-1'
     }],
     '@nuxtjs/sitemap'
   ],
@@ -121,7 +142,10 @@ module.exports = {
     gzip: true,
     generate: true,
     exclude: [
-
+      '/technology',
+      '/careers',
+      '/',
+      '/faq'
     ].concat(locales.map((lang) => {
       return `/${lang.code}/**`;
     })).concat(locales.map((lang) => {
