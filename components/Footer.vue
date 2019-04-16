@@ -197,7 +197,7 @@ export default {
 
 .footer {
   min-height: 315px;
-  background: url("~assets/images/footer/footer.svg") 100% no-repeat;
+  background: url("~assets/images/bg/bg2.svg") 100% no-repeat;
   z-index: 3;
   padding: 0;
   .ft-container {
@@ -205,7 +205,7 @@ export default {
     justify-content: space-around;
   }
   @include touch {
-    background: url("~assets/images/footer/footer.svg") 100% 60%;
+    background: url("~assets/images/bg/bg2.svg") 100% 60%;
   }
   .whole-footer {
     justify-content: space-between;

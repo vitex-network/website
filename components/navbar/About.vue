@@ -23,7 +23,6 @@
 
 <script type="text/babel">
 import config from '~/config';
-import whitepaper from './WhitePaperForMenu';
 
 export default {
   components: { whitepaper },

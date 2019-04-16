@@ -5,7 +5,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "p": "npm run build && npm run generate",
+    "p": "npm run build && npm run generate"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.4",
