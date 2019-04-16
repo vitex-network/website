@@ -17,13 +17,16 @@
         </div>
       </div>
     </section>
+    <vitex-info></vitex-info>
   </div>
 </template>
 
 <script>
+  import VitexInfo from '~/components/VitexInfo'
+
   export default {
     components: {
-
+      VitexInfo
     },
     methods:{
       openViteX(){

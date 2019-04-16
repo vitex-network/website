@@ -29,7 +29,7 @@
     components: {
       VPopover
     },
-    data: function () {
+    data() {
       return {
         isEnabled: true,
         urlList: config.urls.telegram,

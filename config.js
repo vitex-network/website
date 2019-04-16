@@ -60,9 +60,15 @@ module.exports = {
     },
     wiki: {
       en: 'https://vite.wiki/introduction/',
-      zh: 'https://vite.wiki/zh/introduction/',
-      ru: 'https://vite.wiki/introduction/',
-      vi: 'https://vite.wiki/introduction/'
+      zh: 'https://vite.wiki/zh/introduction/'
+    },
+    api: {
+      en: 'https://vite.wiki/api/rpc/',
+      zh: 'https://vite.wiki/zh/api/rpc/'
+    },
+    website: {
+      en: 'http://vite.org/',
+      zh: 'http://vite.org/zh'
     },
     blog: {
       en: 'https://vite.blog/',

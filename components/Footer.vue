@@ -38,7 +38,7 @@ export default {
     Telegram,
     about
   },
-  data: function () {
+  data() {
     let { urls } = config;
     return {
       urls,
@@ -46,7 +46,7 @@ export default {
       learnList: ['document', 'introduction'],
       mediumList: ['medium', 'btt', 'blog'],
       urlShouldTranslate: ['telegram', 'introduction'],
-      navs: ['team', 'community']
+      navs: ['faq']
     };
   },
   methods: {

@@ -29,7 +29,7 @@
         </div>
 
         <div
-            class="navbar-menu column is-6 is-offset-3"
+            class="navbar-menu column is-7 is-offset-3"
             :class="{ 'is-active': navbarActive, collapsing: collapsing }"
         >
           <div
@@ -277,7 +277,7 @@
       }
     }
     .nav-item {
-      padding: 0.5rem 18px;
+      padding: 0.5rem 30px;
       color: $common-text-color;
       font-family: $font-family-light;
       font-size: 14px;
@@ -294,7 +294,6 @@
     }
     .navbar-menu {
       display: flex;
-      margin-left: 30%;
       @include desktop {
         height: auto !important;
       }
