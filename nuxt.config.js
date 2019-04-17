@@ -6,13 +6,13 @@ const routes = [
     img: [
       {
         url: `${hostname}/icon.png`,
-        caption: 'Vite logo',
-        title: 'Vite logo'
+        caption: 'ViteX logo',
+        title: 'ViteX logo'
       },
       {
         url: `${hostname}/logo_appstore.png`,
-        caption: 'Vite logo for appstore',
-        title: 'Vite logo for appstore'
+        caption: 'ViteX logo for appstore',
+        title: 'ViteX logo for appstore'
       }
     ]
   },

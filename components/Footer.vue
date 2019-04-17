@@ -96,19 +96,29 @@
             </div>
             <div class="item about">
               <div class="subtitle">{{$t('footer.about')}}</div>
-              <div class="content">{{$t('about.api')}}</div>
-              <div class="content">{{$t('about.website')}}</div>
+              <a
+                  :href="urls.api"
+                  class="content"
+              >
+                {{$t('about.api')}}
+              </a>
+              <a
+                  :href="urls.api"
+                  class="content"
+              >
+                {{$t('about.website')}}
+              </a>
             </div>
             <div class="item user">
               <div class="subtitle">{{$t('footer.user')}}</div>
-              <div class="content">{{$t('user.protocol')}}</div>
-              <div class="content">{{$t('user.list')}}</div>
-              <div class="content">{{$t('user.contact')}}</div>
+              <a class="content">{{$t('user.protocol')}}</a>
+              <a class="content">{{$t('user.list')}}</a>
+              <a class="content">{{$t('user.contact')}}</a>
             </div>
             <div class="item common">
               <div class="subtitle">{{$t('footer.info')}}</div>
-              <div class="content">{{$t('info.faq')}}</div>
-              <div class="content">{{$t('info.fee')}}</div>
+              <a class="content">{{$t('info.faq')}}</a>
+              <a class="content">{{$t('info.fee')}}</a>
             </div>
           </div>
         </div>

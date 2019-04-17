@@ -175,5 +175,16 @@
         "answer": "Vite的共识机制类似EOS，通过选举产生25个快照节点，通过DPoS算法生产快照块，并领取锻造奖励。"
       }
     ]
+  },
+  "urls": {
+    "telegram": {
+      "ann": "公告群",
+      "english": "英文群",
+      "chinese": "中文群",
+      "vietnamese": "越南群",
+      "korean": "韩国群",
+      "russia": "俄罗斯群",
+      "thailand": "泰国群"
+    }
   }
 }

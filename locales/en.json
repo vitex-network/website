@@ -185,5 +185,16 @@
         ]
       }
     ]
+  },
+  "urls": {
+    "telegram": {
+      "ann": "Announcement Channel",
+      "english": "English",
+      "chinese": "Chinese",
+      "vietnamese": "Vietnamese",
+      "korean": "Korean",
+      "russia": "Russia",
+      "thailand": "Thailand"
+    }
   }
 }
