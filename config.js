@@ -103,6 +103,11 @@ module.exports = {
       medium: 'https://medium.com/vitelabs',
       bitcointalk: 'https://bitcointalk.org/index.php?topic=5056409',
       forum: 'https://forum.vite.net'
+    },
+    use:{
+      create: 'http://vite.org',
+      charge: 'http://vite.net',
+      order: 'http://vite.org'
     }
   }
 };

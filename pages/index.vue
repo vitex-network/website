@@ -18,15 +18,21 @@
       </div>
     </section>
     <vitex-info></vitex-info>
+    <use-vitex></use-vitex>
+    <v-gate></v-gate>
   </div>
 </template>
 
 <script>
-  import VitexInfo from '~/components/VitexInfo'
+  import VitexInfo from '~/components/VitexInfo';
+  import UseVitex from '~/components/UseVitex';
+  import VGate from '~/components/VGate';
 
   export default {
     components: {
-      VitexInfo
+      VitexInfo,
+      UseVitex,
+      VGate
     },
     methods:{
       openViteX(){
@@ -35,7 +41,7 @@
         );
       }
     }
-  }
+  };
 </script>
 
 <style lang="scss" scoped>

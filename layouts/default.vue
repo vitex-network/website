@@ -18,14 +18,6 @@
               <logo class="logo"></logo>
             </nuxt-link>
           </div>
-          <div
-              class="navbar-burger"
-              @click="onBurgerClick"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
         </div>
 
         <div
@@ -93,6 +85,7 @@
     >
       <nuxt :keep-alive="true"></nuxt>
     </div>
+    <v-footer></v-footer>
   </div>
 </template>
 
@@ -101,13 +94,15 @@
   import Logo from '~/components/Logo';
   import LangSelect from '~/components/LangSelect';
   import About from '~/components/About';
+  import VFooter from '~/components/Footer';
 
 
   export default {
     components: {
       Logo,
       LangSelect,
-      About
+      About,
+      VFooter
     },
     head() {
       let {routeName} = this;
@@ -246,7 +241,6 @@
   }
 
   .nuxt-content {
-    padding-bottom: 100px;
     @include touch {
       padding-bottom: 50px;
     }
@@ -313,20 +307,6 @@
         .logo {
           max-height: 20px;
           transition: transform 0.4s ease-in-out;
-        }
-        .navbar-burger {
-          height: 40px;
-          width: 49px;
-          span {
-            width: 19px;
-            right: 50%;
-            left: auto;
-            margin-right: -10px;
-            transition: all 0.3s ease-in-out;
-            &:nth-child(2) {
-              width: 15px;
-            }
-          }
         }
       }
 

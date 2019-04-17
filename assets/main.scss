@@ -22,6 +22,15 @@ h1 {
 ::-webkit-scrollbar { 
     display: none; 
 }
+
+// common button
+.text-btn{
+  font-size: 14px;
+  font-family: $font-family-title;
+  color: $common-active-color;
+  cursor: pointer;
+}
+
 // transition
 
 .text-hover-transition {

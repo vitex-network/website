@@ -49,13 +49,11 @@
     display: inline-block;
     height: 30px;
     width: 30px;
-    margin-left: 20px;
   }
 
   .no-ssr {
     display: inline-block;
-    height: 30px;
-    width: 30px;
-    margin-left: 20px;
+    height: 20px;
+    width: 20px;
   }
 </style>
