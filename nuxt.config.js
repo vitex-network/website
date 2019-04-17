@@ -21,16 +21,6 @@ const routes = [
     priority: 0.3
   }
 ];
-const whitepaperUrls = [
-  {
-    lang: 'en',
-    url: 'https://www.vite.org/whitepaper/vite_en.pdf'
-  },
-  {
-    lang: 'zh',
-    url: 'https://www.vite.org/whitepaper/vite_cn.pdf'
-  }
-];
 const sitemapUrls = [];
 const locales = [
   {
@@ -68,12 +58,6 @@ routes.forEach((route) => {
   });
 });
 
-whitepaperUrls.forEach(({lang, url}) => {
-  sitemapUrls.push({
-    url,
-    links: whitepaperUrls
-  });
-});
 
 module.exports = {
   head: {
