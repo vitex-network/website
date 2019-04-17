@@ -3,7 +3,7 @@
     <footer class="footer">
       <div class="ft-container">
         <div class="is-flex whole-footer">
-          <div class="icon-wrapper is-half is-hidden-touch">
+          <div class="icon-wrapper is-hidden-touch">
             <logo></logo>
             <div class="subtitle">{{$t('home.slogan')}}</div>
             <div class="social-icons">
@@ -91,7 +91,25 @@
             </div>
           </div>
           <div class="footer-tab is-half">
-            <about></about>
+            <div class="item exchange">
+              <div class="subtitle">{{$t('footer.trade')}}</div>
+            </div>
+            <div class="item about">
+              <div class="subtitle">{{$t('footer.about')}}</div>
+              <div class="content">{{$t('about.api')}}</div>
+              <div class="content">{{$t('about.website')}}</div>
+            </div>
+            <div class="item user">
+              <div class="subtitle">{{$t('footer.user')}}</div>
+              <div class="content">{{$t('user.protocol')}}</div>
+              <div class="content">{{$t('user.list')}}</div>
+              <div class="content">{{$t('user.contact')}}</div>
+            </div>
+            <div class="item common">
+              <div class="subtitle">{{$t('footer.info')}}</div>
+              <div class="content">{{$t('info.faq')}}</div>
+              <div class="content">{{$t('info.fee')}}</div>
+            </div>
           </div>
         </div>
       </div>
@@ -150,7 +168,7 @@
     z-index: 3;
     padding: 0;
     .ft-container {
-      display: flex;
+      padding: 90px 0 50px 0;
       justify-content: space-around;
     }
     @include touch {
@@ -166,9 +184,22 @@
       }
     }
     .footer-tab {
-      color: $text-color;
+      display: flex;
+      font-size: 12px;
       justify-self: flex-end;
-      margin-right: 50px;
+      .item{
+        margin-right: 80px;
+        .subtitle{
+          margin-bottom: 9px;
+          font-size: 12px;
+          font-family: $font-family-title;
+          color: $text-color;
+        }
+        .content{
+          margin-bottom: 9px;
+          color: $common-text-color
+        }
+      }
       @include touch {
         margin: 0 auto;
       }
@@ -192,29 +223,6 @@
       color: $common-text-color;
       @include touch {
         text-align: center;
-      }
-    }
-
-    .footer-nav {
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      @include touch {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      a {
-        color: $common-text-color;
-      }
-      .nav-item {
-        padding: 0.5rem 23px;
-        color: $common-text-color;
-        font-family: $font-family-light;
-        &:hover {
-          color: $common-active-color;
-        }
-        &.active {
-          color: $common-active-color;
-        }
       }
     }
 

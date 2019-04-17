@@ -310,27 +310,6 @@
         }
       }
 
-      .is-open {
-        .navbar-brand {
-          .logo {
-            /*transform: translateX(16px);*/
-            transform: rotate(30deg);
-          }
-          .navbar-burger {
-            span {
-              &:nth-child(2) {
-                width: 19px;
-              }
-              &:nth-child(1),
-              &:nth-child(3) {
-                width: 9px;
-                margin-right: -5px;
-              }
-            }
-          }
-        }
-      }
-
       .nav-item {
         padding: 11px 16px;
       }
