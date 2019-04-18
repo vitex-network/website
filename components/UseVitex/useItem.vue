@@ -45,6 +45,7 @@
   @import "~assets/vars";
 
   .use-item{
+    width: 276px;
     text-align: center;
     .use-item-title{
       font-size: 18px;
@@ -54,11 +55,11 @@
       align-items: center;
     }
     .use-item-child{
+      padding: 12px 0;
       text-align: center;
-      display:flex;
       color:#111111;
       font-size: 14px;
-      line-height: 34px;
+      line-height: 28px;
       align-items: center;
     }
   }

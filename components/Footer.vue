@@ -231,7 +231,9 @@
       color: $common-text-color;
     }
     .copyright {
+      margin-bottom: 35px;
       font-size: 12px;
+      line-height: 16px;
       text-align: center;
       color: $common-text-color;
       @include touch {

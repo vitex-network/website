@@ -32,10 +32,13 @@
 
 <style rel="stylesheet/scss" lang="scss" scoped>
   @import "~assets/vars";
+
   .info-item{
     display:flex;
     flex-direction: column;
+    max-width: 196px;
     .info-item-title{
+      padding-bottom: 26px;
       text-align: center;
       img{
         text-align: center;
@@ -46,7 +49,8 @@
       display:flex;
       color:#111111;
       font-size: 14px;
-      line-height: 34px;
+      font-weight:400;
+      line-height: 20px;
     }
   }
 </style>

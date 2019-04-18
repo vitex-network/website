@@ -38,18 +38,25 @@
 <style rel="stylesheet/scss" lang="scss" scoped>
   @import "~assets/vars";
   .use{
-    text-align: center;
     height:500px;
+    margin-top: 129px;
+    text-align: center;
     justify-content: space-between;
     background:rgba(246,248,249,1);
     h1 {
       display: block;
+      padding-top: 65px;
       font-size: 32px;
+      line-height: 45px;
     }
     .use-group{
       display: flex;
+      margin-top: 48px;
       align-items: center;
       justify-content: center;
+      img{
+        padding: 0 30px;
+      }
     }
   }
 </style>

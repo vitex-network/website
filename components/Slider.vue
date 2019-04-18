@@ -28,10 +28,10 @@
           slidesPerView: 1,
           centeredSlides: true,
           spaceBetween: 30,
-          autoplay: {
-            delay: 3000,
-            disableOnInteraction: false
-          },
+          // autoplay: {
+          //   delay: 3000,
+          //   disableOnInteraction: false
+          // },
           pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -78,11 +78,17 @@
         /*background-color: red;*/
       }
     }
-    .swiper-button-prev{
-      background-image: url("~/assets/images/Left-arrow.svg");
-    }
-    .swiper-button-next{
-      background-image: url("~/assets/images/Right-arrow.svg");
-    }
+  }
+  .swiper-button-prev{
+    width: 112px;
+    height: 112px;
+    background: url("~assets/images/Left-arrow.svg") no-repeat center;
+    background-size: 68px 68px;
+  }
+  .swiper-button-next{
+    width: 112px;
+    height: 112px;
+    background: url("~assets/images/Right-arrow.svg") no-repeat center;
+    background-size: 68px 68px;
   }
 </style>

@@ -29,7 +29,7 @@
   @import "~assets/vars";
   .info{
     display:flex;
-    padding-left: 85px;
+    padding-top: 40px;
     justify-content: space-between;
   }
 </style>

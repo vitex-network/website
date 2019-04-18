@@ -106,7 +106,6 @@
     },
     head() {
       let {routeName} = this;
-      console.log(routeName);
       let title = this.$t(`nav.${routeName}`) + ' - ' + this.$t('head.title');
 
       let description = this.$t(`head.description.${routeName}`);
@@ -202,11 +201,6 @@
           // this.$i18n.locale === 'zh' ? 'https://vite.net/zh/' : 'https://vite.net'
         );
       },
-      openAirdropPage() {
-        let lang = '';
-        this.$i18n.locale !== 'en' ? lang = `/${this.$i18n.locale}` : lang = '';
-        this.$router.push({path: `${lang}/airdrop/`});
-      },
       onNavClick(e) {
         let {target} = e;
         if (
@@ -220,13 +214,6 @@
       },
       onLogoClick() {
         this.navbarActive = false;
-      },
-      onBurgerClick() {
-        this.collapsing = true;
-        this.navbarActive = !this.navbarActive;
-        setTimeout(() => {
-          this.collapsing = false;
-        }, 500);
       }
     }
   };
@@ -264,7 +251,7 @@
       background-color: white;
     }
     .navbar-brand {
-      height: $navbar-height;
+      margin-left: 45px;
       .nav-item {
         height: 100%;
         cursor: pointer;

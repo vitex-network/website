@@ -14,21 +14,24 @@
       </a>
     </div>
     <div class="piechart column is-6">
-      <img src="~/assets/images/piechart.png">
+      <img :src="piechart">
     </div>
   </div>
 </template>
 
 <script type="text/babel">
-  export default {
-    components: {
+  import pieEn from '~/assets/images/piecharten.png';
+  import pieZh from '~/assets/images/piechart.png';
 
+  export default {
+    computed: {
+      piechart: function () {
+        return this.$i18n.locale === 'zh'? pieZh : pieEn;
+      }
     },
-    data: function () {
+    data() {
       return {
-        navbarActive: false,
-        navs: ['faq'],
-        collapsing: false
+
       };
     },
   };
@@ -38,17 +41,23 @@
   @import "~assets/vars";
   .detail{
     display:flex;
-    padding-left: 85px;
     justify-content: space-between;
+    padding-top: 88px;
     .title{
+      margin-bottom: 20px;
       color:#171C34;
       font-size: 20px;
     }
     .content{
       display:flex;
+      max-width: 450px;
+      margin-bottom: 20px;
       color:$text-color;
       font-size: 14px;
-      line-height: 34px;
+      line-height: 20px;
+    }
+    .piechart{
+      padding-top: 30px;
     }
   }
 </style>

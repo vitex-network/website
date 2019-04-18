@@ -62,6 +62,9 @@
   .home {
     position: relative;
     font-family: $font-family-title;
+    .hero-body{
+      padding: 64px 10px;
+    }
     @include touch {
       .hero-body {
         display: block;

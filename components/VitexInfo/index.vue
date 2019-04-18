@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="vitex-info container">
     <div class="is-size-1-desktop is-size-2-touch slogan-wrapper">
       <h1>
         {{$t('vitexInfo.title')}}
@@ -33,19 +33,26 @@
 <style rel="stylesheet/scss" lang="scss" scoped>
   @import "assets/vars.scss";
 
-  .slogan-wrapper {
-    text-align: center;
-    h1 {
-      font-size: 32px;
-    }
-    p {
-      margin-top: 30px;
-      font-size: 14px;
-      color: $common-text-color;
-      line-height: 24px;
-      font-family: $font-family-light;
-      @include touch {
-        font-size: 1rem;
+  .vitex-info{
+    margin-top: 90px;
+    .slogan-wrapper {
+      text-align: center;
+      h1 {
+        font-size: 32px;
+      }
+      p {
+        margin-top: 30px;
+        font-size: 14px;
+        color: $common-text-color;
+        line-height: 24px;
+        font-family: $font-family-light;
+        @include touch {
+          font-size: 1rem;
+        }
+      }
+      a{
+        display: block;
+        padding-top: 8px;
       }
     }
   }
