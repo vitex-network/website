@@ -17,6 +17,7 @@
         </div>
       </div>
     </section>
+    <slider></slider>
     <vitex-info></vitex-info>
     <use-vitex></use-vitex>
     <v-gate></v-gate>
@@ -27,12 +28,14 @@
   import VitexInfo from '~/components/VitexInfo';
   import UseVitex from '~/components/UseVitex';
   import VGate from '~/components/VGate';
+  import Slider from '~/components/Slider';
 
   export default {
     components: {
       VitexInfo,
       UseVitex,
-      VGate
+      VGate,
+      Slider
     },
     methods:{
       openViteX(){

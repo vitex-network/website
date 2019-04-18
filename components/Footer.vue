@@ -209,6 +209,9 @@
           margin-bottom: 9px;
           color: $common-text-color
         }
+        a{
+          display: block;
+        }
       }
       @include touch {
         margin: 0 auto;

@@ -83,7 +83,9 @@ module.exports = {
       }
     }
   },
-  plugins: ['~/plugins/fontawesome', {src: '~/plugins/vue-headroom', ssr: false}],
+  plugins: ['~/plugins/fontawesome',
+    {src: '~/plugins/vue-headroom', ssr: false},
+    {src: '~/plugins/nuxt-swiper-plugin.js', ssr: false}],
   router: {
     middleware: 'i18n'
   },
@@ -115,10 +117,11 @@ module.exports = {
     '@nuxtjs/sitemap'
   ],
   css: [
-    '~/assets/main.scss'
+    '~/assets/main.scss',
+    'swiper/dist/css/swiper.css'
   ],
   render: {
-    gzip: { threshold: 1 }
+    gzip: {threshold: 1}
   },
   sitemap: {
     path: '/sitemap.xml',
