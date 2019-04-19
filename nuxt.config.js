@@ -1,4 +1,4 @@
-const hostname = 'https://www.vite.org';
+const hostname = 'https://vitex.net';
 const routes = [
   {
     url: '/',
@@ -66,7 +66,7 @@ module.exports = {
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
       {name: 'author', content: 'vite lab'},
-      {name: 'keywords', content: 'vite,crypto,dag,bitcoin,vitecoin,contract platform'}
+      {name: 'keywords', content: 'vite, vitex, crypto,dag,bitcoin,vitecoin,contract platform'}
     ]
   },
   loading: {
@@ -111,9 +111,9 @@ module.exports = {
         }
       }
     }],
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-118987496-1'
-    }],
+    // ['@nuxtjs/google-analytics', {
+    //   id: ''
+    // }],
     '@nuxtjs/sitemap'
   ],
   css: [
@@ -129,8 +129,6 @@ module.exports = {
     gzip: true,
     generate: true,
     exclude: [
-      '/technology',
-      '/careers',
       '/',
       '/faq'
     ].concat(locales.map((lang) => {

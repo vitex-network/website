@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <footer class="footer">
+  <div class="container footer">
+    <footer class="">
       <div class="ft-container">
         <div class="is-flex whole-footer">
           <div class="icon-wrapper is-hidden-touch">

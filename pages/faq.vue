@@ -50,6 +50,7 @@
   .section {
     padding-top: 92px;
     color: white;
+    background:rgba(246,248,249,1);
     @include touch {
       padding-top: 25px;
     }

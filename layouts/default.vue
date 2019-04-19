@@ -1,5 +1,7 @@
 <template>
-  <div class="public">
+  <div class="public"
+       :class="`is-${routeName}-public`"
+  >
     <div
         class="navbar headroom"
         v-headroom
@@ -62,7 +64,7 @@
               {{$t(`nav.${item}`)}}
             </nuxt-link>
             <a
-                href="http://vite.net/"
+                href="https://wallet.vite.net/"
                 class="nav-item text-hover-transition"
                 target="_blank"
             >
@@ -224,6 +226,9 @@
 
   .public {
     width: 100%;
+  }
+
+  .is-index-public {
     background: no-repeat url("~assets/images/bg/bg1.svg");
   }
 

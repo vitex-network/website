@@ -99,6 +99,10 @@ module.exports = {
       create: 'http://vite.org',
       charge: 'http://vite.net',
       order: 'http://vite.org'
+    },
+    vitex:{
+      en: 'https://x-test.vite.net',
+      zh: 'https://x-test.vite.net/zh'
     }
   }
 };

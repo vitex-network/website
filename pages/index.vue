@@ -29,6 +29,7 @@
   import UseVitex from '~/components/UseVitex';
   import VGate from '~/components/VGate';
   import Slider from '~/components/Slider';
+  import { urls } from '~/config.js';
 
   export default {
     components: {
@@ -39,9 +40,7 @@
     },
     methods:{
       openViteX(){
-        window.open(
-          this.$i18n.locale === 'zh' ? 'https://vite.net/zh/' : 'https://vite.net'
-        );
+        window.open(urls.vitex[this.$i18n.locale]);
       }
     }
   };

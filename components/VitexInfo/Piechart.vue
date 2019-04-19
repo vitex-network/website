@@ -14,24 +14,25 @@
       </a>
     </div>
     <div class="piechart column is-6">
-      <img :src="piechart">
+      <img :src="piechart[$i18n.locale]">
     </div>
   </div>
 </template>
 
 <script type="text/babel">
-  import pieEn from '~/assets/images/piecharten.png';
-  import pieZh from '~/assets/images/piechart.png';
+  import en from '~/assets/images/piecharten.png';
+  import zh from '~/assets/images/piechart.png';
 
   export default {
     computed: {
-      piechart: function () {
-        return this.$i18n.locale === 'zh'? pieZh : pieEn;
-      }
+
     },
     data() {
       return {
-
+        piechart:{
+          en,
+          zh
+        },
       };
     },
   };

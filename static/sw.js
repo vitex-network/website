@@ -4,36 +4,40 @@ importScripts('/_nuxt/workbox.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/_nuxt/3.f9c46fd5344a11eda750.js",
-    "revision": "33898f6c977953f50fa49320b5d885d1"
+    "url": "/_nuxt/2.aa4e48c0b279235f590b.js",
+    "revision": "1b584aec9adcdd554df517d4feb33dbf"
   },
   {
-    "url": "/_nuxt/app.8f2d9c76ac7157d8ccc025b40925d50a.css",
-    "revision": "8f2d9c76ac7157d8ccc025b40925d50a"
+    "url": "/_nuxt/4.2aed7d2692cf31da25f5.js",
+    "revision": "e3232eed1aa121e4f36bac2083bde5d3"
   },
   {
-    "url": "/_nuxt/app.fae187ac1bca697f2090.js",
-    "revision": "71586deab5fa4c6af1510fe2b9d6102b"
+    "url": "/_nuxt/app.7c11d57abacde45292ab.js",
+    "revision": "a4864e3dfbd011c32a7a210f460f3e17"
   },
   {
-    "url": "/_nuxt/lang-en.126db9c26a2bf7cddf22.js",
-    "revision": "0d8eed68e176fb1de2c0f8b99277d470"
+    "url": "/_nuxt/app.863f69aafe7e0a94c8f9e29e7a072502.css",
+    "revision": "863f69aafe7e0a94c8f9e29e7a072502"
   },
   {
-    "url": "/_nuxt/lang-zh.e4f818ee8899a5d81750.js",
-    "revision": "8f853a61cf0518b6529963d8db125e60"
+    "url": "/_nuxt/lang-en.65aa58e3b95601811ff4.js",
+    "revision": "08b828b4e51a52b72d601d5a13ff4397"
   },
   {
-    "url": "/_nuxt/layouts/default.0b0a2c5682a254e1b45d.js",
-    "revision": "323162d55be674d0da82ded9e16371ee"
+    "url": "/_nuxt/lang-zh.4e1245465d742d7115a3.js",
+    "revision": "47e9095007f5047bf9909cee9c0acd96"
   },
   {
-    "url": "/_nuxt/manifest.e8d3740402622abd7f48.js",
-    "revision": "180493fcdae18e962a0332ea7be78060"
+    "url": "/_nuxt/layouts/default.ce5f81d998ad1a732c1f.js",
+    "revision": "bfc2a7a126c3ee83db49ddc3858b9354"
   },
   {
-    "url": "/_nuxt/vendor.2818b813d7b756db8adb.js",
-    "revision": "ecc88f830493322859c708c9b7d6dbac"
+    "url": "/_nuxt/manifest.e6a5cf387bc782ed32cb.js",
+    "revision": "c9d03e2daa53bd7a906aa85041725ec9"
+  },
+  {
+    "url": "/_nuxt/vendor.17927d5544a2dabaa3ea.js",
+    "revision": "734dc43dbbfbc4d60d1f00cba5cc63ef"
   }
 ], {
   "cacheId": "vitex-page",

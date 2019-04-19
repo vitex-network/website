@@ -43,145 +43,107 @@
     "btn": "了解VGATE"
   },
   "nav": {
-    "index": "首页",
-    "trade": "交易",
-    "mine": "挖矿",
-    "market": "行情",
-    "about": "关于",
-    "faq": "常见问题",
-    "wallet": "创建钱包"
+    "index": "Index",
+    "trade": "Trade",
+    "mine": "Mine",
+    "market": "Market",
+    "about": "About",
+    "faq": "FAQ",
+    "wallet": "Create A Wallet"
   },
   "footer": {
     "slogan": "全球第一个基于DAG的去中心化交易所",
-    "trade": "交易",
-    "mine": "挖矿",
-    "market": "行情",
-    "about": "关于我们",
-    "user": "用户支持",
-    "info": "常见说明"
+    "trade": "Trade",
+    "mine": "Mine",
+    "market": "Market",
+    "about": "About Us",
+    "user": "Support",
+    "info": "General Instructions"
   },
   "about": {
     "api": "API",
-    "website": "Vite官网"
+    "website": "Vite.org"
   },
   "user": {
-    "protocol": "用户协议",
+    "protocol": "服务条款",
     "list": "申请上币",
     "contact": "联系我们"
   },
   "info": {
-    "faq": "常见问题",
+    "faq": "FAQ",
     "fee": "费率说明"
   },
   "faq": {
-    "title": "VITE Q&A",
+    "title": "ViteX Q&A",
     "questions": [
       {
-        "question": "What is Vite?",
+        "question": "费率说明",
         "answer": [
-          "Vite is a general-purpose platform for decentralized applications.  It is designed to support industrial-strength applications by offering high throughput, low latency and scalability while also providing security.",
-          "The Vite team are dedicated to addressing current performance and scalability issues of infrastructural chains, so that truly practical applications with high-frequency data requirements can be built in a blockchain framework."
+          " Vite链上的交易不需要消耗类似以太坊的gas，但是还需要消耗一定的资源，即配额。在只需消耗较少配额的情况下，矿池可以免费提供；但是大额高频的交易，还是需要一定成本的配额存在，只是相比较其他的链消耗资源更少。同理，ViteX作为一个高频的应用，也需要一定的配额，所以收取的手续费一部分会置换配额这种资源。收取的手续费主要基础货币，即VITE、ETH、BTC、美元稳定币等，具体收取规则如下：\n",
+
+          "交易手续费\n",
+          "ViteX的手续费分为两类，第一类可以挖矿获得VX代币手续费费率4‰，第二类仅交易无法获得VX手续费2.5‰。\n",
+          "在某类手续费模式下，Taker和Maker都收基准币的手续费比例（4‰或者2.5‰）。\n",
+          "在以上手续费的基础上，还可以通过抵押VITE降低手续费费率，抵押10000VITE可以降低1‰，按照两类费率会由之前的4‰或2.5‰，降低至3.‰或者1.5‰。\n",
+
+          "提现手续费：\n",
+          "Vite钱包与交易所直接的提币、充币不需要手续费，只需要消耗配额。当提现到Vite链外，则需要通过Vite网关，目前社区合作网关VGATE会收取千分之五的手续费（5‰）。\n",
+          "其中，交易手续费是用于给持有VX的用户分红的，提现手续费是Vite网关自己分配的。\n"
         ]
       },
       {
-        "question": "Which exchange(s) will Vite be listed on?",
+        "question": "什么是ViteX, ViteX 的工作原理是什么？",
         "answer": [
-          "Currently we have launched on BITTREX and OKEX exchanges, we are also in contact with other exchanges. Stay tuned."
+          "ViteX是基于VITE网络开发的去中心化交易所。ViteX 的工作原理为：通过Vite链上的智能合约完成所有订单的撮合，订单簿也存储在链上，实现了完全的去中心化。ViteX交易所智能合约按照Take-Make的方式，根据挂单和吃单中价格优先的顺序成交。"
         ]
       },
       {
-        "question": "What is the public WeChat account of Vite?",
+        "question": "完全去中心化的优势，和其他交易所的区别是什么？",
         "answer": [
-          "Our official account: vitelabs"
-        ],
-        "key": "wechat"
-      },
-      {
-        "question": "What is Vite’s biggest innovation as compared to other public chains?",
-        "answer": [
-          "The biggest innovation is the asynchronous design, which can be understood in three aspects: ",
-          "First, we are introducing the concept of asynchronous design into smart contracts.  The Nano project (one of three well-known chains that use DAG) separates a transfer action into a send and a receive transaction. We are building upon this mechanism, and will separate the call and the response of a smart contract, so they can take place asynchronously.",
-          "Second, the writing and verification of a transaction also happen asynchronously in Vite.  In traditional blockchain setup (e.g., Bitcoin), the speed of writing transactions into a ledger is limited by the speed of packing.  But Vite allows writing of many transactions into the ledger within the constraints of the TPS.  Because the asynchronous setup allows the transactions to happen at an even speed, this reduces the peaks and troughs of the speed of transaction writing, thus optimizing usage of resources and increasing system throughput.  Also, the transactions of two users will no longer be blocked; that is, we will no longer see a scenario where a user sends a large amount of transactions that prevents the transactions of other users from taking place.",
-          "Third, calls between contracts will also happen asynchronously in Vite.  The calls between smart contracts in Ethereum are implemented through messaging (aka insider transactions); and the calls either all succeed or all fail, as per an atomic ACID semantic.  To solve for this bottleneck in performance, we take a page from well-developed solutions in centralized Internet technologies, and will make use of a message-driven architecture.  As such, contracts do not share states and communicate via messages."
+          "目前市面上的大部分去中心化交易所，受制于本身公链的性能，交易链下撮合，结果上链。ViteX是完全的去中心化交易所，交易撮合引擎通过链上智能合约实现，订单撮合全部在链上完成，订单簿也存储在链上，是真正意义上的完全去中心化。交易所手续费分红将通过智能合约的方式在链上实现，从而保证结果完全公开且分红规则不可篡改。ViteX对比中心化交易所，优势主要有四点：资产私钥自己保存-更安全、订单信息上链更透明、免KYC-个人信息更私密、充提币免限额更便捷。",
+          "ViteX对比其他的去中心化交易所，优势主要是两点：\n 1. 订单链上撮合、交易体验更流畅。ViteX的订单撮合全部在链上完成，订单簿也存储在链上，实现了完全的去中心化；\n 2. 依附于Vite公链提供的高吞吐、秒级确认、无gas费用、跨链等基础能力，交易体验更流畅。"
         ]
       },
       {
-        "question": "Since smart contracts in Vite don’t support synchronous calls, how will such calls in Ethereum be compatible with Vite?",
-        "answer": "Unfortunately, these calls are not compatible with Vite.  Synchronous calls need to be changed to asynchronous calls to work in Vite."
-      },
-      {
-        "question": "What is the difference between Vite's Solidity++ and Ethereum’s Solidity?",
+        "question": "用户资金放在上面安全吗，为什么？",
         "answer": [
-          "On a high level, the differences are similar to those of C and C++.  In basic syntax, the two languages are largely compatible.  The largest difference is in the synchronous (Ethereum) vs asynchronous (Vite) calls as mentioned earlier.",
-          "In addition, a series of standard libraries, such as string manipulation, floating-point operations, basic mathematical operations, containers, and sorting will be provided in Solidity++."
+          "是安全的。因为ViteX为完全的去中心化交易所，用户资产自己保管、不需要预充值到中心化交易所的账户中,交易撮合通过智能合约实现，从而保障用户资产安全。"
         ]
       },
       {
-        "question": "The message-based architecture has an advantage of high throughput and scalability. However, this comes at a cost of more complex programming model, which may not guarantee strong consistency, and may lead to even higher latencies.  How does Vite reduce both the complexity in programming model and latencies?",
+        "question": "Vite是免手续费交易，为什么交易所要收取手续费？收取的手续费是VITE还是什么？",
+        "answer": "Vite链上的交易不需要消耗类似以太坊的gas，但是还需要消耗一定的资源，即配额，配额在消耗较少的情况下，可以通过矿池免费提供，在Vite链上大额高频的交易，还是需要一定成本的配额存在，只是相比较其他的链消耗资源更少。同理，ViteX作为一个高频的应用，肯定也需要一定的配额。所有收取的手续费一部分会置换配额这种资源，使用的VX交易挖矿这种经济模型。手续的手续费主要收取基础货币，即VITE、ETH、BTC、CUSD等。"
+      },
+      {
+        "question": "什么是VX？",
         "answer": [
-          "Vite will provide Solidity++ contract language and a complete SDK to reduce the cost of asynchronous programming.",
-          "After rigorous research, we find that in practical use cases, strong consistency semantics can be replaced by BASE semantics. Since the HDPoS consensus algorithm of Vite can guarantee transaction confirmation within 1 second, any potential latency increase is still under control."
+          "VX是ViteX交易所发行的新的代币，持有VX的用户会享受到每天的ViteX交易所的交易手续费和开通交易对手续费分红。无1C0、思慕、公慕、预挖和预售，不接受投资，用户只能通过挖矿获得。"
         ]
       },
       {
-        "question": "What is the significance of Snapshot Chain?",
+        "question": "VX的发放规则",
         "answer": [
-          "Vite employs a ledger structure called block-lattice. Each account corresponds to a blockchain and each transaction refers to the hash of the previous transaction in the account. Transactions are divided into two types: \"request transactions\" and \"response transactions.”  A response transaction needs to quote the corresponding hash of the request transaction.",
-          "The DAG structure has an inherent deficiency in security. This is because transactions are grouped by accounts, and each transaction is only attached to the chain associated with the relevant account. Transactions generated by other accounts do not automatically become the subsequent nodes of the previous transaction. Therefore, for some transactions, the rollback probability will not drop over time.  The Snapshot chain technology is meant to address this issue."
+          "VX总量1亿，分2年挖矿获得，每天会有固定的数量分发出来，规则如下：\n",
+          "1. 每天挖矿获得的VX，交易推广占10%，交易挖矿分60%，配额租赁分30%。\n",
+          "2. 每天VX挖矿数量，第一年每天衰减0.5%，第一天释放477,210.00，最后一天释放76,968.13，第一年释放总量的80.13%；第二年每天衰减0.2%，第一天释放76,660.56，最后一天释放36,965.22，第二年最后一天会100%全部释放。总计100,000,000。VX每日释放量走势如下图。\n"
         ]
       },
       {
-        "question": "Does the inter-chain protocol only support exchange of assets?",
+        "question": "VX获得方式有哪些？",
         "answer": [
-          "Yes.  Vite will support value transfers between different chains but not other inter-chain functions such as message transfers or smart contract calls between chains."
+          "ViteX交易所的交易手续费会分给所有持有VX的用户，VX的获取可以通过三种方式，第一种参与ViteX交易，即交易挖矿，第二种帮助交易所抵押VITE获得配额，可以获得VX，第三种上币可以获得VX 。有关具体交易获得多少VX，抵押获得多少VX和上币会获得多少VX这部分规则尚未确定，后期会陆续发公告说明。"
         ]
       },
       {
-        "question": "The whitepaper mentions that Vite’s development tools are similar to, and have features extended from, those of Ethereum. Does this indicate that dApp’s for Ethereum can be deployed on Vite with minor changes?",
-        "answer": [
-          "Yes, one of Vite’s goals is to reduce the cost of porting over dApps from Ethereum. Vite tries to maximize compatibility with EVM."
-        ]
+        "question": "VX和VITE什么关系/区别？",
+        "answer": "VX可以理解为ViteX交易所的股权证明，可以定期拿到分红。VITE是Vite链上的资源拥有凭证，持有VITE，就可以更好的使用Vite链上资源。比如抵押VITE获得配额可以更高频的交易，持有VITE可以参与超级节点投票，选举出超级节点。VITE和VX也会存在一定的联系，如帮助ViteX抵押VITE获得配额，就可以获得VX，间接获得ViteX交易所的手续费，即用Vite链上的资源兑换手续费。"
       },
       {
-        "question": "Can Vite’s smart contracts support running on a mobile device?  Will they be similar to Qtum and support mainstream languages like C++ and Java?",
+        "question": "Vite上币有哪些具体要求？",
         "answer": [
-          "Vite won’t support mobile. There are no current plans to support other languages. In the future, we will set up a VM Lab to continue research in smart contract language and virtual machine.  We welcome participation from experts in these areas."
-        ]
-      },
-      {
-        "question": "The smart contract language used on Ethereum's platform is Solidity. A notable benefit of Solidity is its beginner-friendly nature, however a critical downside is its susceptibility to hackers' attacks. What solution does Vite have for this problem? ",
-        "answer": [
-          "Vite has taken Solidity's problems into account and has adopted countermeasures when designing smart contracts. These operational improvements are seen within our Solidity++ language. One of those improvements, for example, would be the incorporation of a series of standard libraries. This serves a dual purpose of increasing security protection while simplifying programming complexity. Because Solidity++ inter-contract calls rely on asynchronous architecture, the attacks facilitated by contract synchronous calls are inherently prevented. The classic Ethereum example of a \"reentrancy attack\" scenario is not applicable in Vite's case. Vite will implement contractual formal verification technology to tackle smart contract development and we are considering offering a smart contract solution based on WASM. In short, we present users with a variety of solution-based options. "
-        ]
-      },
-      {
-        "question": "What does the Vite team think about the recent (and future) public chain competition?",
-        "answer": [
-          "Currently, public chain technology is still in its early stage of development. There is still a long ways to go before the industry matures. We will be open-minded when it comes to working with other teams to promote the development of public chain technology. In the future, the competition within the public chain sphere will evolve into ecosystem development. Vite will develop an ecosystem layout, contributing to the applications of blockchain technology."
-        ]
-      },
-      {
-        "question": "Token inflation (mining rewards) and consumption will be dynamically balanced under the premise of a total of 1 billion tokens?",
-        "answer": [
-          "The amount of one billion tokens demonstrates initial circulation. Mining rewards are generated from additional token issuance: the inflation. As the system becomes widely used, tokens will continue to be burned. We hope that the circulation of tokens will attain the dynamic balance needed."
-        ]
-      },
-      {
-        "question": "On Vite network, users can issue their own currency. Is the function similar to ERC20 token(s) on Ethereum? What advantages does Vite have with their system? What is the address of the VITE ERC20 token?",
-        "answer": [
-          "Vite's asset issuance is similar to ERC20, but in other ways it is different. ERC20 is a specification, but not a part of the Ethereum protocol. The issuance of new tokens with Ethereum requires the user to develop and deploy a smart contract. Token balance is maintained by the state of the contract. If contract development is flawed, security risks surface. For example, if a user forgets to refer to the SaftMath library, an overflow may occur. Vite token is built into the Vite protocol. The token balance is maintained in the state of the user's account. The new token and the Vite native token share the same underlying protocol thus bringing the same measure of security to the new token and native token. When a user decides to issue a new token in Vite, all they need to do is initiate a transaction. The transaction then puts the new token parameters in the transaction data. The fact that our network does not require smart contract writing inherently leaves less room for bug generation to occur."
-        ]
-      },
-      {
-        "question": "What is the address of the VITE ERC20 token?",
-        "answer": [
-          "Currently, the VITE ERC20 token address hosted on Ethereum's platform is https: //etherscan.io/token/0x1b793E49237758dBD8b752AFC9Eb4b329d5Da016, when Vite MainNet is launched, all of the ERC20 VITE tokens will be migrated to Vite MainNet tokens at a 1:1 ratio."
-        ]
-      },
-      {
-        "question": "Can we mine Vite tokens?",
-        "answer": [
-          "Vite's consensus mechanism is similar to EOS's. It generates 25 snapshot block producers through the DPoS algorithm. The block producers, in turn, receive mining rewards."
+          "VIteX交易所上币会分为两部分，一部分是Vite链上的资产，在ViteX只需要交付10000VITE，即可开通一个交易对，ViteX也会默认展示所有开通的交易所，是完全自助的行为。第二部分是Vite链外的资产，需要通过网关来完成资产映射，即把Vite链外的资产转账给网关，网关给你的Vite地址转入等额的Vite链上的资产，然后再开通交易对，在ViteX交易所交易。通过网关上币，需要满足网关的一些需求，目前ViteX已经有一个合作的网关，该网关会给出具体的上币要求。当然也欢迎更多的社区力量作为ViteX的网关，一起来推进ViteX去中心化交易所的发展。\n",
+
+          "1）联系社区网关，缴纳一定的铸币费用，链上铸币费用为燃烧1000 VITE或者抵押100,000VITE，生成自己的币种ABC；2）通过网关，交一定的网关服务费，开通ABC的跨链网关，允许用户将ABC从以太坊跨链转入Vite公链，即价值的映射；3）缴纳开通交易对的费用，花费10000 VITE开通ABC / ETH的交易对；也可以自己钱包开通更多的交易对。"
         ]
       }
     ]
