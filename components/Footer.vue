@@ -4,7 +4,7 @@
       <div class="ft-container">
         <div class="is-flex whole-footer">
           <div class="icon-wrapper is-hidden-touch">
-            <logo></logo>
+            <logo class="logo"></logo>
             <div class="subtitle">{{$t('home.slogan')}}</div>
             <div class="social-icons">
               <div class="icons">
@@ -92,33 +92,61 @@
           </div>
           <div class="footer-tab is-half">
             <div class="item exchange">
-              <div class="subtitle">{{$t('footer.trade')}}</div>
+              <a
+                  class="subtitle"
+                  :href="urls.vitex[$i18n.locale]"
+                  target="_blank"
+              >
+                {{$t('footer.trade')}}
+              </a>
             </div>
             <div class="item about">
               <div class="subtitle">{{$t('footer.about')}}</div>
               <a
-                  :href="urls.api"
+                  :href="urls.api[$i18n.locale]"
                   class="content"
+                  target="_blank"
               >
                 {{$t('about.api')}}
               </a>
               <a
-                  :href="urls.api"
+                  :href="urls.website[$i18n.locale]"
                   class="content"
+                  target="_blank"
               >
                 {{$t('about.website')}}
               </a>
             </div>
             <div class="item user">
               <div class="subtitle">{{$t('footer.user')}}</div>
-              <a class="content">{{$t('user.protocol')}}</a>
-              <a class="content">{{$t('user.list')}}</a>
-              <a class="content">{{$t('user.contact')}}</a>
+              <a class="content"
+                 :href="urls.privacy"
+                 target="_blank"
+              >
+                {{$t('user.protocol')}}
+              </a>
+              <a class="content"
+                 :href="urls.privacy"
+                 target="_blank"
+              >
+                {{$t('user.list')}}
+              </a>
+              <a class="content" :href="urls.privacy">{{$t('user.contact')}}</a>
             </div>
             <div class="item common">
               <div class="subtitle">{{$t('footer.info')}}</div>
-              <a class="content">{{$t('info.faq')}}</a>
-              <a class="content">{{$t('info.fee')}}</a>
+              <nuxt-link
+                  class="content"
+                  :to="localePath('faq')"
+              >
+                {{$t('info.faq')}}
+              </nuxt-link>
+              <nuxt-link
+                  class="content"
+                  :to="localePath('faq')"
+              >
+                {{$t('info.fee')}}
+              </nuxt-link>
             </div>
           </div>
         </div>
@@ -187,6 +215,10 @@
     .whole-footer {
       justify-content: space-between;
       .icon-wrapper {
+        .logo{
+          padding-bottom: 12px;
+          margin-left: -20px;
+        }
         .subtitle{
           font-size: 13px;
           color: $common-text-color;

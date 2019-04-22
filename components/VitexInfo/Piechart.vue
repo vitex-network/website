@@ -40,6 +40,7 @@
 
 <style rel="stylesheet/scss" lang="scss" scoped>
   @import "~assets/vars";
+
   .detail{
     display:flex;
     justify-content: space-between;

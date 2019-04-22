@@ -8,11 +8,6 @@ const routes = [
         url: `${hostname}/icon.png`,
         caption: 'ViteX logo',
         title: 'ViteX logo'
-      },
-      {
-        url: `${hostname}/logo_appstore.png`,
-        caption: 'ViteX logo for appstore',
-        title: 'ViteX logo for appstore'
       }
     ]
   },
@@ -74,7 +69,7 @@ module.exports = {
   },
   build: {
     extractCSS: true,
-    vendor: ['babel-polyfill'],
+    vendor: ['@babel/parser'],
     postcss: {
       plugins: {
         'postcss-custom-properties': {

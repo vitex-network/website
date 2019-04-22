@@ -23,7 +23,7 @@
         </div>
 
         <div
-            class="navbar-menu column is-7 is-offset-3"
+            class="navbar-menu column is-8 is-offset-2"
             :class="{ 'is-active': navbarActive, collapsing: collapsing }"
         >
           <div
@@ -76,6 +76,9 @@
               class="navbar-end"
           >
             <div class="nav-item">
+              <wallet-btn></wallet-btn>
+            </div>
+            <div class="nav-item">
               <lang-select></lang-select>
             </div>
           </div>
@@ -96,6 +99,7 @@
   import Logo from '~/components/Logo';
   import LangSelect from '~/components/LangSelect';
   import About from '~/components/About';
+  import WalletBtn from '~/components/WalletBtn';
   import VFooter from '~/components/Footer';
 
 
@@ -104,6 +108,7 @@
       Logo,
       LangSelect,
       About,
+      WalletBtn,
       VFooter
     },
     head() {
@@ -255,8 +260,12 @@
     a.navbar-item:hover {
       background-color: white;
     }
+    .navbar-start{
+      margin-left: 30px;
+    }
     .navbar-brand {
-      margin-left: 45px;
+      margin: 30px 0 0 45px;
+      padding: 0;
       .nav-item {
         height: 100%;
         cursor: pointer;

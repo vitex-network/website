@@ -49,7 +49,8 @@
     "market": "行情",
     "about": "关于",
     "faq": "常见问题",
-    "wallet": "创建钱包"
+    "wallet": "创建钱包",
+    "login": "登录钱包"
   },
   "footer": {
     "slogan": "全球第一个基于DAG的去中心化交易所",
@@ -65,7 +66,7 @@
     "website": "Vite官网"
   },
   "user": {
-    "protocol": "用户协议",
+    "protocol": "政策条款",
     "list": "申请上币",
     "contact": "联系我们"
   },

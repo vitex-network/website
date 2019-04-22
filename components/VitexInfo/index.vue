@@ -6,7 +6,7 @@
       </h1>
       <p>{{$t('vitexInfo.desc')}}</p>
       <a
-          href="http://vite.net/"
+          :href="urls.more[$i18n.locale]"
           class="text-btn"
           target="_blank"
       >
@@ -21,11 +21,17 @@
 <script>
   import info from './info';
   import piechart from './piechart';
+  import { urls } from '~/config.js';
 
   export default {
     components: {
       info,
       piechart
+    },
+    data(){
+      return{
+        urls
+      };
     }
   };
 </script>
