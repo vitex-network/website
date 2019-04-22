@@ -20,7 +20,7 @@
 
 <script>
   import info from './info';
-  import piechart from './piechart';
+  import piechart from './Piechart';
   import { urls } from '~/config.js';
 
   export default {
