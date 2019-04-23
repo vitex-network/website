@@ -23,7 +23,7 @@
         </div>
 
         <div
-            class="navbar-menu column is-8 is-offset-2"
+            class="navbar-menu column is-7 is-offset-3"
             :class="{ 'is-active': navbarActive, collapsing: collapsing }"
         >
           <div
@@ -31,54 +31,47 @@
               class="navbar-start"
           >
             <a
-                href="http://vite.net/"
+                href="https://x-test.vite.net/"
                 class="nav-item text-hover-transition"
                 target="_blank"
             >
               {{$t(`nav.trade`)}}
             </a>
-            <a
-                href="http://vite.net/"
-                class="nav-item text-hover-transition"
-                target="_blank"
-            >
-              {{$t(`nav.mine`)}}
-            </a>
-            <a
-                href="http://vite.net/"
-                class="nav-item text-hover-transition"
-                target="_blank"
-            >
-              {{$t(`nav.market`)}}
-            </a>
+            <!--<a-->
+                <!--href="https://wallet.vite.net/"-->
+                <!--class="nav-item text-hover-transition"-->
+                <!--target="_blank"-->
+            <!--&gt;-->
+              <!--{{$t(`nav.mine`)}}-->
+            <!--</a>-->
+            <!--<a-->
+                <!--href="https://wallet.vite.net/"-->
+                <!--class="nav-item text-hover-transition"-->
+                <!--target="_blank"-->
+            <!--&gt;-->
+              <!--{{$t(`nav.market`)}}-->
+            <!--</a>-->
+            <div class="nav-item">
+              <user></user>
+            </div>
+            <div class="nav-item">
+              <info></info>
+            </div>
             <div class="nav-item">
               <about></about>
             </div>
-            <nuxt-link
-                :key="item"
-                :to="localePath(item)"
-                class="nav-item text-hover-transition"
-                :class="{active: routeName === item}"
-                v-for="item in navs"
-            >
-              {{$t(`nav.${item}`)}}
-            </nuxt-link>
-            <a
-                href="https://wallet.vite.net/"
-                class="nav-item text-hover-transition"
-                target="_blank"
-            >
-              {{$t(`nav.wallet`)}}
-            </a>
           </div>
           <div
               ref="navbarEnd"
               class="navbar-end"
           >
-            <div class="nav-item">
-              <wallet-btn></wallet-btn>
+            <div class="nav-end-item">
+              <wallet-btn :btn-type="'create'"></wallet-btn>
             </div>
-            <div class="nav-item">
+            <div class="nav-end-item">
+              <wallet-btn :btn-type="'login'"></wallet-btn>
+            </div>
+            <div class="nav-end-item">
               <lang-select></lang-select>
             </div>
           </div>
@@ -96,11 +89,13 @@
 
 <script type="text/babel">
   import config from '~/config';
-  import Logo from '~/components/Logo';
-  import LangSelect from '~/components/LangSelect';
-  import About from '~/components/About';
-  import WalletBtn from '~/components/WalletBtn';
-  import VFooter from '~/components/Footer';
+  import Logo from '~/components/navs/Logo';
+  import LangSelect from '~/components/navs/LangSelect';
+  import User from '~/components/navs/User';
+  import Info from '~/components/navs/Faq';
+  import About from '~/components/navs/About';
+  import WalletBtn from '~/components/navs/WalletBtn';
+  import VFooter from '~/components/navs/Footer';
 
 
   export default {
@@ -108,6 +103,8 @@
       Logo,
       LangSelect,
       About,
+      User,
+      Info,
       WalletBtn,
       VFooter
     },
@@ -272,10 +269,19 @@
       }
     }
     .nav-item {
-      padding: 0.5rem 30px;
+      padding: 0.5rem 20px;
       color: $common-text-color;
       font-family: $font-family-light;
       font-size: 14px;
+      &:hover {
+        color: $common-active-color;
+      }
+      &.active {
+        color: $common-active-color;
+      }
+    }
+    .nav-end-item{
+      padding: 0.5rem 10px;
       &:hover {
         color: $common-active-color;
       }

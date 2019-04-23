@@ -48,8 +48,10 @@
     "mine": "Mine",
     "market": "Market",
     "about": "About",
+    "user": "Support",
     "faq": "FAQ",
-    "wallet": "Create A Wallet",
+    "info": "General",
+    "create": "Sign up",
     "login": "Login"
   },
   "footer": {
@@ -59,7 +61,7 @@
     "market": "Market",
     "about": "About Us",
     "user": "Support",
-    "info": "General Instructions"
+    "info": "General"
   },
   "about": {
     "api": "API",

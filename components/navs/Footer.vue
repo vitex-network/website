@@ -30,7 +30,7 @@
                     ></fa-icon>
                   </a>
                   <a
-                      :href="urls.forum"
+                      :href="urls.medium"
                       target="_blank"
                       class="text-hover-transition"
                   >
@@ -161,11 +161,11 @@
 </template>
 
 <script type="text/babel">
-  import Logo from '~/components/Logo';
-  import Wechat from '~/components/Wechat';
-  import Telegram from '~/components/Telegram';
+  import Logo from '~/components/navs/Logo';
+  import Wechat from '~/components/navs/Wechat';
+  import Telegram from '~/components/navs/Telegram';
   import config from '~/config.js';
-  import about from '~/components/About';
+  import about from '~/components/navs/About';
 
   export default {
     components: {

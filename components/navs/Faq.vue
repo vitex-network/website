@@ -3,9 +3,8 @@
     <div class="dropdown-trigger">
       <button
         class="button"
-        :class="{'foot-btn': isFooter}"
       >
-        <span>{{$t('nav.about')}}</span>
+        <span>{{$t('nav.info')}}</span>
       </button>
     </div>
     <div
@@ -14,44 +13,32 @@
       role="menu"
     >
       <div class="dropdown-content">
-        <a
-            v-for="(item, index) in aboutArr"
-            class="dropdown-item"
-            target="_blank"
-            :href="url[item]"
+        <nuxt-link
+            :key="item"
+            :to="localePath('faq')"
+            class="dropdown-item text-hover-transition"
+            v-for="item in infoArr"
         >
-          {{$t(`about.${item}`)}}
-        </a>
+          {{$t(`info.${item}`)}}
+        </nuxt-link>
       </div>
     </div>
   </div>
 </template>
 
 <script type="text/babel">
-import config from '~/config';
 
 export default {
   components: {
 
   },
-  props: {
-    isFooter: {
-      type: Boolean,
-      default: false
-    }
-  },
   computed:{
-    url(){
-      return {
-        website:config.urls.website[this.$i18n.locale],
-        api:config.urls.api[this.$i18n.locale]
-      };
-    }
+
   },
   data(){
     return{
-      aboutArr: ['api','website']
-    }
+      infoArr: ['faq','fee']
+    };
   }
 
 };
@@ -93,12 +80,6 @@ export default {
         transform: rotate(-45deg);
         transform-origin: center;
         width: .625em;
-      }
-    }
-    .foot-btn {
-      color: white;
-      &:hover {
-        color: white;
       }
     }
   }

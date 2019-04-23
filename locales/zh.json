@@ -49,7 +49,9 @@
     "market": "行情",
     "about": "关于",
     "faq": "常见问题",
-    "wallet": "创建钱包",
+    "create": "创建钱包",
+    "info": "常见说明",
+    "user": "用户支持",
     "login": "登录钱包"
   },
   "footer": {
