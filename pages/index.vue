@@ -7,6 +7,9 @@
             <h1>
               {{$t("home.slogan")}}
             </h1>
+            <h1>
+              {{$t("home.content")}}
+            </h1>
           </div>
           <div class="btn">
             <div

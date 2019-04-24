@@ -96,9 +96,9 @@ module.exports = {
       forum: 'https://forum.vite.net'
     },
     use:{
-      create: 'http://vite.org',
-      charge: 'http://vite.net',
-      order: 'http://vite.org'
+      create: 'https://x-test.vite.net/start',
+      charge: 'https://x-test.vite.net/tradeAssets',
+      order: 'https://x-test.vite.net/'
     },
     more:{
       zh: 'https://forum.vite.net/topic/971/%E4%BA%A4%E6%98%93%E4%BD%93%E9%AA%8C%E7%9A%84%E9%9D%A9%E5%91%BD-%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E4%BA%A4%E6%98%93%E6%89%80vitex%E5%8D%B3%E5%B0%86%E9%97%AE%E4%B8%96',
@@ -109,8 +109,8 @@ module.exports = {
       zh: 'https://x-test.vite.net/zh'
     },
     wallet:{
-      en: 'https://wallet.vite.net',
-      zh: 'https://wallet.vite.net/zh'
+      login: 'https://x-test.vite.net/start',
+      create: 'https://x-test.vite.net/startCreate'
     },
     privacy: 'https://x-test.vite.net/privacy.html'
   }

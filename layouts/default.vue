@@ -12,13 +12,21 @@
           @click="onNavClick"
       >
         <div class="column is-1 navbar-brand">
-          <div @click="onLogoClick">
+          <div class="logo" @click="onLogoClick">
             <nuxt-link
                 class="navbar-item nav-item nav-item-logo"
                 :to="localePath('index')"
             >
               <logo class="logo"></logo>
             </nuxt-link>
+          </div>
+          <div
+              class="navbar-burger"
+              @click="onBurgerClick"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </div>
 
@@ -218,6 +226,13 @@
       },
       onLogoClick() {
         this.navbarActive = false;
+      },
+      onBurgerClick () {
+        this.collapsing = true;
+        this.navbarActive = !this.navbarActive;
+        setTimeout(() => {
+          this.collapsing = false;
+        }, 500);
       }
     }
   };
@@ -314,6 +329,20 @@
         .logo {
           max-height: 20px;
           transition: transform 0.4s ease-in-out;
+        }
+        .navbar-burger {
+          height: 40px;
+          width: 49px;
+          span {
+            width: 19px;
+            right: 50%;
+            left: auto;
+            margin-right: -10px;
+            transition: all 0.3s ease-in-out;
+            &:nth-child(2) {
+              width: 15px;
+            }
+          }
         }
       }
 

@@ -34,7 +34,7 @@ export default {
   },
   methods:{
     openWallet(){
-      window.open(urls.wallet[this.$i18n.locale]);
+      window.open(urls.wallet[this.btnType]);
     }
   }
 

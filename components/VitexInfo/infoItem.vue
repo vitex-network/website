@@ -3,10 +3,11 @@
     <div class="info-item-title">
       <img :src="iconMap[itemKey]">
     </div>
+    <h2>{{$t(`vitexInfo.${itemKey}.title`)}}</h2>
     <div
         class="info-item-child"
     >
-      <div>{{$t(`vitexInfo.${itemKey}`)}}</div>
+      <div>{{$t(`vitexInfo.${itemKey}.content`)}}</div>
     </div>
   </div>
 </template>
@@ -43,6 +44,12 @@
       img{
         text-align: center;
       }
+    }
+    h2{
+      text-align: center;
+      color: #171C34;
+      font-size: 15px;
+      font-weight:600;
     }
     .info-item-child{
       text-align: center;

@@ -5,7 +5,7 @@
         <div class="is-flex whole-footer">
           <div class="icon-wrapper is-hidden-touch">
             <logo class="logo"></logo>
-            <div class="subtitle">{{$t('home.slogan')}}</div>
+            <div class="subtitle">{{$t('footer.slogan')}}</div>
             <div class="social-icons">
               <div class="icons">
                 <div class="icon-links-wrapper">
@@ -126,12 +126,12 @@
                 {{$t('user.protocol')}}
               </a>
               <a class="content"
-                 :href="urls.privacy"
+                 :href="urls.vitex[$i18n.locale]"
                  target="_blank"
               >
                 {{$t('user.list')}}
               </a>
-              <a class="content" :href="urls.privacy">{{$t('user.contact')}}</a>
+              <a class="content" :href="`mailto:partnerships@vite.org`">{{$t('user.contact')}}</a>
             </div>
             <div class="item common">
               <div class="subtitle">{{$t('footer.info')}}</div>
