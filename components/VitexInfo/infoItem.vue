@@ -38,6 +38,11 @@
     display:flex;
     flex-direction: column;
     max-width: 196px;
+    @include touch{
+      display: block;
+      max-width: unset;
+      margin: 20px 90px;
+    }
     .info-item-title{
       padding-bottom: 26px;
       text-align: center;

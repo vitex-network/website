@@ -27,9 +27,14 @@
 
 <style rel="stylesheet/scss" lang="scss" scoped>
   @import "~assets/vars";
+
   .info{
     display:flex;
     padding-top: 40px;
     justify-content: space-between;
+    @include touch{
+      display: block;
+      text-align: center;
+    }
   }
 </style>

@@ -82,9 +82,15 @@
       }
       @include touch {
         max-width: unset;
+        h1{
+          font-size: 28px;
+        }
       }
       @include mobile {
         margin-top: 0;
+        h1{
+          font-size: 28px;
+        }
       }
     }
     .btn{
@@ -100,8 +106,8 @@
         background: $common-active-color;
         cursor: pointer;
         @include touch {
-          width: 100px;
-          font-size: 12px;
+          height: 44px;
+          line-height: 42px;
         }
       }
     }

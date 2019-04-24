@@ -45,6 +45,9 @@
       text-align: center;
       h1 {
         font-size: 32px;
+        @include touch {
+          font-size: 28px;
+        }
       }
       p {
         margin-top: 30px;
@@ -53,7 +56,9 @@
         line-height: 24px;
         font-family: $font-family-light;
         @include touch {
-          font-size: 1rem;
+          font-size: 14px;
+          padding: 0 20px;
+          margin-top: 10px;
         }
       }
       a{

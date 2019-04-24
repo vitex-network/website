@@ -43,6 +43,9 @@
     text-align: center;
     justify-content: space-between;
     background:rgba(246,248,249,1);
+    @include touch{
+      height: auto;
+    }
     h1 {
       display: block;
       padding-top: 65px;
@@ -54,6 +57,9 @@
       margin-top: 48px;
       align-items: center;
       justify-content: center;
+      @include touch{
+        display: block;
+      }
       img{
         padding: 0 30px;
       }

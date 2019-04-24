@@ -11,8 +11,8 @@
           :class="{ 'is-open': navbarActive }"
           @click="onNavClick"
       >
-        <div class="column is-1 navbar-brand">
-          <div class="logo" @click="onLogoClick">
+        <div class="column is-1-desktop navbar-brand">
+          <div @click="onLogoClick">
             <nuxt-link
                 class="navbar-item nav-item nav-item-logo"
                 :to="localePath('index')"
@@ -31,7 +31,7 @@
         </div>
 
         <div
-            class="navbar-menu column is-7 is-offset-3"
+            class="navbar-menu column is-7-desktop is-offset-3"
             :class="{ 'is-active': navbarActive, collapsing: collapsing }"
         >
           <div
@@ -247,6 +247,10 @@
 
   .is-index-public {
     background: no-repeat url("~assets/images/bg/bg1.svg");
+    @include touch {
+      background-size: auto 432px;
+    }
+
   }
 
   .nuxt-content {
@@ -282,7 +286,11 @@
         height: 100%;
         cursor: pointer;
       }
+      @include mobile{
+        margin: 20px;
+      }
     }
+
     .nav-item {
       padding: 0.5rem 20px;
       color: $common-text-color;
@@ -324,23 +332,46 @@
       min-height: 40px;
       height: auto;
       .navbar-brand {
+        min-width: 112px;
         min-height: 40px;
         height: 40px;
+        .nav-item{
+          padding: 10px 0;
+        }
         .logo {
-          max-height: 20px;
+          max-height: 30px;
           transition: transform 0.4s ease-in-out;
         }
         .navbar-burger {
-          height: 40px;
-          width: 49px;
+          top: -32px;
+          height: 20px;
+          width: 20px;
           span {
             width: 19px;
             right: 50%;
             left: auto;
             margin-right: -10px;
             transition: all 0.3s ease-in-out;
-            &:nth-child(2) {
-              width: 15px;
+          }
+        }
+      }
+
+      .is-open {
+        .navbar-brand {
+          .logo {
+            /*transform: translateX(16px);*/
+            /*transform: rotate(30deg);*/
+          }
+          .navbar-burger {
+            span {
+              &:nth-child(2) {
+                width: 19px;
+              }
+              &:nth-child(1),
+              &:nth-child(3) {
+                width: 9px;
+                margin-right: -5px;
+              }
             }
           }
         }

@@ -1,6 +1,6 @@
 <template>
-  <div class="detail columns">
-    <div class="question column is-6">
+  <div class="detail columns is-desktop">
+    <div class="question column is-6-desktop">
       <div class="title">{{$t('vitexInfo.what')}}</div>
       <div class="content">{{$t('vitexInfo.whatContent')}}</div>
       <div class="title">{{$t('vitexInfo.how')}}</div>
@@ -13,7 +13,7 @@
         {{$t('home.starttoUse')}}
       </a>
     </div>
-    <div class="piechart column is-6">
+    <div class="piechart column is-6-desktop">
       <img :src="piechart[$i18n.locale]">
     </div>
   </div>
@@ -45,6 +45,9 @@
     display:flex;
     justify-content: space-between;
     padding-top: 88px;
+    @include touch{
+      display: block;
+    }
     .title{
       margin-bottom: 20px;
       color:#171C34;

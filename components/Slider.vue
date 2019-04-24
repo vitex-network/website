@@ -67,8 +67,13 @@
 
 
 <style lang="scss" scoped>
+  @import "assets/vars.scss";
+
   .swiper-container{
     height: 300px;
+    @include touch{
+      height: 102px;
+    }
   }
   .swiper-pagination {
     text-align: center;
@@ -88,6 +93,9 @@
     background: url("~assets/images/Left-arrow.svg") no-repeat center;
     background-size: 68px 68px;
     outline: none;
+    @include touch{
+      display: none;
+    }
   }
   .swiper-button-next{
     width: 68px;
@@ -100,5 +108,8 @@
     background: url("~assets/images/Right-arrow.svg") no-repeat center;
     background-size: 68px 68px;
     outline: none;
+    @include touch{
+      display: none;
+    }
   }
 </style>
