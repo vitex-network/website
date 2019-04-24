@@ -47,6 +47,9 @@
   .use-item{
     width: 276px;
     text-align: center;
+    @include touch{
+      width: auto;
+    }
     .use-item-title{
       font-size: 18px;
       font-family:$font-family-title;

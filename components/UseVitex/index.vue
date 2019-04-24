@@ -62,6 +62,9 @@
       }
       img{
         padding: 0 30px;
+        @include touch{
+          transform: rotate(90deg);
+        }
       }
     }
   }
