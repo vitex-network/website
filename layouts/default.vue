@@ -326,7 +326,7 @@
 
   @include touch {
     .nuxt-content {
-      margin-top: 41px;
+      margin-top: 60px;
     }
     .navbar {
       min-height: 40px;

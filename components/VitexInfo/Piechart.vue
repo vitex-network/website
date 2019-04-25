@@ -47,6 +47,7 @@
     padding-top: 88px;
     @include touch{
       display: block;
+      margin: 0 20px;
     }
     .title{
       margin-bottom: 20px;

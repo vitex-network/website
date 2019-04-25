@@ -57,13 +57,13 @@
   },
   "nav": {
     "index": "Index",
-    "trade": "Trade",
+    "trade": "Trading",
     "mine": "Mine",
     "market": "Market",
     "about": "About",
     "user": "Support",
     "faq": "FAQ",
-    "info": "General",
+    "info": "FAQ",
     "create": "Sign up",
     "login": "Log In"
   },
@@ -74,7 +74,7 @@
     "market": "Market",
     "about": "About Us",
     "user": "Support",
-    "info": "General"
+    "info": "FAQ"
   },
   "about": {
     "api": "API",
@@ -87,13 +87,13 @@
   },
   "info": {
     "faq": "FAQ",
-    "fee": "Introduction of Fees"
+    "fee": "Fees"
   },
   "faq": {
     "title": "ViteX Q&A",
     "questions": [
       {
-        "question": "Introduction of Fees",
+        "question": "Fees",
         "answer": [
           " Vite链上的交易不需要消耗类似以太坊的gas，但是还需要消耗一定的资源，即配额。在只需消耗较少配额的情况下，矿池可以免费提供；但是大额高频的交易，还是需要一定成本的配额存在，只是相比较其他的链消耗资源更少。同理，ViteX作为一个高频的应用，也需要一定的配额，所以收取的手续费一部分会置换配额这种资源。收取的手续费主要基础货币，即VITE、ETH、BTC、美元稳定币等，具体收取规则如下：\n",
 

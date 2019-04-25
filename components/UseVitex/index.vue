@@ -45,6 +45,8 @@
     background:rgba(246,248,249,1);
     @include touch{
       height: auto;
+      margin-top: 50px;
+      padding-bottom: 50px;
     }
     h1 {
       display: block;

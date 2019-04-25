@@ -38,11 +38,17 @@
     align-items: center;
     justify-content: center;
     background: no-repeat url("~assets/images/bg/bg2.svg");
+    @include touch {
+      height: 220px;
+    }
     .slogan-wrapper {
       text-align: center;
       h1 {
         font-size: 32px;
         color: #ffffff;
+        @include touch {
+          font-size: 24px;
+        }
       }
       p {
         margin-top: 30px;
@@ -70,8 +76,9 @@
         background: white;
         cursor: pointer;
         @include touch {
-          width: 100px;
-          font-size: 12px;
+          height: 44px;
+          line-height: 42px;
+          font-size: 16px;
         }
       }
     }

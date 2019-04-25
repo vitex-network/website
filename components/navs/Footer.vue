@@ -2,8 +2,8 @@
   <div class="container footer">
     <footer class="">
       <div class="ft-container">
-        <div class="is-flex whole-footer">
-          <div class="icon-wrapper is-hidden-touch">
+        <div class="is-flex-desktop-only whole-footer">
+          <div class="icon-wrapper">
             <logo class="logo"></logo>
             <div class="subtitle">{{$t('footer.slogan')}}</div>
             <div class="social-icons">
@@ -208,6 +208,10 @@
     .ft-container {
       padding: 90px 0 50px 0;
       justify-content: space-around;
+      @include touch {
+        padding: 0;
+        margin: 0 20px;
+      }
     }
     @include touch {
       background: white;
@@ -244,12 +248,18 @@
         a{
           display: block;
         }
+        @include touch {
+          min-width: 90px;
+          height: 100px;
+          display: inline-block;
+          margin-right: 70px;
+          vertical-align: top;
+        }
       }
       @include touch {
-        margin: 0 auto;
-      }
-      @include mobile {
         width: 100%;
+        display: inline-block;
+        margin: 48px auto;
       }
       .social-icons {
         margin-right: 10px;
@@ -275,7 +285,7 @@
 
     .icon-links-wrapper {
       @include touch {
-        text-align: center;
+
       }
       & > a,
       /deep/ .v-popover {
