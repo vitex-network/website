@@ -67,7 +67,7 @@
     "login": "Log In"
   },
   "footer": {
-    "slogan": "全球第一个基于DAG的去中心化交易所",
+    "slogan": "The first DAG-based decentralized exchange",
     "trade": "Trade",
     "mine": "Mine",
     "market": "Market",
@@ -94,45 +94,38 @@
       {
         "question": "Fees",
         "answer": [
-          " Vite链上的交易不需要消耗类似以太坊的gas，但是还需要消耗一定的资源，即配额。在只需消耗较少配额的情况下，矿池可以免费提供；但是大额高频的交易，还是需要一定成本的配额存在，只是相比较其他的链消耗资源更少。同理，ViteX作为一个高频的应用，也需要一定的配额，所以收取的手续费一部分会置换配额这种资源。收取的手续费主要基础货币，即VITE、ETH、BTC、美元稳定币等，具体收取规则如下：\n",
-
           "How do trading fees work?\n",
-          "ViteX的手续费分为两类，第一类可以挖矿获得VX代币手续费费率4‰，第二类仅交易无法获得VX手续费2.5‰。\n",
-          "在某类手续费模式下，Taker和Maker都收基准币的手续费比例（4‰或者2.5‰）。\n",
-          "在以上手续费的基础上，还可以通过抵押VITE降低手续费费率，抵押10000VITE可以降低1‰，按照两类费率会由之前的4‰或2.5‰，降低至3.‰或者1.5‰。\n",
+          "There are two categories that traders can choose from: 1. If traders want to be able to mine VX tokens, they will be subject to a fee rate of 4%. 2. If traders do not wish to mine VX tokens, they will be subject to a fee rate of 2.5%.\n",
+          "The above fees are the same for both the makers and the takers.\n",
+          "You can choose to stake 10,000 VITE to lower the trading fees to 3% and 1.5% (from 4% and 2.5%, respectively).\n",
+          "All transaction fees collected will be re-distributed as dividends to VX holders.\n",
 
           "How do withdrawal fees work?\n",
-          "Vite钱包与交易所直接的提币、充币不需要手续费，只需要消耗配额。当提现到Vite链外，则需要通过Vite网关，目前社区合作网关VGATE会收取千分之五的手续费（5‰）。\n",
-          "其中，交易手续费是用于给持有VX的用户分红的，提现手续费是Vite网关自己分配的。\n"
+          "There are no fees for deposits and withdrawals between the Vite wallet and ViteX; only quota will be consumed in these cases.\n",
+          "When assets are withdrawn to non-Vite wallets, the partner cross-chain gateway, VGATE, will charge a withdrawal fee of 5%.\n"
         ]
       },
       {
-        "question": "什么是ViteX, ViteX 的工作原理是什么？",
+        "question": "Why release VX? Will it affect VITE? What is the relationship between VX and VITE?",
         "answer": [
-          "ViteX是基于VITE网络开发的去中心化交易所。ViteX 的工作原理为：通过Vite链上的智能合约完成所有订单的撮合，订单簿也存储在链上，实现了完全的去中心化。ViteX交易所智能合约按照Take-Make的方式，根据挂单和吃单中价格优先的顺序成交。"
+          "VX can be understood as a “proof-of-equity” on the ViteX platform, which is a standalone application running on the Vite blockchain. ViteX has its own incentive model to encourage user trading. The value of VX is positively related to user and transaction volumes on ViteX. This will not affect the value of VITE, which is related to the Vite public chain. The value of VITE and the Vite chain increases as more dApps are run on Vite. VITE and VX are connected in some ways. For example, if VITE is staked to obtain certain quotas, VX can be earned. This means that resources on Vite can be used for transactions on ViteX."
         ]
       },
       {
-        "question": "完全去中心化的优势，和其他交易所的区别是什么？",
+        "question": "What is the difference between a truly decentralized exchange and other exchanges?",
         "answer": [
-          "目前市面上的大部分去中心化交易所，受制于本身公链的性能，交易链下撮合，结果上链。ViteX是完全的去中心化交易所，交易撮合引擎通过链上智能合约实现，订单撮合全部在链上完成，订单簿也存储在链上，是真正意义上的完全去中心化。交易所手续费分红将通过智能合约的方式在链上实现，从而保证结果完全公开且分红规则不可篡改。ViteX对比中心化交易所，优势主要有四点：资产私钥自己保存-更安全、订单信息上链更透明、免KYC-个人信息更私密、充提币免限额更便捷。",
-          "ViteX对比其他的去中心化交易所，优势主要是两点：\n 1. 订单链上撮合、交易体验更流畅。ViteX的订单撮合全部在链上完成，订单簿也存储在链上，实现了完全的去中心化；\n 2. 依附于Vite公链提供的高吞吐、秒级确认、无gas费用、跨链等基础能力，交易体验更流畅。"
+          "At present, most decentralized exchanges are not truly decentralized as they are limited by the performance of their own public chain. Typically, transactions are performed off-chain and results are shown on-chain.",
+          "ViteX is completely decentralized: \n 1. The transaction matching engine is performed through smart contracts that run on-chain \n 2. The order combinations are all completed on-chain \n 3. The order book is stored on-chain \n 4. The exchange fee redemption is implemented on-chain. Consequently, the results are fully public and dividend rules cannot be tampered with."
         ]
       },
       {
-        "question": "用户资金放在上面安全吗，为什么？",
-        "answer": [
-          "是安全的。因为ViteX为完全的去中心化交易所，用户资产自己保管、不需要预充值到中心化交易所的账户中,交易撮合通过智能合约实现，从而保障用户资产安全。"
-        ]
+        "question": "The Vite chain has a transaction model without fees. Why does the Vite exchange charge a fee? Is the fee charged by VITE or other tokens?",
+        "answer": "Transactions on the Vite chain do not consume gas like those on Ethereum, but another resource referred to as “quota.” Low-frequency traders can reach this quota by running a PoW on the local device. Since PoW takes time to complete, this mechanism is suitable for low-frequency usage. On the other hand, to accommodate high-frequency usage, traders will need to stake VITE in order to obtain the required quota. As a high frequency application, ViteX will also consume resources, which will be collected in the form of transaction fees on ViteX. Users can choose to stake VITE in order to fill quota on ViteX to lower the transaction fees. All collected transaction fees will be re-distributed to VX holders. The transaction fees will be paid out in “basic currencies” such as VITE, ETH, BTC and stablecoins. "
       },
       {
-        "question": "Vite是免手续费交易，为什么交易所要收取手续费？收取的手续费是VITE还是什么？",
-        "answer": "Vite链上的交易不需要消耗类似以太坊的gas，但是还需要消耗一定的资源，即配额，配额在消耗较少的情况下，可以通过矿池免费提供，在Vite链上大额高频的交易，还是需要一定成本的配额存在，只是相比较其他的链消耗资源更少。同理，ViteX作为一个高频的应用，肯定也需要一定的配额。所有收取的手续费一部分会置换配额这种资源，使用的VX交易挖矿这种经济模型。手续的手续费主要收取基础货币，即VITE、ETH、BTC、CUSD等。"
-      },
-      {
-        "question": "什么是VX？",
+        "question": "What is VX?",
         "answer": [
-          "VX是ViteX交易所发行的新的代币，持有VX的用户会享受到每天的ViteX交易所的交易手续费和开通交易对手续费分红。无1C0、思慕、公慕、预挖和预售，不接受投资，用户只能通过挖矿获得。"
+          "VX is the token related to ViteX. Users who hold VX enjoy payouts from a shared dividend pool comprised of transaction and listing fees. There will be no public nor private sale for VX. Users can only get VX through mining."
         ]
       },
       {
