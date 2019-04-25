@@ -2,7 +2,7 @@
   <div class="container footer">
     <footer class="">
       <div class="ft-container">
-        <div class="is-flex-desktop-only whole-footer">
+        <div class="is-flex-desktop whole-footer">
           <div class="icon-wrapper">
             <logo class="logo"></logo>
             <div class="subtitle">{{$t('footer.slogan')}}</div>

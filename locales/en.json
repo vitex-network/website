@@ -1,59 +1,58 @@
 {
   "lang": "EN",
   "head": {
-    "title": "ViteX - 完全去中心化的数字资产交易平台",
+    "title": "ViteX - the first DAG-based decentralized exchange",
     "document": "Documentation",
     "description": {
-      "index": "ViteX - 完全去中心化的数字资产交易平台",
-      "faq": "有关ViteX的所有问题答疑"
+      "index": "ViteX - the first DAG-based decentralized exchange",
+      "faq": "ViteX FAQ"
     }
   },
   "home": {
-    "slogan": "安全 快速 开放",
-    "content": "ViteX——全球第一个基于DAG的去中心化交易所",
-    "starttoUse": "开始使用ViteX"
+    "slogan": "Fast, Secure, Open",
+    "content": "ViteX - The First DAG-Based Decentralized Exchange",
+    "starttoUse": "Start to Use ViteX"
   },
   "vitexInfo": {
     "title": "About ViteX",
-    "desc": "ViteX是基于VITE网络开发的去中心化交易所，是去中心化应用的一个落地场景。ViteX开放四个基础代币交易市场，即VITE、BTC、ETH、CUSD，四种基础代币由VITE官方网关铸币并发行。与传统中心化交易所对比，去中心化交易所更加安全",
+    "desc": "ViteX is a decentralized exchange developed on the Vite public chain. ViteX has four major trading markets: VITE, BTC, ETH, and a stablecoin. These four coins will be minted and issued by Vite official gateway. ViteX will also have its native token VX.",
     "more": "Learn More",
     "dex": {
-      "title": "完全去中心化，资产更安全",
-      "content": "交易撮合智能合约链上实现 手续费分红智能合约链上实现 私钥本人保管"
+      "title": "True decentralization, secure asset management",
+      "content": "On-chain order matching. Smart contract driven dividend distribution. Locally stored private keys."
     },
     "performance": {
-      "title": "底链性能卓越，更好交易体验",
-      "content": "底链高吞吐、妙计确认、无gas费，交易体验接近中心化交易所"
+      "title": "Ultra-high performance, better trading experience",
+      "content": "High transaction throughput, confirmation within seconds, zero gas fee. Trading experience rivaling that of centralized exchanges"
     },
     "mine": {
-      "title": "挖矿方式多，持币得分红",
-      "content": "交易即挖矿，上币即挖矿，抵押即挖矿，持有VX可持续获得手续费分红"
+      "title": "VX holder collects dividends",
+      "content": "Multiple ways to mine exchange coins VX, via trading, staking and listing"
     },
     "open": {
-      "title": "向社区开放，铸币更简单",
-      "content": "铸币、搭建跨链网关、开通交易对及订单深度完全放开"
+      "title": "Open sourced protocol, one-click token issuance",
+      "content": "Token forging, gateway creation, coin listing, and order book information are completely transparent"
     },
-    "what": "什么是VX",
-    "whatContent": "ViteX交易所会发行新的代币VX，新的代币VX不参与私募、不预售预挖，只通过交易所上线后挖矿获得。 VX发行总量为1亿，永不增发，分两年发放，预计每天发放13.7w。 每天挖出的VX中的10%的挖矿奖励，会进入发展池，用于激励ViteX的发展和推广。",
-    "how": "如何获得VX",
-    "howContent": "VX的获取可以通过三种方式，第一种参与ViteX交易，即交易挖矿；第二种为交易所智能合约抵押VITE获得交易所运行的配额，可以获取VX代币，即配额租赁；第三种通过开通交易对可以获得VX，即上币挖矿 。 交易挖矿：每天挖出VX总数量的60%，按照当天用户交易手续费占比分给参与交易的用户；目前会有四个市场，BTC、ETH、VITE、美元稳定币，每个市场占15%的份额。 配额租赁：每天挖出VX总数量的30%，按照当天的抵押额比例分给所有参与抵押的用户。 上币挖矿：在Vite交易所上线一个新的交易对，可以获得一定的VX。上线新的交易对需要交10,000 VITE，获得的VX的权重相当于产生1000 VITE交易手续费，参与到当天VITE市场的交易挖矿的金额中。"
+    "what": "What is VX?",
+    "whatContent": "VX is the token associated with ViteX. VX holders enjoy payouts from a shared dividend pool comprised of transaction fees and listing fees. There will be no public nor private sale for VX. Users can only get VX through mining. The total supply of VX is 100 million. All VX will be distributed in two years, with zero inflation. The daily average VX distribution is 137,000. 10% of daily distributed VX will be set aside to fund future development of ViteX.",
+    "how": "How do I get VX?",
+    "howContent": "You can get VX in three ways. The first way is to trade on ViteX (“Trading is Mining”); the second way is to stake VITE and help ViteX receive quota for its operations (“Staking is Mining”); and the third way is to list trading pairs (“Listing is Mining”). Trading is Mining: 60% of daily released VX will be distributed to traders according to the proportion of their transaction fee on ViteX; Currently there will be four markets: BTC market, ETH market, VITE market and a stablecoin market. Each market will equally share 15% of the daily distribution. Staking is Mining: 30% of daily released VX will be distributed to users who participate in staking VITE for the benefit of ViteX. Listing is Mining: A user (“token issuer”) that lists a new trading pair will receive VX. As mentioned earlier, the token issuer receives VX by participating in the same pool as traders, with his/her share calculated as if he/she executed a trade involving a transaction fee of 1,000 VITE. A listing fee is required for the DEX: for a token issued on the Vite chain, the listing fee is 10,000 VITE. Otherwise, a cross-chain gateway will be involved in the listing and a related fee may be added. "
   },
   "useX": {
     "title": "Use ViteX",
     "create": "Create",
-    "createSub": "创建一个Vite链地址并使用密码登录",
+    "createSub": "Create a Vite address and login with password",
     "createBtn": "Create Now",
     "charge": "Deposit",
-    "chargeSub": "将资产从钱包充至交易所账户",
-    "chargeBtn": "Try It Now",
-    "order": "Order",
-    "orderSub": "使用网页钱包发送或取消订单",
-    "orderBtn": "Make Orders",
-    "btn": "Learn more about VGATE"
+    "chargeSub": "Transfer asset from wallet to ViteX",
+    "chargeBtn": "Deposit Now",
+    "order": "Trade",
+    "orderSub": "Send or cancel a transaction via web wallet",
+    "orderBtn": "Trade Now"
   },
   "vgate": {
-    "slogan": "通过Vite网关在ViteX上币",
-    "btn": "了解VGATE"
+    "slogan": "List coin on ViteX via gateways",
+    "btn": "More about VGATE"
   },
   "nav": {
     "index": "Index",
@@ -97,12 +96,12 @@
         "answer": [
           " Vite链上的交易不需要消耗类似以太坊的gas，但是还需要消耗一定的资源，即配额。在只需消耗较少配额的情况下，矿池可以免费提供；但是大额高频的交易，还是需要一定成本的配额存在，只是相比较其他的链消耗资源更少。同理，ViteX作为一个高频的应用，也需要一定的配额，所以收取的手续费一部分会置换配额这种资源。收取的手续费主要基础货币，即VITE、ETH、BTC、美元稳定币等，具体收取规则如下：\n",
 
-          "交易手续费\n",
+          "How do trading fees work?\n",
           "ViteX的手续费分为两类，第一类可以挖矿获得VX代币手续费费率4‰，第二类仅交易无法获得VX手续费2.5‰。\n",
           "在某类手续费模式下，Taker和Maker都收基准币的手续费比例（4‰或者2.5‰）。\n",
           "在以上手续费的基础上，还可以通过抵押VITE降低手续费费率，抵押10000VITE可以降低1‰，按照两类费率会由之前的4‰或2.5‰，降低至3.‰或者1.5‰。\n",
 
-          "提现手续费：\n",
+          "How do withdrawal fees work?\n",
           "Vite钱包与交易所直接的提币、充币不需要手续费，只需要消耗配额。当提现到Vite链外，则需要通过Vite网关，目前社区合作网关VGATE会收取千分之五的手续费（5‰）。\n",
           "其中，交易手续费是用于给持有VX的用户分红的，提现手续费是Vite网关自己分配的。\n"
         ]
