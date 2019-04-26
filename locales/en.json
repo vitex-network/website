@@ -15,7 +15,7 @@
   },
   "vitexInfo": {
     "title": "About ViteX",
-    "desc": "ViteX is a decentralized exchange developed on the Vite public chain. ViteX has four major trading markets: VITE, BTC, ETH, and a stablecoin. These four coins will be minted and issued by Vite official gateway. ViteX will also have its native token VX.",
+    "desc": "ViteX is a decentralized exchange developed on the Vite public chain. ViteX has four major trading markets: VITE, BTC, ETH, and a stablecoin. ViteX will also have its native token VX.",
     "more": "Learn More",
     "dex": {
       "title": "True decentralization, secure asset management",
@@ -129,22 +129,18 @@
         ]
       },
       {
-        "question": "VX的发放规则",
+        "question": "How is VX distributed?",
         "answer": [
-          "VX总量1亿，分2年挖矿获得，每天会有固定的数量分发出来，规则如下：\n",
-          "1. 每天挖矿获得的VX，交易推广占10%，交易挖矿分60%，配额租赁分30%。\n",
-          "2. 每天VX挖矿数量，第一年每天衰减0.5%，第一天释放477,210.00，最后一天释放76,968.13，第一年释放总量的80.13%；第二年每天衰减0.2%，第一天释放76,660.56，最后一天释放36,965.22，第二年最后一天会100%全部释放。总计100,000,000。VX每日释放量走势如下图。\n"
+          "The total supply of VX is 100,000,000 with no inflation. The release of VX will gradually slow down to a mining timeline of two years.\n",
+          "1. Among all VX issued in one day, 60% is distributed to traders, 30% to VITE stakers for ViteX and 10% to Vite Labs.\n",
+          "2. The number of VX mined decreases 0.5% daily in the first year. 477,210.00 VX will be released on the launch date of ViteX. 76,968.13 VX will be released one year after the launch. Thus, 80.13% of total supply will be released in the first year. The number of mined VX will decrease by 0.2% every day in the second year. 76,660.56 VX will be released on the first day of the second year and 36,965.22 VX will be released on the last day of the second year.\n"
         ]
       },
       {
-        "question": "VX获得方式有哪些？",
+        "question": "How do I get VX?",
         "answer": [
-          "ViteX交易所的交易手续费会分给所有持有VX的用户，VX的获取可以通过三种方式，第一种参与ViteX交易，即交易挖矿，第二种帮助交易所抵押VITE获得配额，可以获得VX，第三种上币可以获得VX 。有关具体交易获得多少VX，抵押获得多少VX和上币会获得多少VX这部分规则尚未确定，后期会陆续发公告说明。"
+          "You can get VX in three ways. The first way is to trade on ViteX (“Trading is Mining”); the second way is to stake VITE and help ViteX receive quota for its operations (“Staking is Mining”); and the third way is to list trading pairs (“Listing is Mining”)."
         ]
-      },
-      {
-        "question": "VX和VITE什么关系/区别？",
-        "answer": "VX可以理解为ViteX交易所的股权证明，可以定期拿到分红。VITE是Vite链上的资源拥有凭证，持有VITE，就可以更好的使用Vite链上资源。比如抵押VITE获得配额可以更高频的交易，持有VITE可以参与超级节点投票，选举出超级节点。VITE和VX也会存在一定的联系，如帮助ViteX抵押VITE获得配额，就可以获得VX，间接获得ViteX交易所的手续费，即用Vite链上的资源兑换手续费。"
       },
       {
         "question": "Vite上币有哪些具体要求？",
