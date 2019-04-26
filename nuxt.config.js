@@ -62,7 +62,10 @@ module.exports = {
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
       {name: 'author', content: 'vite lab'},
       {name: 'keywords', content: 'vite, vitex, crypto,dag,bitcoin,vitecoin,contract platform'}
-    ]
+    ],
+    link: [
+      {rel: 'icon', type: 'image/x-icon', href: '/icon.png'}
+    ],
   },
   loading: {
     color: '#7FB2FE'

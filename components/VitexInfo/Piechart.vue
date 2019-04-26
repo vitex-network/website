@@ -6,7 +6,7 @@
       <div class="title">{{$t('vitexInfo.how')}}</div>
       <div class="content">{{$t('vitexInfo.howContent')}}</div>
       <a
-          href="http://vite.net/"
+          href="https://x-test.vite.net/"
           class="text-btn"
           target="_blank"
       >

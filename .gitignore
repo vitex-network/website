@@ -3,7 +3,6 @@ dist
 .nuxt
 node_modules
 package-lock.json
-static/
 
 .DS_Store
 assets/.DS_Store
