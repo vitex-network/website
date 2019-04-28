@@ -51,7 +51,7 @@
     "orderBtn": "Trade Now"
   },
   "vgate": {
-    "slogan": "List coin on ViteX via gateways",
+    "slogan": "List Coin on ViteX via Gateways",
     "btn": "More about VGATE"
   },
   "nav": {
@@ -67,7 +67,7 @@
     "login": "Log In"
   },
   "footer": {
-    "slogan": "The first DAG-based decentralized exchange",
+    "slogan": "The First DAG-Based Decentralized Exchange",
     "trade": "Trade",
     "mine": "Mine",
     "market": "Market",
@@ -89,7 +89,7 @@
     "fee": "Fees"
   },
   "faq": {
-    "title": "ViteX Q&A",
+    "title": "ViteX FAQs",
     "questions": [
       {
         "question": "Fees",
@@ -125,7 +125,7 @@
       {
         "question": "What is VX?",
         "answer": [
-          "VX is the token related to ViteX. Users who hold VX enjoy payouts from a shared dividend pool comprised of transaction and listing fees. There will be no public nor private sale for VX. Users can only get VX through mining."
+          "VX is the token related to ViteX. Users who hold VX enjoy payouts from a shared dividend pool comprised of transaction and listing fees. There will be no public nor private sale for VX. Users can only get VX through mining. The total supply of VX is 100 million. All VX will be distributed in two years, with zero inflation. The daily average VX distribution is proportionally decreasing."
         ]
       },
       {
@@ -143,11 +143,12 @@
         ]
       },
       {
-        "question": "Vite上币有哪些具体要求？",
+        "question": "What are the requirements for listing a token on ViteX?",
         "answer": [
-          "VIteX交易所上币会分为两部分，一部分是Vite链上的资产，在ViteX只需要交付10000VITE，即可开通一个交易对，ViteX也会默认展示所有开通的交易所，是完全自助的行为。第二部分是Vite链外的资产，需要通过网关来完成资产映射，即把Vite链外的资产转账给网关，网关给你的Vite地址转入等额的Vite链上的资产，然后再开通交易对，在ViteX交易所交易。通过网关上币，需要满足网关的一些需求，目前ViteX已经有一个合作的网关，该网关会给出具体的上币要求。当然也欢迎更多的社区力量作为ViteX的网关，一起来推进ViteX去中心化交易所的发展。\n",
+          "You have cryptocurrency ABC that you wish to list on ViteX. You can choose to: \n ",
+          "1. Issue directly on the VITE chain: 1) Pay 10,000 VITE for each trading pair you wish to list. \n",
 
-          "1）联系社区网关，缴纳一定的铸币费用，链上铸币费用为燃烧1000 VITE或者抵押100,000VITE，生成自己的币种ABC；2）通过网关，交一定的网关服务费，开通ABC的跨链网关，允许用户将ABC从以太坊跨链转入Vite公链，即价值的映射；3）缴纳开通交易对的费用，花费10000 VITE开通ABC / ETH的交易对；也可以自己钱包开通更多的交易对。"
+          "2. Issue from a third-party chain: 1）Contact your preferred gateway and pay a token minting fee. You can choose to either pay the on-chain cost of 1,000 VITE or stake 100,000 VITE to mint your ABC tokens.  2）Pay the corresponding gateway service fee in order to open ABC's cross-chain gateway from the third-party chain to the VITE chain. This will allow you to transfer your ABC tokens from the third-party chain to the Vite public chain. 3）Pay 10,000 VITE for each trading pair you wish to list. "
         ]
       }
     ]

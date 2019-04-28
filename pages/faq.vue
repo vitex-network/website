@@ -11,7 +11,7 @@
                 <p v-for="(answerItem, index) in item.answer" :key="index">
                   <template v-if="item.key === 'wechat'">
                     {{answerItem}}
-                    <div><img src="~/assets/images/social/vitelabs_wechat.jpg" alt=""/></div>
+                    <div><img src="~/assets/images/social/vitex_wechat.png" alt=""/></div>
                   </template>
                   <template v-else>{{answerItem}}</template>
                 </p>

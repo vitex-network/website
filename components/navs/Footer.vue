@@ -10,34 +10,15 @@
               <div class="icons">
                 <div class="icon-links-wrapper">
                   <a
-                      :href="urls.github"
-                      target="_blank"
-                      class="text-hover-transition"
-                  >
-                    <fa-icon
-                        class="icon"
-                        :icon="['fab', 'github']"
-                    ></fa-icon>
-                  </a>
-                  <a
-                      :href="urls.discord"
-                      target="_blank"
-                      class="text-hover-transition"
-                  >
-                    <fa-icon
-                        class="icon"
-                        :icon="['fab', 'discord']"
-                    ></fa-icon>
-                  </a>
-                  <a
-                      :href="urls.medium"
+                      :href="urls.telegramx"
                       target="_blank"
                       class="text-hover-transition"
                   >
                     <img
                         class="icon"
-                        src="~/assets/images/social/medium.svg"
-                    /></a>
+                        src="~/assets/images/social/telegram.svg"
+                    />
+                  </a>
                   <a
                       :href="urls.twitter"
                       target="_blank"
@@ -48,25 +29,6 @@
                         :icon="['fab', 'twitter']"
                     ></fa-icon>
                   </a>
-                  <telegram></telegram>
-                  <a
-                      :href="urls.reddit"
-                      target="_blank"
-                      class="text-hover-transition"
-                  >
-                    <fa-icon
-                        class="icon"
-                        :icon="['fab', 'reddit']"
-                    /></a>
-                  <a
-                      :href="urls.youtube"
-                      target="_blank"
-                      class="text-hover-transition"
-                  >
-                    <fa-icon
-                        class="icon"
-                        :icon="['fab', 'youtube']"
-                    /></a>
                   <a
                       :href="urls.forum"
                       target="_blank"

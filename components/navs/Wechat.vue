@@ -8,7 +8,7 @@
       <a class="tooltip-target"  target="_blank"><fa-icon :icon="['fab', 'weixin']" /></a>
 
       <template slot="popover">
-        <img src="~/assets/images/social/vitelabs_wechat.jpg" alt="">
+        <img src="~/assets/images/social/vitex_wechat.png" alt="">
       </template>
     </v-popover>
 

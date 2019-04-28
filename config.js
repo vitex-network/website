@@ -1,6 +1,6 @@
 module.exports = {
   urls: {
-    weibo: 'https://weibo.com/u/6572727462',
+    weibo: 'http://m.weibo.cn/u/6840230204',
     viteNet: {
       zh: 'https://vite.net/zh',
       en: 'https://vite.net'
@@ -42,7 +42,7 @@ module.exports = {
         vi: 'http://1257137467.vod2.myqcloud.com/c9d24a0dvodcq1257137467/696fc14d5285890783561282405/iunXawfrnzoA.mp4'
       }
     },
-    twitter: 'https://twitter.com/vitelabs',
+    twitter: 'https://twitter.com/ViteXExchange',
     discord: 'https://discordapp.com/invite/CsVY76q',
     reddit: 'https://www.reddit.com/r/vitelabs',
     github: 'https://github.com/vitelabs',
@@ -85,6 +85,7 @@ module.exports = {
       russia: 'https://t.me/vite_russia',
       thailand: 'https://t.me/vite_thailand'
     },
+    telegramx: 'https://t.me/vitexexchange',
     exchange: {
       bittrex: 'https://international.bittrex.com/Market/Index?MarketName=BTC-VITE',
       okex: 'https://www.okex.com/spot/trade#product=vite_eth',
