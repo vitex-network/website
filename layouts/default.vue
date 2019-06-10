@@ -279,6 +279,9 @@
     .navbar-start{
       margin-left: 30px;
     }
+    .navbar-end{
+      margin-top: 8px;
+    }
     .navbar-brand {
       margin: 30px 0 0 45px;
       padding: 0;
