@@ -37,7 +37,7 @@
     height: 360px;
     align-items: center;
     justify-content: center;
-    background: no-repeat url("~assets/images/bg/bg2.svg");
+    background: url("~assets/images/bg/bg2.svg");
     @include touch {
       height: 220px;
     }
