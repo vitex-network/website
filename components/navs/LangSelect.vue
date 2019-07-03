@@ -73,6 +73,7 @@
       }
     }
     .dropdown-menu {
+      min-width: 100px;
       .dropdown-content {
         .dropdown-item {
           color: $common-text-color;

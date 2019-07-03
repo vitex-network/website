@@ -107,7 +107,7 @@ module.exports = {
     },
     vitex:{
       en: 'https://x-test.vite.net',
-      zh: 'https://x-test.vite.net/zh'
+      zh: 'https://x-test.vite.net'
     },
     wallet:{
       login: 'https://x-test.vite.net/start',
