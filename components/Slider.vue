@@ -71,8 +71,10 @@
 
   .swiper-container{
     height: 300px;
+    overflow: auto;
     @include touch{
       height: 102px;
+      overflow: auto;
     }
   }
   .swiper-pagination {

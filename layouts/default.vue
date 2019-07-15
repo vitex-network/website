@@ -63,7 +63,12 @@
               <user></user>
             </div>
             <div class="nav-item">
-              <info></info>
+              <nuxt-link
+                  :to="localePath('faq')"
+                  class="text-hover-transition"
+              >
+                {{$t('nav.faq')}}
+              </nuxt-link>
             </div>
             <div class="nav-item">
               <about></about>
@@ -100,7 +105,7 @@
   import Logo from '~/components/navs/Logo';
   import LangSelect from '~/components/navs/LangSelect';
   import User from '~/components/navs/User';
-  import Info from '~/components/navs/Faq';
+  // import Info from '~/components/navs/Faq';
   import About from '~/components/navs/About';
   import WalletBtn from '~/components/navs/WalletBtn';
   import VFooter from '~/components/navs/Footer';
@@ -112,7 +117,7 @@
       LangSelect,
       About,
       User,
-      Info,
+      // Info,
       WalletBtn,
       VFooter
     },
@@ -344,6 +349,9 @@
         .logo {
           max-height: 30px;
           transition: transform 0.4s ease-in-out;
+          &:hover{
+
+          }
         }
         .navbar-burger {
           top: -32px;
