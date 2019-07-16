@@ -109,6 +109,7 @@ module.exports = {
       en: 'https://x-test.vite.net',
       zh: 'https://x-test.vite.net'
     },
+    list:'https://forms.gle/eG66BnL3btbFNvH59',
     wallet:{
       login: 'https://x-test.vite.net/start',
       create: 'https://x-test.vite.net/startCreate'

@@ -23,7 +23,7 @@
     methods:{
       openVGate(){
         window.open(
-          this.$i18n.locale === 'zh' ? 'https://vite.net/zh/' : 'https://vite.net'
+          this.$i18n.locale === 'zh' ? 'https://vgate.io/zh/' : 'https://vgate.io/'
         );
       }
     }

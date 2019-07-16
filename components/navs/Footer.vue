@@ -88,7 +88,7 @@
                 {{$t('user.protocol')}}
               </a>
               <a class="content"
-                 :href="urls.vitex[$i18n.locale]"
+                 :href="urls.list"
                  target="_blank"
               >
                 {{$t('user.list')}}
@@ -96,18 +96,11 @@
               <a class="content" :href="`mailto:partnerships@vite.org`">{{$t('user.contact')}}</a>
             </div>
             <div class="item common">
-              <div class="subtitle">{{$t('footer.info')}}</div>
               <nuxt-link
-                  class="content"
+                  class="subtitle"
                   :to="localePath('faq')"
               >
                 {{$t('info.faq')}}
-              </nuxt-link>
-              <nuxt-link
-                  class="content"
-                  :to="localePath('faq')"
-              >
-                {{$t('info.fee')}}
               </nuxt-link>
             </div>
           </div>

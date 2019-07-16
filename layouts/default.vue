@@ -279,7 +279,7 @@
       }
     }
     a.navbar-item:hover {
-      background-color: white;
+      background-color: transparent;
     }
     .navbar-start{
       margin-left: 30px;
