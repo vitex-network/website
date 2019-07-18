@@ -109,9 +109,9 @@ module.exports = {
         }
       }
     }],
-    // ['@nuxtjs/google-analytics', {
-    //   id: ''
-    // }],
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-144137943-1'
+    }],
     '@nuxtjs/sitemap'
   ],
   css: [
