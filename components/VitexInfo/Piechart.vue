@@ -20,8 +20,8 @@
 </template>
 
 <script type="text/babel">
-  import en from '~/assets/images/piecharten.png';
-  import zh from '~/assets/images/piechart.png';
+  import en from '~/assets/images/piecharten.jpg';
+  import zh from '~/assets/images/piechart.jpg';
 
   export default {
     computed: {

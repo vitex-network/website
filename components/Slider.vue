@@ -4,7 +4,7 @@
     <div v-swiper:mySwiper="swiperOption">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="banner in banners[$i18n.locale]" @click="onBannerClick">
-          <a :href="urls.forum">
+          <a :href="bannerUrls[$i18n.locale]">
             <img :src="banner">
           </a>
         </div>
@@ -28,6 +28,10 @@
         banners: {
           en: [en1],
           zh: [zh1]
+        },
+        bannerUrls:{
+          en: urls.telegramx,
+          zh: urls.forum
         },
         swiperOption: {
           loop: true,

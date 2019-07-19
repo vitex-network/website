@@ -93,7 +93,7 @@
               >
                 {{$t('user.list')}}
               </a>
-              <a class="content" :href="`mailto:partnerships@vite.org`">{{$t('user.contact')}}</a>
+              <a class="content" :href="`mailto:info@vite.org`">{{$t('user.contact')}}</a>
             </div>
             <div class="item common">
               <nuxt-link

@@ -44,7 +44,7 @@ export default {
       return {
         protocol:config.urls.privacy,
         list:config.urls.vitex[this.$i18n.locale],
-        contact:'mailto:partnerships@vite.org'
+        contact:'mailto:info@vite.org'
       };
     }
   },

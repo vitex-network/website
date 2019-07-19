@@ -27,7 +27,7 @@ module.exports = {
         vi: 'https://medium.com/vitelabs'
       }
     },
-    forum: 'https://forum.vite.net',
+    forum: 'https://forum.vite.net/category/32/vitex',
     video: {
       home: {
         zh: 'http://1257137467.vod2.myqcloud.com/c9d24a0dvodcq1257137467/72d670585285890783561692168/WGwQoGPaGHsA.mp4',
