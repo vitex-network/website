@@ -1,0 +1,165 @@
+{
+  "lang": "EN",
+  "head": {
+    "title": "ViteX - the first DAG-based decentralized exchange",
+    "document": "Documentation",
+    "description": {
+      "index": "ViteX - the first DAG-based decentralized exchange",
+      "faq": "ViteX FAQ"
+    }
+  },
+  "home": {
+    "slogan": "Fast, Secure, Open",
+    "content": "ViteX - The First DAG-Based Decentralized Exchange",
+    "starttoUse": "Start to Use ViteX"
+  },
+  "vitexInfo": {
+    "title": "About ViteX",
+    "desc": "ViteX is a decentralized exchange developed on the Vite public chain. ViteX has four major trading markets: VITE, BTC, ETH, and a stablecoin. ViteX will also have its native token VX.",
+    "more": "Learn More",
+    "dex": {
+      "title": "True decentralization, secure asset management",
+      "content": "On-chain order matching. Smart contract driven dividend distribution. Locally stored private keys."
+    },
+    "performance": {
+      "title": "Ultra-high performance, better trading experience",
+      "content": "High transaction throughput, confirmation within seconds, zero gas fee. Trading experience rivaling that of centralized exchanges"
+    },
+    "mine": {
+      "title": "VX holder collects dividends",
+      "content": "Multiple ways to mine exchange coins VX, via trading, staking, order placing, referrals and trading pairs listing"
+    },
+    "open": {
+      "title": "Open sourced protocol, one-click token issuance",
+      "content": "Token forging, gateway creation, coin listing, and order book information are completely transparent"
+    },
+    "what": "What is VX?",
+    "whatContent": "VX is the token associated with ViteX. VX holders enjoy payouts from a shared dividend pool comprised of transaction fees and listing fees. There will be no public nor private sale for VX. Users can only get VX through mining. The total supply of VX is 100 million. All VX will be distributed in two years, with zero inflation. The daily average VX distribution is 137,000. 10% of daily distributed VX will be set aside to fund future development of ViteX.",
+    "how": "How do I get VX?",
+    "howContent": "You can get VX in five ways. The first way is to trade on ViteX (“Trading as Mining”); the second way is to stake VITE and help ViteX receive quota for its operations (“Staking as Mining”); and the third way is to list trading pairs (“Listing as Mining”). The fourth way is to invite friends to get referral incomes. The fifth way is to place orders for liquidity increase. Trading as Mining & Referral as Mining: 60% of daily released VX will be distributed to traders according to the proportion of their transaction fee on ViteX and referrals they made; Currently there will be four markets: BTC market, ETH market, VITE market and a stablecoin market. Each market will equally share 15% of the daily distribution. Staking as Mining: 20% of daily released VX will be distributed to users who participate in staking VITE for the benefit of ViteX. Listing as Mining: A user (\"token issuer\" or an \"operator\") that lists a new trading pair will receive VX. The token issuer receives VX by participating in the same pool as traders, with his/her share calculated as if he/she executed a trade involving a transaction fee of 1,000 VITE. A listing fee is required for the DEX: for a token issued on the Vite chain, the listing fee is 10,000 VITE, half of listing fee (5000 VITE) will be burned and the rest of them will be distributed to VX holders. Placing Order as Mining: 10% of daily released VX will be distributed to traders who create orders. The amount of dividends depend on the proportion of an single address's VX balance (including available and frozen assets) to ViteX accounts' whole VX balances. The dividends will not be distributed if VX balance is less than 10 VX."
+  },
+  "useX": {
+    "title": "Use ViteX",
+    "create": "Create",
+    "createSub": "Create a Vite address and login with password",
+    "createBtn": "Create Now",
+    "charge": "Deposit",
+    "chargeSub": "Transfer asset from wallet to ViteX",
+    "chargeBtn": "Deposit Now",
+    "order": "Trade",
+    "orderSub": "Send or cancel a transaction via web wallet",
+    "orderBtn": "Trade Now"
+  },
+  "vgate": {
+    "slogan": "List Coin on ViteX via Gateways",
+    "btn": "More about VGATE"
+  },
+  "nav": {
+    "index": "Index",
+    "trade": "Trading",
+    "mine": "Mine",
+    "market": "Market",
+    "about": "About",
+    "user": "Support",
+    "faq": "FAQ",
+    "info": "FAQ",
+    "create": "Sign up",
+    "login": "Log In"
+  },
+  "footer": {
+    "slogan": "The First DAG-Based Decentralized Exchange",
+    "trade": "Trade",
+    "mine": "Mine",
+    "market": "Market",
+    "about": "About Us",
+    "user": "Support",
+    "info": "FAQ"
+  },
+  "about": {
+    "api": "API",
+    "website": "Vite.org"
+  },
+  "user": {
+    "protocol": "Policy Terms",
+    "list": "Become an Operator",
+    "contact": "Contact Us"
+  },
+  "info": {
+    "faq": "FAQ",
+    "fee": "Fees"
+  },
+  "faq": {
+    "title": "ViteX FAQs",
+    "questions": [
+      {
+        "question": "Fees",
+        "answer": [
+          "How do trading fees work?\n",
+          "There are two types of fee rate: 1. ViteX default common fee rate is 0.2% 2. Third-party organizations who operate trading pairs may charge operator's fee rate ranging between 0-0.2%. Operators can manually adjust the fee rate on ViteX Operator section.\n",
+          "The above fees are the same for both the makers and the takers.\n",
+          "You can choose to stake 10,000 VITE to lower the default trading fee rate from 0.2% to 0.1% (Operators' fee rate not included).\n",
+          "All ViteX default transaction fees (fee rate range 0.1% to 0.2%) collected will be re-distributed as dividends to VX holders.\n",
+          "How do withdrawal fees work?\n",
+          "There are no fees for deposits and withdrawals between the Vite wallet and ViteX; only quota will be consumed in these cases.\n",
+          "When assets are withdrawn to non-Vite wallets, the partner cross-chain gateway, VGATE, will charge a withdrawal fee of 5%.\n"
+        ]
+      },
+      {
+        "question": "Why release VX? Will it affect VITE? What is the relationship between VX and VITE?",
+        "answer": [
+          "VX can be understood as a “proof-of-equity” on the ViteX platform, which is a standalone application running on the Vite blockchain. ViteX has its own incentive model to encourage user trading. The value of VX is positively related to user and transaction volumes on ViteX. This will not affect the value of VITE, which is related to the Vite public chain. The value of VITE and the Vite chain increases as more dApps are run on Vite. VITE and VX are connected in some ways. For example, if VITE is staked to obtain certain quotas, VX can be earned. This means that resources on Vite can be used for transactions on ViteX."
+        ]
+      },
+      {
+        "question": "What is the difference between a truly decentralized exchange and other exchanges?",
+        "answer": [
+          "At present, most decentralized exchanges are not truly decentralized as they are limited by the performance of their own public chain. Typically, transactions are performed off-chain and results are shown on-chain.",
+          "ViteX is completely decentralized: \n 1. The transaction matching engine is performed through smart contracts that run on-chain \n 2. The order combinations are all completed on-chain \n 3. The order book is stored on-chain \n 4. The exchange fee redemption is implemented on-chain. Consequently, the results are fully public and dividend rules cannot be tampered with."
+        ]
+      },
+      {
+        "question": "The Vite chain has a transaction model without fees. Why does the Vite exchange charge a fee? Is the fee charged by VITE or other tokens?",
+        "answer": "Transactions on the Vite chain do not consume gas like those on Ethereum, but another resource referred to as “quota.” Low-frequency traders can reach this quota by running a PoW on the local device. Since PoW takes time to complete, this mechanism is suitable for low-frequency usage. On the other hand, to accommodate high-frequency usage, traders will need to stake VITE in order to obtain the required quota. As a high frequency application, ViteX will also consume resources, which will be collected in the form of transaction fees on ViteX. Users can choose to stake VITE in order to fill quota on ViteX to lower the transaction fees. All collected transaction fees will be re-distributed to VX holders. The transaction fees will be paid out in “basic currencies” such as VITE, ETH, BTC and stablecoins. "
+      },
+      {
+        "question": "What is VX?",
+        "answer": [
+          "VX is the token related to ViteX. Users who hold VX enjoy payouts from a shared dividend pool comprised of transaction and listing fees. There will be no public nor private sale for VX. Users can only get VX through mining. The total supply of VX is 100 million. All VX will be distributed in two years, with zero inflation. The daily average VX distribution is proportionally decreasing."
+        ]
+      },
+      {
+        "question": "How is VX distributed?",
+        "answer": [
+          "The total supply of VX is 100,000,000 with no inflation. The release of VX will gradually slow down to a mining timeline of two years.\n",
+          "1. Among all VX issued in one day, 60% is distributed to traders(trading & referral as mining), 20% to VITE stakers for ViteX(staking as mining), 10% to placing order as mining and 10% to Vite Labs.\n",
+          "2. The number of VX mined decreases 0.5% daily in the first year. 477,032.36 VX will be released on the launch date of ViteX. 76,939.48 VX will be released one year after the launch. Thus, 80.095% of total supply will be released in the first year. The number of mined VX will decrease by 0.2% every day in the second year. 76,785.60 VX will be released on the first day of the second year and 37,050.73 VX will be released on the last day of the second year. 100,000,000 in total.\n"
+        ]
+      },
+      {
+        "question": "How do I get VX?",
+        "answer": [
+          "You can get VX in five ways. The first way is to trade on ViteX (“Trading as Mining”); the second way is to stake VITE and help ViteX receive quota for its operations (“Staking as Mining”); and the third way is to list trading pairs (“Listing is Mining”). The fourth way is to place order on ViteX (Placing Order as Mining) and the fifth way is to invite your friends trading on ViteX (Referral as Mining)."
+        ]
+      },
+      {
+        "question": "What are the requirements for listing a token on ViteX?",
+        "answer": [
+          "You have cryptocurrency ABC that you wish to list on ViteX. You can choose to: \n ",
+          "1. Issue directly on the VITE chain: 1) Pay 10,000 VITE for each trading pair you wish to list. \n",
+          "2. Issue from a third-party chain: 1）Contact your preferred gateway and pay a token minting fee. You can choose to either pay the on-chain cost of 1,000 VITE or stake 100,000 VITE to mint your ABC tokens.  2）Pay the corresponding gateway service fee in order to open ABC's cross-chain gateway from the third-party chain to the VITE chain. This will allow you to transfer your ABC tokens from the third-party chain to the Vite public chain. 3）Pay 10,000 VITE for each trading pair you wish to list. "
+        ]
+      }
+    ]
+  },
+  "urls": {
+    "telegram": {
+      "ann": "Announcement Channel",
+      "english": "English",
+      "chinese": "Chinese",
+      "vietnamese": "Vietnamese",
+      "korean": "Korean",
+      "russia": "Russia",
+      "thailand": "Thailand"
+    }
+  }
+}
