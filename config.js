@@ -103,7 +103,7 @@ module.exports = {
     },
     more:{
       zh: 'https://forum.vite.net/topic/971/%E4%BA%A4%E6%98%93%E4%BD%93%E9%AA%8C%E7%9A%84%E9%9D%A9%E5%91%BD-%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E4%BA%A4%E6%98%93%E6%89%80vitex%E5%8D%B3%E5%B0%86%E9%97%AE%E4%B8%96',
-      en: 'https://medium.com/vitelabs/the-revolution-of-dex-vitex-7aa6553f441f'
+      en: 'https://medium.com/vitelabs/vitex-101-update-489f6e49392'
     },
     vitex:{
       en: 'https://x-test.vite.net',

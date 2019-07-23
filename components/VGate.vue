@@ -6,8 +6,15 @@
           {{$t('vgate.slogan')}}
         </h1>
       </div>
-      <div class="operators">
-
+      <div class="operators columns is-multiline is-mobile is-centered">
+        <div :key="item.key" v-for="(item, index) in list" class="item">
+          <a :href="item.url" target="_blank" @mouseover="onHover(index)" @mouseout="onOut(index)" :class="`key-${item.key}`">
+            <div class="img-wrapper">
+              <!--<img v-show="index === hover" class="investor-logo" :src="item.logoActive" alt="">-->
+              <img :src="item.logo" alt="">
+            </div>
+          </a>
+        </div>
       </div>
       <div class="btn">
         <div
@@ -23,11 +30,41 @@
 <script>
   export default {
     components: {},
+    data(){
+      return{
+        list: [
+          {
+            key: 'vgate',
+            logo: require('~/assets/images/operators/vgate.svg'),
+            // logoActive: require('~/assets/images/operators/vgate-act.png'),
+            url: 'https://vgate.io/'
+          },
+          {
+            key: 'bid',
+            logo: require('~/assets/images/operators/bid.svg'),
+            // logoActive: require('~/assets/images/operators/bid-act.png'),
+            url: 'https://www.bbiidd.org'
+          },
+          {
+            key: 'xinsheng',
+            logo: require('~/assets/images/operators/xinsheng.png'),
+            // logoActive: require('~/assets/images/operators/xinsheng-act.png'),
+            url: 'https://forum.vite.net/category/55/xsfund'
+          }
+        ]
+      };
+    },
     methods:{
       openVGate(){
         window.open(
           this.$i18n.locale === 'zh' ? 'https://forms.gle/eG66BnL3btbFNvH59' : 'https://forms.gle/eG66BnL3btbFNvH59'
         );
+      },
+      onHover (index) {
+        this.hover = index;
+      },
+      onOut () {
+        this.hover = null;
       }
     }
   };
@@ -41,10 +78,22 @@
     align-items: center;
     justify-content: center;
     background: url("~assets/images/bg/bg2.svg");
+    .container{
+      height: 100%;
+    }
     @include touch {
       height: 220px;
     }
+    .is-multiline {
+      display: flex;
+      display: -webkit-flex;
+      flex-wrap: wrap;
+      .item{
+        padding: 0 60px;
+      }
+    }
     .slogan-wrapper {
+      padding: 40px 0 45px 0;
       text-align: center;
       h1 {
         font-size: 32px;
@@ -70,7 +119,7 @@
         display: inline-block;
         width: 180px;
         height: 55px;
-        margin-top: 40px;
+        margin-top: 30px;
         line-height: 53px;
         border-radius: 5px;
         color: $common-active-color;

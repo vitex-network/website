@@ -48,6 +48,7 @@
                         :icon="['fab', 'weibo']"
                     /></a>
                   <wechat></wechat>
+                  <qq v-show="$i18n.locale === 'zh'" class="margin-left"></qq>
                 </div>
               </div>
             </div>
@@ -118,6 +119,7 @@
 <script type="text/babel">
   import Logo from '~/components/navs/Logo';
   import Wechat from '~/components/navs/Wechat';
+  import Qq from '~/components/navs/QQ';
   import Telegram from '~/components/navs/Telegram';
   import config from '~/config.js';
   import about from '~/components/navs/About';
@@ -127,7 +129,8 @@
       Logo,
       Wechat,
       Telegram,
-      about
+      about,
+      Qq
     },
     data() {
       let {urls} = config;
@@ -239,6 +242,9 @@
     }
 
     .icon-links-wrapper {
+      .margin-left{
+        margin-left: 22px;
+      }
       @include touch {
 
       }
