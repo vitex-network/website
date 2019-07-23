@@ -6,6 +6,9 @@
           {{$t('vgate.slogan')}}
         </h1>
       </div>
+      <div class="operators">
+
+      </div>
       <div class="btn">
         <div
             class="gate-btn"
@@ -23,7 +26,7 @@
     methods:{
       openVGate(){
         window.open(
-          this.$i18n.locale === 'zh' ? 'https://vgate.io/zh/' : 'https://vgate.io/'
+          this.$i18n.locale === 'zh' ? 'https://forms.gle/eG66BnL3btbFNvH59' : 'https://forms.gle/eG66BnL3btbFNvH59'
         );
       }
     }

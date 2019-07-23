@@ -1,10 +1,12 @@
 <template>
   <div class="detail columns is-desktop">
     <div class="question column is-6-desktop">
-      <div class="title">{{$t('vitexInfo.what')}}</div>
-      <div class="content">{{$t('vitexInfo.whatContent')}}</div>
-      <div class="title">{{$t('vitexInfo.how')}}</div>
-      <div class="content">{{$t('vitexInfo.howContent')}}</div>
+      <div class="answer" v-for="(item, index) in $t('vitexInfo.questions')">
+        <div class="title">{{`${index + 1}. ${item.question}`}}</div>
+        <div class="content">
+          <p v-for="(ansItem, index) in item.answer">{{ ansItem }}</p>
+        </div>
+      </div>
       <a
           href="https://x-test.vite.net/"
           class="text-btn"
@@ -55,7 +57,6 @@
       font-size: 20px;
     }
     .content{
-      display:flex;
       max-width: 450px;
       margin-bottom: 20px;
       color:$text-color;

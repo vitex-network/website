@@ -1,42 +1,65 @@
 {
   "lang": "EN",
   "head": {
-    "title": "ViteX - the first DAG-based decentralized exchange",
+    "title": "ViteX - Exchange By the Community, For the Community",
     "document": "Documentation",
     "description": {
-      "index": "ViteX - the first DAG-based decentralized exchange",
+      "index": "ViteX - Exchange By the Community, For the Community",
       "faq": "ViteX FAQ"
     }
   },
   "home": {
-    "slogan": "Fast, Secure, Open",
-    "content": "ViteX - The First DAG-Based Decentralized Exchange",
-    "starttoUse": "Start to Use ViteX"
+    "slogan": "Fast, Secure & Open",
+    "content": "ViteX - Exchange By the Community, For the Community",
+    "starttoUse": "Start Trading Now!"
   },
   "vitexInfo": {
     "title": "About ViteX",
-    "desc": "ViteX is a decentralized exchange developed on the Vite public chain. ViteX has four major trading markets: VITE, BTC, ETH, and a stablecoin. ViteX will also have its native token VX.",
+    "desc": "ViteX is a decentralized exchange with its own native token, VX. Currently, ViteX has four major trading markets: VITE, BTC, ETH, and USDT. ",
     "more": "Learn More",
     "dex": {
-      "title": "True decentralization, secure asset management",
-      "content": "On-chain order matching. Smart contract driven dividend distribution. Locally stored private keys."
+      "title": "Truly Decentralized",
+      "content": "On-chain order matching and asset management. Smart contract driven dividend distribution. Locally private key storage."
     },
     "performance": {
-      "title": "Ultra-high performance, better trading experience",
-      "content": "High transaction throughput, confirmation within seconds, zero gas fee. Trading experience rivaling that of centralized exchanges"
+      "title": "Ultra-High Performance",
+      "content": "High transaction throughput with <1 second confirmation time. Zero gas fees."
     },
     "mine": {
-      "title": "VX holder collects dividends",
-      "content": "Multiple ways to mine exchange coins VX, via trading, staking, order placing, referrals and trading pairs listing"
+      "title": "Collect Dividends",
+      "content": "Mine VX by trading, staking, market-making, referring, and listing. Hold VX to receive daily dividends."
     },
     "open": {
-      "title": "Open sourced protocol, one-click token issuance",
-      "content": "Token forging, gateway creation, coin listing, and order book information are completely transparent"
+      "title": "Open-Source Protocol",
+      "content": "Token forging, gateway creation, coin listings, and order book information are completely transparent and open to the public."
     },
-    "what": "What is VX?",
-    "whatContent": "VX is the token associated with ViteX. VX holders enjoy payouts from a shared dividend pool comprised of transaction fees and listing fees. There will be no public nor private sale for VX. Users can only get VX through mining. The total supply of VX is 100 million. All VX will be distributed in two years, with zero inflation. The daily average VX distribution is 137,000. 10% of daily distributed VX will be set aside to fund future development of ViteX.",
-    "how": "How do I get VX?",
-    "howContent": "You can get VX in five ways. The first way is to trade on ViteX (“Trading as Mining”); the second way is to stake VITE and help ViteX receive quota for its operations (“Staking as Mining”); and the third way is to list trading pairs (“Listing as Mining”). The fourth way is to invite friends to get referral incomes. The fifth way is to place orders for liquidity increase. Trading as Mining & Referral as Mining: 60% of daily released VX will be distributed to traders according to the proportion of their transaction fee on ViteX and referrals they made; Currently there will be four markets: BTC market, ETH market, VITE market and a stablecoin market. Each market will equally share 15% of the daily distribution. Staking as Mining: 20% of daily released VX will be distributed to users who participate in staking VITE for the benefit of ViteX. Listing as Mining: A user (\"token issuer\" or an \"operator\") that lists a new trading pair will receive VX. The token issuer receives VX by participating in the same pool as traders, with his/her share calculated as if he/she executed a trade involving a transaction fee of 1,000 VITE. A listing fee is required for the DEX: for a token issued on the Vite chain, the listing fee is 10,000 VITE, half of listing fee (5000 VITE) will be burned and the rest of them will be distributed to VX holders. Placing Order as Mining: 10% of daily released VX will be distributed to traders who create orders. The amount of dividends depend on the proportion of an single address's VX balance (including available and frozen assets) to ViteX accounts' whole VX balances. The dividends will not be distributed if VX balance is less than 10 VX."
+    "questions": [
+      {
+        "question":"What is VX?",
+        "answer":[
+          "VX is the token native to the ViteX platform. The total supply of VX is 100 million, to be fully released in two years with no inflation. The daily average VX distribution is 137,000 with 10% to be set aside to fund future ViteX developments. VX holders enjoy payouts from a shared dividend pool comprised of transaction fees and listing fees. "
+        ]
+      },
+      {
+        "question":"How do I get VX?",
+        "answer":[
+          "There will be no public nor private sale for VX. The only way to obtain VX is through mining: \n",
+          "1.Trading is mining. Each time you execute a trade (i.e. take an order off the order book), you get some VX. The amount of VX you receive will be calculated based on the proportion of the amount of trading fees that you paid to the total amount of trading fees collected by ViteX that day. \n",
+          "2 Referring is Mining. Every trader will get a referral code that they can share with their friends. When your friends sign up, they get 10% off of all trading fees on ViteX (Base Transaction Fee + any applicable Zone Fees). You benefit as 5% of your referred friends' accumulated trading fees get added to your daily accumulated trading fees.\n",
+          "3 Listing is Mining. List new trading pairs to mine VX. A user (“token issuer” or an “operator”) that lists a new trading pair will also receive VX. The token issuer’s reward is calculated as if he/she executed a trade involving a transaction fee of 1,000 VITE.\n",
+          "4 Staking is mining. The Vite public chain requires quota to properly allocate is computing resources. Quota is obtained by staking VITE. If you stake VITE to help ViteX obtain the quota it requires to run, then you get VX. \n",
+          "5 Market-making is Mining. Place orders to boost liquidity on ViteX and you’ll be rewarded with VX."
+        ]
+      },
+      {
+        "question":"VX distribution rules.",
+        "answer":[
+          "The total supply of VX is 100,000,000 with no inflation. The release of VX will gradually slow down to a mining timeline of two years.\n",
+          "The number of VX mined decreases 0.5% daily in the first year and it will decrease by 0.2% every day in the second year.\n"
+        ]
+      }
+    ],
+    "howContent": "The amount of dividends depend on the proportion of an single address's VX balance (including available and frozen assets) to ViteX accounts' whole VX balances. The dividends will not be distributed if VX balance is less than 10 VX."
   },
   "useX": {
     "title": "Use ViteX",
@@ -44,30 +67,30 @@
     "createSub": "Create a Vite address and login with password",
     "createBtn": "Create Now",
     "charge": "Deposit",
-    "chargeSub": "Transfer asset from wallet to ViteX",
+    "chargeSub": "Transfer assets from wallet to ViteX account",
     "chargeBtn": "Deposit Now",
     "order": "Trade",
     "orderSub": "Send or cancel a transaction via web wallet",
     "orderBtn": "Trade Now"
   },
   "vgate": {
-    "slogan": "List Coin on ViteX via Gateways",
-    "btn": "More about VGATE"
+    "slogan": "Operators",
+    "btn": "Become an Operator"
   },
   "nav": {
     "index": "Index",
-    "trade": "Trading",
+    "trade": "Trade",
     "mine": "Mine",
     "market": "Market",
     "about": "About",
     "user": "Support",
     "faq": "FAQ",
     "info": "FAQ",
-    "create": "Sign up",
+    "create": "Sign Up",
     "login": "Log In"
   },
   "footer": {
-    "slogan": "The First DAG-Based Decentralized Exchange",
+    "slogan": "Exchange By the Community, For the Community",
     "trade": "Trade",
     "mine": "Mine",
     "market": "Market",

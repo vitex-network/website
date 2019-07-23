@@ -23,7 +23,7 @@
     <slider></slider>
     <vitex-info></vitex-info>
     <use-vitex></use-vitex>
-    <!--<v-gate></v-gate>-->
+    <v-gate></v-gate>
   </div>
 </template>
 
