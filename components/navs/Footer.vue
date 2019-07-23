@@ -65,13 +65,13 @@
             </div>
             <div class="item about">
               <div class="subtitle">{{$t('footer.about')}}</div>
-              <a
-                  :href="urls.api[$i18n.locale]"
-                  class="content"
-                  target="_blank"
-              >
-                {{$t('about.api')}}
-              </a>
+              <!--<a-->
+                  <!--:href="urls.api[$i18n.locale]"-->
+                  <!--class="content"-->
+                  <!--target="_blank"-->
+              <!--&gt;-->
+                <!--{{$t('about.api')}}-->
+              <!--</a>-->
               <a
                   :href="urls.website[$i18n.locale]"
                   class="content"

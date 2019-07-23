@@ -78,12 +78,12 @@
               ref="navbarEnd"
               class="navbar-end"
           >
-            <div class="nav-end-item">
-              <wallet-btn :btn-type="'create'"></wallet-btn>
-            </div>
-            <div class="nav-end-item">
-              <wallet-btn :btn-type="'login'"></wallet-btn>
-            </div>
+            <!--<div class="nav-end-item">-->
+              <!--<wallet-btn :btn-type="'create'"></wallet-btn>-->
+            <!--</div>-->
+            <!--<div class="nav-end-item">-->
+              <!--<wallet-btn :btn-type="'login'"></wallet-btn>-->
+            <!--</div>-->
             <div class="nav-end-item">
               <lang-select></lang-select>
             </div>

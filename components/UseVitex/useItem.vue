@@ -9,13 +9,13 @@
     >
       <div>{{$t(`useX.${itemKey+'Sub'}`)}}</div>
     </div>
-    <a
-        :href="urlMap[itemKey]"
-        class="text-btn"
-        target="_blank"
-    >
-      {{$t(`useX.${itemKey+'Btn'}`)}}
-    </a>
+    <!--<a-->
+        <!--:href="urlMap[itemKey]"-->
+        <!--class="text-btn"-->
+        <!--target="_blank"-->
+    <!--&gt;-->
+      <!--{{$t(`useX.${itemKey+'Btn'}`)}}-->
+    <!--</a>-->
   </div>
 </template>
 

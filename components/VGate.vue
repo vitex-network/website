@@ -34,10 +34,10 @@
       return{
         list: [
           {
-            key: 'vgate',
-            logo: require('~/assets/images/operators/vgate.svg'),
-            // logoActive: require('~/assets/images/operators/vgate-act.png'),
-            url: 'https://vgate.io/'
+            key: 'xinsheng',
+            logo: require('~/assets/images/operators/xinsheng.png'),
+            // logoActive: require('~/assets/images/operators/xinsheng-act.png'),
+            url: 'https://forum.vite.net/category/55/xsfund'
           },
           {
             key: 'bid',
@@ -46,11 +46,11 @@
             url: 'https://www.bbiidd.org'
           },
           {
-            key: 'xinsheng',
-            logo: require('~/assets/images/operators/xinsheng.png'),
-            // logoActive: require('~/assets/images/operators/xinsheng-act.png'),
-            url: 'https://forum.vite.net/category/55/xsfund'
-          }
+            key: 'vgate',
+            logo: require('~/assets/images/operators/vgate.svg'),
+            // logoActive: require('~/assets/images/operators/vgate-act.png'),
+            url: 'https://vgate.io/'
+          },
         ]
       };
     },

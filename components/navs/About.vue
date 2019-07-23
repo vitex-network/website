@@ -50,7 +50,7 @@ export default {
   },
   data(){
     return{
-      aboutArr: ['api','website'],
+      aboutArr: ['website'],
     };
   }
 
