@@ -56,7 +56,7 @@ routes.forEach((route) => {
 
 module.exports = {
   head: {
-    title: 'A completely decentralized exchange',
+    title: 'ViteX, Exchange By the Community, For the Community',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
