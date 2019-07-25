@@ -118,10 +118,10 @@
         "question": "Fees",
         "answer": [
           "How do trading fees work?\n",
-          "There are two types of fee rate: 1. ViteX default common fee rate is 0.2% 2. Third-party organizations who operate trading pairs may charge operator's fee rate ranging between 0-0.2%. Operators can manually adjust the fee rate on ViteX Operator section.\n",
+          "There are two types of fee charges: 1. ViteX charges a Base Transaction Fee of 0.2% paid by all traders who use the ViteX platform. 2. ViteX Operators running their own Zones may charge an additional fee (\"Zone Fee\") up to 0.2%. In other words, the minimum fees that a trader can pay is 0.2% (Base Transaction Fee with no Zone Fee) and the maximum is 0.4% (Base Transaction Fee + 0.2% Zone Fee). Operators also reserve the right to adjust their individual Zone Fees.\n",
           "The above fees are the same for both the makers and the takers.\n",
-          "You can choose to stake 10,000 VITE to lower the default trading fee rate from 0.2% to 0.1% (Operators' fee rate not included).\n",
-          "All ViteX default transaction fees (fee rate range 0.1% to 0.2%) collected will be re-distributed as dividends to VX holders.\n",
+          "A trader can choose to stake 10,000 VITE to lower the Base Transaction fee from 0.2% to 0.1%. However, any additional Zone fees will remain the same.\n",
+          "All the fees collected from the Base Transaction Fee charge will be re-distributed as dividends to VX holders.\n",
 
           "How do withdrawal fees work?\n",
           "There are no fees for deposits and withdrawals between the Vite wallet and ViteX; only quota will be consumed in these cases.\n",
@@ -155,23 +155,52 @@
         "question": "How is VX distributed?",
         "answer": [
           "The total supply of VX is 100,000,000 with no inflation. The release of VX will gradually slow down to a mining timeline of two years.\n",
-          "1. Among all VX issued in one day, 60% is distributed to traders(trading & referral as mining), 20% to VITE stakers for ViteX(staking as mining), 10% to placing order as mining and 10% to Vite Labs.\n",
-          "2. The number of VX mined decreases 0.5% daily in the first year. 477,032.36 VX will be released on the launch date of ViteX. 76,939.48 VX will be released one year after the launch. Thus, 80.095% of total supply will be released in the first year. The number of mined VX will decrease by 0.2% every day in the second year. 76,785.60 VX will be released on the first day of the second year and 37,050.73 VX will be released on the last day of the second year. 100,000,000 in total.\n"
+          "1.  Among all VX issued in one day, 60% is distributed towards trading & referring as mining, 20% to VITE staking as mining, 10% to market-making as mining and 10% to Vite Labs.\n",
+          "2.  The number of VX mined decreases 0.5% daily in the first year. 477,032.36 VX will be released on the launch date of ViteX. 76,939.48 VX will be released one year after the launch. Thus, 80.095% of total supply will be released in the first year. The number of mined VX will decrease by 0.2% every day in the second year. 76,785.60 VX will be released on the first day of the second year and 37,050.73 VX will be released on the last day of the second year for a total of 100,000,000 VX.\n"
         ]
       },
       {
         "question": "How do I get VX?",
         "answer": [
-          "You can get VX in five ways. The first way is to trade on ViteX (“Trading as Mining”); the second way is to stake VITE and help ViteX receive quota for its operations (“Staking as Mining”); and the third way is to list trading pairs (“Listing is Mining”). The fourth way is to place order on ViteX (Placing Order as Mining) and the fifth way is to invite your friends trading on ViteX (Referral as Mining)."
+          "You can get VX in five ways: \n ",
+          "1. Trading as Mining \n ",
+          "2. Staking as Mining\n ",
+          "3. Market-making as Mining \n ",
+          "4. Listing as Mining \n ",
+          "5. Referring as Mining\n "
         ]
       },
       {
-        "question": "What are the requirements for listing a token on ViteX?",
+        "question": "How do I get VX dividends?",
         "answer": [
-          "You have cryptocurrency ABC that you wish to list on ViteX. You can choose to: \n ",
-          "1. Issue directly on the VITE chain: 1) Pay 10,000 VITE for each trading pair you wish to list. \n",
-
-          "2. Issue from a third-party chain: 1）Contact your preferred gateway and pay a token minting fee. You can choose to either pay the on-chain cost of 1,000 VITE or stake 100,000 VITE to mint your ABC tokens.  2）Pay the corresponding gateway service fee in order to open ABC's cross-chain gateway from the third-party chain to the VITE chain. This will allow you to transfer your ABC tokens from the third-party chain to the Vite public chain. 3）Pay 10,000 VITE for each trading pair you wish to list. "
+          "Traders must have a minimum of 10 VX in order to receive dividends. The amount of dividends received is calculated based on the proportion of a single address's VX balance (including available and frozen assets) to the total amount of VX held by all addresses. "
+        ]
+      },
+      {
+        "question": "How much dividends will be distributed every day?",
+        "answer": [
+          "The system will distribute 1% of the total pool to all VX users proportional to the amount of VX they hold. The initial dividend pool will start at 0 and will grow according to the amount of fees collected by ViteX.",
+          "Dividends will be distributed in BTC, ETH, USDT and VITE.\n "
+        ]
+      },
+      {
+        "question": "What goes into the dividend pool?",
+        "answer": [
+          "1. All trading fees collected by the exchange, with the exception of Zone Fees charged by ViteX Operators.\n ",
+          "2. When a trading pair is opened, of the 10,000 VITE paid in listing costs, 5,000 will go into the dividend pool.\n ",
+          "3. 1,000 VITE fee for generating referral codes.\n "
+        ]
+      },
+      {
+        "question": "What are the requirements for listing tokens?",
+        "answer": [
+          "There are two scenarios for listing trading pairs on ViteX: ",
+          "1. For assets listed on the Vite chain, a fee of 10,000 VITE needs to be paid to ViteX in order to open a new trading pair. \n ",
+          "2. For assets not listed on the Vite chain, a gateway will be required. The asset to be listed is first transferred to the gateway, which then transfers the asset to the appropriate ViteX address in order to open the trading pair.\n",
+          "If you want to list an asset and are not a ViteX operator, you will need to enlist help from an Operator:\n",
+          "1) Contact an Operator to mint your asset. ViteX charges a flat fee of 1,000 VITE each time you want to issue an token.",
+          "2) Pay the service or listing fee charged by the Operator to open the cross-chain gateway for the new asset.\n",
+          "3) Pay the 10,000 ViteX listing fee to open the new trading pair on ViteX.\n"
         ]
       }
     ]
