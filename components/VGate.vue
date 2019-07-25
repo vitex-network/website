@@ -90,6 +90,16 @@
       flex-wrap: wrap;
       .item{
         padding: 0 60px;
+        vertical-align: center;
+        &:first-child{
+          @include touch {
+            padding-top: 5px;
+          }
+        }
+        @include touch {
+          padding: 0 20px;
+          max-width: 120px;
+        }
       }
     }
     .slogan-wrapper {
@@ -99,7 +109,7 @@
         font-size: 32px;
         color: #ffffff;
         @include touch {
-          font-size: 24px;
+          font-size: 22px;
         }
       }
       p {
@@ -111,6 +121,9 @@
         @include touch {
           font-size: 1rem;
         }
+      }
+      @include touch {
+        padding: 20px 0 30px 0;
       }
     }
     .btn{
@@ -128,9 +141,10 @@
         background: white;
         cursor: pointer;
         @include touch {
-          height: 44px;
-          line-height: 42px;
-          font-size: 16px;
+          height: 30px;
+          margin-top: 10px;
+          line-height: 28px;
+          font-size: 12px;
         }
       }
     }
