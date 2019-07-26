@@ -75,7 +75,7 @@
 
   .swiper-container{
     height: 300px;
-    overflow: auto;
+    overflow: hidden;
     @include touch{
       height: 102px;
       overflow: auto;

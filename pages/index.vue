@@ -74,7 +74,7 @@
     }
 
     .slogan-wrapper {
-      margin-top: 155px;
+      margin-top: 15%;
       padding-bottom: 40px;
       text-align: center;
       h1 {

@@ -252,7 +252,7 @@
 
   .is-index-public {
     background: url("~assets/images/bg/bg1.svg") no-repeat;
-    background-size: 100%;
+    background-size: 118%;
     @include touch {
       background-size: auto 432px;
     }
@@ -283,7 +283,7 @@
       background-color: transparent;
     }
     .navbar-start{
-      margin-left: 30px;
+      margin-left: 7%;
     }
     .navbar-end{
       margin-top: 8px;
