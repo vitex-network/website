@@ -252,7 +252,7 @@
 
   .is-index-public {
     background: url("~assets/images/bg/bg1.svg") no-repeat;
-    background-size: 112% 19%;
+    background-size: 100%;
     @include touch {
       background-size: auto 432px;
     }
