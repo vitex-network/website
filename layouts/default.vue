@@ -251,8 +251,8 @@
   }
 
   .is-index-public {
-    background: url("~assets/images/bg/bg1.svg") no-repeat;
-    background-size: 118%;
+    background: url("~assets/images/bg/vitexbg.svg") no-repeat;
+    /*background-size: 100% 900px;*/
     @include touch {
       background-size: auto 432px;
     }
