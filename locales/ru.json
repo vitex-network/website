@@ -2,7 +2,7 @@
   "lang": "EN",
   "head": {
     "title": "ViteX - Exchange By the Community, For the Community",
-    "document": "Documentation",
+    "document": "Документация",
     "description": {
       "index": "ViteX - Exchange By the Community, For the Community",
       "faq": "ViteX FAQ"
@@ -14,15 +14,15 @@
     "starttoUse": "Start Trading Now!"
   },
   "vitexInfo": {
-    "title": "About ViteX",
+    "title": "О ViteX",
     "desc": "ViteX is a decentralized exchange with its own native token, VX. Currently, ViteX has four major trading markets: VITE, BTC, ETH, and USDT. ",
-    "more": "Learn More",
+    "more": "Подробнее",
     "dex": {
-      "title": "Truly Decentralized",
+      "title": "По-настоящему децентрализованный",
       "content": "On-chain order matching and asset management. Smart contract driven dividend distribution. Locally private key storage."
     },
     "performance": {
-      "title": "Ultra-High Performance",
+      "title": "Сверхвысокая производительность",
       "content": "High transaction throughput with <1 second confirmation time. Zero gas fees."
     },
     "mine": {
@@ -30,18 +30,18 @@
       "content": "Mine VX by trading, staking, market-making, referring, and listing. Hold VX to receive daily dividends."
     },
     "open": {
-      "title": "Open-Source Protocol",
+      "title": "Протокол с открытым исходным кодом",
       "content": "Token forging, gateway creation, coin listings, and order book information are completely transparent and open to the public."
     },
     "questions": [
       {
-        "question": "What is VX?",
+        "question": "Что такое VX?",
         "answer": [
           "VX is the token native to the ViteX platform. The total supply of VX is 100 million, to be fully released in two years with no inflation. The daily average VX distribution is 137,000 with 10% to be set aside to fund future ViteX developments. VX holders enjoy payouts from a shared dividend pool comprised of transaction fees and listing fees. "
         ]
       },
       {
-        "question": "How do I get VX?",
+        "question": "Как получить VX?",
         "answer": [
           "There will be no public nor private sale for VX. The only way to obtain VX is through mining: \n",
           "1.Trading is mining. Each time you execute a trade (i.e. take an order off the order book), you get some VX. The amount of VX you receive will be calculated based on the proportion of the amount of trading fees that you paid to the total amount of trading fees collected by ViteX that day. \n",
@@ -52,7 +52,7 @@
         ]
       },
       {
-        "question": "VX distribution rules.",
+        "question": "Правила распространения VX.",
         "answer": [
           "The total supply of VX is 100,000,000 with no inflation. The release of VX will gradually slow down to a mining timeline of two years.\n",
           "The number of VX mined decreases 0.5% daily in the first year and it will decrease by 0.2% every day in the second year.\n"
@@ -62,19 +62,19 @@
     "howContent": "The amount of dividends depend on the proportion of an single address's VX balance (including available and frozen assets) to ViteX accounts' whole VX balances. The dividends will not be distributed if VX balance is less than 10 VX."
   },
   "useX": {
-    "title": "Use ViteX",
-    "create": "Create",
-    "createSub": "Create a Vite address and login with password",
-    "createBtn": "Create Now",
-    "charge": "Deposit",
+    "title": "Использовать ViteX",
+    "create": "Создать",
+    "createSub": "Создайте Vite-адрес и логин с паролем",
+    "createBtn": "Создать сейчас",
+    "charge": "Пополнить",
     "chargeSub": "Transfer assets from wallet to ViteX account",
     "chargeBtn": "Deposit Now",
-    "order": "Trade",
+    "order": "Торговля",
     "orderSub": "Send or cancel a transaction via web wallet",
     "orderBtn": "Trade Now"
   },
   "vgate": {
-    "slogan": "Operators",
+    "slogan": "Операторы",
     "btn": "Become an Operator"
   },
   "nav": {
@@ -83,7 +83,7 @@
     "mine": "Mine",
     "market": "Market",
     "about": "About",
-    "user": "Support",
+    "user": "Поддержка",
     "faq": "FAQ",
     "info": "FAQ",
     "create": "Sign Up",
@@ -105,7 +105,7 @@
   "user": {
     "protocol": "Policy Terms",
     "list": "Become an Operator",
-    "contact": "Contact Us"
+    "contact": "Связаться с нами"
   },
   "info": {
     "faq": "FAQ",
@@ -207,12 +207,12 @@
   "urls": {
     "telegram": {
       "ann": "Announcement Channel",
-      "english": "English",
-      "chinese": "Chinese",
-      "vietnamese": "Vietnamese",
-      "korean": "Korean",
-      "russia": "Russia",
-      "thailand": "Thailand"
+      "english": "Английский",
+      "chinese": "Китайский",
+      "vietnamese": "Вьетнамский",
+      "korean": "Корейский",
+      "russia": "Русский",
+      "thailand": "Тайский"
     }
   }
 }
