@@ -10,8 +10,8 @@ module.exports = {
       en: 'https://explorer.vite.net'
     },
     webWallet: {
-      zh: 'https://wallet.vite.net',
-      en: 'https://wallet.vite.net'
+      zh: 'https://x.vite.net',
+      en: 'https://x.vite.net'
     },
     news: {
       rss: {
@@ -85,7 +85,10 @@ module.exports = {
       russia: 'https://t.me/vite_russia',
       thailand: 'https://t.me/vite_thailand'
     },
-    telegramx: 'https://t.me/vitexexchange',
+    telegramx: {
+      en: 'https://t.me/vitexexchange',
+      zh: 'https://t.me/vitexexchangechinese'
+    },
     exchange: {
       bittrex: 'https://international.bittrex.com/Market/Index?MarketName=BTC-VITE',
       okex: 'https://www.okex.com/spot/trade#product=vite_eth',
@@ -97,23 +100,23 @@ module.exports = {
       forum: 'https://forum.vite.net'
     },
     use:{
-      create: 'https://x-test.vite.net/start',
-      charge: 'https://x-test.vite.net/tradeAssets',
-      order: 'https://x-test.vite.net/'
+      create: 'https://x.vite.net/start',
+      charge: 'https://x.vite.net/tradeAssets',
+      order: 'https://x.vite.net/'
     },
     more:{
       zh: 'https://forum.vite.net/topic/971/%E4%BA%A4%E6%98%93%E4%BD%93%E9%AA%8C%E7%9A%84%E9%9D%A9%E5%91%BD-%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E4%BA%A4%E6%98%93%E6%89%80vitex%E5%8D%B3%E5%B0%86%E9%97%AE%E4%B8%96',
       en: 'https://medium.com/vitelabs/vitex-101-update-489f6e49392'
     },
     vitex:{
-      en: 'https://x-test.vite.net',
-      zh: 'https://x-test.vite.net'
+      en: 'https://x.vite.net',
+      zh: 'https://x.vite.net'
     },
     list:'https://forms.gle/eG66BnL3btbFNvH59',
     wallet:{
-      login: 'https://x-test.vite.net/start',
-      create: 'https://x-test.vite.net/startCreate'
+      login: 'https://x.vite.net/start',
+      create: 'https://x.vite.net/startCreate'
     },
-    privacy: 'https://x-test.vite.net/privacy.html'
+    privacy: 'https://x.vite.net/privacy.html'
   }
 };

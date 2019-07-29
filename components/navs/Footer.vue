@@ -10,7 +10,7 @@
               <div class="icons">
                 <div class="icon-links-wrapper">
                   <a
-                      :href="urls.telegramx"
+                      :href="urls.telegramx[$i18n.locale]"
                       target="_blank"
                       class="text-hover-transition"
                   >

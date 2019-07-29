@@ -8,7 +8,7 @@
         </div>
       </div>
       <a
-          href="https://x-test.vite.net/"
+          :href="urls.vitex[$i18n.locale]"
           class="text-btn"
           target="_blank"
       >
@@ -22,6 +22,7 @@
 </template>
 
 <script type="text/babel">
+  import config from '~/config';
   import en from '~/assets/images/piecharten.jpg';
   import zh from '~/assets/images/piechart.jpg';
 
@@ -33,7 +34,8 @@
       return {
         piechart:{
           en,
-          zh
+          zh,
+          urls: config.urls
         },
       };
     },

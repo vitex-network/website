@@ -39,7 +39,7 @@
               class="navbar-start"
           >
             <a
-                href="https://x-test.vite.net/"
+                :href="urls.vitex[$i18n.locale]"
                 class="nav-item text-hover-transition"
                 target="_blank"
             >
@@ -185,7 +185,7 @@
         })
       };
     },
-    data: function () {
+    data() {
       return {
         navbarActive: false,
         navs: ['faq'],
