@@ -8,7 +8,7 @@
         </div>
       </div>
       <a
-          :href="urls.vitex[$i18n.locale]"
+          :href="piechart.urls.vitex[$i18n.locale]"
           class="text-btn"
           target="_blank"
       >
