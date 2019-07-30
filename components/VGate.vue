@@ -37,7 +37,7 @@
             key: 'xinsheng',
             logo: require('~/assets/images/operators/xinsheng.png'),
             // logoActive: require('~/assets/images/operators/xinsheng-act.png'),
-            url: 'https://forum.vite.net/category/55/xsfund'
+            url: 'https://forum.vite.net/topic/2313/introduction-of-vitex-operator-xsfund'
           },
           {
             key: 'bid',
