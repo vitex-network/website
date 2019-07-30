@@ -43,7 +43,7 @@ export default {
     url(){
       return {
         protocol:config.urls.privacy,
-        list:config.urls.list,
+        list:config.urls.list[this.$i18n.locale],
         contact:'mailto:info@vite.org'
       };
     }
