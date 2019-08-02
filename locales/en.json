@@ -124,8 +124,7 @@
           "All the fees collected from the Base Transaction Fee charge will be re-distributed as dividends to VX holders.\n",
 
           "How do withdrawal fees work?\n",
-          "There are no fees for deposits and withdrawals between the Vite wallet and ViteX; only quota will be consumed in these cases.\n",
-          "When assets are withdrawn to non-Vite wallets, the partner cross-chain gateway, VGATE, will charge a withdrawal fee of 5%.\n"
+          "There are no fees for deposits and withdrawals between the Vite wallet and ViteX; only quota will be consumed in these cases.\n"
         ]
       },
       {
