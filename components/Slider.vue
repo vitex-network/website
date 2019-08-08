@@ -28,12 +28,12 @@
       return {
         urls,
         banners: {
-          en: [en1,vitexTestEn],
-          zh: [zh1,vitexTestZh]
+          en: [vitexTestEn, en1],
+          zh: [vitexTestZh, zh1]
         },
         bannerUrls:{
-          en: [urls.telegramx.en,urls.vitexContest.en],
-          zh: [urls.forum,urls.vitexContest.zh]
+          en: [urls.vitexContest.en, urls.telegramx.en],
+          zh: [urls.vitexContest.zh, urls.forum]
         },
         swiperOption: {
           loop: true,
