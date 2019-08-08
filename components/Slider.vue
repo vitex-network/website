@@ -3,8 +3,8 @@
   <div class="container">
     <div v-swiper:mySwiper="swiperOption">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="banner in banners[$i18n.locale]" @click="onBannerClick">
-          <a :href="bannerUrls[$i18n.locale]" target="_blank">
+        <div class="swiper-slide" v-for="(banner,index) in banners[$i18n.locale]" @click="onBannerClick">
+          <a :href="bannerUrls[$i18n.locale][index]" target="_blank">
             <img :src="banner">
           </a>
         </div>
@@ -19,29 +19,31 @@
 <script>
   import { urls } from '~/config.js';
   import en1 from '~/assets/images/banner/en.jpg';
+  import vitexTestEn from '~/assets/images/banner/vitexTestEn.png';
   import zh1 from '~/assets/images/banner/zh.jpg';
+  import vitexTestZh from '~/assets/images/banner/vitexTestZh.png';
 
   export default {
     data () {
       return {
         urls,
         banners: {
-          en: [en1],
-          zh: [zh1]
+          en: [en1,vitexTestEn],
+          zh: [zh1,vitexTestZh]
         },
         bannerUrls:{
-          en: urls.telegramx,
-          zh: urls.forum
+          en: [urls.telegramx.en,urls.vitexContest.en],
+          zh: [urls.forum,urls.vitexContest.zh]
         },
         swiperOption: {
           loop: true,
           slidesPerView: 1,
           centeredSlides: true,
           spaceBetween: 30,
-          // autoplay: {
-          //   delay: 3000,
-          //   disableOnInteraction: false
-          // },
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+          },
           // pagination: {
           //   el: '.swiper-pagination',
           //   clickable: true
@@ -52,7 +54,7 @@
           },
           on: {
             slideChange() {
-              // console.log('onSlideChangeEnd', this);
+              // console.log(this.bannerUrls[this.$i18n.locale]);
             },
             tap() {
               // console.log('onTap', this);

@@ -112,6 +112,10 @@ module.exports = {
       en: 'https://x.vite.net',
       zh: 'https://x.vite.net'
     },
+    vitexContest:{
+      en: 'https://medium.com/vitelabs/new-campaign-alert-vitex-deposit-trading-contest-42779fa92f4',
+      zh: 'https://forum.vite.net/topic/2420/%E7%A6%8F%E5%88%A9%E6%B4%BB%E5%8A%A8-vitex%E4%BA%A4%E6%98%93%E6%89%80%E4%B8%8A%E7%BA%BF-%E5%85%85%E5%80%BC%E4%BA%A4%E6%98%93%E8%B5%A2200000vite%E5%A4%A7%E5%A5%96'
+    },
     list:{
       en: 'https://forms.gle/Xx4zfYHfNnQjvMFbA',
       zh: 'https://forms.gle/eG66BnL3btbFNvH59'
