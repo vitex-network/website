@@ -244,10 +244,11 @@
     .icon-links-wrapper {
       .margin-left{
         margin-left: 22px;
+        @include touch {
+          margin-left: 42px;
+        }
       }
-      @include touch {
-
-      }
+      
       & > a,
       /deep/ .v-popover {
         img, svg {
