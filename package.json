@@ -19,6 +19,8 @@
     "@nuxtjs/sitemap": "^0.1.1",
     "@nuxtjs/webpackmonitor": "^0.1.0",
     "babel-polyfill": "^6.26.0",
+    "bignumber.js": "^9.0.0",
+    "element-ui": "^2.11.1",
     "headroom.js": "^0.9.4",
     "is-mobile": "^2.0.0",
     "ismobilejs": "^0.4.1",
@@ -32,6 +34,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
+    "babel-plugin-component": "^1.1.1",
     "eslint": "^4.18.2",
     "eslint-config-standard": "^11.0.0",
     "eslint-loader": "^2.0.0",
