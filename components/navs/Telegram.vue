@@ -1,23 +1,23 @@
 <template>
   <no-ssr class="no-ssr">
-    <v-popover
-      offset="16"
-      :disabled="!isEnabled"
-      popoverClass="v-popover">
-      <a class="tooltip-target"  target="_blank"><fa-icon :icon="['fab', 'telegram-plane']" /></a>
+      <v-popover
+        offset="16"
+        :disabled="!isEnabled"
+        popoverClass="v-popover">
+        <a class="tooltip-target"  target="_blank"><fa-icon :icon="['fab', 'telegram-plane']" /></a>
 
-      <template slot="popover">
-        <div class="item-wrapper">
-          <div v-for="(item, index) in list" :key="index">
-            <a class="tag" target="_blank" :href="urlList[item]">
-              {{$t(`urls.telegram.${item}`)}}
-            </a>
+        <template slot="popover">
+          <div class="item-wrapper">
+            <div v-for="(item, index) in list" :key="index">
+              <a class="tag" target="_blank" :href="urlList[item]">
+                {{$t(`urls.telegram.${item}`)}}
+              </a>
+            </div>
           </div>
-        </div>
-      </template>
-    </v-popover>
+        </template>
+      </v-popover>
 
-    <a slot="placeholder" target="_blank"><fa-icon :icon="['fab', 'telegram-plane']" /></a>
+      <a slot="placeholder" target="_blank"><fa-icon :icon="['fab', 'telegram-plane']" /></a>
   </no-ssr>
 </template>
 

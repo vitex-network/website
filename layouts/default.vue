@@ -60,6 +60,22 @@
               <!--{{$t(`nav.market`)}}-->
             <!--</a>-->
             <div class="nav-item">
+              <nuxt-link
+                  :to="localePath('mine')"
+                  class="text-hover-transition"
+              >
+                {{$t('nav.mine')}}
+              </nuxt-link>
+            </div>
+            <div class="nav-item">
+              <nuxt-link
+                  :to="localePath('dividend')"
+                  class="text-hover-transition"
+              >
+                {{$t('nav.dividend')}}
+              </nuxt-link>
+            </div>
+            <div class="nav-item">
               <user></user>
             </div>
             <div class="nav-item">

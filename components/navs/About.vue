@@ -19,6 +19,7 @@
             class="dropdown-item"
             target="_blank"
             :href="url[item]"
+            :key="index"
         >
           {{$t(`about.${item}`)}}
         </a>

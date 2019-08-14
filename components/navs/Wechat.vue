@@ -1,19 +1,21 @@
 <template>
+<div class="no-ssr">
   <no-ssr class="no-ssr">
-    <v-popover
-      offset="16"
-      :disabled="!isEnabled"
-      popoverClass="v-popover"
-    >
-      <a class="tooltip-target"  target="_blank"><fa-icon :icon="['fab', 'weixin']" /></a>
+      <v-popover
+        offset="16"
+        :disabled="!isEnabled"
+        popoverClass="v-popover"
+      >
+        <a class="tooltip-target"  target="_blank"><fa-icon :icon="['fab', 'weixin']" /></a>
 
-      <template slot="popover">
-        <img src="~/assets/images/social/vitex_wechat.png" alt="">
-      </template>
-    </v-popover>
+        <template slot="popover">
+          <img src="~/assets/images/social/vitex_wechat.png" alt="">
+        </template>
+      </v-popover>
 
-    <a slot="placeholder" target="_blank"><fa-icon :icon="['fab', 'weixin']" /></a>
+      <a slot="placeholder" target="_blank"><fa-icon :icon="['fab', 'weixin']" /></a>
   </no-ssr>
+</div>
 </template>
 
 <script type="text/babel">

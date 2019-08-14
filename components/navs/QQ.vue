@@ -1,27 +1,29 @@
 <template>
-  <no-ssr class="no-ssr">
-    <v-popover
-      offset="16"
-      :disabled="!isEnabled"
-      popoverClass="v-popover"
-    >
-      <a class="tooltip-target"  target="_blank">
-        <img
+  <div class="no-ssr">
+    <no-ssr class="no-ssr">
+        <v-popover
+          offset="16"
+          :disabled="!isEnabled"
+          popoverClass="v-popover"
+        >
+          <a class="tooltip-target"  target="_blank">
+            <img
+                class="icon"
+                src="~/assets/images/social/qq.svg"
+            />
+          </a>
+
+          <template slot="popover">
+            <img src="~/assets/images/social/qq.jpg" alt="">
+          </template>
+        </v-popover>
+
+        <a slot="placeholder" target="_blank"><img
             class="icon"
             src="~/assets/images/social/qq.svg"
-        />
-      </a>
-
-      <template slot="popover">
-        <img src="~/assets/images/social/qq.jpg" alt="">
-      </template>
-    </v-popover>
-
-    <a slot="placeholder" target="_blank"><img
-        class="icon"
-        src="~/assets/images/social/qq.svg"
-    /></a>
-  </no-ssr>
+        /></a>
+    </no-ssr>
+  </div>
 </template>
 
 <script type="text/babel">

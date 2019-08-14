@@ -48,7 +48,7 @@
                         :icon="['fab', 'weibo']"
                     /></a>
                   <wechat></wechat>
-                  <qq v-show="$i18n.locale === 'zh'" class="margin-left"></qq>
+                  <qq v-if="$i18n.locale === 'zh'" class="margin-left"></qq>
                 </div>
               </div>
             </div>
