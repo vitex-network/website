@@ -89,7 +89,7 @@ module.exports = {
   },
   modules: [
     // '@nuxtjs/webpackmonitor',
-    '@nuxtjs/pwa',
+    // '@nuxtjs/pwa',
     ['nuxt-i18n', {
       locales,
       defaultLocale,
@@ -105,8 +105,10 @@ module.exports = {
           /*
           * make the default locale can work in fallback in ssr.
           * */
-          en: require('./locales/en.json')
-        }
+          en: require('./locales/en.json'),
+          zh: require('./locales/zh.json')
+        },
+        silentTranslationWarn: true
       }
     }],
     ['@nuxtjs/google-analytics', {
@@ -119,7 +121,7 @@ module.exports = {
     'swiper/dist/css/swiper.css'
   ],
   render: {
-    gzip: {threshold: 1}
+    compressor: {threshold: 1}
   },
   sitemap: {
     path: '/sitemap.xml',
