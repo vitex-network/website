@@ -3,6 +3,7 @@
     <section class="section">
       <div class="container">
         <h1 style="margin-bottom: 50px;">{{$t('nav.mine')}}</h1>
+        {{ limit }}
         <market></market>
         <div>
           <info-total-card></info-total-card>
@@ -20,7 +21,7 @@
   import InfoCard from '~/components/InfoCard.vue';
   import InfoTotalCard from '~/components/InfoTotalCard.vue';
   import market from '~/components/market/market.vue';
-
+  
   export default {
     components: {
       InfoCard,
@@ -36,6 +37,17 @@
           title: '累计挖矿总量',
           value: 9654647.56
         }]
+      }
+    },
+    async asyncData({ $axios }) {
+      try {
+        const limit = await $axios.$get('https://vitex.vite.net/test/api/v1/limit');
+        console.log(limit);
+        return { limit }
+        
+      } catch(err) {
+        console.log(err);
+        return err;
       }
     },
     data() {

@@ -212,7 +212,7 @@
     computed: {
       routeName() {
         if (!this.$route || !this.$route.name) return 'index';
-        return this.$route.name.split('-')[0];
+        return this.$route.name.split('__')[0];
       },
       navbarEndStyle() {
         if (this.navbarActive) {

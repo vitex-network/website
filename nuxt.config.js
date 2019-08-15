@@ -97,6 +97,7 @@ module.exports = {
   modules: [
     // '@nuxtjs/webpackmonitor',
     // '@nuxtjs/pwa',
+    '@nuxtjs/axios',
     ['nuxt-i18n', {
       locales,
       defaultLocale,
