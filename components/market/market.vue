@@ -14,8 +14,9 @@
 </template>
 <script>
 import tableList from './tableList.vue';
-import tabList from './tabList.vue'
-import VitexInput from '../VitexInput.vue'
+import tabList from './tabList.vue';
+import VitexInput from '../VitexInput.vue';
+import { client } from '~/utils/proto/wspb';
 
 export default {
     components: {
@@ -23,9 +24,16 @@ export default {
         tabList,
         VitexInput
     },
+    beforeMount() {
+        this.init();
+    },
     data() {
         return {
             searchText: ''
+        }
+    },
+    methods: {
+        init() {
         }
     }
 }
