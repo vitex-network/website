@@ -16,7 +16,9 @@
 import tableList from './tableList.vue';
 import tabList from './tabList.vue';
 import VitexInput from '../VitexInput.vue';
-import { client } from '~/utils/proto/wspb';
+// import { client } from '~/utils/proto/wspb';
+import { subTask } from '~/utils/proto/subTask';
+let defaultPairTimer = null;
 
 export default {
     components: {
@@ -24,16 +26,63 @@ export default {
         tabList,
         VitexInput
     },
-    beforeMount() {
-        this.init();
+    created() {
+        if (process.server) {
+          this.init();
+        }
     },
     data() {
         return {
-            searchText: ''
+            searchText: '',
+            quoteTokenCategory: 'BTC',
+            txPairList: [],
+            isLoading: false
         }
     },
     methods: {
         init() {
+            console.log("aaaa");
+            // console.log(this.$subTask);
+            defaultPairTimer = defaultPairTimer || new subTask('defaultPair', ({ args, data }) => {
+                console.log(data);
+                if (args.quoteTokenCategory !== this.quoteTokenCategory) {
+                    return;
+                }
+
+                this.isLoading = false;
+
+                if (data instanceof Array) {
+                    this.txPairList = data || [];
+                    return;
+                }
+
+                if (!data) {
+                    return;
+                }
+
+                // if (this.activeTxPair && data.symbol === this.activeTxPair.symbol) {
+                //     this.$store.commit('exSetActiveTxPair', data);
+                // }
+
+                let i;
+                for (i = 0; i < this.txPairList.length; i++) {
+                    if (this.txPairList[i].symbol === data.symbol) {
+                        this.txPairList[i] = data;
+                        break;
+                    }
+                }
+
+                if (i === this.txPairList.length) {
+                    this.txPairList.push(data);
+                    return;
+                }
+
+                this.txPairList = [].concat(this.txPairList);
+            }, 2000);
+
+            defaultPairTimer.start(() => {
+                return { quoteTokenCategory: this.quoteTokenCategory };
+            });
         }
     }
 }

@@ -88,6 +88,7 @@ module.exports = {
     }
   },
   plugins: ['~/plugins/fontawesome',
+    { src: "~/plugins/subTask.js", ssr: false },
     { src: "~/plugins/element-ui.js", ssr: true },
     {src: '~/plugins/vue-headroom', ssr: false},
     {src: '~/plugins/nuxt-swiper-plugin.js', ssr: false}],
