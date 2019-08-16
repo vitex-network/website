@@ -72,7 +72,7 @@ module.exports = {
   },
   build: {
     extractCSS: true,
-    vendor: ['@babel/parser', "~/plugins/element-ui.js"],
+    vendor: ['@babel/parser', "axios", "~/plugins/element-ui.js"],
     babel: {
       "plugins": [["component", {
         "libraryName": "element-ui",
@@ -97,7 +97,6 @@ module.exports = {
   modules: [
     // '@nuxtjs/webpackmonitor',
     // '@nuxtjs/pwa',
-    '@nuxtjs/axios',
     ['nuxt-i18n', {
       locales,
       defaultLocale,

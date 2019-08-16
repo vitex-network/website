@@ -3,7 +3,7 @@
     <section class="section">
       <div class="container">
         <h1 style="margin-bottom: 50px;">{{$t('nav.mine')}}</h1>
-        {{ limit }}
+        {{ limitData }}
         <market></market>
         <div>
           <info-total-card></info-total-card>
@@ -21,6 +21,7 @@
   import InfoCard from '~/components/InfoCard.vue';
   import InfoTotalCard from '~/components/InfoTotalCard.vue';
   import market from '~/components/market/market.vue';
+  import trade from "~/services/trade.js";
   
   export default {
     components: {
@@ -39,11 +40,11 @@
         }]
       }
     },
-    async asyncData({ $axios }) {
+    async asyncData() {
       try {
-        const limit = await $axios.$get('https://vitex.vite.net/test/api/v1/limit');
-        console.log(limit);
-        return { limit }
+        let limitData = await trade.limit();
+        console.log(limitData);
+        return { limitData }
         
       } catch(err) {
         console.log(err);

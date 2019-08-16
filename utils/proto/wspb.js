@@ -43,6 +43,7 @@ class WsProtoClient {
 
         try {
             const connect = new WebSocket(this.wsUrl);
+            // 显示指定收到的二进制数据类型是arraybuffer
             connect.binaryType = 'arraybuffer';
 
             this.connect = connect;
