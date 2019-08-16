@@ -21,7 +21,7 @@
   import InfoCard from '~/components/InfoCard.vue';
   import InfoTotalCard from '~/components/InfoTotalCard.vue';
   import market from '~/components/market/market.vue';
-  import trade from "~/services/trade.js";
+  import { limit } from "~/services/trade.js";
   
   export default {
     components: {
@@ -42,7 +42,7 @@
     },
     async asyncData() {
       try {
-        let limitData = await trade.limit();
+        let limitData = await limit();
         console.log(limitData);
         return { limitData }
         

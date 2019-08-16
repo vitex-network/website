@@ -2,13 +2,8 @@ import axios from "axios";
 import config from "./config";
 
 if (process.server) {
-  console.log("server");
   config.baseURL = "https://vitex.vite.net/test/api";
 } 
-// else {
-//   console.log("client");
-//   config.baseURL = "/api";  
-// }
 
 const service = axios.create(config);
 
