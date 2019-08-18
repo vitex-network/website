@@ -26,10 +26,9 @@ export default {
     tabList,
     VitexInput
   },
-  created() {
-    if (process.server) {
-      this.init();
-    }
+
+  beforeMount() {
+    this.init();
   },
   data() {
     return {
@@ -41,9 +40,8 @@ export default {
   },
   methods: {
     init() {
-      console.log('aaaa');
-      // console.log(this.$subTask);
       defaultPairTimer = defaultPairTimer || new subTask('defaultPair', ({ args, data }) => {
+        console.log('bbbbbb');
         console.log(data);
         if (args.quoteTokenCategory !== this.quoteTokenCategory) {
           return;

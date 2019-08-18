@@ -1,16 +1,16 @@
-import http from "http";
-import https from "https";
+import http from 'http';
+import https from 'https';
 
 export default {
   headers: {
     post: {
-      "Content-Type": "application/json;charset=UTF-8"
+      'Content-Type': 'application/json;charset=UTF-8'
     },
-    "X-Requested-With": "XMLHttpRequest"
+    'X-Requested-With': 'XMLHttpRequest'
   },
   timeout: 10000,
-  withCredentials: true,
-  responseType: "json",
+  withCredentials: false,
+  responseType: 'json',
   httpAgent: new http.Agent({
     keepAlive: true
   }),

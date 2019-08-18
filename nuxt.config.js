@@ -72,11 +72,11 @@ module.exports = {
   },
   build: {
     extractCSS: true,
-    vendor: ['@babel/parser', "axios", "~/plugins/element-ui.js"],
+    vendor: ['@babel/parser', 'axios', '~/plugins/element-ui.js'],
     babel: {
-      "plugins": [["component", {
-        "libraryName": "element-ui",
-        "styleLibraryName": "theme-chalk"
+      'plugins': [['component', {
+        'libraryName': 'element-ui',
+        'styleLibraryName': 'theme-chalk'
       }]]
     },
     postcss: {
@@ -88,8 +88,7 @@ module.exports = {
     }
   },
   plugins: ['~/plugins/fontawesome',
-    { src: "~/plugins/subTask.js", ssr: false },
-    { src: "~/plugins/element-ui.js", ssr: true },
+    { src: '~/plugins/element-ui.js', ssr: true },
     {src: '~/plugins/vue-headroom', ssr: false},
     {src: '~/plugins/nuxt-swiper-plugin.js', ssr: false}],
   router: {

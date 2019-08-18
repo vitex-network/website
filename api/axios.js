@@ -1,9 +1,7 @@
-import axios from "axios";
-import config from "./config";
+import axios from 'axios';
+import config from './config';
 
-if (process.server) {
-  config.baseURL = "https://vitex.vite.net/test/api";
-} 
+config.baseURL = 'https://vitex.vite.net/test/api';
 
 const service = axios.create(config);
 
@@ -30,8 +28,8 @@ service.interceptors.response.use(
   error => {
     if (!error.code) {
       error = {
-        code: error.response && error.response.status ? error.response.status : "5000",
-        msg: error.response && error.response.statusText ? error.response.statusText : "request error"
+        code: error.response && error.response.status ? error.response.status : '5000',
+        msg: error.response && error.response.statusText ? error.response.statusText : 'request error'
       };
     }
     return Promise.reject(error);
@@ -40,7 +38,7 @@ service.interceptors.response.use(
 
 export function post(url, data) {
   return service({
-    method: "post",
+    method: 'post',
     url,
     data
   });
@@ -48,7 +46,7 @@ export function post(url, data) {
 
 export function get(url, data) {
   return service({
-    method: "get",
+    method: 'get',
     url,
     params: data
   });
