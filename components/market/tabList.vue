@@ -14,21 +14,21 @@
 <script>
 
 export default {
-    data() {
-        return {
-            curentCategory: 'USDT'
-        };
-    },
-    computed: {
-        quoteTokenCategory() {
-            return [ 'USDT', 'BTC', 'ETH', 'VITE' ];
-        }
-    },
-    methods: {
-        changeCategory(category) {
-            this.curentCategory = category;
-        }
+  data() {
+    return {
+      curentCategory: 'USDT'
+    };
+  },
+  computed: {
+    quoteTokenCategory() {
+      return [ 'USDT', 'BTC', 'ETH', 'VITE' ];
     }
+  },
+  methods: {
+    changeCategory(category) {
+      this.curentCategory = category;
+    }
+  }
 };
 </script>
 

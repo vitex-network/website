@@ -21,7 +21,7 @@
   import InfoCard from '~/components/InfoCard.vue';
   import InfoTotalCard from '~/components/InfoTotalCard.vue';
   import market from '~/components/market/market.vue';
-  import { limit } from "~/services/trade.js";
+  import { limit } from '~/services/trade.js';
   
   export default {
     components: {
@@ -37,7 +37,7 @@
         }, {
           title: '累计挖矿总量',
           value: 9654647.56
-        }]
+        }];
       }
     },
     async asyncData() {
@@ -45,7 +45,7 @@
         if (process.server) {
           let limitData = await limit();
           console.log(limitData);
-          return { limitData }
+          return { limitData };
         }
       } catch(err) {
         console.log(err);
@@ -55,7 +55,7 @@
     data() {
       return {
         limitData: null
-      }
+      };
     },
   };
 </script>

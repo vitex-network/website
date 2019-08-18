@@ -1,9 +1,9 @@
-import Vue from "vue";
+import Vue from 'vue';
 import {
   Loading, 
   Table,
   TableColumn,
-} from "element-ui";
+} from 'element-ui';
 
 
 

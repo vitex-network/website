@@ -1,4 +1,4 @@
-import { get, post } from "~/api/axios";
+import { get, post } from '~/api/axios';
 
 const version = 'v1';
 
@@ -8,38 +8,38 @@ export function limit() {
 
 export function klineHistory({ startTime, endTime, symbol, interval }) {
   return get(`${ version }/klines`, {
-          startTime,
-          endTime,
-          limit: 1500,
-          interval,
-          symbol
+    startTime,
+    endTime,
+    limit: 1500,
+    interval,
+    symbol
   });
 }
 
 export function depth({ symbol, step }) {
   return get(`${ version }/depth`, {
-      symbol, 
-      step 
+    symbol, 
+    step 
   });
 }
 
 export function order({ address, total, startTime, endTime, tradeTokenSymbol, quoteTokenSymbol, side, offset, limit, status }) {
   return get(`${ version }/orders`,{
-      address, startTime, endTime, total, tradeTokenSymbol, quoteTokenSymbol, side, offset, limit, status
+    address, startTime, endTime, total, tradeTokenSymbol, quoteTokenSymbol, side, offset, limit, status
   });
 }
 
 
 export function orderDetail({ orderId, symbol, offset, limit, side }) {
   return get(`${ version }/trades`,{ 
-      orderId, symbol, offset, limit, side 
+    orderId, symbol, offset, limit, side 
   });
 }
 
 export function latestTx({ symbol }) {
   return get(`${ version }/trades`,{
-      symbol,
-      limit: 100
+    symbol,
+    limit: 100
   });
 }
 
@@ -60,70 +60,70 @@ export function defaultPair({ quoteTokenCategory }) {
 
 export function assignPair({ symbols = [] }) {
   return get(`${ version }/ticker/24hr`, {
-     symbols: symbols.join(',')
+    symbols: symbols.join(',')
   });
 }
 
 export function marketsReserve({ quoteTokenSymbol }) {
   return get(`${ version }/token/unmapped`, {
-     quoteTokenSymbol
+    quoteTokenSymbol
   });
 }
 
 export function tokenDetail({ tokenId }) {
   return get(`${ version }/token/detail`,{
-     tokenId
+    tokenId
   });
 }
 
 export function baseToken() {
   return get(`${ version }/tokens`,{
-      category: 'quote'
+    category: 'quote'
   });
 }
 
 export function tokenMap({ symbol }) {
   return get(`${ version }/token/mapped`,{
-      quoteTokenSymbol: symbol
+    quoteTokenSymbol: symbol
   });
 }
 
 export function chargeDetail({ tokenId, address }) {
   return get(`${ version }/deposit-withdraw`,{
-      pageSize: 100,
-      pageNo: 1,
-      tokenId,
-      address
+    pageSize: 100,
+    pageNo: 1,
+    tokenId,
+    address
   });
 }
 
 export function tokenInfoFromGithub({ tokenSymbol, platformSymbol = 'VITE', tokenAddress } = { tokenSymbol, platformSymbol: 'VITE', tokenAddress }) {
   return post(`${ version }/cryptocurrency/info/query`, {
-      tokenSymbol, platformSymbol, tokenAddress
+    tokenSymbol, platformSymbol, tokenAddress
   });
 }
 
 export function tokenRateFromCMC({ tokenSymbol, platformSymbol = 'VITE', tokenAddress } = { tokenSymbol, platformSymbol: 'VITE', tokenAddress }) {
   return post(`${ version }/cryptocurrency/rate/query`,{
-      tokenSymbol, platformSymbol, tokenAddress
+    tokenSymbol, platformSymbol, tokenAddress
   });
 }
 
 export function miningTrade({ address, offset, limit = 30 }) {
   return get(`${ version }/mining/trade`, {
-     address, offset, limit
+    address, offset, limit
   });
 }
 
 export function miningPledge({ address, offset, limit = 30 }) {
   return get(`${ version }/mining/pledge`, {
-      address, offset, limit
+    address, offset, limit
   });
 }
 
 export function dividend({ address, offset, limit = 30 }) {
   return get(`${ version }/dividend`, {
-      address, offset, limit 
+    address, offset, limit 
   });
 }
 
@@ -133,28 +133,28 @@ export function marketsClosed() {
 
 export function operator(operatorId) {
   return get(`${ version }/operator`, {
-      operatorId,
-      offset: 0,
-      limit: 100
+    operatorId,
+    offset: 0,
+    limit: 100
   });
 }
 
 export function operatorTokens(operatorId) {
   return get(`${ version }/operator/tokens`,{
-      operatorId,
-      offset: 0,
-      limit: 100
+    operatorId,
+    offset: 0,
+    limit: 100
   });
 }
 
 export function operatorMarkets({ operatorId, tradeToken, offset, limit = 30 }) {
   return get(`${ version }/operator/markets`, {
-      operatorId, tradeToken, offset, limit 
+    operatorId, tradeToken, offset, limit 
   });
 }
 
 export function operatorIncome({ operatorId, tradeToken, quoteToken, offset, limit = 30 }) {
   return get(`${ version }/operator/income`, {
-      operatorId, tradeToken, quoteToken, offset, limit
+    operatorId, tradeToken, quoteToken, offset, limit
   });
 }
