@@ -14,7 +14,7 @@ import faWechat from '@fortawesome/fontawesome-free-brands/faWeixin';
 import faYoutube from '@fortawesome/fontawesome-free-brands/faYoutube';
 import faWeibo from '@fortawesome/fontawesome-free-brands/faWeibo';
 
-export default ({ app, store }) => {
+export default () => {
   fontawesome.library.add(faGithub, faLinkin, faTwitter, faDiscord, faPlusCircle, faTelegram, faReddit, faWechat, faYoutube, faWeibo);
 
   Vue.component('fa-icon', FontAwesomeIcon);

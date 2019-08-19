@@ -59,7 +59,9 @@ class WsProtoClient {
       };
 
       connect.onmessage = e => {
+        console.log('wssssssssss');
         const data = DexProto.decode(Buffer.from(e.data));
+        console.log(data);  
         if (data.op_type !== this.MESSAGETYPE.PUSH) {
           // console.log(data);
           return;
@@ -71,7 +73,7 @@ class WsProtoClient {
         }
 
         const realData = getRealData(data);
-        // console.log('Onmessage', data, JSON.stringify(realData));
+        console.log('Onmessage', data, JSON.stringify(realData));
 
         const error = data.error_code || undefined;
         this._subKeys[data.event_key] && this._subKeys[data.event_key].forEach(c => {

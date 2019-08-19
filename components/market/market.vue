@@ -1,14 +1,14 @@
 <template>
     <div>
         <div class="market-table">
-          <tab-list></tab-list>
+          <tab-list @currCategroy="getActiveTxPair" :current-category="quoteTokenCategory"></tab-list>
           <vitex-input 
             class="market-search-input" 
             v-model="searchText"
             :placeholder="`请搜索`">
             <img slot="before" class="icon" src="~assets/images/search.svg"/>
           </vitex-input>
-          <table-list></table-list>
+          <table-list :list="activeTxPairList"></table-list>
         </div>
     </div>
 </template>
@@ -16,7 +16,6 @@
 import tableList from './tableList.vue';
 import tabList from './tabList.vue';
 import VitexInput from '../VitexInput.vue';
-// import { client } from '~/utils/proto/wspb';
 import { subTask } from '~/utils/proto/subTask';
 let defaultPairTimer = null;
 
@@ -33,16 +32,34 @@ export default {
   data() {
     return {
       searchText: '',
-      quoteTokenCategory: 'BTC',
+      quoteTokenCategory: 'VITE',
       txPairList: [],
-      isLoading: false
+      isLoading: false,
+      searchList: []
+      
     };
   },
+  computed: {
+    activeTxPairList() {
+      let list = this.searchText
+        ? this.searchList 
+        : this.txPairList;
+      list = [].concat(list);
+
+      return list;
+    }
+  },
+  watch: {
+    quoteTokenCategory() {
+      this.init();
+    }
+  },
   methods: {
+    getActiveTxPair(val) {
+      this.quoteTokenCategory = val;
+    },
     init() {
       defaultPairTimer = defaultPairTimer || new subTask('defaultPair', ({ args, data }) => {
-        console.log('bbbbbb');
-        console.log(data);
         if (args.quoteTokenCategory !== this.quoteTokenCategory) {
           return;
         }
@@ -57,10 +74,6 @@ export default {
         if (!data) {
           return;
         }
-
-        // if (this.activeTxPair && data.symbol === this.activeTxPair.symbol) {
-        //     this.$store.commit('exSetActiveTxPair', data);
-        // }
 
         let i;
         for (i = 0; i < this.txPairList.length; i++) {

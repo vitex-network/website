@@ -2,8 +2,8 @@
     <ul class="vitex-tab-list">
         <li v-for="(c, i) in quoteTokenCategory" :key="i"
             :class="{
-                'active': c === curentCategory,
-                'active-side': (i === 0) || (quoteTokenCategory[i-1] === curentCategory)
+                'active': c === viewCategory,
+                'active-side': (i === 0) || (quoteTokenCategory[i-1] === viewCategory)
             }" class="vitex-tab __pointer"
             @click="changeCategory(c)">
             {{ c }}
@@ -16,17 +16,26 @@
 export default {
   data() {
     return {
-      curentCategory: 'USDT'
     };
   },
+  props: {
+    currentCategory: {
+      type: String,
+      default: 'USDT'
+    }
+  },
   computed: {
+    viewCategory() {
+      return this.currentCategory;
+    },  
     quoteTokenCategory() {
       return [ 'USDT', 'BTC', 'ETH', 'VITE' ];
     }
   },
   methods: {
     changeCategory(category) {
-      this.curentCategory = category;
+      this.viewCategory = category;
+      this.$emit('currCategroy', category);
     }
   }
 };

@@ -42,11 +42,9 @@
     },
     async asyncData() {
       try {
-        if (process.server) {
-          let limitData = await limit();
-          console.log(limitData);
-          return { limitData };
-        }
+        let limitData = await limit();
+        console.log(limitData);
+        return { limitData };
       } catch(err) {
         console.log(err);
         return err;

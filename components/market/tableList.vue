@@ -1,31 +1,50 @@
 <template>
    <el-table
-    :data="tableData"
-    style="width: 100%"
-    :default-sort = "{prop: 'date', order: 'descending'}"
-    >
+    :data="showList"
+    style="width: 100%">
     <el-table-column
-      prop="date"
-      label="日期"
+      prop="txPair"
+      label="交易对"
       sortable
-      width="180">
+      :formatter="getTxPairShowSymbol">
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
+      prop="operator"
+      label="运营商">
+    </el-table-column>
+    <el-table-column
+      prop="closePrice"
+      label="最新价格"
       sortable
-      width="180">
+      :formatter="formatClosePrice">
     </el-table-column>
     <el-table-column
       prop="address"
-      label="地址"
+      label="24h变化"
+      sortable
       :formatter="formatter">
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="24h最高">
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="24h最低">
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="24h成交量"
+      sortable>
     </el-table-column>
   </el-table>
 </template>
 
 <script>
 import BigNumber from '~/utils/bigNumber';
+import { rateToken, baseToken } from '~/services/trade.js';
+import { timer } from '~/utils/asyncFlow.js';
+const loopTime = 10000;
 
 export default {
   props: {
@@ -46,60 +65,61 @@ export default {
     return {
       symbol: null,
       realPrice: '',
-      top: 0,
-      tableData: [{
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-04',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1517 弄'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1519 弄'
-      }, {
-        date: '2016-05-03',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1516 弄'
-      }]
+      rateTimer: null,
+      rateTokenIds: []
     };
   },
+  beforeMount() {
+    this.startLoopExchangeRate();
+  },
   computed: {
-    activeSymbol() {
-      return this.activeTxPair ? this.activeTxPair.symbol || null : null;
-    },
-    activeTxPair() {
-      return 'VITE';
-      // return this.$store.state.exchangeActiveTxPair.activeTxPair;
-    },
     showList() {
-      const list = this.orderList(this.list);
-      const query = getQuery();
-      const symbol = query.symbol || 'VITE_BTC-000';
-
-      const _l = [];
-      let activeTxPair = list && list.length ? list[0] : null;
-
-      list.forEach(_t => {
-        if (symbol && _t.symbol === symbol) {
-          activeTxPair = _t;
-        }
-        _l.push(_t);
+      this.rateTokenIds = [];
+      let list = this.list.map(item=> {
+        this.rateTokenIds.push(item.tradeToken);
+        return {
+          ...item,
+          operator:'VGATE'
+        };
       });
-
-      return _l;
+      console.log(list);
+      
+      return list;
     }
   },
   methods: {
-    formatter(row, column) {
-      return row.address;
+    stopLoopExchangeRate() {
+      this.rateTimer && this.rateTimer.stop();
+      this.rateTimer = null;
     },
-    getTxPairShowSymbol(txPair) {
-      const tradeTokenSymbol = txPair.tradeTokenSymbol.split('-')[0];
-      const quoteTokenSymbol = txPair.quoteTokenSymbol.split('-')[0];
+    startLoopExchangeRate() {
+      this.stopLoopExchangeRate();
+      const f = () => {
+        if (!this.rateTokenIds || !this.rateTokenIds.length) {
+          return;
+        }
+        return rateToken({ tokenIdList: this.rateTokenIds }).then(data => {
+          console.log(data);
+        });
+      };
+
+      this.rateTimer = new timer(f, loopTime);
+      this.rateTimer.start();
+    },
+    formatClosePrice(row) {
+      let closePrice = BigNumber.formatNum(row.closePrice, row.pricePrecision);
+      let realPrice = this.getRealPrice(row);
+      return closePrice/realPrice;
+    },
+    getTxPairShowSymbol(row) {
+      const tradeTokenSymbol = row.tradeTokenSymbol.split('-')[0];
+      const quoteTokenSymbol = row.quoteTokenSymbol.split('-')[0];
       return `${ tradeTokenSymbol }/${ quoteTokenSymbol }`;
+    },
+    /// todo 
+    formatter(row, column) {
+      return '';
+    //   return row.address;
     },
     getPercent(num) {
       return `${ BigNumber.multi(num, 100, 2) }%`;
@@ -108,31 +128,26 @@ export default {
       return BigNumber.formatNum(num, fix);
     },
     getRealPrice(txPair) {
+      console.log(txPair);
       if (!txPair) {
         return;
       }
 
-      if (this.closeMarket.find(v => v.symbol === txPair.symbol)) {
-        return this.$t('tradeCenter.marketClosed', { symbol: txPair.symbol });
-      }
-
+    
       const rate = this.getRate(txPair.quoteToken);
       if (!rate) {
-        return txPair.tradeTokenSymbol;
+        return '--';
       }
 
       const price = BigNumber.multi(txPair.closePrice || 0, rate || 0, 2);
       if (!+price) {
-        return txPair.tradeTokenSymbol;
+        return '--';
       }
 
-      // const pre = this.$store.state.env.currency === 'cny' ? '≈¥' : '≈$';
-      const pre = '≈¥';
-      return `${ txPair.tradeTokenSymbol }  ${ pre }${ price }`;
+      const pre = this.$i18n.locale === 'zh' ? '¥' : '$';
+      return `${ pre }${ price }`;
     },
     getRate(tokenId) {
-      // const rateList = this.$store.state.exchangeRate.rateMap || {};
-      // const coin = this.$store.state.env.currency;
 
       const rateList =  {};
       const coin = '';
