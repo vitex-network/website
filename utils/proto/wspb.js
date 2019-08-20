@@ -59,9 +59,7 @@ class WsProtoClient {
       };
 
       connect.onmessage = e => {
-        console.log('wssssssssss');
         const data = DexProto.decode(Buffer.from(e.data));
-        console.log(data);  
         if (data.op_type !== this.MESSAGETYPE.PUSH) {
           // console.log(data);
           return;

@@ -1,50 +1,31 @@
 <template>
-   <el-table
-    :data="showList"
-    style="width: 100%">
-    <el-table-column
-      prop="txPair"
-      label="交易对"
-      sortable
-      :formatter="getTxPairShowSymbol">
-    </el-table-column>
-    <el-table-column
-      prop="operator"
-      label="运营商">
-    </el-table-column>
-    <el-table-column
-      prop="closePrice"
-      label="最新价格"
-      sortable
-      :formatter="formatClosePrice">
-    </el-table-column>
-    <el-table-column
-      prop="address"
-      label="24h变化"
-      sortable
-      :formatter="formatter">
-    </el-table-column>
-    <el-table-column
-      prop="address"
-      label="24h最高">
-    </el-table-column>
-    <el-table-column
-      prop="address"
-      label="24h最低">
-    </el-table-column>
-    <el-table-column
-      prop="address"
-      label="24h成交量"
-      sortable>
-    </el-table-column>
-  </el-table>
+    <div class="tx-pair-wrapper">
+        <span v-show="symbol && realPrice" class="real-price" :style="`top: ${top}px`">{{ realPrice }}</span>
+        <div ref="txList" class="tx-list">
+            <div :ref="`txPair${i}`" v-for="(txPair, i) in showList" :key="i"
+                 class="__center-tb-row __pointer"
+                 @mouseenter="showRealPrice(txPair, i)"
+                 @mouseleave="hideRealPrice(txPair)">
+                <span class="__center-tb-item tx-pair">
+                    <span class="describe">{{ getTxPairShowSymbol(txPair) }}</span>
+                </span>
+                <span class="__center-tb-item">
+                    {{ txPair.closePrice ? formatNum(txPair.closePrice, txPair.pricePrecision) : '--' }}
+                </span>
+                <span  class="__center-tb-item percent" :class="{
+                    'up': +txPair.priceChange > 0,
+                    'down': +txPair.priceChange < 0
+                }">{{ txPair.priceChangePercent ? getPercent(txPair.priceChangePercent) : '--' }}</span>
+                <span  class="__center-tb-item">
+                    {{ txPair.amount ? formatNum(txPair.amount, 1) : '--' }}
+                </span>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
 import BigNumber from '~/utils/bigNumber';
-import { rateToken, baseToken } from '~/services/trade.js';
-import { timer } from '~/utils/asyncFlow.js';
-const loopTime = 10000;
 
 export default {
   props: {
@@ -55,71 +36,26 @@ export default {
     list: {
       type: Array,
       default: () => []
-    },
-    showCol: {
-      type: String,
-      default: 'updown'
     }
   },
   data() {
     return {
       symbol: null,
       realPrice: '',
-      rateTimer: null,
-      rateTokenIds: []
+      top: 0
     };
-  },
-  beforeMount() {
-    this.startLoopExchangeRate();
   },
   computed: {
     showList() {
-      this.rateTokenIds = [];
-      let list = this.list.map(item=> {
-        this.rateTokenIds.push(item.tradeToken);
-        return {
-          ...item,
-          operator:'VGATE'
-        };
-      });
-      console.log(list);
-      
+      const list = this.orderList(this.list);
       return list;
     }
   },
   methods: {
-    stopLoopExchangeRate() {
-      this.rateTimer && this.rateTimer.stop();
-      this.rateTimer = null;
-    },
-    startLoopExchangeRate() {
-      this.stopLoopExchangeRate();
-      const f = () => {
-        if (!this.rateTokenIds || !this.rateTokenIds.length) {
-          return;
-        }
-        return rateToken({ tokenIdList: this.rateTokenIds }).then(data => {
-          console.log(data);
-        });
-      };
-
-      this.rateTimer = new timer(f, loopTime);
-      this.rateTimer.start();
-    },
-    formatClosePrice(row) {
-      let closePrice = BigNumber.formatNum(row.closePrice, row.pricePrecision);
-      let realPrice = this.getRealPrice(row);
-      return closePrice/realPrice;
-    },
-    getTxPairShowSymbol(row) {
-      const tradeTokenSymbol = row.tradeTokenSymbol.split('-')[0];
-      const quoteTokenSymbol = row.quoteTokenSymbol.split('-')[0];
+    getTxPairShowSymbol(txPair) {
+      const tradeTokenSymbol = txPair.tradeTokenSymbol.split('-')[0];
+      const quoteTokenSymbol = txPair.quoteTokenSymbol.split('-')[0];
       return `${ tradeTokenSymbol }/${ quoteTokenSymbol }`;
-    },
-    /// todo 
-    formatter(row, column) {
-      return '';
-    //   return row.address;
     },
     getPercent(num) {
       return `${ BigNumber.multi(num, 100, 2) }%`;
@@ -127,30 +63,49 @@ export default {
     formatNum(num, fix) {
       return BigNumber.formatNum(num, fix);
     },
-    getRealPrice(txPair) {
-      console.log(txPair);
-      if (!txPair) {
+    showRealPrice(txPair, i) {
+      const elTop = this.$refs[`txPair${ i }`][0].getBoundingClientRect().top;
+      const listTop = this.$refs.txList.getBoundingClientRect().top;
+      const height = this.$refs.txList.clientHeight;
+      const top = elTop - listTop - 8;
+
+      if (top > listTop + height) {
+        this.hideRealPrice();
         return;
       }
 
-    
+      this.top = top;
+      this.symbol = txPair.symbol;
+      this.realPrice = this.getRealPrice(txPair);
+    },
+    hideRealPrice(txPair) {
+      if (this.symbol && txPair.symbol === this.symbol) {
+        this.symbol = null;
+      }
+    },
+    getRealPrice(txPair) {
+      if (!txPair) {
+        return txPair.tradeTokenSymbol;
+      }
+
       const rate = this.getRate(txPair.quoteToken);
       if (!rate) {
-        return '--';
+        return txPair.tradeTokenSymbol;
       }
 
       const price = BigNumber.multi(txPair.closePrice || 0, rate || 0, 2);
       if (!+price) {
-        return '--';
+        return txPair.tradeTokenSymbol;
       }
 
-      const pre = this.$i18n.locale === 'zh' ? '¥' : '$';
-      return `${ pre }${ price }`;
+      console.log(this.$i18n.locale);
+
+      const pre = this.$i18n.locale === 'zh' ? '≈¥': '≈$';
+      return `${ txPair.tradeTokenSymbol }  ${ pre }${ price }`;
     },
     getRate(tokenId) {
-
-      const rateList =  {};
-      const coin = '';
+      const rateList = this.$store.state.exchangeRate.rateMap || {};
+      const coin = this.$i18n.locale === 'zh' ? 'cny': 'usd';
 
       if (!tokenId || !rateList[tokenId]) {
         return null;
@@ -195,5 +150,58 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "./center.scss";
+
+.tx-pair-wrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    height: 1px;
+
+    .real-price {
+        position: absolute;
+        padding: 8px;
+        right: -10px;
+        z-index: 1;
+        transform: translateX(100%);
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+        font-size: 12px;
+        color: #5E6875;
+        font-family: $font-normal, arial, sans-serif;
+        font-weight: 400;
+
+        &::after {
+            content: ' ';
+            border: 5px solid transparent;
+            border-right: 5px solid #fff;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            margin-top: -5px;
+            margin-left: -10px;
+        }
+    }
+
+    .tx-list {
+        flex: 1;
+        overflow: auto;
+    }
+}
+
+.__center-tb-row {
+    .__center-tb-item {
+        position: relative;
+    }
+
+    .describe {
+        display: inline-block;
+        width: 80px;
+    }
+
+    &.active {
+        background: rgba(75, 116, 255, 0.1);
+    }
+}
 
 </style>

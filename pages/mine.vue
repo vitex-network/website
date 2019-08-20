@@ -29,6 +29,9 @@
       InfoTotalCard,
       market
     },
+    beforeMount() {
+      this.$store.dispatch('startLoopExchangeRate');
+    },
     computed: {
       totalList() {
         return [{

@@ -1,45 +1,45 @@
 export class timer {
-    constructor(loopFunc, interval = 1000) {
-        this.interval = interval;
-        this.timeHandler = null;
-        this.loopFunc = loopFunc;
+  constructor(loopFunc, interval = 1000) {
+    this.interval = interval;
+    this.timeHandler = null;
+    this.loopFunc = loopFunc;
+  }
+
+  stop() {
+    window.clearTimeout(this.timeHandler);
+    this.timeHandler = null;
+    this.loopFunc = null;
+  }
+
+  start() {
+    if (this.timeHandler || !this.loopFunc) {
+      return;
     }
 
-    stop() {
-        window.clearTimeout(this.timeHandler);
-        this.timeHandler = null;
-        this.loopFunc = null;
-    }
+    // Exec immediately for once
+    this.loopFunc();
+    const _task = () => {
+      if (!this.loopFunc) {
+        return;
+      }
 
-    start() {
-        if (this.timeHandler || !this.loopFunc) {
-            return;
+      this.timeHandler = window.setTimeout(() => {
+        const triggered = this.loopFunc();
+
+        // Normal function
+        if (!triggered || !(triggered instanceof Promise) || !triggered.then) {
+          return _task();
         }
 
-        // Exec immediately for once
-        this.loopFunc();
-        const _task = () => {
-            if (!this.loopFunc) {
-                return;
-            }
+        // Promise
+        triggered.then(() => {
+          _task();
+        }).catch(() => {
+          _task();
+        });
+      }, this.interval);
+    };
 
-            this.timeHandler = window.setTimeout(() => {
-                const triggered = this.loopFunc();
-
-                // Normal function
-                if (!triggered || !(triggered instanceof Promise) || !triggered.then) {
-                    return _task();
-                }
-
-                // Promise
-                triggered.then(() => {
-                    _task();
-                }).catch(() => {
-                    _task();
-                });
-            }, this.interval);
-        };
-
-        _task();
-    }
+    _task();
+  }
 }

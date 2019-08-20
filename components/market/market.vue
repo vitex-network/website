@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="market-table">
-          <tab-list @currCategroy="getActiveTxPair" :current-category="quoteTokenCategory"></tab-list>
+        <div class="market-wrapper">
+          <tab-list></tab-list>
           <vitex-input 
             class="market-search-input" 
             v-model="searchText"
@@ -35,8 +35,8 @@ export default {
       quoteTokenCategory: 'VITE',
       txPairList: [],
       isLoading: false,
-      searchList: []
-      
+      searchList: [],
+      rateTimer: null
     };
   },
   computed: {
@@ -47,11 +47,6 @@ export default {
       list = [].concat(list);
 
       return list;
-    }
-  },
-  watch: {
-    quoteTokenCategory() {
-      this.init();
     }
   },
   methods: {
@@ -99,6 +94,13 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.market-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 .market-search-input.input-wrapper {
     box-sizing: border-box;
     height: 20px;
