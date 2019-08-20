@@ -12,32 +12,32 @@
 </template>
 <script>
 export default {
-    data() {
-        return {
-            list: [{
-              vxAmount: 71197.08,
-              tokenAmount: 12345,
-              tokenSymbol: 'VITE',
-              btcAmount: 1
-            }, {
-              vxAmount: 71197.08,
-              tokenAmount: 12345,
-              tokenSymbol: 'VITE',
-              btcAmount: 1 
-            }, {
-              vxAmount: 71197.08,
-              tokenAmount: 12345,
-              tokenSymbol: 'VITE',
-              btcAmount: 1 
-            }, {
-              vxAmount: 71197.08,
-              tokenAmount: 12345,
-              tokenSymbol: 'VITE',
-              btcAmount: 1 
-            }]
-        }
-    }
-}
+  data() {
+    return {
+      list: [{
+        vxAmount: 71197.08,
+        tokenAmount: 12345,
+        tokenSymbol: 'VITE',
+        btcAmount: 1
+      }, {
+        vxAmount: 71197.08,
+        tokenAmount: 12345,
+        tokenSymbol: 'VITE',
+        btcAmount: 1 
+      }, {
+        vxAmount: 71197.08,
+        tokenAmount: 12345,
+        tokenSymbol: 'VITE',
+        btcAmount: 1 
+      }, {
+        vxAmount: 71197.08,
+        tokenAmount: 12345,
+        tokenSymbol: 'VITE',
+        btcAmount: 1 
+      }]
+    };
+  }
+};
 </script>
 <style lang="scss" scoped>
 

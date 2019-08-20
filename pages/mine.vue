@@ -3,7 +3,6 @@
     <section class="section">
       <div class="container">
         <h1 style="margin-bottom: 50px;">{{$t('nav.mine')}}</h1>
-        {{ limitData }}
         <market></market>
         <div>
           <info-total-card></info-total-card>
@@ -21,7 +20,6 @@
   import InfoCard from '~/components/InfoCard.vue';
   import InfoTotalCard from '~/components/InfoTotalCard.vue';
   import market from '~/components/market/market.vue';
-  import { limit } from '~/services/trade.js';
   
   export default {
     components: {
@@ -44,14 +42,6 @@
       }
     },
     async asyncData() {
-      try {
-        let limitData = await limit();
-        console.log(limitData);
-        return { limitData };
-      } catch(err) {
-        console.log(err);
-        return err;
-      }
     },
     data() {
       return {

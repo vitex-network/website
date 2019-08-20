@@ -11,6 +11,8 @@ const store = ()=> {
   for (const moduleName in exchange) {
     store.registerModule(moduleName, exchange[moduleName]);
   }
+  console.log('browser',process.browser);
+  console.log('server',process.server);
   store.dispatch('updateMarketMap');
   return store;
 };

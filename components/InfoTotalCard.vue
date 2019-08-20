@@ -10,18 +10,18 @@
 </template>
 <script>
 export default {
-    data() {
-        return {
-            list: [{
-                title: '今日可挖量',
-                value: 474647.20
-                }, {
-                title: '累计挖矿总量',
-                value: 9654647.56
-            }]
-        }
-    }
-}
+  data() {
+    return {
+      list: [{
+        title: '今日可挖量',
+        value: 474647.20
+      }, {
+        title: '累计挖矿总量',
+        value: 9654647.56
+      }]
+    };
+  }
+};
 </script>
 <style lang="scss" scoped>
 
