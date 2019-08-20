@@ -7,12 +7,10 @@ const quoteTokenCategory = [ 'BTC', 'ETH', 'VITE', 'USDT' ];
 // const category = query.category;
 // const symbol = query.symbol;
 const DefaultCategory = 'BTC';
-const DefaultSymbol = 'VITE_BTC-000';
 
 const state = {
   quoteTokenCategory,
   curentCategory: DefaultCategory,
-  DefaultSymbol,
   marketMap: [],
   marketClosed: []
 };

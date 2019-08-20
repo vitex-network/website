@@ -32,7 +32,6 @@ export default {
   data() {
     return {
       searchText: '',
-      quoteTokenCategory: 'VITE',
       txPairList: [],
       isLoading: false,
       searchList: [],
@@ -40,6 +39,9 @@ export default {
     };
   },
   computed: {
+    quoteTokenCategory() {
+      return this.$store.state.exchangeMarket.curentCategory;
+    },
     activeTxPairList() {
       let list = this.searchText
         ? this.searchList 
@@ -50,9 +52,6 @@ export default {
     }
   },
   methods: {
-    getActiveTxPair(val) {
-      this.quoteTokenCategory = val;
-    },
     init() {
       defaultPairTimer = defaultPairTimer || new subTask('defaultPair', ({ args, data }) => {
         if (args.quoteTokenCategory !== this.quoteTokenCategory) {

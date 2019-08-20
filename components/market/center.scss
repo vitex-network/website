@@ -21,14 +21,14 @@ $font-bold: PingFangSC-Semibold,arial,sans-serif;
     color: $red;
 }
 
-.vitex-tab-list {
+.ex-tab-list {
     display: flex;
     display: -webkit-flex;
     padding-top: 4px;
     width: 100%;
     background: rgba(243,245,249,1);
     padding: 4px 0 0px 0;
-    .vitex-tab {
+    .ex-tab {
         display: inline-block;
         font-size: 13px;
         font-weight: 600;

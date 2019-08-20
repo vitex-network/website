@@ -1,13 +1,15 @@
 <template>
-    <ul class="vitex-tab-list">
-        <li v-for="(c, i) in categoryList" :key="i"
-            :class="{
-                'active': c.symbol === currentMarket,
-                'active-side': (i === 0) || (categoryList[i-1] && categoryList[i-1].symbol === currentMarket)
-            }" class="vitex-tab __pointer"
-            @click="changeCategory(c)">
-            {{ c.originalSymbol }}
+    <ul class="ex-tab-list">
+        <li class="ex-tab __pointer">
+            <span class="favorite-icon __pointer"></span>
         </li>
+        <li v-for="(c, i) in quoteTokenCategory" :key="i"
+            :class="{
+                'active': c === curentCategory,
+                'active-side': quoteTokenCategory[i-1] === curentCategory
+            }" class="ex-tab __pointer"
+            @click="changeCategory(c)"
+        >{{ c }}</li>
     </ul>
 </template>
 
@@ -15,22 +17,16 @@
 
 export default {
   computed: {
-    currentMarket() {
-      console.log('currentMarket', this.$store.state.exchangeMarket.currentMarket);
-      return this.$store.state.exchangeMarket.currentMarket;
+    curentCategory() {
+      return this.$store.state.exchangeMarket.curentCategory;
     },
-    categoryList() {
-      return this.$store.state.exchangeMarket.marketMap;
-    }
-  },
-  data() {
-    return {
-      viewCategory: ''  
-    };
+    quoteTokenCategory() {
+      return this.$store.state.exchangeMarket.quoteTokenCategory;
+    },
   },
   methods: {
-    changeCategory(c) {
-      this.$store.commit('setCurrentMarket', c.symbol);
+    changeCategory(category) {
+      this.$store.commit('setCurentCategory', category);
     }
   }
 };
