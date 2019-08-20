@@ -1,13 +1,27 @@
 <template>
     <div>
-        <div class="columns is-multiline">
-            <div class="column is-3-desktop is-6-tablet is-12-mobile" v-for="(item, index) in list" :key="index">
-                <div>{{ item.tokenSymbol }}  {{ item.vxAmount }} VX</div>
+      <div class="card-wrapper">
+          <div class="item" v-for="(item, index) in list" :key="index">
+            <div class="is-flex token">
+              <div class="token-left">
+                <div>{{ item.tokenSymbol }} </div>
+                <div class="vx-amount">{{ item.vxAmount }} VX</div>
+              </div>
+              <div class="token-right">
+                <img src="~/assets/images/index/vite.svg"/>
+              </div>
+            </div>
+            <div class="is-flex token-bottom">
+              <div class="token-left">
                 <div>实时交易手续费</div>
+              </div>
+              <div class="token-right">
                 <div>{{ item.tokenAmount }} {{ item.tokenSymbol }}</div>
                 <div>≈{{ item.btcAmount }} BTC</div>
+              </div>
             </div>
-        </div>
+          </div>
+      </div>
     </div>
 </template>
 <script>
@@ -40,5 +54,54 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "~assets/vars.scss";
+.card-wrapper {
+  margin-top: 30px;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  @include mobile {
+    flex-direction: column;
+  }
+  .item {
+    background:rgba(255,255,255,1);
+    box-shadow:0px 2px 9px 0px rgba(0,0,0,0.07);
+    border-radius:5px;
+    border:1px solid rgba(231,234,238,1);
+    width: 255px;
+    font-size:14px;
+    font-family:$font-family-light;
+    color:rgba(84,86,90,1);
+    line-height:18px;
+    @include mobile {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  .token {
+    box-sizing: border-box;
+    padding: 20px;
+    padding-bottom: 10px;
+    justify-content: space-between;
+    .vx-amount {
+      margin-top: 15px;
+      color:rgba(23,28,52,1);
+      line-height:22px;
+      font-size:18px;
+      font-family:$font-family-title;
+    }
+  }
+  .token-bottom {
+    padding: 9px 20px 20px 20px;
+    justify-content: space-between;
+    border-top: 1px solid #E7EAEE;
+    font-size:12px;
+    font-family:PingFangSC;
+    font-weight:400;
+    color:rgba(84,86,90,1);
+    line-height:16px;
+  }
+}
+
 
 </style>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>vite@1x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="-10.3703828%" y1="-4.59826325%" x2="238.489639%" y2="83.9673857%" id="linearGradient-1">
+            <stop stop-color="#0B30E4" offset="0%"></stop>
+            <stop stop-color="#0D6CEF" offset="31.4739301%"></stop>
+            <stop stop-color="#0998F3" offset="49.1836977%"></stop>
+            <stop stop-color="#00C3FF" offset="71.3239784%"></stop>
+            <stop stop-color="#00ECFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页备份-8" transform="translate(-606.000000, -1066.000000)">
+            <g id="vite-icon" transform="translate(606.000000, 1066.000000)">
+                <path d="M17,0.25 C7.74923044,0.25 0.25,7.74923044 0.25,17 C0.25,26.2507696 7.74923044,33.75 17,33.75 C26.2507696,33.75 33.75,26.2507696 33.75,17 C33.75,7.74923044 26.2507696,0.25 17,0.25 Z" id="Rectangle-3" stroke-opacity="0.67" stroke="#007AFF" stroke-width="0.5" fill="#F2F8FF"></path>
+                <path d="M14.5636363,11.4596154 L14.0091691,25.6 L9,12.7200174 L14.5636363,11.4596154 Z M27,8.5 L14.2363636,25.4355769 L15.8824291,11.1326731 L27,8.5 Z" id="Combined-Shape" fill="url(#linearGradient-1)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
