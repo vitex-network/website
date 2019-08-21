@@ -1,27 +1,24 @@
 <template>
   <div class="vgate">
-    <div class="container">
-      <div class="is-size-1-desktop is-size-2-touch slogan-wrapper">
-        <h1>
-          {{$t('vgate.slogan')}}
-        </h1>
-      </div>
-      <div class="operators columns is-multiline is-mobile is-centered">
-        <div :key="item.key" v-for="(item, index) in list" class="item">
-          <a :href="item.url" target="_blank" @mouseover="onHover(index)" @mouseout="onOut(index)" :class="`key-${item.key}`">
-            <div class="img-wrapper">
-              <!--<img v-show="index === hover" class="investor-logo" :src="item.logoActive" alt="">-->
-              <img :src="item.logo" alt="">
+    <div class="">
+      <h1>
+        {{$t('vgate.slogan')}}
+      </h1>
+      <div class="card-wrapper container">
+          <div class="item" v-for="(item, index) in list" :key="index">
+            <div class="is-flex token">
+              <div class="token-left">
+                <div class="operator-name">{{ item.key }} </div>
+                <div class="operator-amount">
+                  <div>成交量</div>
+                  <div class="operator-value">{{ item.vxAmount }} VX</div>
+                </div>
+              </div>
+              <div class="token-right">
+                <img src="~/assets/images/index/vite.svg"/>
+              </div>
             </div>
-          </a>
-        </div>
-      </div>
-      <div class="btn">
-        <div
-            class="gate-btn"
-            @click="openVGate"
-        >{{$t('vgate.btn')}}
-        </div>
+          </div>
       </div>
     </div>
   </div>
@@ -36,18 +33,21 @@
           {
             key: 'xinsheng',
             logo: require('~/assets/images/operators/xinsheng.png'),
+            vxAmount: 123,
             // logoActive: require('~/assets/images/operators/xinsheng-act.png'),
             url: 'https://forum.vite.net/topic/2313/introduction-of-vitex-operator-xsfund'
           },
           {
             key: 'bid',
             logo: require('~/assets/images/operators/bid.svg'),
+            vxAmount: 123,
             // logoActive: require('~/assets/images/operators/bid-act.png'),
             url: 'https://www.bbiidd.org'
           },
           {
             key: 'vgate',
             logo: require('~/assets/images/operators/vgate.svg'),
+            vxAmount: 123,
             // logoActive: require('~/assets/images/operators/vgate-act.png'),
             url: 'https://vgate.io/'
           },
@@ -73,80 +73,63 @@
 <style lang="scss" scoped>
   @import "assets/vars";
   .vgate{
-    display: flex;
-    height: 360px;
-    align-items: center;
-    justify-content: center;
+    margin-top: 80px;
     background: url("~assets/images/bg/bg2.svg");
-    .container{
-      height: 100%;
+    padding: 60px 0 80px 0;
+    h1 {
+      margin-bottom: 40px;
+      color: white;
+      text-align: center;
     }
-    @include touch {
-      height: 220px;
-    }
-    .is-multiline {
+    .card-wrapper {
       display: flex;
       display: -webkit-flex;
-      flex-wrap: wrap;
-      .item{
-        padding: 0 60px;
-        vertical-align: center;
-        &:first-child{
-          @include touch {
-            padding-top: 5px;
+      justify-content: space-between;
+      @include mobile {
+        flex-direction: column;
+        padding: 0 20px;
+      }
+      .item {
+        background:rgba(255,255,255,1);
+        box-shadow:0px 2px 9px 0px rgba(0,0,0,0.07);
+        border-radius:5px;
+        border:1px solid rgba(231,234,238,1);
+        width: 255px;
+        
+        @include mobile {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+      
+      .token {
+        box-sizing: border-box;
+        padding: 20px;
+        padding-bottom: 18px;
+        justify-content: space-between;
+        .operator-name {
+          font-size:20px;
+          font-family:PingFangSC;
+          font-weight:600;
+          color:rgba(23,28,52,1);
+          line-height:24px;
+        }
+        .operator-amount {
+          font-size:12px;
+          font-family:PingFangSC;
+          font-weight:400;
+          color:rgba(126,128,133,1);
+          line-height:16px;
+          margin-top: 10px;
+          .operator-value {
+            font-size:14px;
+            color:rgba(84,86,90,1);
+            line-height:18px;
+            margin-top: 4px;
           }
         }
-        @include touch {
-          padding: 0 20px;
-          max-width: 120px;
-        }
       }
     }
-    .slogan-wrapper {
-      padding: 40px 0 45px 0;
-      text-align: center;
-      h1 {
-        font-size: 32px;
-        color: #ffffff;
-        @include touch {
-          font-size: 22px;
-        }
-      }
-      p {
-        margin-top: 30px;
-        font-size: 14px;
-        color: $common-text-color;
-        line-height: 24px;
-        font-family: $font-family-light;
-        @include touch {
-          font-size: 1rem;
-        }
-      }
-      @include touch {
-        padding: 20px 0 30px 0;
-      }
-    }
-    .btn{
-      text-align: center;
-      .gate-btn {
-        display: inline-block;
-        width: 180px;
-        height: 55px;
-        margin-top: 30px;
-        line-height: 53px;
-        border-radius: 5px;
-        color: $common-active-color;
-        font-size: 16px;
-        font-family: $font-family-title;
-        background: white;
-        cursor: pointer;
-        @include touch {
-          height: 30px;
-          margin-top: 10px;
-          line-height: 28px;
-          font-size: 12px;
-        }
-      }
-    }
+    
   }
 </style>

@@ -14,7 +14,7 @@
       </a>
     </div>
     <info></info>
-    <piechart></piechart>
+    <!-- <piechart></piechart> -->
   </div>
 </template>
 

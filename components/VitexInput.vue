@@ -13,69 +13,69 @@
 
 <script>
 export default {
-    props: {
-        valid: {
-            type: Function,
-            default: () => {}
-        },
-        placeholder: {
-            type: String,
-            default: ''
-        },
-        type: {
-            type: String,
-            default: 'text'
-        },
-        disabled: {
-            type: Boolean,
-            default: false
-        },
-        _value: {
-            type: String,
-            default: ''
-        },
-        _delay: {
-            type: Number,
-            default: 500
-        }
+  props: {
+    valid: {
+      type: Function,
+      default: () => {}
     },
-    destroyed() {
-        this.clear();
+    placeholder: {
+      type: String,
+      default: ''
     },
-    data() {
-        return {
-            valueTimeout: null,
-            value: this._value
-        };
+    type: {
+      type: String,
+      default: 'text'
     },
-    model: { prop: '_value' },
-    watch: {
-        _value: function () {
-            this.value = this._value;
-        },
-        value: function () {
-            this.clear();
-            this.valueTimeout = setTimeout(() => {
-                this.clear();
-                this.valid();
-            }, this._delay);
-        }
+    disabled: {
+      type: Boolean,
+      default: false
     },
-    methods: {
-        update() {
-            this.$emit('input', this.value);
-        },
-        _blur() {
-            this.$emit('blur');
-        },
-        _focus() {
-            this.$emit('focus');
-        },
-        clear() {
-            this.valueTimeout && window.clearTimeout(this.valueTimeout);
-            this.valueTimeout = null;
-        }
+    _value: {
+      type: String,
+      default: ''
+    },
+    _delay: {
+      type: Number,
+      default: 500
     }
+  },
+  destroyed() {
+    this.clear();
+  },
+  data() {
+    return {
+      valueTimeout: null,
+      value: this._value
+    };
+  },
+  model: { prop: '_value' },
+  watch: {
+    _value: function () {
+      this.value = this._value;
+    },
+    value: function () {
+      this.clear();
+      this.valueTimeout = setTimeout(() => {
+        this.clear();
+        this.valid();
+      }, this._delay);
+    }
+  },
+  methods: {
+    update() {
+      this.$emit('input', this.value);
+    },
+    _blur() {
+      this.$emit('blur');
+    },
+    _focus() {
+      this.$emit('focus');
+    },
+    clear() {
+      this.valueTimeout && window.clearTimeout(this.valueTimeout);
+      this.valueTimeout = null;
+    }
+  }
 };
 </script>
 

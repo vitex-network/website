@@ -3,12 +3,12 @@
     <section class="section">
       <div class="container">
         <h1 style="margin-bottom: 50px;">{{$t('nav.dividend')}}</h1>
-        <div>
+        <!-- <div>
           <info-total-card></info-total-card>
         </div>
         <div>
           <info-card></info-card>
-        </div>
+        </div> -->
       </div>
     </section>
   </div>
@@ -16,13 +16,13 @@
 </template>
 
 <script>
-  import InfoCard from '~/components/InfoCard.vue';
-  import InfoTotalCard from '~/components/InfoTotalCard.vue';
+  // import InfoCard from '~/components/InfoCard.vue';
+  // import InfoTotalCard from '~/components/InfoTotalCard.vue';
 
   export default {
     components: {
-      InfoCard,
-      InfoTotalCard
+      // InfoCard,
+      // InfoTotalCard
     },
     computed: {
       totalList() {

@@ -27,8 +27,9 @@ export default {
   margin-top: 50px;
   background: url("~assets/images/index/bg.png") no-repeat center;
   background-color: white;
+  box-shadow:0px 2px 9px 0px rgba(0,0,0,0.07);
+  border-radius:5px;
   height:80px;
-  border-radius:2px;
   display: flex;
   display: -webkit-flex;
   @include mobile {
@@ -36,6 +37,7 @@ export default {
     height: auto;
     border-radius:none;
     background: none;
+    box-shadow:none;
   }
   .column:last-child {
     border-right:none;

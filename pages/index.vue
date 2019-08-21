@@ -21,9 +21,11 @@
       </div>
     </section>
     <slider></slider>
-    <vitex-info></vitex-info>
-    <use-vitex></use-vitex>
+    <mine class="container"></mine>
+    
+    <!-- <use-vitex></use-vitex> -->
     <v-gate></v-gate>
+    <vitex-info></vitex-info>
   </div>
 </template>
 
@@ -33,13 +35,15 @@
   import VGate from '~/components/VGate';
   import Slider from '~/components/Slider';
   import { urls } from '~/config.js';
+  import mine from '~/components/mine/index';
 
   export default {
     components: {
       VitexInfo,
       UseVitex,
       VGate,
-      Slider
+      Slider,
+      mine
     },
     methods:{
       openViteX(){

@@ -4,12 +4,7 @@
       <div class="container">
         <h1 style="margin-bottom: 50px;">{{$t('nav.mine')}}</h1>
         <market></market>
-        <div>
-          <info-total-card></info-total-card>
-        </div>
-        <div>
-          <info-card></info-card>
-        </div>
+        <mine></mine>
       </div>
     </section>
   </div>
@@ -17,15 +12,13 @@
 </template>
 
 <script>
-  import InfoCard from '~/components/InfoCard.vue';
-  import InfoTotalCard from '~/components/InfoTotalCard.vue';
+  import mine from '~/components/mine/index';
   import market from '~/components/market/market.vue';
   
   export default {
     components: {
-      InfoCard,
-      InfoTotalCard,
-      market
+      market,
+      mine
     },
     beforeMount() {
       this.$store.dispatch('startLoopExchangeRate');

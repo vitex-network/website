@@ -1,6 +1,6 @@
 <template>
-  <div class="container footer">
-    <footer class="">
+  <div class="footer">
+    <footer class="container">
       <div class="ft-container">
         <div class="is-flex-desktop whole-footer">
           <div class="icon-wrapper">
@@ -160,7 +160,8 @@
 
   .footer {
     height: 300px;
-    background: white;
+    background: #1E59F3;
+    color: white;
     z-index: 3;
     padding: 0;
     .ft-container {
@@ -172,7 +173,7 @@
       }
     }
     @include touch {
-      background: white;
+      background: #1E59F3;
     }
     .whole-footer {
       justify-content: space-between;
@@ -183,7 +184,7 @@
         }
         .subtitle{
           font-size: 13px;
-          color: $common-text-color;
+          color: white;
         }
       }
     }
@@ -197,11 +198,11 @@
           margin-bottom: 9px;
           font-size: 12px;
           font-family: $font-family-title;
-          color: $text-color;
+          color: white;
         }
         .content{
           margin-bottom: 9px;
-          color: $common-text-color
+          color: white;
         }
         a{
           display: block;
@@ -228,14 +229,14 @@
     }
     .icons {
       text-align: left;
-      color: $common-text-color;
+      color: white;
     }
     .copyright {
       margin-bottom: 35px;
       font-size: 12px;
       line-height: 16px;
       text-align: center;
-      color: $common-text-color;
+      color: white;
       @include touch {
         text-align: center;
       }
@@ -255,7 +256,7 @@
           width: 20px;
           height: 20px;
           margin: 0 22px 0 0;
-          color: $common-text-color;
+          color: white;
           &:hover {
             // color: #1580E3;
           }

@@ -1,5 +1,6 @@
 <template>
     <div>
+      <common-title v-if="hasTitle"></common-title>
       <div class="card-wrapper">
           <div class="item" v-for="(item, index) in list" :key="index">
             <div class="is-flex token">
@@ -11,7 +12,7 @@
                 <img src="~/assets/images/index/vite.svg"/>
               </div>
             </div>
-            <div class="is-flex token-bottom">
+            <div class="is-flex token-bottom" v-if="!isSimple">
               <div class="token-left">
                 <div>实时交易手续费</div>
               </div>
@@ -25,7 +26,21 @@
     </div>
 </template>
 <script>
+import commonTitle from './commonTitle';
 export default {
+  components: {
+    commonTitle
+  },
+  props: {
+    isSimple: {
+      type: Boolean,
+      default: false
+    },
+    hasTitle: {
+      type: Boolean,
+      default: true
+    }
+  },
   data() {
     return {
       list: [{
@@ -56,7 +71,6 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/vars.scss";
 .card-wrapper {
-  margin-top: 30px;
   display: flex;
   display: -webkit-flex;
   justify-content: space-between;
