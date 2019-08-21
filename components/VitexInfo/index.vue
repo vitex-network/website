@@ -41,6 +41,7 @@
 
   .vitex-info{
     margin-top: 90px;
+    padding-bottom: 88px;
     .slogan-wrapper {
       text-align: center;
       h1 {

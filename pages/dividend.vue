@@ -3,12 +3,7 @@
     <section class="section">
       <div class="container">
         <h1 style="margin-bottom: 50px;">{{$t('nav.dividend')}}</h1>
-        <!-- <div>
-          <info-total-card></info-total-card>
-        </div>
-        <div>
-          <info-card></info-card>
-        </div> -->
+        <piechart></piechart>
       </div>
     </section>
   </div>
@@ -16,13 +11,11 @@
 </template>
 
 <script>
-  // import InfoCard from '~/components/InfoCard.vue';
-  // import InfoTotalCard from '~/components/InfoTotalCard.vue';
-
+  import piechart from '~/components/VitexInfo/Piechart';
+  
   export default {
     components: {
-      // InfoCard,
-      // InfoTotalCard
+      piechart
     },
     computed: {
       totalList() {
@@ -34,7 +27,14 @@
           value: 9654647.56
         }];
       }
-    }
+    },
+    async asyncData() {
+    },
+    data() {
+      return {
+        limitData: null
+      };
+    },
   };
 </script>
 
@@ -83,5 +83,5 @@
     }
   }
 
+  
 </style>
-

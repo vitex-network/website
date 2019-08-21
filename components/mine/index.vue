@@ -7,7 +7,7 @@
     <info-card :is-simple="true"></info-card>
     <div class="title">VX当日分红概况</div>
     <info-total-card></info-total-card>
-    <info-card :is-simple="true"></info-card>
+    <info-card :is-simple="true" :has-title="false" style="margin-top: 30px;"></info-card>
   </div>
 </template>
 <script>

@@ -98,8 +98,6 @@ export default {
         return txPair.tradeTokenSymbol;
       }
 
-      console.log(this.$i18n.locale);
-
       const pre = this.$i18n.locale === 'zh' ? '≈¥': '≈$';
       return `${ txPair.tradeTokenSymbol }  ${ pre }${ price }`;
     },

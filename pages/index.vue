@@ -22,9 +22,11 @@
     </section>
     <slider></slider>
     <mine class="container"></mine>
-    
     <!-- <use-vitex></use-vitex> -->
     <v-gate></v-gate>
+    <div class="market-wrapper">
+      <market class="container"></market>
+    </div>
     <vitex-info></vitex-info>
   </div>
 </template>
@@ -36,6 +38,7 @@
   import Slider from '~/components/Slider';
   import { urls } from '~/config.js';
   import mine from '~/components/mine/index';
+  import market from '~/components/market/market.vue';
 
   export default {
     components: {
@@ -43,7 +46,11 @@
       UseVitex,
       VGate,
       Slider,
-      mine
+      mine,
+      market
+    },
+    beforeMount() {
+      this.$store.dispatch('startLoopExchangeRate');
     },
     methods:{
       openViteX(){
@@ -55,6 +62,10 @@
 
 <style lang="scss" scoped>
   @import "assets/vars.scss";
+  .market-wrapper {
+    padding: 60px 0 88px 0;
+    background-color: #131C34;
+  }
 
   .section-title {
     text-align: center;

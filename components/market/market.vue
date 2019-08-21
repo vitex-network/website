@@ -51,6 +51,17 @@ export default {
       return list;
     }
   },
+  watch: {
+    quoteTokenCategory() {
+      this.searchText = '';
+      this.searchList = [];
+
+      if (!this.quoteTokenCategory) {
+        return;
+      }
+      this.init();
+    },
+  },
   methods: {
     init() {
       defaultPairTimer = defaultPairTimer || new subTask('defaultPair', ({ args, data }) => {

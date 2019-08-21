@@ -1,10 +1,13 @@
 <template>
-  <div class="detail columns is-desktop">
-    <div class="question column is-6-desktop">
-      <div class="answer" v-for="(item, index) in $t('vitexInfo.questions')">
-        <div class="title">{{`${index + 1}. ${item.question}`}}</div>
+  <div class="detail">
+    <div class="piechart is-flex">
+      <img :src="piechart[$i18n.locale]" width="50%" height="50%">
+    </div>
+    <div class="question">
+      <div class="answer" v-for="(item, index) in $t('vitexInfo.questions')" :key="index">
+        <div class="title is-flex"><span class="dot"></span>{{`${item.question}`}}</div>
         <div class="content">
-          <p v-for="(ansItem, index) in item.answer">{{ ansItem }}</p>
+          <p v-for="(ansItem, index) in item.answer" :key="index">{{ ansItem }}</p>
         </div>
       </div>
       <a
@@ -15,16 +18,13 @@
         {{$t('home.starttoUse')}}
       </a>
     </div>
-    <div class="piechart column is-6-desktop">
-      <img :src="piechart[$i18n.locale]">
-    </div>
   </div>
 </template>
 
 <script type="text/babel">
   import config from '~/config';
   import en from '~/assets/images/piecharten.jpg';
-  import zh from '~/assets/images/piechart.jpg';
+  import zh from '~/assets/images/piechart@2x.png';
 
   export default {
     computed: {
@@ -46,9 +46,6 @@
   @import "~assets/vars";
 
   .detail{
-    display:flex;
-    justify-content: space-between;
-    padding-top: 88px;
     @include touch{
       display: block;
       margin: 0 20px;
@@ -57,16 +54,26 @@
       margin-bottom: 20px;
       color:#171C34;
       font-size: 20px;
+      align-items: center;
+      .dot {
+        display: inline-block;
+        width:6px;
+        height:6px;
+        background:rgba(47,91,234,1);
+        border-radius:6px;
+        margin-right: 7px;
+        vertical-align: top;
+      }
     }
     .content{
-      max-width: 450px;
       margin-bottom: 20px;
       color:$text-color;
       font-size: 14px;
       line-height: 20px;
     }
     .piechart{
-      padding-top: 30px;
+      justify-content: center;
+
     }
   }
 </style>
