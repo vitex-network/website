@@ -87,10 +87,8 @@ export default {
   },
   watch: {
     '$i18n.locale': function() {
-      console.log('i18n');
       this.searchText = '';
       this.searchList = [];
-      console.log(this.quoteTokenCategory);
       this.init();
     },
     quoteTokenCategory() {
@@ -163,6 +161,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "./center.scss";
+
 .market-wrapper {
     position: relative;
     width: 100%;

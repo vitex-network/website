@@ -2,7 +2,7 @@
   <div>
     <card-info :name="name"></card-info>
     <common-title :title="`交易对`"></common-title>
-    <market></market>
+    <market class="operator-market"></market>
   </div>
 </template>
 <script>
@@ -55,6 +55,7 @@ export default {
   }
   
 }
+
 </style>
 
 

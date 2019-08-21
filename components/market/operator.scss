@@ -1,0 +1,28 @@
+.operator-market {
+    .__center-tb-row {
+        color: #171C34;
+        &:hover {
+            background:rgba(232,234,253,1);
+        }
+    }
+    .ex-tab-list {
+        display: flex;
+        display: -webkit-flex;
+        width: 100%;
+        color: #C9D1D8;
+        margin-bottom: 20px;
+        .ex-tab {
+            display: inline-block;
+            font-size:14px;
+            font-family:PingFangSC;
+            font-weight:600;
+            line-height:18px;
+            padding: 6px 0 6px 0;
+            margin-right: 30px;
+            &.active {
+                color: #171C34;
+                border-bottom: 2px solid #2F5BEA;
+            }
+        }
+    }
+}
