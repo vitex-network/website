@@ -82,19 +82,24 @@ export default {
 <style lang="scss" scoped>
 .input-wrapper {
     display: flex;
-    width: 100%;
-    border: 1px solid #d4dee7;
-    border-radius: 2px;
+    width: 250px;
     font-size: 14px;
     height: 34px;
-    line-height: 34px;
+    line-height:18px;
     box-sizing: border-box;
-
+    border-bottom: 1px solid rgba(216,216,216,0.3);
     input {
+        outline:none;
+        border-width: 0;
         flex: 1;
         width: 100%;
-        font-size: 12px;
-        text-indent: 15px;
+        background-color: transparent;
+        text-align: right;
+        color: white;
+        font-size:14px;
+        font-family:PingFangSC;
+        font-weight:400;
+        line-height:18px;
     }
 }
 </style>

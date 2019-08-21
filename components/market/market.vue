@@ -1,13 +1,17 @@
 <template>
     <div>
         <div class="market-wrapper">
-          <tab-list></tab-list>
-          <vitex-input 
-            class="market-search-input" 
-            v-model="searchText"
-            :placeholder="`请搜索`">
-            <img slot="before" class="icon" src="~assets/images/search.svg"/>
-          </vitex-input>
+          <div class="is-flex">
+            <tab-list></tab-list>
+            <vitex-input 
+              class="market-search-input" 
+              v-model="searchText"
+              :placeholder="`查询交易对`">
+              <img slot="before" class="icon" src="~assets/images/search.svg"/>
+            </vitex-input>
+          </div>
+          
+          
           <table-list :list="activeTxPairList"></table-list>
         </div>
     </div>
@@ -113,21 +117,18 @@ export default {
 }
 .market-search-input.input-wrapper {
     box-sizing: border-box;
-    height: 20px;
     line-height: 20px;
-    border: none;
 
     .icon {
-        width: 12px;
-        height: 12px;
-        margin: 4px 6px 4px 6px;
+        width: 16px;
+        height: 16px;
+        margin: 9px;
     }
 
     input {
         text-indent: 0;
         font-weight: 400;
         font-size: 11px;
-        background: rgba(245, 250, 255, 1);
     }
 }
 

@@ -1,12 +1,8 @@
 <template>
     <ul class="ex-tab-list">
-        <li class="ex-tab __pointer">
-            <span class="favorite-icon __pointer"></span>
-        </li>
         <li v-for="(c, i) in quoteTokenCategory" :key="i"
             :class="{
                 'active': c === curentCategory,
-                'active-side': quoteTokenCategory[i-1] === curentCategory
             }" class="ex-tab __pointer"
             @click="changeCategory(c)"
         >{{ c }}</li>
