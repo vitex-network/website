@@ -6,8 +6,8 @@
                  class="__center-tb-row __pointer"
                  @mouseenter="showRealPrice(txPair, i)"
                  @mouseleave="hideRealPrice(txPair)">
-                <span class="__center-tb-item tx-pair">
-                    <span class="describe">{{ getTxPairShowSymbol(txPair) }}</span>
+                <span class="__center-tb-item">
+                    <span>{{ getTxPairShowSymbol(txPair) }}</span>
                 </span>
                 <span class="__center-tb-item">
                     {{ txPair.closePrice ? formatNum(txPair.closePrice, txPair.pricePrecision) : '--' }}
@@ -67,7 +67,7 @@ export default {
       const elTop = this.$refs[`txPair${ i }`][0].getBoundingClientRect().top;
       const listTop = this.$refs.txList.getBoundingClientRect().top;
       const height = this.$refs.txList.clientHeight;
-      const top = elTop - listTop - 8;
+      const top = elTop - listTop;
 
       if (top > listTop + height) {
         this.hideRealPrice();

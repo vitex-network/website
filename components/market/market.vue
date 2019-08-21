@@ -1,33 +1,51 @@
 <template>
-    <div>
-        <div class="market-wrapper">
-          <div class="is-flex">
-            <tab-list></tab-list>
-            <vitex-input 
-              class="market-search-input" 
-              v-model="searchText"
-              :placeholder="`查询交易对`">
-              <img slot="before" class="icon" src="~assets/images/search.svg"/>
-            </vitex-input>
-          </div>
-          
-          
-          <table-list :list="activeTxPairList"></table-list>
+  <div>
+    <div class="market-wrapper">
+      <div class="is-flex">
+        <tab-list></tab-list>
+        <vitex-input 
+          class="market-search-input" 
+          v-model="searchText"
+          :placeholder="`查询交易对`">
+          <img slot="before" class="icon" src="~assets/images/search.svg"/>
+        </vitex-input>
+      </div>
+
+      <div class="__center-tb-title">
+        <div class="__center-tb-item __pointer">
+            交易对
         </div>
+        <div class="__center-tb-item">
+            <span class="describe-r">价格</span>
+            <order-arrow orderItem="price" :setOrderRule="setOrderRule"></order-arrow>
+        </div>
+        <div class="__center-tb-item percent">
+            <span class="describe-r">涨幅</span>
+            <order-arrow orderItem="upDown" :setOrderRule="setOrderRule"></order-arrow>
+        </div>
+        <div  class="__center-tb-item">
+            <span class="describe-r">交易量</span>
+            <order-arrow orderItem="txNum" :setOrderRule="setOrderRule"></order-arrow>
+        </div>
+      </div>
+      <table-list :list="activeTxPairList" :currentRule="currentOrderRule"></table-list>
     </div>
+  </div>
 </template>
 <script>
 import tableList from './tableList.vue';
 import tabList from './tabList.vue';
 import VitexInput from '../VitexInput.vue';
 import { subTask } from '~/utils/proto/subTask';
+import orderArrow from './orderArrow';
 let defaultPairTimer = null;
 
 export default {
   components: {
     tableList,
     tabList,
-    VitexInput
+    VitexInput,
+    orderArrow
   },
 
   beforeMount() {
@@ -39,7 +57,8 @@ export default {
       txPairList: [],
       isLoading: false,
       searchList: [],
-      rateTimer: null
+      rateTimer: null,
+      currentOrderRule: 'txNumDown',
     };
   },
   computed: {
@@ -103,17 +122,26 @@ export default {
       defaultPairTimer.start(() => {
         return { quoteTokenCategory: this.quoteTokenCategory };
       });
+    },
+    setOrderRule(rule) {
+      this.currentOrderRule = rule;
     }
   }
+  
 };
 </script>
 <style lang="scss" scoped>
+@import "./center.scss";
 .market-wrapper {
     position: relative;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    .describe-r {
+      position: relative;
+      bottom: 9px;
+    }
 }
 .market-search-input.input-wrapper {
     box-sizing: border-box;

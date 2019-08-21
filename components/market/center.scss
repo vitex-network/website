@@ -59,23 +59,22 @@ $font-bold: PingFangSC-Semibold,arial,sans-serif;
     padding: 0 6px;
     height: 27px;
     line-height: 27px;
-    border-bottom: 1px solid rgba(212,222,231,0.5);
     font-size: 12px;
     font-weight: 400;
-    color: rgba(94,104,117,0.58);;
+    color: rgba(126,128,133,1);
 }
 .__center-tb-row {
     position: relative;
-    height: 20px;
-    line-height: 20px;
+    height: 34px;
+    line-height: 34px;
     padding: 0 6px;
     display: flex;
     flex-direction: row;
     font-size: 12px;
     font-weight: 400;
-    color: rgba(94,104,117,1);
+    color: white;
     &:hover {
-        background: rgba(75, 116, 255, 0.1);    
+        background:rgba(216,216,216,0.1); 
     }
 }
 .__center-tb-item {
@@ -107,13 +106,6 @@ $font-bold: PingFangSC-Semibold,arial,sans-serif;
             flex: 1;
             box-sizing: border-box;
         }
-    }
-    .describe {
-        position: relative;
-        left: 15px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
     }
 }
 
