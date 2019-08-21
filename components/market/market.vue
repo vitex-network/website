@@ -49,6 +49,7 @@ import tabList from './tabList.vue';
 import VitexInput from '../VitexInput.vue';
 import { subTask } from '~/utils/proto/subTask';
 import orderArrow from './orderArrow';
+import { operatorFetcher } from './operator.js';
 let defaultPairTimer = null;
 
 export default {
@@ -110,6 +111,9 @@ export default {
         }
       });
       this.searchList = list;
+    },
+    txPairList(val) {
+      operatorFetcher.getOperators(val);
     }
   },
   methods: {

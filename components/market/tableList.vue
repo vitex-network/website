@@ -13,7 +13,7 @@
                     <span>VGATE</span>
                 </span>
                 <span class="__center-tb-item">
-                    {{ txPair.closePrice ? formatNum(txPair.closePrice, txPair.pricePrecision) : '--' }}
+                    {{ txPair.closePrice ? `${formatNum(txPair.closePrice, txPair.pricePrecision)}/${getTableRealPrice(txPair)}` : '--' }}
                 </span>
                 <span  class="__center-tb-item percent" :class="{
                     'up': +txPair.priceChange > 0,
@@ -110,6 +110,19 @@ export default {
 
       const pre = this.$i18n.locale === 'zh' ? '≈¥': '≈$';
       return `${ txPair.tradeTokenSymbol }  ${ pre }${ price }`;
+    },
+    getTableRealPrice(txPair) {
+      const pre = this.$i18n.locale === 'zh' ? '¥': '$';
+      const rate = this.getRate(txPair.quoteToken);
+      if (!rate) {
+        return `${ pre }0.0`;
+      }
+
+      const price = BigNumber.multi(txPair.closePrice || 0, rate || 0, 2);
+      if (!+price) {
+        return `${ pre }0.0`;
+      }
+      return `${ pre }${ price }`;
     },
     getRate(tokenId) {
       const rateList = this.$store.state.exchangeRate.rateMap || {};
