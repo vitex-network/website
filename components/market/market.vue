@@ -84,6 +84,17 @@ export default {
       }
       this.init();
     },
+    searchText: function () {
+      const list = [];
+      const searchText = this.searchText.trim().toLowerCase();
+      this.txPairList.forEach(tx => {
+        const ftokenShow = tx.tradeTokenSymbol.toLowerCase();
+        if (ftokenShow.indexOf(searchText) !== -1) {
+          list.push(tx);
+        }
+      });
+      this.searchList = list;
+    }
   },
   methods: {
     init() {

@@ -4,7 +4,7 @@
       <div class="ft-container">
         <div class="is-flex-desktop whole-footer">
           <div class="icon-wrapper">
-            <logo class="logo"></logo>
+            <img class="logo" src="~/assets/images/footer_logo.svg"/>
             <div class="subtitle">{{$t('footer.slogan')}}</div>
             <div class="social-icons">
               <div class="icons">
@@ -180,7 +180,6 @@
       .icon-wrapper {
         .logo{
           padding-bottom: 12px;
-          margin-left: -20px;
         }
         .subtitle{
           font-size: 13px;
