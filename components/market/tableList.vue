@@ -10,14 +10,24 @@
                     <span>{{ getTxPairShowSymbol(txPair) }}</span>
                 </span>
                 <span class="__center-tb-item">
+                    <span>VGATE</span>
+                </span>
+                <span class="__center-tb-item">
                     {{ txPair.closePrice ? formatNum(txPair.closePrice, txPair.pricePrecision) : '--' }}
                 </span>
                 <span  class="__center-tb-item percent" :class="{
                     'up': +txPair.priceChange > 0,
                     'down': +txPair.priceChange < 0
-                }">{{ txPair.priceChangePercent ? getPercent(txPair.priceChangePercent) : '--' }}</span>
+                }">{{ txPair.priceChangePercent ? getPercent(txPair.priceChangePercent) : '0.00%' }}
+                </span>
+                <span class="__center-tb-item">
+                    {{ txPair.highPrice ? formatNum(txPair.highPrice, txPair.pricePrecision) : '--' }}
+                </span>
+                <span class="__center-tb-item">
+                    {{ txPair.lowPrice ? formatNum(txPair.lowPrice, txPair.pricePrecision) : '--' }}
+                </span>
                 <span  class="__center-tb-item">
-                    {{ txPair.amount ? formatNum(txPair.amount, 1) : '--' }}
+                    {{ txPair.amount ? formatNum(txPair.amount, 1) : '0.0' }}
                 </span>
             </div>
         </div>

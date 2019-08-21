@@ -15,16 +15,27 @@
         <div class="__center-tb-item __pointer">
             交易对
         </div>
+        <div class="__center-tb-item __pointer">
+            运营商
+        </div>
         <div class="__center-tb-item">
-            <span class="describe-r">价格</span>
+            <span class="describe-r">最新价格</span>
             <order-arrow orderItem="price" :setOrderRule="setOrderRule"></order-arrow>
         </div>
         <div class="__center-tb-item percent">
-            <span class="describe-r">涨幅</span>
+            <span class="describe-r">24h变化</span>
+            <order-arrow orderItem="upDown" :setOrderRule="setOrderRule"></order-arrow>
+        </div>
+        <div class="__center-tb-item percent">
+            <span class="describe-r">24h最高</span>
+            <order-arrow orderItem="upDown" :setOrderRule="setOrderRule"></order-arrow>
+        </div>
+         <div class="__center-tb-item percent">
+            <span class="describe-r">24h最低</span>
             <order-arrow orderItem="upDown" :setOrderRule="setOrderRule"></order-arrow>
         </div>
         <div  class="__center-tb-item">
-            <span class="describe-r">交易量</span>
+            <span class="describe-r">24h成交量</span>
             <order-arrow orderItem="txNum" :setOrderRule="setOrderRule"></order-arrow>
         </div>
       </div>
@@ -75,6 +86,13 @@ export default {
     }
   },
   watch: {
+    '$i18n.locale': function() {
+      console.log('i18n');
+      this.searchText = '';
+      this.searchList = [];
+      console.log(this.quoteTokenCategory);
+      this.init();
+    },
     quoteTokenCategory() {
       this.searchText = '';
       this.searchList = [];
@@ -99,6 +117,8 @@ export default {
   methods: {
     init() {
       defaultPairTimer = defaultPairTimer || new subTask('defaultPair', ({ args, data }) => {
+        console.log('args.quoteTokenCategory');
+        console.log(args.quoteTokenCategory);
         if (args.quoteTokenCategory !== this.quoteTokenCategory) {
           return;
         }

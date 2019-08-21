@@ -5,19 +5,21 @@
         {{$t('vgate.slogan')}}
       </h1>
       <div class="card-wrapper container">
-          <div class="item" v-for="(item, index) in list" :key="index">
-            <div class="is-flex token">
-              <div class="token-left">
-                <div class="operator-name">{{ item.key }} </div>
-                <div class="operator-amount">
-                  <div>成交量</div>
-                  <div class="operator-value">{{ item.vxAmount }} VX</div>
+          <div class="item __pointer" v-for="(item, index) in list" :key="index">
+            <nuxt-link :to="`${locales}/operatorDetail/${item.key}`">
+              <div class="is-flex token">
+                <div class="token-left">
+                  <div class="operator-name">{{ item.key }} </div>
+                  <div class="operator-amount">
+                    <div>成交量</div>
+                    <div class="operator-value">{{ item.vxAmount }} VX</div>
+                  </div>
+                </div>
+                <div class="token-right">
+                  <img src="~/assets/images/index/vite.svg"/>
                 </div>
               </div>
-              <div class="token-right">
-                <img src="~/assets/images/index/vite.svg"/>
-              </div>
-            </div>
+            </nuxt-link>
           </div>
       </div>
     </div>
@@ -27,6 +29,11 @@
 <script>
   export default {
     components: {},
+    computed: {
+      locales() {
+        return this.$i18n.locale === 'zh' ? 'zh' : '';
+      }
+    },
     data(){
       return{
         list: [

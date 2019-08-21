@@ -3,7 +3,6 @@ import vuex from 'vuex';
 
 import exchange from './exchange/index';
 
-
 Vue.use(vuex);
 
 const store = ()=> {
