@@ -80,26 +80,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.input-wrapper {
-    display: flex;
-    width: 250px;
-    font-size: 14px;
-    height: 34px;
-    line-height:18px;
-    box-sizing: border-box;
-    border-bottom: 1px solid rgba(216,216,216,0.3);
-    input {
-        outline:none;
-        border-width: 0;
-        flex: 1;
-        width: 100%;
-        background-color: transparent;
-        text-align: right;
-        color: white;
-        font-size:14px;
-        font-family:PingFangSC;
-        font-weight:400;
-        line-height:18px;
-    }
-}
+@import "./center.scss";
 </style>

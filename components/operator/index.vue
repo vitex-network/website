@@ -2,19 +2,19 @@
   <div>
     <card-info :name="name"></card-info>
     <common-title :title="`交易对`"></common-title>
-    <market class="operator-market"></market>
+    <operatorMarket class="operator-market"></operatorMarket>
   </div>
 </template>
 <script>
 import cardInfo from './cardInfo';
 import commonTitle from './commonTitle';
-import market from '../market/market';
+import operatorMarket from '../market/operatorMarket';
 
 export default {
   components: {
     cardInfo,
     commonTitle,
-    market
+    operatorMarket
   },
   props: {
     name: {

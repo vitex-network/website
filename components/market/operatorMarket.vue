@@ -7,16 +7,13 @@
           class="market-search-input" 
           v-model="searchText"
           :placeholder="`查询交易对`">
-          <img slot="before" class="icon" src="~assets/images/search.svg"/>
+          <img slot="before" class="icon" src="~assets/images/operators/search.svg"/>
         </vitex-input>
       </div>
 
       <div class="__center-tb-title">
         <div class="__center-tb-item __pointer">
             交易对
-        </div>
-        <div class="__center-tb-item __pointer">
-            运营商
         </div>
         <div class="__center-tb-item">
             <span class="describe-r">最新价格</span>
@@ -39,7 +36,7 @@
             <order-arrow orderItem="txNum" :setOrderRule="setOrderRule"></order-arrow>
         </div>
       </div>
-      <table-list :list="activeTxPairList" :currentRule="currentOrderRule"></table-list>
+      <table-list :list="activeTxPairList" :currentRule="currentOrderRule" :hasOperator="false"></table-list>
     </div>
   </div>
 </template>
@@ -49,7 +46,7 @@ import tabList from './tabList.vue';
 import VitexInput from './VitexInput.vue';
 import { subTask } from '~/utils/proto/subTask';
 import orderArrow from './orderArrow';
-import { operatorFetcher } from './operator.js';
+// import { operatorFetcher } from './operator.js';
 let defaultPairTimer = null;
 
 export default {
@@ -112,17 +109,9 @@ export default {
       });
       this.searchList = list;
     },
-    async txPairList(val) {
-      let operatorMap = await operatorFetcher.getOperators(val);
-      for(let i = 0; i < val.length; i++) {
-        for(let key in operatorMap) {
-          if (val[i].symbol === key) {
-            this.$set(val[i], 'operatorName', operatorMap[key].gateway);
-          } 
-        }
-      }
-      // console.log(val);
-    }
+    // txPairList(val) {
+    // operatorFetcher.getOperators(val);
+    // }
   },
   methods: {
     init() {
@@ -137,16 +126,6 @@ export default {
 
         if (data instanceof Array) {
           this.txPairList = data || [];
-          // operatorFetcher.getOperators(data).then(operatorMap=> {
-          //   for(let i = 0; i < data.length; i++) {
-          //     for(let key in operatorMap) {
-          //       if (data[i].symbol === key) {
-          //         this.$set(data[i], 'operatorName', operatorMap[key].gateway);
-          //       }
-          //     }
-          //   }
-          // });
-         
           return;
         }
 

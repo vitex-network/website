@@ -9,8 +9,8 @@
                 <span class="__center-tb-item">
                     <span>{{ getTxPairShowSymbol(txPair) }}</span>
                 </span>
-                <span class="__center-tb-item">
-                    <span>VGATE</span>
+                <span class="__center-tb-item" v-if="hasOperator">
+                    <span>{{ txPair.operatorName || '--'}}</span>
                 </span>
                 <span class="__center-tb-item">
                     {{ txPair.closePrice ? `${formatNum(txPair.closePrice, txPair.pricePrecision)}/${getTableRealPrice(txPair)}` : '--' }}
@@ -46,6 +46,10 @@ export default {
     list: {
       type: Array,
       default: () => []
+    },
+    hasOperator: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
