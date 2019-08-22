@@ -32,6 +32,7 @@
     components: {},
     async beforeMount() {
       this.list = await operatorInfo([]);
+      
       console.log(this.list );
     },
     computed: {

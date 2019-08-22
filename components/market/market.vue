@@ -28,11 +28,11 @@
         </div>
         <div class="__center-tb-item percent">
             <span class="describe-r">24h最高</span>
-            <order-arrow orderItem="upDown" :setOrderRule="setOrderRule"></order-arrow>
+            <order-arrow orderItem="highPrice" :setOrderRule="setOrderRule"></order-arrow>
         </div>
          <div class="__center-tb-item percent">
             <span class="describe-r">24h最低</span>
-            <order-arrow orderItem="upDown" :setOrderRule="setOrderRule"></order-arrow>
+            <order-arrow orderItem="lowPrice" :setOrderRule="setOrderRule"></order-arrow>
         </div>
         <div  class="__center-tb-item">
             <span class="describe-r">24h成交量</span>
@@ -126,8 +126,6 @@ export default {
   methods: {
     init() {
       defaultPairTimer = defaultPairTimer || new subTask('defaultPair', ({ args, data }) => {
-        console.log('args.quoteTokenCategory');
-        console.log(args.quoteTokenCategory);
         if (args.quoteTokenCategory !== this.quoteTokenCategory) {
           return;
         }

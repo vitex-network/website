@@ -2,7 +2,7 @@
   <section class="section">
       <div class="container">
         <h1 style="margin-bottom: 50px;">运营商详情</h1>
-        <operator :operator-info="operatorInfo"></operator>
+        <operator></operator>
       </div>
     </section>
 </template>
@@ -14,15 +14,19 @@ export default {
   components: {
     operator
   },
-  async beforeMount() {
-    let list = await operatorInfo([this.$route.params.operator]);
-    this.operatorInfo = list[0];
+  async fetch({store}) {
+    let list = await operatorInfo([]);
+    let operatorInfoMap = {};
+    list.forEach(item=> {
+      operatorInfoMap[item.address] = item;
+    });
+    store.commit('setOperatorInfo', operatorInfoMap);
   },
-  computed: {
+  created() {
+    this.$store.commit('setCurrentOperator', this.$route.params.operator);
   },
   data() {
     return {
-      operatorInfo: {}
     };
   }
 };

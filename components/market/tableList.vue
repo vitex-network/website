@@ -161,6 +161,14 @@ export default {
           return BigNumber.compared(a.priceChangePercent, b.priceChangePercent);
         case 'upDownDown':
           return BigNumber.compared(b.priceChangePercent, a.priceChangePercent);
+        case 'highPriceUp':
+          return BigNumber.compared(a.highPrice, b.highPrice);
+        case 'highPriceDown':
+          return BigNumber.compared(b.highPrice, a.highPrice);
+        case 'lowPriceUp':
+          return BigNumber.compared(a.lowPrice, b.lowPrice);
+        case 'lowPriceDown':
+          return BigNumber.compared(b.lowPrice, a.lowPrice);
         case 'txNumUp':
           return BigNumber.compared(a.amount, b.amount);
         case 'txNumDown':

@@ -9,6 +9,8 @@ let quoteTokenCategory = [ 'BTC', 'ETH', 'VITE', 'USDT' ];
 let DefaultCategory = 'BTC';
 
 let state = {
+  operatorInfoMap: {},
+  currentOperatorInfo: {},
   quoteTokenCategory,
   curentCategory: DefaultCategory,
   marketMap: [],
@@ -21,6 +23,12 @@ const mutations = {
   },
   setMarketMap(state, marketMap) {
     state.marketMap = marketMap;
+  },
+  setOperatorInfo(state, operatorInfo) {
+    state.operatorInfoMap = operatorInfo;
+  },
+  setCurrentOperator(state, address) {
+    state.currentOperatorInfo = state.operatorInfoMap[address];
   }
 };
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card is-flex">
-      <div class="left is-flex">
+      <div class="left is-flex" v-if="operatorInfo">
         <img :src="operatorInfo.icon" class="pic"/>
         <div class="info">
           <div class="name">{{ operatorInfo.name }}</div>
@@ -35,11 +35,13 @@ export default {
   components: {
     commonTitle
   },
-  props: {
-    operatorInfo: {
-      type: Object,
-      default: () => {}
-    }
+  created() {
+    this.operatorInfo = this.$store.state.exchangeMarket.currentOperatorInfo;
+  },
+  data() {
+    return {
+      operatorInfo: null
+    };
   }
 };
 </script>
