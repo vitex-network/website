@@ -6,6 +6,7 @@
               <div class="token-left">
                 <div>{{ item.tokenSymbol }} </div>
                 <div class="vx-amount">{{ item.amount }}</div>
+                <div v-if="item.mainBtcAmount" class="amount-btc">≈ {{ item.mainBtcAmount }} BTC</div>
               </div>
               <div class="token-right">
                 <img :src="item.img"/>
@@ -17,7 +18,7 @@
               </div>
               <div class="token-right">
                 <div>{{ item.tokenAmount }} VITE</div>
-                <div>≈{{ item.btcAmount }} BTC</div>
+                <div>≈ {{ item.btcAmount }} BTC</div>
               </div>
             </div>
           </div>
@@ -90,6 +91,13 @@ export default {
       width: 100%;
       margin-bottom: 10px;
     }
+  }
+  .amount-btc {
+    font-size:12px;
+    font-family:PingFangSC;
+    font-weight:400;
+    color:rgba(84,86,90,1);
+    line-height:16px;
   }
   .token {
     box-sizing: border-box;

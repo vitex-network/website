@@ -16,7 +16,7 @@
     </div>
     <div class="title">VX当日分红概况</div>
     <info-total-card :total-info="diviTotalInfo"></info-total-card>
-    <info-card :is-simple="true" style="margin-top: 30px;" :list="txMineList"></info-card>
+    <info-card :is-simple="true" style="margin-top: 30px;" :list="dividendList"></info-card>
   </div>
 </template>
 <script>
@@ -40,7 +40,6 @@ export default {
     // 抵押是VITE 18位
     this.vxMineInfo = await dexFund.getCurrentVxMineInfo();
     this.feesForMine = await dexFund.getCurrentFeesForMine();
-    console.log(this.feesForMine);
     this.pledgeForVxSum = await dexFund.getCurrentPledgeForVxSum();
   },
   computed: {
@@ -108,6 +107,28 @@ export default {
         tokenSymbol: 'USDT',
         img: require('~/assets/images/index/usd.svg'),
         amount: `${(this.totalMineAmount.order/4).toFixed(2)} VX`
+      }] || [];
+    },
+    dividendList() {
+      return this.vxMineInfo && [{
+        tokenSymbol: 'VITE',
+        img: require('~/assets/images/index/vite.svg'),
+        amount: `${(this.totalMineAmount.order/4).toFixed(2) } VITE`,
+        mainBtcAmount: '--'
+      }, {
+        tokenSymbol: 'BTC',
+        img: require('~/assets/images/index/btc.svg'),
+        amount: `${(this.totalMineAmount.order/4).toFixed(2)} BTC`
+      }, {
+        tokenSymbol: 'ETH',
+        img: require('~/assets/images/index/eth.svg'),
+        amount: `${(this.totalMineAmount.order/4).toFixed(2)} ETH`,
+        mainBtcAmount: '--'
+      }, {
+        tokenSymbol: 'USDT',
+        img: require('~/assets/images/index/usd.svg'),
+        amount: `${(this.totalMineAmount.order/4).toFixed(2)} USDT`,
+        mainBtcAmount: '--'
       }] || [];
     }
   },
