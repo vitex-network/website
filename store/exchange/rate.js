@@ -20,7 +20,6 @@ const mutations = {
 
 const actions = {
   startLoopExchangeRate({ commit, dispatch, state }) {
-    console.log('startLoopExchangeRate');
     dispatch('stopLoopExchangeRate');
     const f = () => {
       if (!state.rateTokenIds || !state.rateTokenIds.length) {

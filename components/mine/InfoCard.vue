@@ -1,15 +1,14 @@
 <template>
     <div>
-      <common-title v-if="hasTitle"></common-title>
       <div class="card-wrapper">
           <div class="item" v-for="(item, index) in list" :key="index">
             <div class="is-flex token">
               <div class="token-left">
                 <div>{{ item.tokenSymbol }} </div>
-                <div class="vx-amount">{{ item.vxAmount }} VX</div>
+                <div class="vx-amount">{{ item.amount }}</div>
               </div>
               <div class="token-right">
-                <img src="~/assets/images/index/vite.svg"/>
+                <img :src="item.img"/>
               </div>
             </div>
             <div class="is-flex token-bottom" v-if="!isSimple">
@@ -17,7 +16,7 @@
                 <div>实时交易手续费</div>
               </div>
               <div class="token-right">
-                <div>{{ item.tokenAmount }} {{ item.tokenSymbol }}</div>
+                <div>{{ item.tokenAmount }} VITE</div>
                 <div>≈{{ item.btcAmount }} BTC</div>
               </div>
             </div>
@@ -36,34 +35,34 @@ export default {
       type: Boolean,
       default: false
     },
-    hasTitle: {
-      type: Boolean,
-      default: true
+    list: {
+      type: Array,
+      default: ()=> []
     }
   },
   data() {
     return {
-      list: [{
-        vxAmount: 71197.08,
-        tokenAmount: 12345,
-        tokenSymbol: 'VITE',
-        btcAmount: 1
-      }, {
-        vxAmount: 71197.08,
-        tokenAmount: 12345,
-        tokenSymbol: 'VITE',
-        btcAmount: 1 
-      }, {
-        vxAmount: 71197.08,
-        tokenAmount: 12345,
-        tokenSymbol: 'VITE',
-        btcAmount: 1 
-      }, {
-        vxAmount: 71197.08,
-        tokenAmount: 12345,
-        tokenSymbol: 'VITE',
-        btcAmount: 1 
-      }]
+      // list: [{
+      //   vxAmount: 71197.08,
+      //   tokenAmount: 12345,
+      //   tokenSymbol: 'VITE',
+      //   btcAmount: 1
+      // }, {
+      //   vxAmount: 71197.08,
+      //   tokenAmount: 12345,
+      //   tokenSymbol: 'VITE',
+      //   btcAmount: 1 
+      // }, {
+      //   vxAmount: 71197.08,
+      //   tokenAmount: 12345,
+      //   tokenSymbol: 'VITE',
+      //   btcAmount: 1 
+      // }, {
+      //   vxAmount: 71197.08,
+      //   tokenAmount: 12345,
+      //   tokenSymbol: 'VITE',
+      //   btcAmount: 1 
+      // }]
     };
   }
 };

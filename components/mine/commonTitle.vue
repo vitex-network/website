@@ -1,12 +1,12 @@
 <template>
   <div class="is-flex sub-title-wrapper">
     <div class="dot"></div>
-    <div class="desc">交易挖矿总收益 <span>46719.12 VX</span></div>
+    <div class="desc">{{ name }} <span>{{ amount }} VX</span></div>
   </div>
 </template>
 <script>
 export default {
-  
+  props: ['name', 'amount']
 };
 </script>
 <style lang="scss" scoped>

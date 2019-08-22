@@ -1,23 +1,23 @@
 <template>
     <div class="info-total-wrapper">
-      <div class="column item" v-for="(item, index) in list" :key="index">
-        <div>{{ item.title }}</div>
-        <div class="value">{{ item.value }} VX</div>
+      <div class="column item" v-for="(item, index) in totalInfo" :key="index">
+        <div>{{ item.name }}</div>
+        <div class="value">{{ item.amount }}</div>
       </div>
     </div>
 </template>
 <script>
+
+
 export default {
+  props: {
+    totalInfo: {
+      type: Array,
+      default: () => []
+    }
+  },
   data() {
-    return {
-      list: [{
-        title: '今日可挖量',
-        value: 474647.20
-      }, {
-        title: '累计挖矿总量',
-        value: 9654647.56
-      }]
-    };
+    return {};
   }
 };
 </script>

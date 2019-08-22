@@ -31,7 +31,6 @@ const mutations = {
 const actions = {
   updateMarketMap({ commit, dispatch }) {
     // Add quote token
-    console.log('store_updateMarketMap');
     baseToken().then(data => {
       const marketMap = data || [];
       commit('setMarketMap', marketMap);

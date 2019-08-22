@@ -127,5 +127,11 @@ export default {
   onlyFormat(num) {
     const n = new GroupBigNumber(num);
     return n.toFormat();
+  },
+  originFormat(str, decimal = 18, fix = 8) {
+    if (str === 0 || str === '0') return '0';
+    if (!str || str === 'null') return '';
+    const n = new BigNumber(str);
+    return new BigNumber(n.shiftedBy(-decimal)).toFixed(fix);
   }
 };

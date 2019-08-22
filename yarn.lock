@@ -1322,9 +1322,17 @@
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
 
+"@vite/vitejs-client@^2.2.9":
+  version "2.2.9"
+  resolved "https://registry.npm.taobao.org/@vite/vitejs-client/download/@vite/vitejs-client-2.2.9.tgz#d8cb93e5ef60afb2cdb72cec34b43e68dc78ab26"
+
 "@vite/vitejs-utils@^2.2.9":
   version "2.2.9"
   resolved "https://registry.yarnpkg.com/@vite/vitejs-utils/-/vitejs-utils-2.2.9.tgz#77ae54671a5d4b4d298b8cb28cc8c5dd324f30af"
+
+"@vite/vitejs-ws@^2.2.9":
+  version "2.2.9"
+  resolved "https://registry.npm.taobao.org/@vite/vitejs-ws/download/@vite/vitejs-ws-2.2.9.tgz#5f2c3a1c0557705bd4e7ae4a9b4162d2429a4a9c"
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0":
   version "1.0.0"

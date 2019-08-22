@@ -3,7 +3,7 @@
   <div class="container">
     <div v-swiper:mySwiper="swiperOption">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="(banner,index) in banners[$i18n.locale]" @click="onBannerClick">
+        <div class="swiper-slide" v-for="(banner,index) in banners[$i18n.locale]" @click="onBannerClick" :key="index">
           <a :href="bannerUrls[$i18n.locale][index]" target="_blank">
             <img :src="banner">
           </a>

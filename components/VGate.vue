@@ -32,8 +32,6 @@
     components: {},
     async beforeMount() {
       this.list = await operatorInfo([]);
-      
-      console.log(this.list );
     },
     computed: {
       locales() {
@@ -49,30 +47,7 @@
     },
     data(){
       return{
-        list: [],
-        // list: [
-        //   {
-        //     key: 'xinsheng',
-        //     logo: require('~/assets/images/operators/xinsheng.png'),
-        //     vxAmount: 123,
-        //     // logoActive: require('~/assets/images/operators/xinsheng-act.png'),
-        //     url: 'https://forum.vite.net/topic/2313/introduction-of-vitex-operator-xsfund'
-        //   },
-        //   {
-        //     key: 'bid',
-        //     logo: require('~/assets/images/operators/bid.svg'),
-        //     vxAmount: 123,
-        //     // logoActive: require('~/assets/images/operators/bid-act.png'),
-        //     url: 'https://www.bbiidd.org'
-        //   },
-        //   {
-        //     key: 'vgate',
-        //     logo: require('~/assets/images/operators/vgate.svg'),
-        //     vxAmount: 123,
-        //     // logoActive: require('~/assets/images/operators/vgate-act.png'),
-        //     url: 'https://vgate.io/'
-        //   },
-        // ]
+        list: []
       };
     },
     methods:{
