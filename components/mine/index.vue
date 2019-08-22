@@ -41,6 +41,45 @@ export default {
     this.vxMineInfo = await dexFund.getCurrentVxMineInfo();
     this.feesForMine = await dexFund.getCurrentFeesForMine();
     this.pledgeForVxSum = await dexFund.getCurrentPledgeForVxSum();
+    this.dividendPools = await dexFund.getCurrentDividendPools();
+  },
+  watch: {
+    dividendPools(val) {
+      console.log(val);
+      this.rawData = val;
+      if (!val) {
+        this.pool = {};
+        return;
+      }
+      this.pool = {};
+      const tokenIds = [];
+
+      for (const tokenId in val) {
+        const token = val[tokenId];
+        const tokenTypeName = this.tokenList[token.quoteTokenType - 1];
+
+        this.pool[tokenTypeName] = this.pool[tokenTypeName] || {
+          amount: '0',
+          decimals: 8,
+          tokens: []
+        };
+
+        const allAmount = this.pool[tokenTypeName].amount;
+
+        token.tokenType = tokenTypeName;
+        token.amount = BigNumber.toBasic(token.amount, token.tokenInfo.decimals);
+
+        this.pool[tokenTypeName].tokens.push(token);
+        this.pool[tokenTypeName].amount = BigNumber.plus(token.amount, allAmount);
+
+        tokenIds.push(token.tokenInfo.tokenId);
+
+        this.$store.dispatch('addRateTokens', tokenIds);
+      }
+      console.log('this.pool', this.pool);
+      console.log('tokenIds',tokenIds);
+
+    }
   },
   computed: {
     pledgeAmount() {
@@ -110,24 +149,24 @@ export default {
       }] || [];
     },
     dividendList() {
-      return this.vxMineInfo && [{
+      return this.pool && [{
         tokenSymbol: 'VITE',
         img: require('~/assets/images/index/vite.svg'),
-        amount: `${(this.totalMineAmount.order/4).toFixed(2) } VITE`,
+        amount: this.pool['VITE'] && `${this.pool['VITE'].amount} VITE` || '-- VITE',
         mainBtcAmount: '--'
       }, {
         tokenSymbol: 'BTC',
         img: require('~/assets/images/index/btc.svg'),
-        amount: `${(this.totalMineAmount.order/4).toFixed(2)} BTC`
+        amount: this.pool['BTC'] && `${this.pool['BTC'].amount} BTC` || '-- BTC',
       }, {
         tokenSymbol: 'ETH',
         img: require('~/assets/images/index/eth.svg'),
-        amount: `${(this.totalMineAmount.order/4).toFixed(2)} ETH`,
+        amount: this.pool['ETH'] && `${this.pool['ETH'].amount} ETH` || '-- ETH',
         mainBtcAmount: '--'
       }, {
         tokenSymbol: 'USDT',
         img: require('~/assets/images/index/usd.svg'),
-        amount: `${(this.totalMineAmount.order/4).toFixed(2)} USDT`,
+        amount: this.pool['USDT'] && `${this.pool['USDT'].amount} USDT` || '-- USDT',
         mainBtcAmount: '--'
       }] || [];
     }
@@ -137,6 +176,10 @@ export default {
       vxMineInfo: null,
       feesForMine: null,
       pledgeForVxSum: null,
+      dividendPools: null,
+      rawData: {},
+      pool: null,
+      tokenList: ['VITE', 'ETH', 'BTC', 'USDT']
     };
   },
   methods: {
