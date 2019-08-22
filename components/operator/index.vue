@@ -1,8 +1,10 @@
 <template>
   <div>
     <card-info :operatorInfo="operatorInfo"></card-info>
-    <common-title :title="`交易对`"></common-title>
-    <operatorMarket class="operator-market"></operatorMarket>
+    <div v-if="tradePairs">
+      <common-title :title="`交易对`"></common-title>
+      <operatorMarket class="operator-market"></operatorMarket>
+    </div>    
   </div>
 </template>
 <script>
@@ -15,6 +17,15 @@ export default {
     cardInfo,
     commonTitle,
     operatorMarket
+  },
+  created() {
+    let operatorInfo = this.$store.state.exchangeMarket.currentOperatorInfo;
+    this.tradePairs = operatorInfo && operatorInfo.tradePairs || null;
+  },
+  data() {
+    return {
+      tradePairs: null
+    };
   },
   props: {
     operatorInfo: {

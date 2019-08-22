@@ -20,7 +20,7 @@ export default {
   },
   created() {
     this.operatorInfo = this.$store.state.exchangeMarket.currentOperatorInfo;
-    this.tradePairs = this.operatorInfo && Object.keys(this.operatorInfo.tradePairs) || [];
+    this.tradePairs = this.operatorInfo && this.operatorInfo.tradePairs && Object.keys(this.operatorInfo.tradePairs) || [];
     console.log(this.tradePairs);
   },
   data() {
