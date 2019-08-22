@@ -89,7 +89,7 @@
                 {{$t('user.protocol')}}
               </a>
               <a class="content"
-                 :href="urls.list"
+                 :href="urls.list[$i18n.locale]"
                  target="_blank"
               >
                 {{$t('user.list')}}
