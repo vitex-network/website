@@ -162,3 +162,7 @@ export function operatorIncome({ operatorId, tradeToken, quoteToken, offset, lim
 export function operatorName(list) {
   return post(`${ version }/operator/tradepair`, list);
 }
+
+export function operatorInfo(addresslist) {
+  return post(`${ version }/operator/info`, addresslist);
+}

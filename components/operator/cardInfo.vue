@@ -2,27 +2,29 @@
   <div>
     <div class="card is-flex">
       <div class="left is-flex">
-        <div class="pic"></div>
+        <img :src="operatorInfo.icon" class="pic"/>
         <div class="info">
-          <div class="name">{{ name }}</div>
+          <div class="name">{{ operatorInfo.name }}</div>
           <div class="is-flex">
             <img src="~/assets/images/operators/address.svg"/>
-            <a href="">hhhhhh</a>
+            <a href="">{{ operatorInfo.address }}</a>
           </div>
           <div class="is-flex">
             <img src="~/assets/images/operators/link.svg"/>
-            <a href="">hhhhhh</a>
+            <a href="">{{ operatorInfo.links && operatorInfo.links.website && operatorInfo.links.website[0] }}</a>
           </div>
         </div>
       </div>
-      <div class="right">
-        加大拿回家撒旦
+      <div class="right is-flex __pointer">
+        <img src="~/assets/images/operators/facebook.svg"/>
+        <img src="~/assets/images/operators/twitter.svg"/>
+        <img src="~/assets/images/operators/telegram.svg"/>
       </div>
     </div>
     <div class="desc-wrapper">
       <commonTitle :title="`详细介绍`"></commonTitle>
       <div class="introduction">
-         Vite 是一个通用的去中心化应用平台，在兼顾安全性的同时，满足了工业级应用对高吞吐、低延迟和扩展性的要求。Vite 致力于解决基础链目前的性能和扩展性问题，以便在基础链上能搭建出真正实用且高频的应用。Vite 是一个通用的去中心化应用平台，在兼顾安全性的同时，满足了工业级应用对高吞吐、低延迟和扩展性的要求。Vite 致力于解决基础链目前的性能和扩展性问题，以便在基础链上能搭建出真正实用且高频的应用。Vite 是一个通用的去中心化应用平台，在兼顾安全性的同时，满足了工业级应用对高吞吐、低延迟和扩展性的要求。Vite 致力于解决基础链目前的性能和扩展性问题，以便在基础链上能搭建出真正实用且高频的应用。Vite 是一个通用的去中心化应用平台，在兼顾安全性的同时，满足了工业级应用对高吞吐、低延迟和扩展性的要求。Vite 致力于解决基础链目前的性能和扩展性问题，以便在基础链上能搭建出真正实用且高频的应用。Vite 是一个通用的去中心化应用平台，在兼顾安全性的同时，满足了工业级应用对高吞吐、低延迟和扩展性的要求。Vite 致力于解决基础链目前的性能和扩展性问题，以便在基础链上能搭建出真正实用且高频的应用。
+        {{ operatorInfo && operatorInfo.overview && operatorInfo.overview[$i18n.locale] }}
       </div>
     </div>
   </div>
@@ -34,9 +36,9 @@ export default {
     commonTitle
   },
   props: {
-    name: {
-      type: String,
-      default: ''
+    operatorInfo: {
+      type: Object,
+      default: () => {}
     }
   }
 };
@@ -49,6 +51,7 @@ export default {
   background: url("~assets/images/bg/operator.png");
   justify-content: space-between;
   padding: 30px;
+  align-items: flex-start;
   .pic {
     width:70px;
     height:70px;
@@ -68,6 +71,11 @@ export default {
     }
     img {
       margin-right: 6px;
+    }
+  }
+  .right {
+    img {
+      margin-left: 14px;
     }
   }
   

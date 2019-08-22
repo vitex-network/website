@@ -5,18 +5,18 @@
         {{$t('vgate.slogan')}}
       </h1>
       <div class="card-wrapper container">
-          <div class="item __pointer" v-for="(item, index) in list" :key="index">
-            <nuxt-link :to="`${locales}/operatorDetail/${item.key}`">
+          <div class="item __pointer" v-for="(item, index) in showList" :key="index">
+            <nuxt-link :to="`${locales}/operatorDetail/${item.address}`">
               <div class="is-flex token">
                 <div class="token-left">
-                  <div class="operator-name">{{ item.key }} </div>
+                  <div class="operator-name">{{ item.name }} </div>
                   <div class="operator-amount">
                     <div>成交量</div>
-                    <div class="operator-value">{{ item.vxAmount }} VX</div>
+                    <div class="operator-value">123456 BTC</div>
                   </div>
                 </div>
                 <div class="token-right">
-                  <img src="~/assets/images/index/vite.svg"/>
+                  <img :src="item.icon" width="50px" height="50px"/>
                 </div>
               </div>
             </nuxt-link>
@@ -27,38 +27,51 @@
 </template>
 
 <script>
+  import { operatorInfo } from '~/services/trade';
   export default {
     components: {},
+    async beforeMount() {
+      this.list = await operatorInfo([]);
+      console.log(this.list );
+    },
     computed: {
       locales() {
         return this.$i18n.locale === 'zh' ? 'zh' : '';
+      },
+      showList() {
+        return this.list.map(item=> {
+          return {
+            ...item
+          };
+        });
       }
     },
     data(){
       return{
-        list: [
-          {
-            key: 'xinsheng',
-            logo: require('~/assets/images/operators/xinsheng.png'),
-            vxAmount: 123,
-            // logoActive: require('~/assets/images/operators/xinsheng-act.png'),
-            url: 'https://forum.vite.net/topic/2313/introduction-of-vitex-operator-xsfund'
-          },
-          {
-            key: 'bid',
-            logo: require('~/assets/images/operators/bid.svg'),
-            vxAmount: 123,
-            // logoActive: require('~/assets/images/operators/bid-act.png'),
-            url: 'https://www.bbiidd.org'
-          },
-          {
-            key: 'vgate',
-            logo: require('~/assets/images/operators/vgate.svg'),
-            vxAmount: 123,
-            // logoActive: require('~/assets/images/operators/vgate-act.png'),
-            url: 'https://vgate.io/'
-          },
-        ]
+        list: [],
+        // list: [
+        //   {
+        //     key: 'xinsheng',
+        //     logo: require('~/assets/images/operators/xinsheng.png'),
+        //     vxAmount: 123,
+        //     // logoActive: require('~/assets/images/operators/xinsheng-act.png'),
+        //     url: 'https://forum.vite.net/topic/2313/introduction-of-vitex-operator-xsfund'
+        //   },
+        //   {
+        //     key: 'bid',
+        //     logo: require('~/assets/images/operators/bid.svg'),
+        //     vxAmount: 123,
+        //     // logoActive: require('~/assets/images/operators/bid-act.png'),
+        //     url: 'https://www.bbiidd.org'
+        //   },
+        //   {
+        //     key: 'vgate',
+        //     logo: require('~/assets/images/operators/vgate.svg'),
+        //     vxAmount: 123,
+        //     // logoActive: require('~/assets/images/operators/vgate-act.png'),
+        //     url: 'https://vgate.io/'
+        //   },
+        // ]
       };
     },
     methods:{

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <card-info :name="name"></card-info>
+    <card-info :operatorInfo="operatorInfo"></card-info>
     <common-title :title="`交易对`"></common-title>
     <operatorMarket class="operator-market"></operatorMarket>
   </div>
@@ -17,9 +17,9 @@ export default {
     operatorMarket
   },
   props: {
-    name: {
-      type: String,
-      default: ''
+    operatorInfo: {
+      type: Object,
+      default: () => {}
     }
   }
 };

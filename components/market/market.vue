@@ -121,7 +121,6 @@ export default {
           } 
         }
       }
-      // console.log(val);
     }
   },
   methods: {
@@ -137,16 +136,6 @@ export default {
 
         if (data instanceof Array) {
           this.txPairList = data || [];
-          // operatorFetcher.getOperators(data).then(operatorMap=> {
-          //   for(let i = 0; i < data.length; i++) {
-          //     for(let key in operatorMap) {
-          //       if (data[i].symbol === key) {
-          //         this.$set(data[i], 'operatorName', operatorMap[key].gateway);
-          //       }
-          //     }
-          //   }
-          // });
-         
           return;
         }
 
