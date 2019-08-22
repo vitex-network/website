@@ -1,11 +1,7 @@
 import { baseToken } from '~/services/trade';
-// import getQuery from '~/utils/query';
 
 let quoteTokenCategory = [ 'BTC', 'ETH', 'VITE', 'USDT' ];
 
-// const query = getQuery();
-// const category = query.category;
-// const symbol = query.symbol;
 let DefaultCategory = 'BTC';
 
 let state = {

@@ -3,7 +3,7 @@
     <section class="section">
       <div class="container">
         <h1 style="margin-bottom: 50px;">{{$t('nav.dividend')}}</h1>
-        <piechart></piechart>
+        <piechart :page="`dividend`"></piechart>
       </div>
     </section>
   </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="detail">
     <div class="piechart is-flex">
-      <img :src="piechart[$i18n.locale]" width="50%" height="50%">
+      <img :src="piechart[page][$i18n.locale]" width="50%" height="50%">
     </div>
     <div class="question">
       <div class="answer" v-for="(item, index) in $t('vitexInfo.questions')" :key="index">
@@ -23,20 +23,35 @@
 
 <script type="text/babel">
   import config from '~/config';
-  import en from '~/assets/images/piecharten.jpg';
-  import zh from '~/assets/images/piechart@2x.png';
+  import dividend_en from '~/assets/images/index/dividend_en.jpg';
+  import dividend_zh from '~/assets/images/index/dividend_zh.jpg';
+  import mine_en from '~/assets/images/index/mine_en.jpg';
+  import mine_zh from '~/assets/images/index/mine_zh.jpg';
 
   export default {
+    props: {
+      page: {
+        type: String,
+        default: ''
+      }
+    },
     computed: {
-
+      piechart() {
+        return {
+          'dividend': {
+            en: dividend_en,
+            zh: dividend_zh,
+          },
+          'mine': {
+            en: mine_en,
+            zh: mine_zh,
+          },
+          urls: config.urls
+        };
+      }
     },
     data() {
       return {
-        piechart:{
-          en,
-          zh,
-          urls: config.urls
-        },
       };
     },
   };
