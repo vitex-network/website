@@ -19,25 +19,24 @@ export default {
     }
   },
   created() {
-    this.operatorInfo = this.$store.state.exchangeMarket.currentOperatorInfo;
-    this.tradePairs = this.operatorInfo && this.operatorInfo.tradePairs && Object.keys(this.operatorInfo.tradePairs) || [];
+    let operatorInfo = this.$store.state.exchangeMarket.currentOperatorInfo;
+    this.tradePairs = operatorInfo && operatorInfo.tradePairs && Object.keys(operatorInfo.tradePairs) || [];
   },
   data() {
     return {
-      tradePairs: []
+      tradePairs: [],
+      curentCategory: 'BTC'
     };
   },
   computed: {
-    curentCategory() {
-      return this.$store.state.exchangeMarket.curentCategory;
-    },
     quoteTokenCategory() {
       return this.isOperator ? this.tradePairs : this.$store.state.exchangeMarket.quoteTokenCategory;
     },
   },
   methods: {
     changeCategory(category) {
-      this.$store.commit('setCurentCategory', category);
+      this.curentCategory = category;
+      this.$emit('currentCategory', category);
     }
   }
 };

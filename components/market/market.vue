@@ -2,7 +2,7 @@
   <div>
     <div class="market-wrapper">
       <div class="is-flex">
-        <tab-list></tab-list>
+        <tab-list @currentCategory="getCurrentCategory"></tab-list>
         <vitex-input 
           class="market-search-input" 
           v-model="searchText"
@@ -61,6 +61,7 @@ export default {
   },
 
   beforeMount() {
+    this.quoteTokenCategory = 'BTC';
     this.init();
   },
   data() {
@@ -71,12 +72,16 @@ export default {
       searchList: [],
       rateTimer: null,
       currentOrderRule: 'txNumDown',
+      quoteTokenCategory: 'BTC'
     };
   },
+  destroyed() {
+    this.stopDefaultPair();
+  },
   computed: {
-    quoteTokenCategory() {
-      return this.$store.state.exchangeMarket.curentCategory;
-    },
+    // quoteTokenCategory() {
+    //   return this.$store.state.exchangeMarket.curentCategory;
+    // },
     activeTxPairList() {
       let list = this.searchText
         ? this.searchList 
@@ -90,11 +95,13 @@ export default {
     '$i18n.locale': function() {
       this.searchText = '';
       this.searchList = [];
+      this.stopDefaultPair();
       this.init();
     },
     quoteTokenCategory() {
       this.searchText = '';
       this.searchList = [];
+      this.stopDefaultPair();
 
       if (!this.quoteTokenCategory) {
         return;
@@ -124,6 +131,9 @@ export default {
     }
   },
   methods: {
+    getCurrentCategory(val) {
+      this.quoteTokenCategory = val;
+    },
     init() {
       defaultPairTimer = defaultPairTimer || new subTask('defaultPair', ({ args, data }) => {
         if (args.quoteTokenCategory !== this.quoteTokenCategory) {
@@ -163,7 +173,11 @@ export default {
     },
     setOrderRule(rule) {
       this.currentOrderRule = rule;
-    }
+    },
+    stopDefaultPair() {
+        defaultPairTimer && defaultPairTimer.stop();
+        defaultPairTimer = null;
+    },
   }
   
 };

@@ -2,7 +2,7 @@
   <div>
     <div class="market-wrapper">
       <div class="is-flex">
-        <tab-list :isOperator="true"></tab-list>
+        <tab-list :isOperator="true" @currentCategory="getCurrentCategory"></tab-list>
         <vitex-input 
           class="market-search-input" 
           v-model="searchText"
@@ -46,8 +46,9 @@ import tabList from './tabList.vue';
 import VitexInput from './VitexInput.vue';
 import { subTask } from '~/utils/proto/subTask';
 import orderArrow from './orderArrow';
-// import { operatorFetcher } from './operator.js';
-let defaultPairTimer = null;
+import { assignPair } from '~/services/trade';
+let operatorPairTimer = null;
+let assignPairTimerList = [];
 
 export default {
   components: {
@@ -68,12 +69,10 @@ export default {
       searchList: [],
       rateTimer: null,
       currentOrderRule: 'txNumDown',
+      quoteTokenCategory: 'BTC'
     };
   },
   computed: {
-    quoteTokenCategory() {
-      return this.$store.state.exchangeMarket.curentCategory;
-    },
     activeTxPairList() {
       let list = this.searchText
         ? this.searchList 
@@ -83,15 +82,20 @@ export default {
       return list;
     }
   },
+  destroyed() {
+    this.stopAssignPair();
+  },
   watch: {
     '$i18n.locale': function() {
       this.searchText = '';
       this.searchList = [];
+      this.stopAssignPair();
       this.init();
     },
     quoteTokenCategory() {
       this.searchText = '';
       this.searchList = [];
+      this.stopAssignPair();
 
       if (!this.quoteTokenCategory) {
         return;
@@ -111,46 +115,58 @@ export default {
     }
   },
   methods: {
+    getCurrentCategory(val) {
+      this.quoteTokenCategory = val;
+    },
     init() {
-      defaultPairTimer = defaultPairTimer || new subTask('defaultPair', ({ args, data }) => {
-        if (args.quoteTokenCategory !== this.quoteTokenCategory) {
-          return;
-        }
+      let symbols = [];
+      let tradePairs = this.$store.state.exchangeMarket.currentOperatorInfo.tradePairs;
+      if (!tradePairs) return;
 
-        this.isLoading = false;
+      symbols = tradePairs[this.quoteTokenCategory];
+      assignPair({ symbols }).then(data => {
+        this.txPairList = data;
+        this.stopAssignPair();
+        this.txPairList && this.txPairList.forEach(txPair => {
+          const _t = new subTask('assignPair', ({ data }) => {
+            if (!data) {
+              return;
+            }
 
-        if (data instanceof Array) {
-          this.txPairList = data || [];
-          return;
-        }
+            let i;
+            for (i = 0; i < this.txPairList.length; i++) {
+              if (this.txPairList[i].symbol === data.symbol) {
+                this.txPairList[i] = data;
+                break;
+              }
+            }
 
-        if (!data) {
-          return;
-        }
+            if (i === this.txPairList.length) {
+              return;
+            }
 
-        let i;
-        for (i = 0; i < this.txPairList.length; i++) {
-          if (this.txPairList[i].symbol === data.symbol) {
-            this.txPairList[i] = data;
-            break;
-          }
-        }
-
-        if (i === this.txPairList.length) {
-          this.txPairList.push(data);
-          return;
-        }
-
-        this.txPairList = [].concat(this.txPairList);
-      }, 2000);
-
-      defaultPairTimer.start(() => {
-        return { quoteTokenCategory: this.quoteTokenCategory };
+            this.txPairList = [].concat(this.txPairList);
+          });
+          _t.start(() => {
+              return { symbol: txPair.symbol };
+          }, false);
+          assignPairTimerList.push(_t);
+        });
+      })
+      .catch(err=> {
+        console.log(err);
       });
     },
     setOrderRule(rule) {
       this.currentOrderRule = rule;
-    }
+    },
+    stopAssignPair() {
+        assignPairTimerList.forEach(assignTimer => {
+            assignTimer && assignTimer.stop();
+            assignTimer = null;
+        });
+        assignPairTimerList = [];
+    },
   }
   
 };
