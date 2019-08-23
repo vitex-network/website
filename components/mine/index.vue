@@ -67,14 +67,14 @@ export default {
     
   },
   watch: {
+    dividendPools() {
+      this.handleDividendPools();
+    },
     feesForMine() {
       this.handleFeesForMine();
     },
     dividendStat() {
       this.handleDividendStat();
-    },
-    dividendPools() {
-      this.handleDividendPools();
     }
   },
   computed: {
