@@ -59,7 +59,6 @@ const actions = {
     rateTimer = new timer(f, loopTime);
     rateTimer.start();
   },
-  
   stopLoopExchangeRate() {
     rateTimer && rateTimer.stop();
     rateTimer = null;

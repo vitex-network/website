@@ -219,6 +219,7 @@ export default {
         this.pool[tokenTypeName] = this.pool[tokenTypeName] || {
           amount: '0',
           decimals: 8,
+          btcAmount: '0',
           tokens: []
         };
 
@@ -229,10 +230,12 @@ export default {
 
         this.pool[tokenTypeName].tokens.push(token);
         this.pool[tokenTypeName].amount = BigNumber.plus(token.amount, allAmount);
-        this.pool[tokenTypeName].btcAmount = BigNumber.multi(token.amount || 0, this.getRate(token.tokenInfo.tokenId, 'btc') || 0);
+        this.pool[tokenTypeName].btcAmount = this.pool[tokenTypeName].btcAmount = BigNumber.multi(token.amount || 0, this.getRate(token.tokenInfo.tokenId, 'btc') || 0);
+
         tokenIds.push(token.tokenInfo.tokenId);
 
         this.$store.dispatch('addRateTokens', tokenIds);
+        
       }
     },
     handleDividendStat() {
@@ -297,7 +300,7 @@ export default {
       if (!tokenId || !rateList[tokenId]) {
         return null;
       }
-
+     
       return rateList[tokenId][`${ coin }Rate`] || null;
     },
     getRateFromSymbol(symbol, coin) {
