@@ -45,7 +45,6 @@ export default {
   },
   watch: {
     dividendPools(val) {
-      console.log(val);
       this.rawData = val;
       if (!val) {
         this.pool = {};
@@ -71,13 +70,11 @@ export default {
 
         this.pool[tokenTypeName].tokens.push(token);
         this.pool[tokenTypeName].amount = BigNumber.plus(token.amount, allAmount);
-
+        this.pool[tokenTypeName].btcAmount = BigNumber.multi(token.amount || 0, this.getRate(token.tokenInfo.tokenId, 'btc') || 0);
         tokenIds.push(token.tokenInfo.tokenId);
 
         this.$store.dispatch('addRateTokens', tokenIds);
       }
-      console.log('this.pool', this.pool);
-      console.log('tokenIds',tokenIds);
 
     }
   },
@@ -153,7 +150,7 @@ export default {
         tokenSymbol: 'VITE',
         img: require('~/assets/images/index/vite.svg'),
         amount: this.pool['VITE'] && `${this.pool['VITE'].amount} VITE` || '-- VITE',
-        mainBtcAmount: '--'
+        mainBtcAmount: this.pool['VITE'] && `${this.pool['VITE'].btcAmount}` || '--',
       }, {
         tokenSymbol: 'BTC',
         img: require('~/assets/images/index/btc.svg'),
@@ -162,12 +159,12 @@ export default {
         tokenSymbol: 'ETH',
         img: require('~/assets/images/index/eth.svg'),
         amount: this.pool['ETH'] && `${this.pool['ETH'].amount} ETH` || '-- ETH',
-        mainBtcAmount: '--'
+        mainBtcAmount: this.pool['ETH'] && `${this.pool['ETH'].btcAmount}` || '--',
       }, {
         tokenSymbol: 'USDT',
         img: require('~/assets/images/index/usd.svg'),
         amount: this.pool['USDT'] && `${this.pool['USDT'].amount} USDT` || '-- USDT',
-        mainBtcAmount: '--'
+        mainBtcAmount: this.pool['USDT'] && `${this.pool['USDT'].btcAmount}` || '--',
       }] || [];
     },
     allBtc() {
@@ -224,7 +221,6 @@ export default {
     },
     getRate(tokenId, coin) {
       const rateList = this.$store.state.exchangeRate.rateMap || {};
-
       if (!tokenId || !rateList[tokenId]) {
         return null;
       }

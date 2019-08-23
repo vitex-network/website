@@ -12,6 +12,8 @@ const mutations = {
     rateList && rateList.forEach(rate => {
       state.rateMap[rate.tokenId] = rate;
     });
+    console.log('state.rateMap');
+    console.log(state.rateMap);
   },
   setRateTokenIds(state, payload) {
     state.rateTokenIds = Array.from(new Set([ ...state.rateTokenIds, ...payload ]));
