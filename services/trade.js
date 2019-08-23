@@ -52,6 +52,11 @@ export function rateToken({ tokenIdList = [] }) {
   return get(`${ version }/exchange-rate`, { tokenIds });
 }
 
+export function rateTokenSymbols({ tokenSymbolList = [] }) {
+  const tokenSymbols = tokenSymbolList.join(',');
+  return get(`${ version }/exchange-rate`, { tokenSymbols });
+}
+
 export function defaultPair({ quoteTokenCategory }) {
   return get(`${ version }/ticker/24hr`, {
     quoteTokenCategory
@@ -165,4 +170,8 @@ export function operatorName(list) {
 
 export function operatorInfo(addresslist) {
   return post(`${ version }/operator/info`, addresslist);
+}
+
+export function getMiningStat() {
+  return get(`${ version }/mining/stat`);
 }

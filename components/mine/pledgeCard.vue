@@ -3,8 +3,8 @@
   <div class="is-flex pledge-wrapper">
     <div class="left">
       <div class="pledge-title">当前累计抵押金额</div>
-      <div class="pledge-amount"> {{ pledgeAmount }} VITE</div>
-      <div class="pledge-amount-btc">= 12 BTC</div>
+      <div class="pledge-amount"> {{ pledgeAmount.vite }} VITE</div>
+      <div class="pledge-amount-btc">≈ {{ pledgeAmount.btc }} BTC</div>
     </div>
     <div class="right">
       <div class="img-wrapper is-flex">

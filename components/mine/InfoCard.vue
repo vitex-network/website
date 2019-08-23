@@ -17,8 +17,8 @@
                 <div>实时交易手续费</div>
               </div>
               <div class="token-right">
-                <div>{{ item.tokenAmount }} VITE</div>
-                <div>≈ {{ item.btcAmount }} BTC</div>
+                <div>{{ item.fee }} VITE</div>
+                <div>≈ {{ item.btcFee }} BTC</div>
               </div>
             </div>
           </div>
@@ -43,27 +43,6 @@ export default {
   },
   data() {
     return {
-      // list: [{
-      //   vxAmount: 71197.08,
-      //   tokenAmount: 12345,
-      //   tokenSymbol: 'VITE',
-      //   btcAmount: 1
-      // }, {
-      //   vxAmount: 71197.08,
-      //   tokenAmount: 12345,
-      //   tokenSymbol: 'VITE',
-      //   btcAmount: 1 
-      // }, {
-      //   vxAmount: 71197.08,
-      //   tokenAmount: 12345,
-      //   tokenSymbol: 'VITE',
-      //   btcAmount: 1 
-      // }, {
-      //   vxAmount: 71197.08,
-      //   tokenAmount: 12345,
-      //   tokenSymbol: 'VITE',
-      //   btcAmount: 1 
-      // }]
     };
   }
 };

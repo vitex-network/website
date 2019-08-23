@@ -26,6 +26,20 @@ import pledgeCard from './pledgeCard';
 import { dexFund } from '~/utils/vitejs/index.js';
 import BigNumber from '~/utils/bigNumber';
 import commonTitle from './commonTitle';
+import { getMiningStat } from '~/services/trade.js';
+const tokenMap = {
+  1: 'VITE',
+  2: 'ETH',
+  3: 'BTC',
+  4: 'USDT'
+};
+
+const decimals = {
+  'VITE': 18,
+  'BTC': 8,
+  'USDT': 6,
+  'ETH': 18
+};
 
 export default {
   components: {
@@ -38,12 +52,57 @@ export default {
     // VX 18位
     // 手续费相关的 VITE 18, ETH 18, BTC 8, USDT 6
     // 抵押是VITE 18位
-    this.vxMineInfo = await dexFund.getCurrentVxMineInfo();
-    this.feesForMine = await dexFund.getCurrentFeesForMine();
-    this.pledgeForVxSum = await dexFund.getCurrentPledgeForVxSum();
     this.dividendPools = await dexFund.getCurrentDividendPools();
+
+    Promise.all([getMiningStat().then(data=> {
+      this.dividendStat = data.userDividendStat;
+    }), dexFund.getCurrentVxMineInfo().then(data=> {
+      this.vxMineInfo = data;
+    }), dexFund.getCurrentFeesForMine().then(data=> {
+      // 1 VITE 2 ETH_001 3 BTC_001 4 USDT_001
+      this.feesForMine = data;
+    }), dexFund.getCurrentPledgeForVxSum().then(data=> {
+      this.pledgeForVxSum = data;
+    })]);
+    
   },
   watch: {
+    feesForMine(val) {
+      this.minePool = {};
+      for (const tokenNum in val) {
+        let tokenName = tokenMap[tokenNum];
+        let rate = this.getRateFromSymbol(tokenName, 'btc');
+        let viteRate = this.getRateFromSymbol(tokenName, 'vite');
+        let originAmount = val[tokenNum];
+        let amount = BigNumber.toBasic(originAmount, decimals[tokenName]);
+
+        this.minePool[tokenName] = this.minePool[tokenName] || {
+          fee: '',
+          btcFee: ''
+        };
+        this.minePool[tokenName].fee = BigNumber.multi(amount || 0, viteRate || 0);
+        this.minePool[tokenName].btcFee = BigNumber.multi(amount || 0, rate || 0);
+      }
+    },
+    dividendStat(val) {
+      // console.log(val);
+      
+      let allPrice = 0;
+      for (const tokenName in val) {
+        let rate = this.getRateFromSymbol(tokenName, 'btc');
+        // let viteRate = this.getRateFromSymbol(tokenName, 'vite');
+        let originAmount = val[tokenName].dividendAmount;
+        let btcAmount = BigNumber.multi(originAmount || 0, rate || 0);
+        allPrice = BigNumber.plus(btcAmount, allPrice);
+      }
+      this.dividendAllPriceBtc = allPrice;
+      // this.dividendPool[tokenName] = this.dividendPool[tokenName] || {
+      //   fee: '',
+      //   btcFee: ''
+      // };
+      // this.dividendPool[tokenName].fee = BigNumber.multi(originAmount || 0, viteRate || 0);
+      // this.dividendPool[tokenName].btcFee = BigNumber.multi(originAmount || 0, rate || 0);
+    },
     dividendPools(val) {
       this.rawData = val;
       if (!val) {
@@ -80,7 +139,10 @@ export default {
   },
   computed: {
     pledgeAmount() {
-      return `${this.formatVX(this.pledgeForVxSum)}`;
+      return {
+        vite: this.formatVX(this.pledgeForVxSum),
+        btc: BigNumber.multi(this.formatVX(this.pledgeForVxSum) || 0, this.getRateFromSymbol('VITE', 'btc') || 0)
+      };
     },
     mineTotalInfo() {
       return this.vxMineInfo && [{
@@ -97,7 +159,7 @@ export default {
         amount: `${this.allBtc} BTC`
       }, {
         name: '已发放分红总估值',
-        amount: `${this.formatVX(this.vxMineInfo.historyMinedSum)} BTC`
+        amount: `${this.dividendAllPriceBtc} BTC`
       }] || [];
     },
     totalMineAmount() {
@@ -108,26 +170,34 @@ export default {
       } || {};
     },
     txMineList() {
-      return this.vxMineInfo && [{
+      return this.vxMineInfo && this.minePool && [{
         tokenSymbol: 'VITE',
         img: require('~/assets/images/index/vite.svg'),
-        amount: `${this.formatVX(this.vxMineInfo.feeMineDetail['1'])} VX`
+        amount: `${this.formatVX(this.vxMineInfo.feeMineDetail['1'])} VX`,
+        fee: this.minePool['VITE'] && this.minePool['VITE'].fee || '--',
+        btcFee: this.minePool['VITE'] && this.minePool['VITE'].btcFee || '--'
       }, {
         tokenSymbol: 'BTC',
         img: require('~/assets/images/index/btc.svg'),
-        amount: `${this.formatVX(this.vxMineInfo.feeMineDetail['2'])} VX`
+        amount: `${this.formatVX(this.vxMineInfo.feeMineDetail['2'])} VX`,
+        fee: this.minePool['BTC'] && this.minePool['BTC'].fee || '--',
+        btcFee: this.minePool['BTC'] && this.minePool['BTC'].btcFee || '--'
       }, {
         tokenSymbol: 'ETH',
         img: require('~/assets/images/index/eth.svg'),
-        amount: `${this.formatVX(this.vxMineInfo.feeMineDetail['3'])} VX`
+        amount: `${this.formatVX(this.vxMineInfo.feeMineDetail['3'])} VX`,
+        fee: this.minePool['ETH'] && this.minePool['ETH'].btcFee || '--',
+        btcFee: this.minePool['ETH'] && this.minePool['ETH'].btcFee || '--'
       }, {
         tokenSymbol: 'USDT',
         img: require('~/assets/images/index/usd.svg'),
-        amount: `${this.formatVX(this.vxMineInfo.feeMineDetail['4'])} VX`
+        amount: `${this.formatVX(this.vxMineInfo.feeMineDetail['4'])} VX`,
+        fee: this.minePool['USDT'] && this.minePool['USDT'].fee || '--',
+        btcFee: this.minePool['USDT'] && this.minePool['USDT'].btcFee || '--'
       }] || [];
     },
     orderMineList() {
-      return this.vxMineInfo && [{
+      return this.totalMineAmount && [{
         tokenSymbol: 'VITE',
         img: require('~/assets/images/index/vite.svg'),
         amount: `${(this.totalMineAmount.order/4).toFixed(2) } VX`
@@ -183,9 +253,13 @@ export default {
       feesForMine: null,
       pledgeForVxSum: null,
       dividendPools: null,
+      dividendStat: null,
       rawData: {},
       pool: null,
-      tokenList: ['VITE', 'ETH', 'BTC', 'USDT']
+      tokenList: ['VITE', 'ETH', 'BTC', 'USDT'],
+      symbolRate: null,
+      minePool: null,
+      dividendAllPriceBtc: 0
     };
   },
   methods: {
@@ -227,6 +301,15 @@ export default {
 
       return rateList[tokenId][`${ coin }Rate`] || null;
     },
+    getRateFromSymbol(symbol, coin) {
+      const rateList = this.$store.state.exchangeRate.rateSymbolMap || {};
+      if (!symbol || !rateList[symbol]) {
+        return null;
+      }
+      this.symbolRate = rateList[symbol][`${ coin }Rate`] || null;
+
+      return this.symbolRate;
+    }
   }
   
 };

@@ -51,6 +51,7 @@
     },
     beforeMount() {
       this.$store.dispatch('startLoopExchangeRate');
+      this.$store.dispatch('startLoopRateBySymbol');
     },
     methods:{
       openViteX(){

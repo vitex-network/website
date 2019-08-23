@@ -1,10 +1,11 @@
 import { timer } from '~/utils/asyncFlow';
-import { rateToken } from '~/services/trade';
+import { rateToken, rateTokenSymbols } from '~/services/trade';
 
 const loopTime = 10000;
 let rateTimer = null;
+let rateSymbolTimer = null;
 
-const state = { rateMap: {}, rateTokenIds: [] };
+const state = { rateMap: {}, rateTokenIds: [], rateSymbolMap: {}};
 
 const mutations = {
   setExchangeRate(state, rateList) {
@@ -12,8 +13,16 @@ const mutations = {
     rateList && rateList.forEach(rate => {
       state.rateMap[rate.tokenId] = rate;
     });
-    console.log('state.rateMap');
-    console.log(state.rateMap);
+  },
+  setRateSymbol(state, rateList) {
+    state.rateSymbolMap = {};
+    rateList && rateList.forEach(rate => {
+      let tokenSymbol = rate.tokenSymbol && rate.tokenSymbol.split('-')[0];
+      state.rateSymbolMap[tokenSymbol] = rate;
+    });
+    for (let key in state.rateSymbolMap) {
+      state.rateSymbolMap[key].viteRate = state.rateSymbolMap[key].usdRate / state.rateSymbolMap['VITE'].usdRate;
+    }
   },
   setRateTokenIds(state, payload) {
     state.rateTokenIds = Array.from(new Set([ ...state.rateTokenIds, ...payload ]));
@@ -21,6 +30,21 @@ const mutations = {
 };
 
 const actions = {
+  startLoopRateBySymbol({ commit, dispatch }) {
+    dispatch('stopLoopRateBySymbol');
+    const f = () => {
+      return rateTokenSymbols({ tokenSymbolList: ['ETH-000','VITE','BTC-000','USDT-000'] }).then(data => {
+        commit('setRateSymbol', data);
+      });
+    };
+
+    rateSymbolTimer = new timer(f, loopTime);
+    rateSymbolTimer.start();
+  },
+  stopLoopRateBySymbol() {
+    rateSymbolTimer && rateSymbolTimer.stop();
+    rateSymbolTimer = null;
+  },
   startLoopExchangeRate({ commit, dispatch, state }) {
     dispatch('stopLoopExchangeRate');
     const f = () => {
@@ -35,6 +59,7 @@ const actions = {
     rateTimer = new timer(f, loopTime);
     rateTimer.start();
   },
+  
   stopLoopExchangeRate() {
     rateTimer && rateTimer.stop();
     rateTimer = null;
