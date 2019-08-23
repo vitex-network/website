@@ -67,74 +67,14 @@ export default {
     
   },
   watch: {
-    feesForMine(val) {
-      this.minePool = {};
-      for (const tokenNum in val) {
-        let tokenName = tokenMap[tokenNum];
-        let rate = this.getRateFromSymbol(tokenName, 'btc');
-        let viteRate = this.getRateFromSymbol(tokenName, 'vite');
-        let originAmount = val[tokenNum];
-        let amount = BigNumber.toBasic(originAmount, decimals[tokenName]);
-
-        this.minePool[tokenName] = this.minePool[tokenName] || {
-          fee: '',
-          btcFee: ''
-        };
-        this.minePool[tokenName].fee = BigNumber.multi(amount || 0, viteRate || 0);
-        this.minePool[tokenName].btcFee = BigNumber.multi(amount || 0, rate || 0);
-      }
+    feesForMine() {
+      this.handleFeesForMine();
     },
-    dividendStat(val) {
-      // console.log(val);
-      
-      let allPrice = 0;
-      for (const tokenName in val) {
-        let rate = this.getRateFromSymbol(tokenName, 'btc');
-        // let viteRate = this.getRateFromSymbol(tokenName, 'vite');
-        let originAmount = val[tokenName].dividendAmount;
-        let btcAmount = BigNumber.multi(originAmount || 0, rate || 0);
-        allPrice = BigNumber.plus(btcAmount, allPrice);
-      }
-      this.dividendAllPriceBtc = allPrice;
-      // this.dividendPool[tokenName] = this.dividendPool[tokenName] || {
-      //   fee: '',
-      //   btcFee: ''
-      // };
-      // this.dividendPool[tokenName].fee = BigNumber.multi(originAmount || 0, viteRate || 0);
-      // this.dividendPool[tokenName].btcFee = BigNumber.multi(originAmount || 0, rate || 0);
+    dividendStat() {
+      this.handleDividendStat();
     },
-    dividendPools(val) {
-      this.rawData = val;
-      if (!val) {
-        this.pool = {};
-        return;
-      }
-      this.pool = {};
-      const tokenIds = [];
-
-      for (const tokenId in val) {
-        const token = val[tokenId];
-        const tokenTypeName = this.tokenList[token.quoteTokenType - 1];
-
-        this.pool[tokenTypeName] = this.pool[tokenTypeName] || {
-          amount: '0',
-          decimals: 8,
-          tokens: []
-        };
-
-        const allAmount = this.pool[tokenTypeName].amount;
-
-        token.tokenType = tokenTypeName;
-        token.amount = BigNumber.toBasic(token.amount, token.tokenInfo.decimals);
-
-        this.pool[tokenTypeName].tokens.push(token);
-        this.pool[tokenTypeName].amount = BigNumber.plus(token.amount, allAmount);
-        this.pool[tokenTypeName].btcAmount = BigNumber.multi(token.amount || 0, this.getRate(token.tokenInfo.tokenId, 'btc') || 0);
-        tokenIds.push(token.tokenInfo.tokenId);
-
-        this.$store.dispatch('addRateTokens', tokenIds);
-      }
-
+    dividendPools() {
+      this.handleDividendPools();
     }
   },
   computed: {
@@ -263,6 +203,65 @@ export default {
     };
   },
   methods: {
+    handleDividendPools() {
+      this.rawData = this.dividendPools;
+      if (!this.dividendPools) {
+        this.pool = {};
+        return;
+      }
+      this.pool = {};
+      const tokenIds = [];
+
+      for (const tokenId in this.dividendPools) {
+        const token = this.dividendPools[tokenId];
+        const tokenTypeName = this.tokenList[token.quoteTokenType - 1];
+
+        this.pool[tokenTypeName] = this.pool[tokenTypeName] || {
+          amount: '0',
+          decimals: 8,
+          tokens: []
+        };
+
+        const allAmount = this.pool[tokenTypeName].amount;
+
+        token.tokenType = tokenTypeName;
+        token.amount = BigNumber.toBasic(token.amount, token.tokenInfo.decimals);
+
+        this.pool[tokenTypeName].tokens.push(token);
+        this.pool[tokenTypeName].amount = BigNumber.plus(token.amount, allAmount);
+        this.pool[tokenTypeName].btcAmount = BigNumber.multi(token.amount || 0, this.getRate(token.tokenInfo.tokenId, 'btc') || 0);
+        tokenIds.push(token.tokenInfo.tokenId);
+
+        this.$store.dispatch('addRateTokens', tokenIds);
+      }
+    },
+    handleDividendStat() {
+      let allPrice = 0;
+      for (const tokenName in this.dividendStat) {
+        let rate = this.getRateFromSymbol(tokenName, 'btc');
+        let originAmount = this.dividendStat[tokenName].dividendAmount;
+        let btcAmount = BigNumber.multi(originAmount || 0, rate || 0);
+        allPrice = BigNumber.plus(btcAmount, allPrice);
+      }
+      this.dividendAllPriceBtc = allPrice;
+    },
+    handleFeesForMine() {
+      this.minePool = {};
+      for (const tokenNum in this.feesForMine) {
+        let tokenName = tokenMap[tokenNum];
+        let rate = this.getRateFromSymbol(tokenName, 'btc');
+        let viteRate = this.getRateFromSymbol(tokenName, 'vite');
+        let originAmount = this.feesForMine[tokenNum];
+        let amount = BigNumber.toBasic(originAmount, decimals[tokenName]);
+
+        this.minePool[tokenName] = this.minePool[tokenName] || {
+          fee: '',
+          btcFee: ''
+        };
+        this.minePool[tokenName].fee = BigNumber.multi(amount || 0, viteRate || 0);
+        this.minePool[tokenName].btcFee = BigNumber.multi(amount || 0, rate || 0);
+      }
+    },
     formatVX(num) {
       return BigNumber.originFormat(num, 18, 2);
     },
