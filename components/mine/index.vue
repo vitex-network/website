@@ -97,7 +97,7 @@ export default {
     diviTotalInfo() {
       return this.vxMineInfo && [{
         name: '当前分红池',
-        amount: `${this.formatVX(this.vxMineInfo.total)} BTC`
+        amount: `${this.allBtc} BTC`
       }, {
         name: '已发放分红总估值',
         amount: `${this.formatVX(this.vxMineInfo.historyMinedSum)} BTC`
@@ -169,6 +169,15 @@ export default {
         amount: this.pool['USDT'] && `${this.pool['USDT'].amount} USDT` || '-- USDT',
         mainBtcAmount: '--'
       }] || [];
+    },
+    allBtc() {
+      let allPrice = this.getPrice(this.rawData, 'btc');
+      if (+allPrice < 0) {
+        return '--';
+      }
+
+      allPrice = this.formatNum(allPrice, 'BTC');
+      return `${ allPrice }`;
     }
   },
   data() {
@@ -185,7 +194,43 @@ export default {
   methods: {
     formatVX(num) {
       return BigNumber.originFormat(num, 18, 2);
-    }
+    },
+    formatNum(amount, tokenSymbol) {
+      const map = {
+        BTC: 8,
+        ETH: 8,
+        VITE: 4,
+        USDT: 2
+      };
+      return BigNumber.formatNum(amount, map[tokenSymbol]);
+    },
+    getPrice(data, coin) {
+      let allPrice = 0;
+      for (const tokenId in data) {
+        const token = data[tokenId];
+        if (!token.amount) {
+          continue;
+        }
+
+        const rate = this.getRate(tokenId, coin);
+        if (!rate) {
+          return -1;
+        }
+
+        const price = BigNumber.multi(token.amount || 0, rate || 0);
+        allPrice = BigNumber.plus(price, allPrice);
+      }
+      return allPrice;
+    },
+    getRate(tokenId, coin) {
+      const rateList = this.$store.state.exchangeRate.rateMap || {};
+
+      if (!tokenId || !rateList[tokenId]) {
+        return null;
+      }
+
+      return rateList[tokenId][`${ coin }Rate`] || null;
+    },
   }
   
 };
