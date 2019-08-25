@@ -68,7 +68,6 @@ export default {
   },
   watch: {
     dividendPools() {
-      console.log("dividendPools")
       this.handleDividendPools();
     },
     feesForMine() {
@@ -78,17 +77,12 @@ export default {
       this.handleDividendStat();
     },
     '$store.state.exchangeRate.rateMap': function(val) {
-      // console.log('aaaa')
-      // console.log(val);
-      // this.myRateMap = val;
-      console.log("aa rateMap")
       this.handleDividendPools();
 
     },
-    myRateMap(val) {
-  
-
-      // console.log(val);
+    '$store.state.exchangeRate.rateSymbolMap': function(val) {
+      this.handleFeesForMine();
+      this.handleDividendStat();
     }
   },
   computed: {
@@ -274,6 +268,7 @@ export default {
         this.minePool[tokenName].fee = BigNumber.multi(amount || 0, viteRate || 0);
         this.minePool[tokenName].btcFee = BigNumber.multi(amount || 0, rate || 0);
       }
+      
     },
     formatVX(num) {
       return BigNumber.originFormat(num, 18, 2);
