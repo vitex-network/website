@@ -68,6 +68,7 @@ export default {
   },
   watch: {
     dividendPools() {
+      console.log("dividendPools")
       this.handleDividendPools();
     },
     feesForMine() {
@@ -75,6 +76,19 @@ export default {
     },
     dividendStat() {
       this.handleDividendStat();
+    },
+    '$store.state.exchangeRate.rateMap': function(val) {
+      // console.log('aaaa')
+      // console.log(val);
+      // this.myRateMap = val;
+      console.log("aa rateMap")
+      this.handleDividendPools();
+
+    },
+    myRateMap(val) {
+  
+
+      // console.log(val);
     }
   },
   computed: {
@@ -178,13 +192,11 @@ export default {
       }] || [];
     },
     allBtc() {
-      let allPrice = this.getPrice(this.rawData, 'btc');
-      if (+allPrice < 0) {
-        return '--';
+      let amount = 0;
+      for (let key in this.pool) {
+        amount = BigNumber.plus(this.pool[key].btcAmount, amount);
       }
-
-      allPrice = this.formatNum(allPrice, 'BTC');
-      return `${ allPrice }`;
+      return amount;
     }
   },
   data() {
@@ -199,44 +211,42 @@ export default {
       tokenList: ['VITE', 'ETH', 'BTC', 'USDT'],
       symbolRate: null,
       minePool: null,
-      dividendAllPriceBtc: 0
+      dividendAllPriceBtc: 0,
+      myRateMap: {}
     };
   },
   methods: {
     handleDividendPools() {
-      this.rawData = this.dividendPools;
-      if (!this.dividendPools) {
+      let rawData =  Object.assign({}, this.dividendPools)
+
+      if (!rawData) {
         this.pool = {};
         return;
       }
+
       this.pool = {};
       const tokenIds = [];
 
-      for (const tokenId in this.dividendPools) {
-        const token = this.dividendPools[tokenId];
+      for (const tokenId in rawData) {
+        const token = rawData[tokenId];
         const tokenTypeName = this.tokenList[token.quoteTokenType - 1];
 
         this.pool[tokenTypeName] = this.pool[tokenTypeName] || {
           amount: '0',
           decimals: 8,
-          btcAmount: '0',
-          tokens: []
+          btcAmount: '0'
         };
 
-        const allAmount = this.pool[tokenTypeName].amount;
+        let tokenType = tokenTypeName;
+        let amount = BigNumber.toBasic(token.amount, token.tokenInfo.decimals);
 
-        token.tokenType = tokenTypeName;
-        token.amount = BigNumber.toBasic(token.amount, token.tokenInfo.decimals);
 
-        this.pool[tokenTypeName].tokens.push(token);
-        this.pool[tokenTypeName].amount = BigNumber.plus(token.amount, allAmount);
-        this.pool[tokenTypeName].btcAmount = this.pool[tokenTypeName].btcAmount = BigNumber.multi(token.amount || 0, this.getRate(token.tokenInfo.tokenId, 'btc') || 0);
+        this.pool[tokenTypeName].amount = amount;
+        this.pool[tokenTypeName].btcAmount = BigNumber.multi(amount || 0, this.getRate(token.tokenInfo.tokenId, 'btc') || 0);
 
         tokenIds.push(token.tokenInfo.tokenId);
-
-        this.$store.dispatch('addRateTokens', tokenIds);
-        
       }
+      this.$store.dispatch('addRateTokens', tokenIds);
     },
     handleDividendStat() {
       let allPrice = 0;
@@ -268,33 +278,33 @@ export default {
     formatVX(num) {
       return BigNumber.originFormat(num, 18, 2);
     },
-    formatNum(amount, tokenSymbol) {
-      const map = {
-        BTC: 8,
-        ETH: 8,
-        VITE: 4,
-        USDT: 2
-      };
-      return BigNumber.formatNum(amount, map[tokenSymbol]);
-    },
-    getPrice(data, coin) {
-      let allPrice = 0;
-      for (const tokenId in data) {
-        const token = data[tokenId];
-        if (!token.amount) {
-          continue;
-        }
+    // formatNum(amount, tokenSymbol) {
+    //   const map = {
+    //     BTC: 8,
+    //     ETH: 8,
+    //     VITE: 4,
+    //     USDT: 2
+    //   };
+    //   return BigNumber.formatNum(amount, map[tokenSymbol]);
+    // },
+    // getPrice(data, coin) {
+    //   let allPrice = 0;
+    //   for (const tokenId in data) {
+    //     const token = data[tokenId];
+    //     if (!token.amount) {
+    //       continue;
+    //     }
 
-        const rate = this.getRate(tokenId, coin);
-        if (!rate) {
-          return -1;
-        }
+    //     const rate = this.getRate(tokenId, coin);
+    //     if (!rate) {
+    //       return -1;
+    //     }
 
-        const price = BigNumber.multi(token.amount || 0, rate || 0);
-        allPrice = BigNumber.plus(price, allPrice);
-      }
-      return allPrice;
-    },
+    //     const price = BigNumber.multi(token.amount || 0, rate || 0);
+    //     allPrice = BigNumber.plus(price, allPrice);
+    //   }
+    //   return allPrice;
+    // },
     getRate(tokenId, coin) {
       const rateList = this.$store.state.exchangeRate.rateMap || {};
       if (!tokenId || !rateList[tokenId]) {
