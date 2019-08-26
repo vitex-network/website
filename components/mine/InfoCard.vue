@@ -1,24 +1,33 @@
 <template>
     <div>
       <div class="card-wrapper">
-          <div class="item" v-for="(item, index) in list" :key="index">
-            <div class="is-flex token">
-              <div class="token-left">
-                <div>{{ item.tokenSymbol }} </div>
-                <div class="vx-amount">{{ item.amount }}</div>
-                <div v-if="item.mainBtcAmount" class="amount-btc">≈ {{ item.mainBtcAmount }} BTC</div>
-              </div>
-              <div class="token-right">
-                <img :src="item.img"/>
+          <div class="item __pointer" v-for="(item, index) in list" :key="index" 
+            @mouseenter="!isMobile ? enter(index) : null" @mouseleave="!isMobile ? leave() : null">
+            <div class="desc-wrapper is-flex" v-if="seen && index === current">
+              <div>
+                <div class="desc-top">{{ $t('indexPage.mine.tx.predict') }}</div>
+                <div class="desc-bottom">1000 VX</div>
               </div>
             </div>
-            <div class="is-flex token-bottom" v-if="!isSimple">
-              <div class="token-left">
-                <div>{{ $t('indexPage.mine.tx.fee') }}</div>
+            <div v-if="seenList[index]">
+              <div class="is-flex token">
+                <div class="token-left">
+                  <div>{{ item.tokenSymbol }} </div>
+                  <div class="vx-amount">{{ item.amount }}</div>
+                  <div v-if="item.mainBtcAmount" class="amount-btc">≈ {{ item.mainBtcAmount }} BTC</div>
+                </div>
+                <div class="token-right">
+                  <img :src="item.img"/>
+                </div>
               </div>
-              <div class="token-right">
-                <div>{{ item.fee }} VITE</div>
-                <div>≈ {{ item.btcFee }} BTC</div>
+              <div class="is-flex token-bottom" v-if="!isSimple">
+                <div class="token-left">
+                  <div>{{ $t('indexPage.mine.tx.fee') }}</div>
+                </div>
+                <div class="token-right">
+                  <div>{{ item.fee }} VITE</div>
+                  <div>≈ {{ item.btcFee }} BTC</div>
+                </div>
               </div>
             </div>
           </div>
@@ -27,6 +36,7 @@
 </template>
 <script>
 import commonTitle from './commonTitle';
+import isMobile from 'is-mobile';
 export default {
   components: {
     commonTitle
@@ -43,7 +53,27 @@ export default {
   },
   data() {
     return {
+      isMobile: isMobile(),
+      seen:false,
+      current:0,
+      seenList: [true, true, true, true]
     };
+  },
+  methods: {
+    enter(index){
+      console.log('enter', index);
+      if(this.isSimple) return;
+      this.seen = true;
+      this.current = index;
+      this.seenList[index] = false;
+    },
+    leave(){
+      console.log('leave');
+      if(this.isSimple) return;
+      this.seen = false;
+      this.current = null;
+      this.seenList = [true, true, true, true];
+    }
   }
 };
 </script>
@@ -69,6 +99,28 @@ export default {
     @include mobile {
       width: 100%;
       margin-bottom: 10px;
+    }
+  }
+  .desc-wrapper {
+    background:rgba(30,89,243,1);
+    box-shadow:0px 2px 9px 0px rgba(0,0,0,0.2);
+    border-radius:5px;
+    color: white;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family:PingFangSC;
+    .desc-top {
+      font-weight:400;
+      line-height:16px;
+      font-size: 14px;
+    }
+    .desc-bottom {
+      font-size:20px;
+      font-weight:600;
+      line-height:25px;
+      margin-top: 8px;
     }
   }
   .amount-btc {
