@@ -16,8 +16,7 @@
                     <span :class="{
                       'up': +txPair.priceChange > 0,
                       'down': +txPair.priceChange < 0}">
-                      {{ formatNum(txPair.closePrice, txPair.pricePrecision) || '0.0'}}
-                    </span>/ {{ getTableRealPrice(txPair) || '0.0'}}
+                      {{ formatNum(txPair.closePrice, txPair.pricePrecision) || '0.0'}}</span>/{{ getTableRealPrice(txPair) || '0.0'}}
                 </span>
                 <span  class="__center-tb-item percent" :class="{
                     'up': +txPair.priceChange > 0,

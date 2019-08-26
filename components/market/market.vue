@@ -63,7 +63,7 @@ export default {
   },
 
   beforeMount() {
-    this.quoteTokenCategory = 'BTC';
+    this.stopDefaultPair();
     this.init();
   },
   data() {
@@ -91,7 +91,7 @@ export default {
     }
   },
   watch: {
-    '$i18n.locale': function() {
+    '$i18n.locale': function(val) {
       this.searchText = '';
       this.searchList = [];
       this.stopDefaultPair();
@@ -174,6 +174,7 @@ export default {
       this.currentOrderRule = rule;
     },
     stopDefaultPair() {
+      console.log('stop');
       defaultPairTimer && defaultPairTimer.stop();
       defaultPairTimer = null;
     },

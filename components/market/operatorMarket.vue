@@ -59,6 +59,7 @@ export default {
   },
 
   beforeMount() {
+    this.stopAssignPair();
     this.init();
   },
   data() {
