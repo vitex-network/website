@@ -7,18 +7,24 @@
           <div class="name">{{ operatorInfo.name }}</div>
           <div class=" is-flex">
             <img src="~/assets/images/operators/address.svg"/>
-            <a href="" class="address">{{ operatorInfo.address }}</a>
+            <a :href="`https://explorer.vite.net/account/${operatorInfo.address}`" target="_blank" class="address">{{ operatorInfo.address }}</a>
           </div>
-          <div class="is-flex">
+          <div class="is-flex" v-if="operatorInfo.links && operatorInfo.links.website">
             <img src="~/assets/images/operators/link.svg"/>
-            <a href="">{{ operatorInfo.links && operatorInfo.links.website && operatorInfo.links.website[0] }}</a>
+            <a :href="operatorInfo.links.website[0]" target="_blank">{{ operatorInfo.links.website[0] }}</a>
           </div>
         </div>
       </div>
-      <div class="right is-flex __pointer">
-        <img src="~/assets/images/operators/facebook.svg"/>
-        <img src="~/assets/images/operators/twitter.svg"/>
-        <img src="~/assets/images/operators/telegram.svg"/>
+      <div class="right is-flex __pointer" v-if="operatorInfo.links">
+        <a :href="operatorInfo.links.facebook[0]" v-if="operatorInfo.links.facebook" target="_blank">
+          <img src="~/assets/images/operators/facebook.svg"/>
+        </a>
+        <a :href="operatorInfo.links.twitter[0]" v-if="operatorInfo.links.twitter" target="_blank">
+          <img src="~/assets/images/operators/twitter.svg"/>
+        </a>
+        <a :href="operatorInfo.links.telegram[0]" v-if="operatorInfo.links.telegram" target="_blank">
+          <img src="~/assets/images/operators/twitter.svg"/>
+        </a>
       </div>
     </div>
     <div class="desc-wrapper">
