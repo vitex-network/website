@@ -31,7 +31,7 @@
         </div>
 
         <div
-            class="navbar-menu column is-7-desktop is-offset-3"
+            class="navbar-menu column is-7-desktop is-offset-2"
             :class="{ 'is-active': navbarActive, collapsing: collapsing }"
         >
           <div
