@@ -54,10 +54,12 @@ export default {
   color:rgba(23,28,52,1);
   line-height:40px;
   @include mobile {
+    line-height:18px;
+    flex-direction: column;
     border:1px solid rgba(0,60,255,0.02);
     border-radius:2px;
     background: url("~assets/images/index/bg.png") no-repeat center;
-    // background: url("~assets/images/index/mobile_bg.png") no-repeat center;
+    background-size: cover;
     background-color: white;
     margin-bottom: 10px;
   }
@@ -67,6 +69,8 @@ export default {
     font-size:28px;
     @include mobile {
       font-size: 22px;
+      line-height: 26px;
+      margin-top: 16px;
     }
   }
 }
