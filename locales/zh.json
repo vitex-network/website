@@ -20,7 +20,8 @@
       "totalAmount": "累计挖矿总量",
       "tx": {
         "title": "交易挖矿总收益",
-        "fee": "实时交易手续费"
+        "fee": "实时交易手续费",
+        "predict": "预计1 BTC可瓜分"
       },
       "pledge": {
         "title": "抵押挖矿总收益",

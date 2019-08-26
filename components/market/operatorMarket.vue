@@ -23,15 +23,15 @@
             <span class="describe-r">{{ $t('marketTable.header.change') }}</span>
             <order-arrow orderItem="upDown" :setOrderRule="setOrderRule"></order-arrow>
         </div>
-        <div class="__center-tb-item percent">
+        <div class="__center-tb-item percent is-hidden-mobile">
             <span class="describe-r">{{ $t('marketTable.header.highPrice') }}</span>
             <order-arrow orderItem="highPrice" :setOrderRule="setOrderRule"></order-arrow>
         </div>
-         <div class="__center-tb-item percent">
+         <div class="__center-tb-item percent is-hidden-mobile">
             <span class="describe-r">{{ $t('marketTable.header.lowPrice') }}</span>
             <order-arrow orderItem="lowPrice" :setOrderRule="setOrderRule"></order-arrow>
         </div>
-        <div  class="__center-tb-item">
+        <div  class="__center-tb-item is-hidden-mobile">
             <span class="describe-r">{{ $t('marketTable.header.amount') }}</span>
             <order-arrow orderItem="txNum" :setOrderRule="setOrderRule"></order-arrow>
         </div>

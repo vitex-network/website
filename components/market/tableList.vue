@@ -9,7 +9,7 @@
                 <span class="__center-tb-item">
                     <span>{{ getTxPairShowSymbol(txPair) }}</span>
                 </span>
-                <span class="__center-tb-item" v-if="hasOperator">
+                <span class="__center-tb-item is-hidden-mobile" v-if="hasOperator">
                     <span>{{ txPair.operatorName || '--'}}</span>
                 </span>
                 <span class="__center-tb-item">
@@ -20,13 +20,13 @@
                     'down': +txPair.priceChange < 0
                 }">{{ txPair.priceChangePercent ? getPercent(txPair.priceChangePercent) : '0.00%' }}
                 </span>
-                <span class="__center-tb-item">
+                <span class="__center-tb-item is-hidden-mobile">
                     {{ txPair.highPrice ? formatNum(txPair.highPrice, txPair.pricePrecision) : '--' }}
                 </span>
-                <span class="__center-tb-item">
+                <span class="__center-tb-item is-hidden-mobile">
                     {{ txPair.lowPrice ? formatNum(txPair.lowPrice, txPair.pricePrecision) : '--' }}
                 </span>
-                <span  class="__center-tb-item">
+                <span  class="__center-tb-item is-hidden-mobile">
                     {{ txPair.amount ? formatNum(txPair.amount, 1) : '0.0' }}
                 </span>
             </div>
