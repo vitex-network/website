@@ -2,7 +2,7 @@
 <div>
   <div class="is-flex pledge-wrapper">
     <div class="left">
-      <div class="pledge-title">当前累计抵押金额</div>
+      <div class="pledge-title">{{ $t('indexPage.mine.pledge.current') }}</div>
       <div class="pledge-amount"> {{ pledgeAmount.vite }} VITE</div>
       <div class="pledge-amount-btc">≈ {{ pledgeAmount.btc }} BTC</div>
     </div>
@@ -13,7 +13,7 @@
         <img src="~/assets/images/index/eth.svg"/>
         <img src="~/assets/images/index/usd.svg"/>
       </div>
-      <div class="desc">预计抵押1000 VITE可获得 12345 VX</div>
+      <div class="desc">{{ $t('indexPage.mine.pledge.desc') }}</div>
     </div>
   </div>
 </div>

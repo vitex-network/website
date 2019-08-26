@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="desc-wrapper">
-      <commonTitle :title="`详细介绍`"></commonTitle>
+      <commonTitle :title="$t('operator.detail.introduction')"></commonTitle>
       <div class="introduction">
         {{ operatorInfo && operatorInfo.overview && operatorInfo.overview[$i18n.locale] }}
       </div>

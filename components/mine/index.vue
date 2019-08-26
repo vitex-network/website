@@ -1,20 +1,20 @@
 <template>
   <div class="datas">
-    <div class="title">VX当日挖矿概况</div>
+    <div class="index-main-title">{{ $t('indexPage.mine.title')}}</div>
     <info-total-card :total-info="mineTotalInfo"></info-total-card>
     <div>
-      <common-title :name="`交易挖矿总收益`" :amount="totalMineAmount.tx"></common-title>
+      <common-title :name="$t('indexPage.mine.tx.title')" :amount="totalMineAmount.tx"></common-title>
       <info-card :list="txMineList"></info-card>
     </div>
     <div>
-      <common-title :name="`抵押挖矿总收益`" :amount="totalMineAmount.pledge"></common-title>
+      <common-title :name="$t('indexPage.mine.pledge.title')" :amount="totalMineAmount.pledge"></common-title>
       <pledge-card :pledge-amount="pledgeAmount"></pledge-card>
     </div>
     <div>
-      <common-title :name="`挂单挖矿总收益`" :amount="totalMineAmount.order"></common-title>
+      <common-title :name="$t('indexPage.mine.order.title')" :amount="totalMineAmount.order"></common-title>
       <info-card :is-simple="true" :list="orderMineList"></info-card>
     </div>
-    <div class="title">VX当日分红概况</div>
+    <div class="index-main-title">{{ $t('indexPage.dividend.title')}}</div>
     <info-total-card :total-info="diviTotalInfo"></info-total-card>
     <info-card :is-simple="true" style="margin-top: 30px;" :list="dividendList"></info-card>
   </div>
@@ -56,13 +56,25 @@ export default {
 
     Promise.all([getMiningStat().then(data=> {
       this.dividendStat = data.userDividendStat;
+    }).catch(err=> {
+      console.warn(err);
+      console.log('dividendStat error');
     }), dexFund.getCurrentVxMineInfo().then(data=> {
       this.vxMineInfo = data;
+    }).catch(err=> {
+      console.warn(err);
+      console.log('vxMineInfo error');
     }), dexFund.getCurrentFeesForMine().then(data=> {
       // 1 VITE 2 ETH_001 3 BTC_001 4 USDT_001
       this.feesForMine = data;
+    }).catch(err=> {
+      console.warn(err);
+      console.log('feesForMine error');
     }), dexFund.getCurrentPledgeForVxSum().then(data=> {
       this.pledgeForVxSum = data;
+    }).catch(err=> {
+      console.warn(err);
+      console.log('pledgeForVxSum error');
     })]);
     
   },
@@ -76,11 +88,10 @@ export default {
     dividendStat() {
       this.handleDividendStat();
     },
-    '$store.state.exchangeRate.rateMap': function(val) {
+    '$store.state.exchangeRate.rateMap': function() {
       this.handleDividendPools();
-
     },
-    '$store.state.exchangeRate.rateSymbolMap': function(val) {
+    '$store.state.exchangeRate.rateSymbolMap': function() {
       this.handleFeesForMine();
       this.handleDividendStat();
     }
@@ -94,19 +105,19 @@ export default {
     },
     mineTotalInfo() {
       return this.vxMineInfo && [{
-        name: '今日可挖量',
+        name: this.$t('indexPage.mine.todayTotal'),
         amount: `${this.formatVX(this.vxMineInfo.total)} VX`
       }, {
-        name: '累计挖矿总量',
+        name: this.$t('indexPage.mine.totalAmount'),
         amount: `${this.formatVX(this.vxMineInfo.historyMinedSum)} VX`
       }] || [];
     },
     diviTotalInfo() {
       return this.vxMineInfo && [{
-        name: '当前分红池',
+        name: this.$t('indexPage.dividend.currentPool'),
         amount: `${this.allBtc} BTC`
       }, {
-        name: '已发放分红总估值',
+        name: this.$t('indexPage.dividend.totalPool'),
         amount: `${this.dividendAllPriceBtc} BTC`
       }] || [];
     },
@@ -299,15 +310,11 @@ export default {
   }
   
 }
-  .title {
-    text-align: center;
-    margin-top: 60px;
-    font-size:32px;
-    font-family:PingFangSC;
-    font-weight:600;
-    color:rgba(23,28,52,1);
-    line-height:45px;
-  }
+.index-main-title {
+  color:rgba(23,28,52,1);
+  margin-top: 60px;
+}
+
 </style>
 
 

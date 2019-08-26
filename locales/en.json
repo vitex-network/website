@@ -13,6 +13,54 @@
     "content": "Exchange By the Community, For the Community",
     "starttoUse": "Start Trading Now!"
   },
+  "indexPage": {
+    "mine": {
+      "title": "VX当日挖矿概况",
+      "todayTotal": "今日可挖量",
+      "totalAmount": "累计挖矿总量",
+      "tx": {
+        "title": "交易挖矿总收益",
+        "fee": "实时交易手续费"
+      },
+      "pledge": {
+        "title": "抵押挖矿总收益",
+        "current": "当前累计抵押金额",
+        "desc": "预计抵押1000 VITE可获得 12345 VX"
+      },
+      "order": {
+        "title": "挂单挖矿总收益"
+      }
+    },
+    "dividend": {
+      "title": "VX当日分红概况",
+      "currentPool": "当前分红池",
+      "totalPool": "已发放分红总估值"
+    }
+  },
+  "marketTable": {
+    "title": "市场行情",
+    "search": "查询交易对",
+    "header": {
+      "txPair": "交易对",
+      "operator": "运营商",
+      "closePrice": "最新价格",
+      "change": "24h变化",
+      "highPrice": "24h最高",
+      "lowPrice": "24h最低",
+      "amount": "24h成交量"
+    }
+  },
+  "operator": {
+    "index": {
+      "title": "运营商信息",
+      "amount": "成交量"
+    },
+    "detail": {
+      "title": "运营商详情",
+      "introduction": "详细介绍",
+      "txPair": "交易对"
+    }
+  },
   "vitexInfo": {
     "title": "About ViteX",
     "desc": "ViteX is a decentralized exchange with its own native token, VX. Currently, ViteX has four major trading markets: VITE, BTC, ETH, and USDT. ",

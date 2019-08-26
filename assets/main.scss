@@ -72,3 +72,13 @@ h1 {
 .button:focus:not(:active), .button.is-focused:not(:active) {
   box-shadow: 0 0 0 0.125em rgba(54,130,222, 0.25);
 }
+
+.index-main-title {
+  font-size:32px;
+  font-family:PingFangSC;
+  font-weight:600;
+  color:rgba(255,255,255,1);
+  line-height:45px;
+  margin-bottom: 30px;
+  text-align: center;
+}

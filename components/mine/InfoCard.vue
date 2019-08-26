@@ -14,7 +14,7 @@
             </div>
             <div class="is-flex token-bottom" v-if="!isSimple">
               <div class="token-left">
-                <div>实时交易手续费</div>
+                <div>{{ $t('indexPage.mine.tx.fee') }}</div>
               </div>
               <div class="token-right">
                 <div>{{ item.fee }} VITE</div>

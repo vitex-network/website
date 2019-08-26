@@ -13,6 +13,54 @@
     "content": "社区治理、社区受益的真正去中心化交易所",
     "starttoUse": "开始使用ViteX"
   },
+  "indexPage": {
+    "mine": {
+      "title": "VX当日挖矿概况",
+      "todayTotal": "今日可挖量",
+      "totalAmount": "累计挖矿总量",
+      "tx": {
+        "title": "交易挖矿总收益",
+        "fee": "实时交易手续费"
+      },
+      "pledge": {
+        "title": "抵押挖矿总收益",
+        "current": "当前累计抵押金额",
+        "desc": "预计抵押1000 VITE可获得 12345 VX"
+      },
+      "order": {
+        "title": "挂单挖矿总收益"
+      }
+    },
+    "dividend": {
+      "title": "VX当日分红概况",
+      "currentPool": "当前分红池",
+      "totalPool": "已发放分红总估值"
+    }
+  },
+  "marketTable": {
+    "title": "市场行情",
+    "search": "查询交易对",
+    "header": {
+      "txPair": "交易对",
+      "operator": "运营商",
+      "closePrice": "最新价格",
+      "change": "24h变化",
+      "highPrice": "24h最高",
+      "lowPrice": "24h最低",
+      "amount": "24h成交量"
+    }
+  },
+  "operator": {
+    "index": {
+      "title": "运营商信息",
+      "amount": "成交量"
+    },
+    "detail": {
+      "title": "运营商详情",
+      "introduction": "详细介绍",
+      "txPair": "交易对"
+    }
+  },
   "vitexInfo": {
     "title": "关于ViteX",
     "desc": "关于ViteX，ViteX是基于VITE公链开发的去中心化交易所，是去中心化应用的一个落地场景。ViteX开放四个基础代币交易市场，即VITE、BTC、ETH、美元稳定币。ViteX将发行自己的代币-VX。VX代币只有参与挖矿即可免费获得，持有VX终身享受ViteX交易手续费分红。",

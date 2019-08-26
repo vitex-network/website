@@ -1,41 +1,42 @@
 <template>
   <div>
+    <div class="index-main-title">{{ $t('marketTable.title') }}</div>
     <div class="market-wrapper">
       <div class="is-flex">
         <tab-list @currentCategory="getCurrentCategory"></tab-list>
         <vitex-input 
           class="market-search-input" 
           v-model="searchText"
-          :placeholder="`查询交易对`">
+          :placeholder="$t('marketTable.search')">
           <img slot="before" class="icon" src="~assets/images/search.svg"/>
         </vitex-input>
       </div>
 
       <div class="__center-tb-title">
         <div class="__center-tb-item __pointer">
-            交易对
+          {{ $t('marketTable.header.txPair') }}
         </div>
         <div class="__center-tb-item __pointer">
-            运营商
+          {{ $t('marketTable.header.operator') }}
         </div>
         <div class="__center-tb-item">
-            <span class="describe-r">最新价格</span>
+            <span class="describe-r">{{ $t('marketTable.header.closePrice') }}</span>
             <order-arrow orderItem="price" :setOrderRule="setOrderRule"></order-arrow>
         </div>
         <div class="__center-tb-item percent">
-            <span class="describe-r">24h变化</span>
+            <span class="describe-r">{{ $t('marketTable.header.change') }}</span>
             <order-arrow orderItem="upDown" :setOrderRule="setOrderRule"></order-arrow>
         </div>
         <div class="__center-tb-item percent">
-            <span class="describe-r">24h最高</span>
+            <span class="describe-r">{{ $t('marketTable.header.highPrice') }}</span>
             <order-arrow orderItem="highPrice" :setOrderRule="setOrderRule"></order-arrow>
         </div>
          <div class="__center-tb-item percent">
-            <span class="describe-r">24h最低</span>
+            <span class="describe-r">{{ $t('marketTable.header.lowPrice') }}</span>
             <order-arrow orderItem="lowPrice" :setOrderRule="setOrderRule"></order-arrow>
         </div>
         <div  class="__center-tb-item">
-            <span class="describe-r">24h成交量</span>
+            <span class="describe-r">{{ $t('marketTable.header.amount') }}</span>
             <order-arrow orderItem="txNum" :setOrderRule="setOrderRule"></order-arrow>
         </div>
       </div>
@@ -79,9 +80,6 @@ export default {
     this.stopDefaultPair();
   },
   computed: {
-    // quoteTokenCategory() {
-    //   return this.$store.state.exchangeMarket.curentCategory;
-    // },
     activeTxPairList() {
       let list = this.searchText
         ? this.searchList 

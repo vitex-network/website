@@ -2,7 +2,7 @@
   <div>
     <card-info :operatorInfo="operatorInfo"></card-info>
     <div v-if="tradePairs">
-      <common-title :title="`交易对`"></common-title>
+      <common-title :title="$t('operator.detail.txPair')"></common-title>
       <operatorMarket class="operator-market"></operatorMarket>
     </div>    
   </div>

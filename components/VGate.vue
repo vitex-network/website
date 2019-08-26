@@ -1,9 +1,9 @@
 <template>
   <div class="vgate">
     <div class="">
-      <h1>
-        {{$t('vgate.slogan')}}
-      </h1>
+      <div class="index-main-title">
+        {{$t('operator.index.title')}}
+      </div>
       <div class="card-wrapper container">
           <div class="item __pointer" v-for="(item, index) in showList" :key="index">
             <nuxt-link :to="`${locales}/operatorDetail/${item.address}`">
@@ -11,7 +11,7 @@
                 <div class="token-left">
                   <div class="operator-name">{{ item.name }} </div>
                   <div class="operator-amount">
-                    <div>成交量</div>
+                    <div>{{$t('operator.index.amount')}}</div>
                     <div class="operator-value">123456 BTC</div>
                   </div>
                 </div>
