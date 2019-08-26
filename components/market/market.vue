@@ -189,6 +189,9 @@ export default {
     height: 100%;
     display: flex;
     flex-direction: column;
+    @include mobile {
+      padding: 0 20px;
+    }
     .describe-r {
       position: relative;
       bottom: 9px;

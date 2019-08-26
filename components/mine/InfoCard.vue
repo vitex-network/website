@@ -61,14 +61,12 @@ export default {
   },
   methods: {
     enter(index){
-      console.log('enter', index);
       if(this.isSimple) return;
       this.seen = true;
       this.current = index;
       this.seenList[index] = false;
     },
     leave(){
-      console.log('leave');
       if(this.isSimple) return;
       this.seen = false;
       this.current = null;
