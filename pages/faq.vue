@@ -73,6 +73,7 @@
         font-family: $font-family-light;
         color: #919AA3;
         line-height: 20px;
+        text-indent: 2em;
         img {
           max-width: 200px;
           margin-top: 0.5rem;

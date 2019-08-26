@@ -59,6 +59,9 @@
 
 <style rel="stylesheet/scss" lang="scss" scoped>
   @import "~assets/vars";
+  .question {
+    text-indent: 2em;
+  }
 
   .detail{
     @include touch{

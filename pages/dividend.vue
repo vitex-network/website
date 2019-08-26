@@ -27,41 +27,6 @@
     @include touch {
       padding-top: 25px;
     }
-    .is-info {
-      margin-bottom: 10px;
-      h3 {
-        margin-bottom: 12px;
-        font-size: 20px;
-        font-family: $font-family-main;
-        color: #171C34;
-        line-height: 28px;
-        
-        @include touch {
-          font-size: 17px;
-          line-height: 24px;
-          margin-bottom: 10px;
-        }
-      }
-      .answer {
-        font-size: 14px;
-        font-family: $font-family-light;
-        color: #919AA3;
-        line-height: 20px;
-        img {
-          max-width: 200px;
-          margin-top: 0.5rem;
-        }
-        p {
-          &:first-child {
-            margin-top: 0;
-          }
-        }
-        @include touch {
-          font-size: 14px;
-          line-height: 16px;
-        }
-      }
-    }
   }
 
   
