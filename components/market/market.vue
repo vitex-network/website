@@ -91,7 +91,7 @@ export default {
     }
   },
   watch: {
-    '$i18n.locale': function(val) {
+    '$i18n.locale': function() {
       this.searchText = '';
       this.searchList = [];
       this.stopDefaultPair();
