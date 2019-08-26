@@ -5,7 +5,7 @@
       <div class="is-flex">
         <tab-list @currentCategory="getCurrentCategory"></tab-list>
         <vitex-input 
-          class="market-search-input" 
+          class="market-search-input is-hidden-mobile" 
           v-model="searchText"
           :placeholder="$t('marketTable.search')">
           <img slot="before" class="icon" src="~assets/images/search.svg"/>

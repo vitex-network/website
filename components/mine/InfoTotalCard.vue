@@ -65,6 +65,9 @@ export default {
     font-family: $font-family-title;
     color:rgba(23,28,52,1);
     font-size:28px;
+    @include mobile {
+      font-size: 22px;
+    }
   }
 }
 </style>
