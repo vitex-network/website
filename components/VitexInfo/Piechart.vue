@@ -4,7 +4,7 @@
       <img :src="piechart[page][$i18n.locale]" width="50%" height="50%">
     </div>
     <div class="question">
-      <div class="answer" v-for="(item, index) in $t('vitexInfo.questions')" :key="index">
+      <div class="answer" v-for="(item, index) in $t(`vitexInfo.questions.${page}`)" :key="index">
         <div class="title is-flex"><span class="dot"></span>{{`${item.question}`}}</div>
         <div class="content">
           <p v-for="(ansItem, index) in item.answer" :key="index">{{ ansItem }}</p>
@@ -88,7 +88,7 @@
     }
     .piechart{
       justify-content: center;
-
+      margin-bottom: 30px;
     }
   }
 </style>

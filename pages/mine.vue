@@ -16,25 +16,7 @@
   export default {
     components: {
       piechart
-    },
-    computed: {
-      totalList() {
-        return [{
-          title: '今日可挖量',
-          value: 474647.20
-        }, {
-          title: '累计挖矿总量',
-          value: 9654647.56
-        }];
-      }
-    },
-    async asyncData() {
-    },
-    data() {
-      return {
-        limitData: null
-      };
-    },
+    }
   };
 </script>
 
@@ -42,7 +24,6 @@
   @import "assets/vars.scss";
   .section {
     padding-top: 92px;
-    background:rgba(246,248,249,1);
     @include touch {
       padding-top: 25px;
     }

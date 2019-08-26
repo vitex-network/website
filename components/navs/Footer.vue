@@ -63,6 +63,22 @@
                 {{$t('footer.trade')}}
               </a>
             </div>
+            <div class="item">
+              <nuxt-link
+                  :to="localePath('mine')"
+                  class="subtitle"
+              >
+                {{$t('nav.mine')}}
+              </nuxt-link>
+            </div>
+            <div class="item">
+              <nuxt-link
+                  :to="localePath('dividend')"
+                  class="subtitle"
+              >
+                {{$t('nav.dividend')}}
+              </nuxt-link>
+            </div>
             <div class="item about">
               <div class="subtitle">{{$t('footer.about')}}</div>
               <!--<a-->
@@ -159,7 +175,6 @@
   @import "~assets/vars";
 
   .footer {
-    height: 300px;
     background: #1E59F3;
     color: white;
     z-index: 3;
@@ -168,7 +183,7 @@
       padding: 90px 0 50px 0;
       justify-content: space-around;
       @include touch {
-        padding: 0;
+        padding: 40px 0 0 0;
         margin: 0 20px;
       }
     }
@@ -192,7 +207,7 @@
       font-size: 12px;
       justify-self: flex-end;
       .item{
-        margin-right: 80px;
+        margin-left: 50px;
         .subtitle{
           margin-bottom: 9px;
           font-size: 12px;
@@ -231,7 +246,7 @@
       color: white;
     }
     .copyright {
-      margin-bottom: 35px;
+      padding-bottom: 38px;
       font-size: 12px;
       line-height: 16px;
       text-align: center;

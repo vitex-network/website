@@ -5,9 +5,9 @@
         <img :src="operatorInfo.icon" class="pic"/>
         <div class="info">
           <div class="name">{{ operatorInfo.name }}</div>
-          <div class="is-flex">
+          <div class=" is-flex">
             <img src="~/assets/images/operators/address.svg"/>
-            <a href="">{{ operatorInfo.address }}</a>
+            <a href="" class="address">{{ operatorInfo.address }}</a>
           </div>
           <div class="is-flex">
             <img src="~/assets/images/operators/link.svg"/>
@@ -46,14 +46,30 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "~assets/vars";
+
 .card {
-  height: 152px;
+  // height: 152px;
   width: 100%;
+  border-radius:2px;
   border:1px solid rgba(0,60,255,0.02);
   background: url("~assets/images/bg/operator.png");
   justify-content: space-between;
   padding: 30px;
   align-items: flex-start;
+  @include mobile {
+    flex-direction: column;
+    padding: 15px 15px 11px 15px;
+  }
+  .address {
+    @include mobile {
+      display: inline-block;
+      width: 185px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
   .pic {
     width:70px;
     height:70px;
@@ -76,8 +92,15 @@ export default {
     }
   }
   .right {
+    @include mobile {
+      margin-top: 12px;
+    }
     img {
       margin-left: 14px;
+      @include mobile {
+        margin-left: 0;
+        margin-right: 14px;
+      }
     }
   }
   

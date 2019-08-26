@@ -277,7 +277,7 @@
 
   .nuxt-content {
     @include touch {
-      padding-bottom: 50px;
+      // padding-bottom: 50px;
     }
   }
 
