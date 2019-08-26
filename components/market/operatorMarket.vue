@@ -13,7 +13,8 @@
 
       <div class="__center-tb-title">
         <div class="__center-tb-item __pointer">
-          {{ $t('marketTable.header.txPair') }}
+          <span class="describe-r">{{ $t('marketTable.header.txPair') }}</span>
+          <order-arrow orderItem="txPair" :setOrderRule="setOrderRule"></order-arrow>
         </div>
         <div class="__center-tb-item">
             <span class="describe-r">{{ $t('marketTable.header.closePrice') }}</span>

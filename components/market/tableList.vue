@@ -13,7 +13,11 @@
                     <span>{{ txPair.operatorName || '--'}}</span>
                 </span>
                 <span class="__center-tb-item">
-                    {{ txPair.closePrice ? `${formatNum(txPair.closePrice, txPair.pricePrecision)}/${getTableRealPrice(txPair)}` : '--' }}
+                    <span :class="{
+                      'up': +txPair.priceChange > 0,
+                      'down': +txPair.priceChange < 0}">
+                      {{ formatNum(txPair.closePrice, txPair.pricePrecision) || '0.0'}}
+                    </span>/ {{ getTableRealPrice(txPair) || '0.0'}}
                 </span>
                 <span  class="__center-tb-item percent" :class="{
                     'up': +txPair.priceChange > 0,
@@ -153,6 +157,10 @@ export default {
 
       return list.sort((a, b) => {
         switch (this.currentRule) {
+        case 'txPairUp': 
+          return compareStr(a.tradeTokenSymbol, b.tradeTokenSymbol);
+        case 'txPairDown': 
+          return compareStr(b.tradeTokenSymbol, a.tradeTokenSymbol);
         case 'priceUp':
           return BigNumber.compared(a.closePrice, b.closePrice);
         case 'priceDown':
