@@ -200,18 +200,16 @@ export default {
       pledgeForVxSum: null,
       dividendPools: null,
       dividendStat: null,
-      rawData: {},
       pool: null,
       tokenList: ['VITE', 'ETH', 'BTC', 'USDT'],
       symbolRate: null,
       minePool: null,
-      dividendAllPriceBtc: 0,
-      myRateMap: {}
+      dividendAllPriceBtc: 0
     };
   },
   methods: {
     handleDividendPools() {
-      let rawData =  Object.assign({}, this.dividendPools)
+      let rawData =  Object.assign({}, this.dividendPools);
 
       if (!rawData) {
         this.pool = {};
@@ -231,7 +229,6 @@ export default {
           btcAmount: '0'
         };
 
-        let tokenType = tokenTypeName;
         let amount = BigNumber.toBasic(token.amount, token.tokenInfo.decimals);
 
 
@@ -273,33 +270,6 @@ export default {
     formatVX(num) {
       return BigNumber.originFormat(num, 18, 2);
     },
-    // formatNum(amount, tokenSymbol) {
-    //   const map = {
-    //     BTC: 8,
-    //     ETH: 8,
-    //     VITE: 4,
-    //     USDT: 2
-    //   };
-    //   return BigNumber.formatNum(amount, map[tokenSymbol]);
-    // },
-    // getPrice(data, coin) {
-    //   let allPrice = 0;
-    //   for (const tokenId in data) {
-    //     const token = data[tokenId];
-    //     if (!token.amount) {
-    //       continue;
-    //     }
-
-    //     const rate = this.getRate(tokenId, coin);
-    //     if (!rate) {
-    //       return -1;
-    //     }
-
-    //     const price = BigNumber.multi(token.amount || 0, rate || 0);
-    //     allPrice = BigNumber.plus(price, allPrice);
-    //   }
-    //   return allPrice;
-    // },
     getRate(tokenId, coin) {
       const rateList = this.$store.state.exchangeRate.rateMap || {};
       if (!tokenId || !rateList[tokenId]) {

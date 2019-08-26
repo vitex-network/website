@@ -175,8 +175,8 @@ export default {
       this.currentOrderRule = rule;
     },
     stopDefaultPair() {
-        defaultPairTimer && defaultPairTimer.stop();
-        defaultPairTimer = null;
+      defaultPairTimer && defaultPairTimer.stop();
+      defaultPairTimer = null;
     },
   }
   

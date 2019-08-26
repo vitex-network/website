@@ -47,7 +47,6 @@ import VitexInput from './VitexInput.vue';
 import { subTask } from '~/utils/proto/subTask';
 import orderArrow from './orderArrow';
 import { assignPair } from '~/services/trade';
-let operatorPairTimer = null;
 let assignPairTimerList = [];
 
 export default {
@@ -148,24 +147,24 @@ export default {
             this.txPairList = [].concat(this.txPairList);
           });
           _t.start(() => {
-              return { symbol: txPair.symbol };
+            return { symbol: txPair.symbol };
           }, false);
           assignPairTimerList.push(_t);
         });
       })
-      .catch(err=> {
-        console.log(err);
-      });
+        .catch(err=> {
+          console.log(err);
+        });
     },
     setOrderRule(rule) {
       this.currentOrderRule = rule;
     },
     stopAssignPair() {
-        assignPairTimerList.forEach(assignTimer => {
-            assignTimer && assignTimer.stop();
-            assignTimer = null;
-        });
-        assignPairTimerList = [];
+      assignPairTimerList.forEach(assignTimer => {
+        assignTimer && assignTimer.stop();
+        assignTimer = null;
+      });
+      assignPairTimerList = [];
     },
   }
   
