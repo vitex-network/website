@@ -1,6 +1,7 @@
 <template>
   <div class="datas">
     <div class="index-main-title">{{ $t('indexPage.mine.title')}}</div>
+    <div class="latest-update">{{ $t('indexPage.update') }} {{ getTime }}</div>
     <info-total-card :total-info="mineTotalInfo"></info-total-card>
     <div>
       <common-title :name="$t('indexPage.mine.tx.title')" :amount="totalMineAmount.tx"></common-title>
@@ -15,6 +16,7 @@
       <info-card :is-simple="true" :list="orderMineList"></info-card>
     </div>
     <div class="index-main-title">{{ $t('indexPage.dividend.title')}}</div>
+    <div class="latest-update">{{ $t('indexPage.update') }} {{ getTime }}</div>
     <info-total-card :total-info="diviTotalInfo"></info-total-card>
     <info-card :is-simple="true" style="margin-top: 30px;" :list="dividendList"></info-card>
   </div>
@@ -76,7 +78,6 @@ export default {
       console.warn(err);
       console.log('pledgeForVxSum error');
     })]);
-    
   },
   watch: {
     dividendPools() {
@@ -97,6 +98,10 @@ export default {
     }
   },
   computed: {
+    getTime() {
+      let date = new Date();
+      return `${date.getMonth() + 1}/${date.getDate()}`;
+    },
     pledgeAmount() {
       return {
         vite: this.formatVX(this.pledgeForVxSum),
@@ -310,9 +315,18 @@ export default {
   }
   
 }
+.latest-update {
+  text-align: center;
+  font-size:14px;
+  font-family:PingFangSC;
+  font-weight:400;
+  color:rgba(84,86,90,1);
+  line-height:24px;
+}
 .index-main-title {
   color:rgba(23,28,52,1);
   margin-top: 60px;
+  margin-bottom: 8px;
 }
 
 </style>

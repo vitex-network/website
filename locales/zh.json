@@ -14,6 +14,7 @@
     "starttoUse": "开始使用ViteX"
   },
   "indexPage": {
+    "update": "已更新至",
     "mine": {
       "title": "VX当日挖矿概况",
       "todayTotal": "今日可挖量",

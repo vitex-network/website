@@ -24,7 +24,7 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/vars.scss";
 .info-total-wrapper {
-  margin-top: 50px;
+  margin-top: 30px;
   background: url("~assets/images/index/bg.png") no-repeat center;
   background-color: white;
   box-shadow:0px 2px 9px 0px rgba(0,0,0,0.07);
