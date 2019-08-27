@@ -21,7 +21,7 @@
       </div>
     </section>
     <div style="position: relative;" class="container">
-      <slider style="position: absolute; top: -150px;"></slider>
+      <slider class="slider"></slider>
     </div>
     <div class="mine-wrapper">
       <mine></mine>
@@ -71,6 +71,10 @@
     background: #F6F8F9; 
     padding-bottom: 80px; 
     padding-top: 150px;
+    @include touch {
+      padding-top: 32px;
+      padding-bottom: 30px; 
+    }
   }
   .market-wrapper {
     padding: 60px 0 88px 0;
@@ -85,7 +89,14 @@
     font-weight: normal;
     margin-bottom: 3rem;
   }
-
+  .slider {
+    position: absolute; 
+    top: -150px; 
+    width: 100%;
+    @include touch {
+      top: -50px; 
+    }
+  }
   .home {
     position: relative;
     font-family: $font-family-title;
@@ -95,6 +106,7 @@
     @include touch {
       .hero-body {
         display: block;
+        padding-bottom: 127px;
       }
     }
 
