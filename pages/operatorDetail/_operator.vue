@@ -15,12 +15,16 @@ export default {
     operator
   },
   async fetch({store}) {
-    let list = await operatorInfo([]);
-    let operatorInfoMap = {};
-    list.forEach(item=> {
-      operatorInfoMap[item.address] = item;
-    });
-    store.commit('setOperatorInfo', operatorInfoMap);
+    try {
+      let list = await operatorInfo([]);
+      let operatorInfoMap = {};
+      list.forEach(item=> {
+        operatorInfoMap[item.address] = item;
+      });
+      store.commit('setOperatorInfo', operatorInfoMap);
+    } catch(err) {
+      console.log(err);
+    }
   },
   created() {
     this.$store.commit('setCurrentOperator', this.$route.params.operator);

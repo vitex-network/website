@@ -119,14 +119,18 @@ export default {
       this.searchList = list;
     },
     async txPairList(val) {
-      let operatorMap = await operatorFetcher.getOperators(val);
-      for(let i = 0; i < val.length; i++) {
-        for(let key in operatorMap) {
-          if (val[i].symbol === key) {
-            this.$set(val[i], 'operatorName', operatorMap[key].gateway);
-            this.$set(val[i], 'operatorAddress', operatorMap[key].address || null);
-          } 
+      try {
+        let operatorMap = await operatorFetcher.getOperators(val);
+        for(let i = 0; i < val.length; i++) {
+          for(let key in operatorMap) {
+            if (val[i].symbol === key) {
+              this.$set(val[i], 'operatorName', operatorMap[key].gateway);
+              this.$set(val[i], 'operatorAddress', operatorMap[key].address || null);
+            } 
+          }
         }
+      } catch(err) {
+        console.log(err);
       }
     }
   },

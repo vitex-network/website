@@ -172,6 +172,10 @@ export function operatorInfo(addresslist) {
   return post(`${ version }/operator/info`, addresslist);
 }
 
+export function operatorVolumes(addresslist) {
+  return post(`${ version }/operator/volumes`, addresslist);
+}
+
 export function getMiningStat() {
   return get(`${ version }/mining/stat`);
 }

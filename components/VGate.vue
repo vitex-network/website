@@ -12,7 +12,7 @@
                   <div class="operator-name">{{ item.name }} </div>
                   <div class="operator-amount">
                     <div>{{$t('operator.index.amount')}}</div>
-                    <div class="operator-value">123456 BTC</div>
+                    <div class="operator-value">{{ item.volume || '--'}} BTC</div>
                   </div>
                 </div>
                 <div class="token-right">
@@ -27,22 +27,22 @@
 </template>
 
 <script>
-  import { operatorInfo } from '~/services/trade';
+  import { operatorVolumes } from '~/services/trade';
   export default {
     components: {},
     async beforeMount() {
-      this.list = await operatorInfo([]);
+      try {
+        this.list = await operatorVolumes([]);
+      } catch(err) {
+        console.log(err);
+      }
     },
     computed: {
       locales() {
         return this.$i18n.locale === 'zh' ? 'zh' : '';
       },
       showList() {
-        return this.list.map(item=> {
-          return {
-            ...item
-          };
-        });
+        return this.list;
       }
     },
     data(){

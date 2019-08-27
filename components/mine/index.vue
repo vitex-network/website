@@ -54,8 +54,12 @@ export default {
     // VX 18位
     // 手续费相关的 VITE 18, ETH 18, BTC 8, USDT 6
     // 抵押是VITE 18位
-    this.dividendPools = await dexFund.getCurrentDividendPools();
-
+    try {
+      this.dividendPools = await dexFund.getCurrentDividendPools();
+    } catch(err) {
+      console.log(err);
+    }
+    
     Promise.all([getMiningStat().then(data=> {
       this.dividendStat = data.userDividendStat;
     }).catch(err=> {
