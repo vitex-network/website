@@ -4,13 +4,15 @@ let quoteTokenCategory = [ 'BTC', 'ETH', 'VITE', 'USDT' ];
 
 let DefaultCategory = 'BTC';
 
-let state = {
-  operatorInfoMap: {},
-  currentOperatorInfo: {},
-  quoteTokenCategory,
-  curentCategory: DefaultCategory,
-  marketMap: [],
-  marketClosed: []
+let state = function() {
+  return {
+    operatorInfoMap: {},
+    currentOperatorInfo: {},
+    quoteTokenCategory,
+    curentCategory: DefaultCategory,
+    marketMap: [],
+    marketClosed: []
+  };
 };
 
 const mutations = {

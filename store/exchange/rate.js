@@ -5,7 +5,11 @@ const loopTime = 10000;
 let rateTimer = null;
 let rateSymbolTimer = null;
 
-const state = { rateMap: {}, rateTokenIds: [], rateSymbolMap: {}};
+let state = function() {
+  return { rateMap: {}, rateTokenIds: [], rateSymbolMap: {}};
+};
+
+// const state = { rateMap: {}, rateTokenIds: [], rateSymbolMap: {}};
 
 const mutations = {
   setExchangeRate(state, rateList) {
