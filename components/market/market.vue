@@ -124,6 +124,7 @@ export default {
         for(let key in operatorMap) {
           if (val[i].symbol === key) {
             this.$set(val[i], 'operatorName', operatorMap[key].gateway);
+            this.$set(val[i], 'operatorAddress', operatorMap[key].address || null);
           } 
         }
       }
@@ -174,7 +175,6 @@ export default {
       this.currentOrderRule = rule;
     },
     stopDefaultPair() {
-      console.log('stop');
       defaultPairTimer && defaultPairTimer.stop();
       defaultPairTimer = null;
     },

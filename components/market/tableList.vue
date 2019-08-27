@@ -5,7 +5,8 @@
             <div :ref="`txPair${i}`" v-for="(txPair, i) in showList" :key="i"
                  class="__center-tb-row __pointer"
                  @mouseenter="showRealPrice(txPair, i)"
-                 @mouseleave="hideRealPrice(txPair)">
+                 @mouseleave="hideRealPrice(txPair)"
+                 @click="txPair.operatorAddress ? gotoDetail(txPair.operatorAddress) : null">
                 <span class="__center-tb-item">
                     <span>{{ getTxPairShowSymbol(txPair) }}</span>
                 </span>
@@ -69,6 +70,10 @@ export default {
     }
   },
   methods: {
+    gotoDetail(address) {
+      let locale = this.$i18n.locale === 'zh' ? 'zh' : '';
+      this.$router.push({path: `${locale}/operatorDetail/${address}`});
+    },
     getTxPairShowSymbol(txPair) {
       const tradeTokenSymbol = txPair.tradeTokenSymbol.split('-')[0];
       const quoteTokenSymbol = txPair.quoteTokenSymbol.split('-')[0];
