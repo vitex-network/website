@@ -10,6 +10,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "~assets/vars.scss";
+
 .sub-title-wrapper {
   align-items: center;
   margin: 32px 0px;
@@ -23,7 +25,7 @@ export default {
 .desc {
   margin-left: 7px;
   font-size:14px;
-  font-family:PingFangSC;
+  font-family:$font-family-light;
   font-weight:400;
   color:rgba(84,86,90,1);
   line-height:24px;

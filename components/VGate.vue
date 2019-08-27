@@ -105,14 +105,14 @@
         justify-content: space-between;
         .operator-name {
           font-size:20px;
-          font-family:PingFangSC;
+          font-family:$font-family-light;
           font-weight:600;
           color:rgba(23,28,52,1);
           line-height:24px;
         }
         .operator-amount {
           font-size:12px;
-          font-family:PingFangSC;
+          font-family:$font-family-light;
           font-weight:400;
           color:rgba(126,128,133,1);
           line-height:16px;

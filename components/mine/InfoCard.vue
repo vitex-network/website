@@ -108,7 +108,7 @@ export default {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family:PingFangSC;
+    font-family:$font-family-light;
     .desc-top {
       font-weight:400;
       line-height:16px;
@@ -123,7 +123,7 @@ export default {
   }
   .amount-btc {
     font-size:12px;
-    font-family:PingFangSC;
+    font-family:$font-family-light;
     font-weight:400;
     color:rgba(84,86,90,1);
     line-height:16px;
@@ -146,7 +146,7 @@ export default {
     justify-content: space-between;
     border-top: 1px solid #E7EAEE;
     font-size:12px;
-    font-family:PingFangSC;
+    font-family:$font-family-light;
     font-weight:400;
     color:rgba(84,86,90,1);
     line-height:16px;

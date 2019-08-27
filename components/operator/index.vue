@@ -54,7 +54,6 @@ export default {
   .info {
     .name {
       font-size:20px;
-      font-family:PingFangSC;
       font-weight:600;
       color:rgba(17,17,17,1);
       line-height:24px;

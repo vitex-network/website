@@ -50,7 +50,7 @@ export default {
   }
   .pledge-title {
     font-size:14px;
-    font-family:PingFangSC;
+    font-family:$font-family-light;
     font-weight:400;
     color:rgba(84,86,90,1);
     line-height:18px;
@@ -58,7 +58,7 @@ export default {
   }
   .pledge-amount {
     font-size:20px;
-    font-family:PingFangSC;
+    font-family:$font-family-light;
     font-weight:600;
     color:rgba(23,28,52,1);
     line-height:24px;
@@ -66,7 +66,7 @@ export default {
   }
   .pledge-amount-btc {
     font-size:12px;
-    font-family:PingFangSC;
+    font-family:$font-family-light;
     font-weight:400;
     color:rgba(84,86,90,1);
     line-height:16px;
@@ -74,14 +74,14 @@ export default {
   .desc {
     margin-top: 27px;
     font-size:14px;
-    font-family:PingFangSC;
+    font-family:$font-family-light;
     font-weight:400;
     color:rgba(23,28,52,1);
     line-height:16px;
   }
   .desc-mobile {
     font-size:14px;
-    font-family:PingFangSC;
+    font-family:$font-family-light;
     font-weight:400;
     color:rgba(84,86,90,1);
     line-height:16px;

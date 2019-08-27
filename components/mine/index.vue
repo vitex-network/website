@@ -318,7 +318,7 @@ export default {
 .latest-update {
   text-align: center;
   font-size:14px;
-  font-family:PingFangSC;
+  font-family:$font-family-light;
   font-weight:400;
   color:rgba(84,86,90,1);
   line-height:24px;

@@ -30,7 +30,7 @@ $font-bold: PingFangSC-Semibold,arial,sans-serif;
     .ex-tab {
         display: inline-block;
         font-size:14px;
-        font-family:PingFangSC;
+        font-family:$font-family-light;
         font-weight:600;
         color:rgba(126,128,133,1);
         line-height:18px;
@@ -133,7 +133,7 @@ $font-bold: PingFangSC-Semibold,arial,sans-serif;
         text-align: right;
         color: white;
         font-size:14px;
-        font-family:PingFangSC;
+        font-family:$font-family-light;
         font-weight:400;
         line-height:18px;
     }

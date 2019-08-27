@@ -1,3 +1,5 @@
+@import "~assets/vars.scss";
+
 .operator-market {
     .__center-tb-row {
         color: #171C34;
@@ -14,7 +16,7 @@
         .ex-tab {
             display: inline-block;
             font-size:14px;
-            font-family:PingFangSC;
+            font-family:$font-family-light;
             font-weight:600;
             line-height:18px;
             padding: 6px 0 6px 0;

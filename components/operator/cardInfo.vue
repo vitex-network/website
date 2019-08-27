@@ -87,7 +87,7 @@ export default {
   .info {
     .name {
       font-size:20px;
-      font-family:PingFangSC;
+      font-family:$font-family-light;
       font-weight:600;
       color:rgba(17,17,17,1);
       line-height:24px;
@@ -113,7 +113,7 @@ export default {
 }
 .introduction {
   font-size:14px;
-  font-family:PingFangSC;
+  font-family:$font-family-light;
   font-weight:400;
   color:rgba(84,86,90,1);
   line-height:20px;
