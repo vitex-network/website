@@ -72,6 +72,7 @@ export default {
   methods: {
     gotoDetail(address) {
       let locale = this.$i18n.locale !== 'en' ? `/${this.$i18n.locale}` : '';
+      this.$router.path = locale;
       this.$router.push({path: `${locale}/operatorDetail/${address}`});
     },
     getTxPairShowSymbol(txPair) {

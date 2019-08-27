@@ -6,8 +6,8 @@
       </div>
       <div class="card-wrapper container">
           <div class="item __pointer" v-for="(item, index) in showList" :key="index">
-            <nuxt-link :to="`${locales}/operatorDetail/${item.address}`">
-              <div class="is-flex token">
+            <!-- <nuxt-link :to="`${locales}/operatorDetail/${item.address}`"> -->
+              <div class="is-flex token" @click="gotoDetail(item.address)">
                 <div class="token-left">
                   <div class="operator-name">{{ item.name }} </div>
                   <div class="operator-amount">
@@ -19,7 +19,7 @@
                   <img :src="item.icon" width="50px" height="50px"/>
                 </div>
               </div>
-            </nuxt-link>
+            <!-- </nuxt-link> -->
           </div>
       </div>
     </div>
@@ -51,6 +51,11 @@
       };
     },
     methods:{
+      gotoDetail(address) {
+        let locale = this.$i18n.locale !== 'en' ? `/${this.$i18n.locale}` : '';
+        this.$router.path = locale;
+        this.$router.push({path: `${locale}/operatorDetail/${address}`});
+      },
       openVGate(){
         window.open(
           this.$i18n.locale === 'zh' ? 'https://forms.gle/eG66BnL3btbFNvH59' : 'https://forms.gle/eG66BnL3btbFNvH59'
