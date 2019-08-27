@@ -6,7 +6,6 @@
       </div>
       <div class="card-wrapper container">
           <div class="item __pointer" v-for="(item, index) in showList" :key="index">
-            <!-- <nuxt-link :to="`${locales}/operatorDetail/${item.address}`"> -->
               <div class="is-flex token" @click="gotoDetail(item.address)">
                 <div class="token-left">
                   <div class="operator-name">{{ item.name }} </div>
@@ -16,10 +15,9 @@
                   </div>
                 </div>
                 <div class="token-right">
-                  <img :src="item.icon" width="50px" height="50px"/>
+                  <img :src="item.icon"/>
                 </div>
               </div>
-            <!-- </nuxt-link> -->
           </div>
       </div>
     </div>
@@ -73,8 +71,17 @@
 
 <style lang="scss" scoped>
   @import "assets/vars";
+  .token-right {
+    img {
+      width: 50px;
+      height: 50px;
+      background: white;
+      border-radius: 5px;
+      border: 1px solid #e7eaee;
+    }
+    
+  }
   .vgate{
-    margin-top: 80px;
     background: url("~assets/images/bg/bg2.svg");
     padding: 60px 0 80px 0;
     h1 {

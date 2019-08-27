@@ -150,6 +150,9 @@ export default {
     font-weight:400;
     color:rgba(84,86,90,1);
     line-height:16px;
+    .token-right {
+      text-align: right;
+    }
   }
 }
 

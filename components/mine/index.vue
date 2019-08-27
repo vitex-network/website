@@ -1,5 +1,5 @@
 <template>
-  <div class="datas">
+  <div class="datas container">
     <div class="index-main-title">{{ $t('indexPage.mine.title')}}</div>
     <div class="latest-update">{{ $t('indexPage.update') }} {{ getTime }}</div>
     <info-total-card :total-info="mineTotalInfo"></info-total-card>
@@ -329,7 +329,7 @@ export default {
 }
 .index-main-title {
   color:rgba(23,28,52,1);
-  margin-top: 60px;
+  padding-top: 60px;
   margin-bottom: 8px;
 }
 

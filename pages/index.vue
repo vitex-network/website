@@ -20,8 +20,12 @@
         </div>
       </div>
     </section>
-    <slider></slider>
-    <mine class="container"></mine>
+    <div style="position: relative;" class="container">
+      <slider style="position: absolute; top: -150px;"></slider>
+    </div>
+    <div class="mine-wrapper">
+      <mine></mine>
+    </div>
     <!-- <use-vitex></use-vitex> -->
     <v-gate></v-gate>
     <div class="market-wrapper">
@@ -63,6 +67,11 @@
 
 <style lang="scss" scoped>
   @import "assets/vars.scss";
+  .mine-wrapper {
+    background: #F6F8F9; 
+    padding-bottom: 80px; 
+    padding-top: 150px;
+  }
   .market-wrapper {
     padding: 60px 0 88px 0;
     background-color: #131C34;
@@ -81,7 +90,7 @@
     position: relative;
     font-family: $font-family-title;
     .hero-body{
-      padding: 64px 10px;
+      padding: 64px 10px 205px 10px;
     }
     @include touch {
       .hero-body {
