@@ -222,11 +222,12 @@
           display: block;
         }
         @include touch {
-          min-width: 90px;
-          height: 100px;
+          width: 83px;
+          min-height: 48px;
           display: inline-block;
-          margin-right: 70px;
+          margin-right: 0px;
           vertical-align: top;
+          margin-left: 0px;
         }
       }
       @include touch {
@@ -259,9 +260,6 @@
     .icon-links-wrapper {
       .margin-left{
         margin-left: 22px;
-        @include touch {
-          margin-left: 42px;
-        }
       }
       
       & > a,
@@ -280,7 +278,7 @@
           }
         }
         @include touch {
-          margin-right: 22px;
+          margin-right: 0px;
         }
       }
     }
