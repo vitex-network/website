@@ -14,53 +14,53 @@
     "starttoUse": "Start Trading Now!"
   },
   "indexPage": {
-    "update": "已更新至",
+    "update": "Last updated on",
     "mine": {
-      "title": "VX当日挖矿概况",
-      "todayTotal": "今日可挖量",
-      "totalAmount": "累计挖矿总量",
+      "title": "VX Mining Dashboard",
+      "todayTotal": "Today's Minable VX",
+      "totalAmount": "Total Mined VX",
       "tx": {
-        "title": "交易挖矿总收益",
-        "fee": "实时交易手续费",
-        "predict": "预计1 BTC可瓜分"
+        "title": "Trading as Mining Total Income",
+        "fee": "Live Trading Fees",
+        "predict": "Each BTC will obtain"
       },
       "pledge": {
-        "title": "抵押挖矿总收益",
-        "current": "当前累计抵押金额",
-        "desc": "预计抵押1000 VITE可获得 12345 VX"
+        "title": "Staking as Mining Total Income",
+        "current": "Current Accumulated Stake",
+        "desc": "You will get 12345 VX when staking 1000 VITE"
       },
       "order": {
-        "title": "挂单挖矿总收益"
+        "title": "Market-Making as Mining Total Income"
       }
     },
     "dividend": {
-      "title": "VX当日分红概况",
-      "currentPool": "当前分红池",
-      "totalPool": "已发放分红总估值"
+      "title": "VX Dividend Dashboard",
+      "currentPool": "Dividend Pool",
+      "totalPool": "Total estimated value of distributed dividends"
     }
   },
   "marketTable": {
-    "title": "市场行情",
-    "search": "查询交易对",
+    "title": "Markets",
+    "search": "Find an asset",
     "header": {
-      "txPair": "交易对",
-      "operator": "运营商",
-      "closePrice": "最新价格",
-      "change": "24h变化",
-      "highPrice": "24h最高",
-      "lowPrice": "24h最低",
-      "amount": "24h成交量"
+      "txPair": "Pair",
+      "operator": "Operator",
+      "closePrice": "Last Price",
+      "change": "24H %Change",
+      "highPrice": "24H High",
+      "lowPrice": "24H Low",
+      "amount": "24H Volume"
     }
   },
   "operator": {
     "index": {
-      "title": "运营商信息",
-      "amount": "成交量"
+      "title": "Operators",
+      "amount": "Volume"
     },
     "detail": {
-      "title": "运营商详情",
-      "introduction": "详细介绍",
-      "txPair": "交易对"
+      "title": "Operator Details",
+      "introduction": "Introduction",
+      "txPair": "Trading Pairs"
     }
   },
   "vitexInfo": {
@@ -173,9 +173,9 @@
           "How do trading fees work?",
           "There are two types of fee charges:",
           "  1. ViteX charges a Base Transaction Fee of 0.2% paid by all traders who use the ViteX platform. ",
-          "  2. ViteX Operators running their own Zones may charge an additional fee (\"Zone Fee\") up to 0.2%. In other words, the minimum fees that a trader can pay is 0.2% (Base Transaction Fee with no Zone Fee) and the maximum is 0.4% (Base Transaction Fee + 0.2% Zone Fee). Operators also reserve the right to adjust their individual Zone Fees.",
+          "  2. ViteX Operators running their own Zones may charge an additional fee (\"Operator Fee\") up to 0.2%. In other words, the minimum fees that a trader can pay is 0.2% (Base Transaction Fee with no Operator Fee) and the maximum is 0.4% (Base Transaction Fee + 0.2% Operator Fee). Operators also reserve the right to adjust their individual Operator Fees.",
           "The above fees are the same for both the makers and the takers.",
-          "A trader can choose to stake 10,000 VITE to lower the Base Transaction fee from 0.2% to 0.1%. However, any additional Zone fees will remain the same.",
+          "A trader can choose to stake 10,000 VITE to lower the Base Transaction fee from 0.2% to 0.1%. However, any additional Operator fees will remain the same.",
           "All the fees collected from the Base Transaction Fee charge will be re-distributed as dividends to VX holders.",
 
           "How do withdrawal fees work?",
@@ -244,7 +244,7 @@
       {
         "question": "What goes into the dividend pool?",
         "answer": [
-          "  1. All trading fees collected by the exchange, with the exception of Zone Fees charged by ViteX Operators.",
+          "  1. All trading fees collected by the exchange, with the exception of Operator Fees charged by ViteX Operators.",
           "  2. When a trading pair is opened, of the 10,000 VITE paid in listing costs, 5,000 will go into the dividend pool.",
           "  3. 1,000 VITE fee for generating referral codes."
         ]
