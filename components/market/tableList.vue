@@ -6,11 +6,13 @@
                  class="__center-tb-row __pointer"
                  @mouseenter="showRealPrice(txPair, i)"
                  @mouseleave="hideRealPrice(txPair)"
-                 @click="txPair.operatorAddress ? gotoDetail(txPair.operatorAddress) : null">
+                 @click="gotoVitex(txPair)">
                 <span class="__center-tb-item">
                     <span>{{ getTxPairShowSymbol(txPair) }}</span>
                 </span>
-                <span class="__center-tb-item is-hidden-mobile" v-if="hasOperator">
+                <span class="__center-tb-item is-hidden-mobile" 
+                  v-if="hasOperator"
+                  @click.stop="txPair.operatorAddress ? gotoDetail(txPair.operatorAddress) : null">
                     <span>{{ txPair.operatorName || '--'}}</span>
                 </span>
                 <span class="__center-tb-item">
@@ -70,6 +72,10 @@ export default {
     }
   },
   methods: {
+    gotoVitex(txPair) {
+      let quoteTokenSymbol = txPair.quoteTokenSymbol.split('-')[0];
+      window.open(`https://x.vite.net/trade?symbol=${txPair.symbol}&category=${quoteTokenSymbol}`, '_blank');
+    },
     gotoDetail(address) {
       let locale = this.$i18n.locale !== 'en' ? `/${this.$i18n.locale}` : '';
       this.$router.path = locale;
