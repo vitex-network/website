@@ -27,7 +27,7 @@
       "pledge": {
         "title": "抵押挖矿总收益",
         "current": "当前累计抵押金额",
-        "desc": "预计抵押1000 VITE可获得 12345 VX"
+        "desc": "预计抵押1000 VITE可获得"
       },
       "order": {
         "title": "挂单挖矿总收益"

@@ -6,7 +6,7 @@
             <div class="desc-wrapper is-flex" v-if="seen && index === current">
               <div>
                 <div class="desc-top">{{ $t('indexPage.mine.tx.predict') }}</div>
-                <div class="desc-bottom">1000 VX</div>
+                <div class="desc-bottom">{{ item.precentAmount || '--'}} VX</div>
               </div>
             </div>
             <div v-if="seenList[index]">

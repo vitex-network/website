@@ -11,10 +11,10 @@
         <div class="img-wrapper is-flex">
           <img src="~/assets/images/index/vite.svg"/>
         </div>
-        <div class="desc is-hidden-mobile">{{ $t('indexPage.mine.pledge.desc') }}</div>
+        <div class="desc is-hidden-mobile">{{ $t('indexPage.mine.pledge.desc') }} {{pledgeAmount.percentAmount || '--'}} VX</div>
       </div>
     </div>
-    <div class="desc-mobile is-hidden-desktop">{{ $t('indexPage.mine.pledge.desc') }}</div>
+    <div class="desc-mobile is-hidden-desktop">{{ $t('indexPage.mine.pledge.desc') }} {{pledgeAmount.percentAmount || '--'}} VX</div>
   </div>
   
 </div>
