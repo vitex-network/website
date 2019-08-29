@@ -132,9 +132,9 @@
   "nav": {
     "index": "Index",
     "trade": "Trade",
-    "mine": "Mine",
+    "mine": "Mining",
     "market": "Market",
-    "dividend": "分红",
+    "dividend": "Dividends",
     "about": "About",
     "user": "Support",
     "faq": "FAQ",
@@ -145,7 +145,7 @@
   "footer": {
     "slogan": "Exchange By the Community, For the Community",
     "trade": "Trade",
-    "mine": "Mine",
+    "mine": "Mining",
     "market": "Market",
     "about": "About Us",
     "user": "Support",
