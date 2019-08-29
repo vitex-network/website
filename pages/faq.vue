@@ -7,7 +7,7 @@
           <div class="column item is-destop is-12" v-for="(item, index) in faqs" :key="index">
             <div class="is-info">
               <h3> {{`${index + 1}. ${item.question}`}}</h3>
-              <div class="answer">
+              <div class="answer" :class="{'answer-en': $i18n.locale !== 'zh'}">
                 <p v-for="(answerItem, index) in item.answer" :key="index">
                   <template v-if="item.key === 'wechat'">
                     {{answerItem}}
@@ -87,6 +87,10 @@
           font-size: 14px;
           line-height: 16px;
         }
+      }
+      .answer-en {
+        text-indent: 0;
+        white-space: pre-wrap;
       }
     }
   }
