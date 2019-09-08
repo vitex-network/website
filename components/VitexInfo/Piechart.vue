@@ -1,6 +1,6 @@
 <template>
   <div class="detail">
-    <div class="piechart is-flex">
+    <div class="piechart">
       <img :src="piechart[page][$i18n.locale]" width="50%" height="50%">
     </div>
     <div class="question">
@@ -91,7 +91,7 @@
     }
     .piechart{
       justify-content: center;
-      margin-bottom: 30px;
+      
     }
   }
 </style>
