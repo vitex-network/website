@@ -208,7 +208,6 @@ export default {
     position: relative;
     flex: 1;
     display: flex;
-    height: 1px;
 
     .real-price {
         position: absolute;

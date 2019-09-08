@@ -1,6 +1,6 @@
 <template>
     <div class="info-total-wrapper">
-      <div class="column item" v-for="(item, index) in totalInfo" :key="index">
+      <div class="item" v-for="(item, index) in totalInfo" :key="index">
         <div>{{ item.name }}</div>
         <div class="value">{{ item.amount }}</div>
       </div>
@@ -39,11 +39,12 @@ export default {
     background: none;
     box-shadow:none;
   }
-  .column:last-child {
+  .item:last-child {
     border-right:none;
   }
 }
-.column {
+.item {
+  width: 50%;
   border-right: 1px solid #E7EAEE;
   padding: 20px;
   display: flex;
@@ -54,6 +55,7 @@ export default {
   color:rgba(23,28,52,1);
   line-height:40px;
   @include mobile {
+    width: 100%;
     line-height:18px;
     flex-direction: column;
     border:1px solid rgba(0,60,255,0.02);
@@ -62,11 +64,12 @@ export default {
     background-size: cover;
     background-color: white;
     margin-bottom: 10px;
+    height: 102px;
   }
   .value {
     font-family: $font-family-title;
     color:rgba(23,28,52,1);
-    font-size:28px;
+    font-size:22px;
     @include mobile {
       font-size: 22px;
       line-height: 26px;

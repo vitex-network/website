@@ -54,34 +54,37 @@ export default {
     // VX 18位
     // 手续费相关的 VITE 18, ETH 18, BTC 8, USDT 6
     // 抵押是VITE 18位
-    try {
-      this.dividendPools = await dexFund.getCurrentDividendPools();
-    } catch(err) {
-      console.log(err);
-    }
+    dexFund.getCurrentDividendPools().then(data=> {
+      this.dividendPools = data;
+    }).catch(err=> {
+      console.warn(err);
+    });
     
-    Promise.all([getMiningStat().then(data=> {
+    getMiningStat().then(data=> {
       this.dividendStat = data.userDividendStat;
     }).catch(err=> {
       console.warn(err);
       console.log('dividendStat error');
-    }), dexFund.getCurrentVxMineInfo().then(data=> {
+    });
+    dexFund.getCurrentVxMineInfo().then(data=> {
       this.vxMineInfo = data;
     }).catch(err=> {
       console.warn(err);
       console.log('vxMineInfo error');
-    }), dexFund.getCurrentFeesForMine().then(data=> {
+    });
+    dexFund.getCurrentFeesForMine().then(data=> {
       // 1 VITE 2 ETH_001 3 BTC_001 4 USDT_001
       this.feesForMine = data;
     }).catch(err=> {
       console.warn(err);
       console.log('feesForMine error');
-    }), dexFund.getCurrentPledgeForVxSum().then(data=> {
+    });
+    dexFund.getCurrentPledgeForVxSum().then(data=> {
       this.pledgeForVxSum = data;
     }).catch(err=> {
       console.warn(err);
       console.log('pledgeForVxSum error');
-    })]);
+    });
   },
   watch: {
     dividendPools() {
@@ -287,7 +290,7 @@ export default {
           fee: '',
           btcFee: ''
         };
-        this.minePool[tokenName].fee = BigNumber.multi(amount || 0, viteRate || 0);
+        this.minePool[tokenName].fee = parseInt(BigNumber.multi(amount || 0, viteRate || 0));
         this.minePool[tokenName].btcFee = BigNumber.multi(amount || 0, rate || 0);
       }
       

@@ -31,7 +31,7 @@
         </div>
 
         <div
-            class="navbar-menu column is-7-desktop is-offset-2"
+            class="navbar-menu column is-7-desktop is-offset-1"
             :class="{ 'is-active': navbarActive, collapsing: collapsing }"
         >
           <div
@@ -302,7 +302,11 @@
       margin-left: 7%;
     }
     .navbar-end{
-      margin-top: 8px;
+      margin-top: 11px;
+      margin-left: 180px;
+      @include mobile{
+        margin-left: 30px;
+      }
     }
     .navbar-brand {
       margin: 30px 0 0 45px;
@@ -326,6 +330,9 @@
       }
       &.active {
         color: $common-active-color;
+      }
+      a {
+        flex-grow: initial;
       }
     }
     .nav-end-item{
