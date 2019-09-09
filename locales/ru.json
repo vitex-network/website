@@ -36,7 +36,7 @@
     "dividend": {
       "title": "VX Dividend Dashboard",
       "currentPool": "Dividend Pool",
-      "totalPool": "Total Value"
+      "totalPool": "Total Distributed Value"
     }
   },
   "marketTable": {
