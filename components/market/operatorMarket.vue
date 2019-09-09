@@ -60,7 +60,6 @@ export default {
 
   beforeMount() {
     this.stopAssignPair();
-    this.init();
   },
   data() {
     return {
@@ -70,7 +69,7 @@ export default {
       searchList: [],
       rateTimer: null,
       currentOrderRule: 'txNumDown',
-      quoteTokenCategory: 'VITE'
+      quoteTokenCategory: ''
     };
   },
   computed: {
@@ -123,6 +122,7 @@ export default {
       let symbols = [];
       let tradePairs = this.$store.state.exchangeMarket.currentOperatorInfo.tradePairs;
       if (!tradePairs) return;
+      console.log('this.quoteTokenCategory', this.quoteTokenCategory);
       symbols = tradePairs[this.quoteTokenCategory];
       assignPair({ symbols }).then(data => {
         this.txPairList = data;
