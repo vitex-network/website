@@ -1,18 +1,17 @@
 <template>
     <div>
       <div class="card-wrapper">
-          <div class="item __pointer" v-for="(item, index) in list" :key="index" 
-            @mouseenter="!isMobile ? enter(index) : null" 
-            @mouseleave="!isMobile ? leave() : null"
-            @touchstart="isMobile ? enter(index) : null"
-            @touchend="isMobile ? leave() : null">
-            <div class="desc-wrapper is-flex" v-if="seen && index === current">
+          <div class="item __pointer" v-for="(item, index) in showList" :key="index" 
+            @mouseenter="!isMobile && !isSimple ? item.showDesc = true : null" 
+            @mouseleave="!isMobile && !isSimple? item.showDesc = false : null"
+            @click="isMobile && !isSimple? clickEvent(item, index) : null">
+            <div class="desc-wrapper is-flex" v-if="item.showDesc">
               <div>
                 <div class="desc-top">{{ $t('indexPage.mine.tx.predict') }}</div>
                 <div class="desc-bottom">{{ item.precentAmount || '--'}} BTC</div>
               </div>
             </div>
-            <div v-if="seenList[index]">
+            <div v-else>
               <div class="is-flex token">
                 <div class="token-left">
                   <div>{{ item.tokenSymbol }} </div>
@@ -54,26 +53,30 @@ export default {
       default: ()=> []
     }
   },
+  watch: {
+    list(val) {
+      this.showList = val.map(item=> {
+        return {
+          ...item,
+          showDesc: false
+        };
+      });
+    }
+  },
   data() {
     return {
       isMobile: isMobile(),
-      seen:false,
-      current:0,
-      seenList: [true, true, true, true]
+      showList: []
     };
   },
   methods: {
-    enter(index){
-      if(this.isSimple) return;
-      this.seen = true;
-      this.current = index;
-      this.seenList[index] = false;
-    },
-    leave(){
-      if(this.isSimple) return;
-      this.seen = false;
-      this.current = null;
-      this.seenList = [true, true, true, true];
+    clickEvent(item, index) {
+      item.showDesc = !item.showDesc;
+      for(let i = 0; i < this.showList.length; i++) {
+        if (i !== index) {
+          this.showList[i].showDesc = false;
+        }
+      }
     }
   }
 };
