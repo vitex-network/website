@@ -4,7 +4,7 @@
           <div class="item __pointer" v-for="(item, index) in showList" :key="index" 
             @mouseenter="!isMobile && !isSimple ? item.showDesc = true : null" 
             @mouseleave="!isMobile && !isSimple? item.showDesc = false : null"
-            @click="isMobile && !isSimple? clickEvent(item, index) : null">
+            @click.prevent="isMobile && !isSimple? clickEvent(item, index) : null">
             <div class="desc-wrapper is-flex" v-if="item.showDesc">
               <div>
                 <div class="desc-top">{{ $t('indexPage.mine.tx.predict') }}</div>
@@ -55,10 +55,10 @@ export default {
   },
   watch: {
     list(val) {
-      this.showList = val.map(item=> {
+      this.showList = val.map((item, index)=> {
         return {
           ...item,
-          showDesc: false
+          showDesc: this.showList.length && this.showList[index].showDesc ? true : false
         };
       });
     }
