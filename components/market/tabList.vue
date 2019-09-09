@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       tradePairs: [],
-      curentCategory: 'BTC'
+      curentCategory: 'VITE'
     };
   },
   computed: {

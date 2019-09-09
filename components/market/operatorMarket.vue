@@ -70,7 +70,7 @@ export default {
       searchList: [],
       rateTimer: null,
       currentOrderRule: 'txNumDown',
-      quoteTokenCategory: 'BTC'
+      quoteTokenCategory: 'VITE'
     };
   },
   computed: {
