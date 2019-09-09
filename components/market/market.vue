@@ -13,14 +13,14 @@
       </div>
 
       <div class="__center-tb-title">
-        <div class="__center-tb-item __pointer">
+        <div class="__center-tb-item __pointer" style="max-width: 100px">
           <span class="describe-r">{{ $t('marketTable.header.txPair') }}</span>
           <order-arrow orderItem="txPair" :setOrderRule="setOrderRule"></order-arrow>
         </div>
-        <div class="__center-tb-item __pointer is-hidden-mobile">
+        <div class="__center-tb-item __pointer is-hidden-mobile" style="max-width: 60px">
           {{ $t('marketTable.header.operator') }}
         </div>
-        <div class="__center-tb-item">
+        <div class="__center-tb-item" style="min-width: 180px">
             <span class="describe-r">{{ $t('marketTable.header.closePrice') }}</span>
             <order-arrow orderItem="price" :setOrderRule="setOrderRule"></order-arrow>
         </div>

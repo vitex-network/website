@@ -7,15 +7,16 @@
                  @mouseenter="!isMobile ? showRealPrice(txPair, i) : null"
                  @mouseleave="!isMobile ? hideRealPrice(txPair) : null"
                  @click="gotoVitex(txPair)">
-                <span class="__center-tb-item">
+                <span class="__center-tb-item" style="max-width: 100px">
                     <span>{{ getTxPairShowSymbol(txPair) }}</span>
                 </span>
-                <span class="__center-tb-item is-hidden-mobile" 
+                <span class="__center-tb-item is-hidden-mobile"
+                  style="max-width: 60px" 
                   v-if="hasOperator"
                   @click.stop="txPair.operatorAddress ? gotoDetail(txPair.operatorAddress) : null">
                     <span>{{ txPair.operatorName || '--'}}</span>
                 </span>
-                <span class="__center-tb-item">
+                <span class="__center-tb-item" style="min-width: 180px">
                     <span :class="{
                       'up': +txPair.priceChange > 0,
                       'down': +txPair.priceChange < 0}">
