@@ -4,8 +4,8 @@
         <div ref="txList" class="tx-list">
             <div :ref="`txPair${i}`" v-for="(txPair, i) in showList" :key="i"
                  class="__center-tb-row __pointer"
-                 @mouseenter="showRealPrice(txPair, i)"
-                 @mouseleave="hideRealPrice(txPair)"
+                 @mouseenter="!isMobile ? showRealPrice(txPair, i) : null"
+                 @mouseleave="!isMobile ? hideRealPrice(txPair) : null"
                  @click="gotoVitex(txPair)">
                 <span class="__center-tb-item">
                     <span>{{ getTxPairShowSymbol(txPair) }}</span>
@@ -42,6 +42,7 @@
 
 <script>
 import BigNumber from '~/utils/bigNumber';
+import isMobile from 'is-mobile';
 
 export default {
   props: {
@@ -62,7 +63,8 @@ export default {
     return {
       symbol: null,
       realPrice: '',
-      top: 0
+      top: 0,
+      isMobile: isMobile()
     };
   },
   computed: {

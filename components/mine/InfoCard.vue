@@ -2,7 +2,10 @@
     <div>
       <div class="card-wrapper">
           <div class="item __pointer" v-for="(item, index) in list" :key="index" 
-            @mouseenter="!isMobile ? enter(index) : null" @mouseleave="!isMobile ? leave() : null">
+            @mouseenter="!isMobile ? enter(index) : null" 
+            @mouseleave="!isMobile ? leave() : null"
+            @touchstart="isMobile ? enter(index) : null"
+            @touchend="isMobile ? leave() : null">
             <div class="desc-wrapper is-flex" v-if="seen && index === current">
               <div>
                 <div class="desc-top">{{ $t('indexPage.mine.tx.predict') }}</div>
@@ -104,7 +107,7 @@ export default {
     box-shadow:0px 2px 9px 0px rgba(0,0,0,0.2);
     border-radius:5px;
     color: white;
-    height: 100%;
+    height: 147px;
     justify-content: center;
     align-items: center;
     text-align: center;
