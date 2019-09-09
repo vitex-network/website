@@ -13,7 +13,7 @@ const goViteServer = {
 
 // let serverUrl = env === 'production' ? goViteServer.production : goViteServer.test;
 
-let provider = new WS_RPC(goViteServer.test);
+let provider = new WS_RPC(goViteServer.production);
 let myClient = new client(provider);
 
 
