@@ -185,7 +185,7 @@ class WsProtoClient {
 }
 
 
-export const client = process.browser && new WsProtoClient('wss://vitex.vite.net/test/websocket') || null;
+export const client = process.browser && new WsProtoClient('wss://vitex.vite.net/websocket') || null;
 
 
 function getRealData(data) {
