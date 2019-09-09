@@ -22,7 +22,7 @@
       "tx": {
         "title": "交易挖矿总收益",
         "fee": "实时交易手续费",
-        "predict": "预计1 VX可瓜分"
+        "predict": "预计挖1 VX需花费"
       },
       "pledge": {
         "title": "抵押挖矿总收益",
