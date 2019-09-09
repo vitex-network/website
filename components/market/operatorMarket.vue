@@ -123,7 +123,6 @@ export default {
       let symbols = [];
       let tradePairs = this.$store.state.exchangeMarket.currentOperatorInfo.tradePairs;
       if (!tradePairs) return;
-
       symbols = tradePairs[this.quoteTokenCategory];
       assignPair({ symbols }).then(data => {
         this.txPairList = data;

@@ -21,11 +21,13 @@ export default {
   created() {
     let operatorInfo = this.$store.state.exchangeMarket.currentOperatorInfo;
     this.tradePairs = operatorInfo && operatorInfo.tradePairs && Object.keys(operatorInfo.tradePairs) || [];
+    this.curentCategory = this.isOperator ? this.tradePairs[0] : 'BTC';
+    this.$emit('currentCategory', this.curentCategory);
   },
   data() {
     return {
       tradePairs: [],
-      curentCategory: 'VITE'
+      curentCategory: ''
     };
   },
   computed: {

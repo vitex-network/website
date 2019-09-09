@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="card is-flex">
-      <div class="left is-flex" v-if="operatorInfo">
+    <div class="card is-flex"  v-if="operatorInfo">
+      <div class="left is-flex">
         <img :src="operatorInfo.icon" class="pic"/>
         <div class="info">
           <div class="name">{{ operatorInfo.name }}</div>

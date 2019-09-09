@@ -74,7 +74,7 @@ export default {
       searchList: [],
       rateTimer: null,
       currentOrderRule: 'txNumDown',
-      quoteTokenCategory: 'VITE'
+      quoteTokenCategory: 'BTC'
     };
   },
   destroyed() {

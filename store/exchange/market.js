@@ -1,8 +1,8 @@
 import { baseToken } from '~/services/trade';
 
-let quoteTokenCategory = [ 'VITE', 'USDT', 'BTC', 'ETH' ];
+let quoteTokenCategory = [ 'BTC', 'ETH', 'VITE', 'USDT'];
 
-let DefaultCategory = 'VITE';
+let DefaultCategory = 'BTC';
 
 let state = function() {
   return {
