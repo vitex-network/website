@@ -6,7 +6,7 @@
             <div class="desc-wrapper is-flex" v-if="seen && index === current">
               <div>
                 <div class="desc-top">{{ $t('indexPage.mine.tx.predict') }}</div>
-                <div class="desc-bottom">{{ item.precentAmount || '--'}} VX</div>
+                <div class="desc-bottom">{{ item.precentAmount || '--'}} BTC</div>
               </div>
             </div>
             <div v-if="seenList[index]">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="token-right">
                   <div>{{ item.fee }}</div>
-                  <div>≈ {{ item.btcFee }} BTC</div>
+                  <div v-if="item.btcFee">≈ {{ item.btcFee }} BTC</div>
                 </div>
               </div>
             </div>
