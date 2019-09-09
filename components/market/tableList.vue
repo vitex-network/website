@@ -124,9 +124,19 @@ export default {
         return txPair.tradeTokenSymbol;
       }
 
-      const price = BigNumber.multi(txPair.closePrice || 0, rate || 0, 2);
-      if (!+price) {
+      const _price = BigNumber.multi(txPair.closePrice || 0, rate || 0, 6);
+      if (!+_price) {
         return txPair.tradeTokenSymbol;
+      }
+
+      let price = '';
+      const _realPrice = BigNumber.normalFormatNum(_price, 6);
+      const _realPrice2 = BigNumber.normalFormatNum(_realPrice, 2);
+
+      if (+_realPrice2 === 0) {
+        price = _realPrice;
+      } else {
+        price = _realPrice2;
       }
 
       const pre = this.$i18n.locale === 'zh' ? '≈¥': '≈$';
@@ -139,9 +149,18 @@ export default {
         return `${ pre }0.0`;
       }
 
-      const price = BigNumber.multi(txPair.closePrice || 0, rate || 0, 2);
-      if (!+price) {
+      const _price = BigNumber.multi(txPair.closePrice || 0, rate || 0, 6);
+      if (!+_price) {
         return `${ pre }0.0`;
+      }
+      let price = '';
+      const _realPrice = BigNumber.normalFormatNum(_price, 6);
+      const _realPrice2 = BigNumber.normalFormatNum(_realPrice, 2);
+
+      if (+_realPrice2 === 0) {
+        price = _realPrice;
+      } else {
+        price = _realPrice2;
       }
       return `${ pre }${ price }`;
     },
