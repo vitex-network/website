@@ -25,7 +25,7 @@
                   <div>{{ $t('indexPage.mine.tx.fee') }}</div>
                 </div>
                 <div class="token-right">
-                  <div>{{ item.fee }} VITE</div>
+                  <div>{{ item.fee }}</div>
                   <div>≈ {{ item.btcFee }} BTC</div>
                 </div>
               </div>

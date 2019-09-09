@@ -146,28 +146,28 @@ export default {
         tokenSymbol: 'VITE',
         img: require('~/assets/images/index/vite.svg'),
         amount: `${this.formatVX(this.vxMineInfo.feeMineDetail['1'])} VX`,
-        fee: this.minePool['VITE'] && this.minePool['VITE'].fee || '--',
+        fee: this.minePool['VITE'] &&  `${this.minePool['VITE'].fee} VITE` || '-- VITE',
         btcFee: this.minePool['VITE'] && this.minePool['VITE'].btcFee || '--',
         precentAmount: this.minePool['VITE'] && (1/this.minePool['VITE'].btcFee * this.formatVX(this.vxMineInfo.feeMineDetail['1'])).toFixed(2)
       }, {
         tokenSymbol: 'BTC',
         img: require('~/assets/images/index/btc.svg'),
         amount: `${this.formatVX(this.vxMineInfo.feeMineDetail['2'])} VX`,
-        fee: this.minePool['BTC'] && this.minePool['BTC'].fee || '--',
+        fee: this.minePool['BTC'] && `${this.minePool['BTC'].fee} BTC`|| '-- BTC',
         btcFee: this.minePool['BTC'] && this.minePool['BTC'].btcFee || '--',
         precentAmount: this.minePool['BTC'] && (1/this.minePool['BTC'].btcFee * this.formatVX(this.vxMineInfo.feeMineDetail['2'])).toFixed(2)
       }, {
         tokenSymbol: 'ETH',
         img: require('~/assets/images/index/eth.svg'),
         amount: `${this.formatVX(this.vxMineInfo.feeMineDetail['3'])} VX`,
-        fee: this.minePool['ETH'] && this.minePool['ETH'].btcFee || '--',
+        fee: this.minePool['ETH'] && `${this.minePool['ETH'].fee} ETH`|| '-- ETH',
         btcFee: this.minePool['ETH'] && this.minePool['ETH'].btcFee || '--',
         precentAmount: this.minePool['ETH'] && (1/this.minePool['ETH'].btcFee * this.formatVX(this.vxMineInfo.feeMineDetail['3'])).toFixed(2)
       }, {
         tokenSymbol: 'USDT',
         img: require('~/assets/images/index/usd.svg'),
         amount: `${this.formatVX(this.vxMineInfo.feeMineDetail['4'])} VX`,
-        fee: this.minePool['USDT'] && this.minePool['USDT'].fee || '--',
+        fee: this.minePool['USDT'] && `${this.minePool['USDT'].fee} USDT`|| '-- USDT',
         btcFee: this.minePool['USDT'] && this.minePool['USDT'].btcFee || '--',
         precentAmount: this.minePool['USDT'] && (1/this.minePool['USDT'].btcFee * this.formatVX(this.vxMineInfo.feeMineDetail['4'])).toFixed(2)
       }] || [];
@@ -282,7 +282,7 @@ export default {
       for (const tokenNum in this.feesForMine) {
         let tokenName = tokenMap[tokenNum];
         let rate = this.getRateFromSymbol(tokenName, 'btc');
-        let viteRate = this.getRateFromSymbol(tokenName, 'vite');
+        // let viteRate = this.getRateFromSymbol(tokenName, 'vite');
         let originAmount = this.feesForMine[tokenNum];
         let amount = BigNumber.toBasic(originAmount, decimals[tokenName]);
 
@@ -290,7 +290,7 @@ export default {
           fee: '',
           btcFee: ''
         };
-        this.minePool[tokenName].fee = parseInt(BigNumber.multi(amount || 0, viteRate || 0));
+        this.minePool[tokenName].fee = amount; // parseInt(BigNumber.multi(amount || 0, viteRate || 0));
         this.minePool[tokenName].btcFee = BigNumber.multi(amount || 0, rate || 0);
       }
       
