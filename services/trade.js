@@ -1,4 +1,4 @@
-import { get, post } from '~/api/axios';
+import { get, post } from '../api/axios';
 
 const version = 'v1';
 

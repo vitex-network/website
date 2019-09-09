@@ -1,3 +1,5 @@
+import { operatorInfo } from './services/trade';
+
 const hostname = 'https://vitex.net';
 const routes = [
   {
@@ -93,6 +95,17 @@ module.exports = {
     {src: '~/plugins/nuxt-swiper-plugin.js', ssr: false}],
   router: {
     middleware: 'i18n'
+  },
+  generate: {
+    routes: async function () {
+      let list = await operatorInfo([]);
+      return list.map((item) => {
+        return {
+          route: '/operatorDetail/' + item.address,
+          payload: item
+        };
+      });
+    }
   },
   modules: [
     // '@nuxtjs/webpackmonitor',

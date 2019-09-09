@@ -80,7 +80,13 @@
     overflow: hidden;
     @include touch{
       height: 102px;
-      overflow: auto;
+      overflow: hidden;
+    }
+    img {
+       @include touch{
+        width: 100%;
+        height: 102px;
+      }
     }
   }
   .swiper-pagination {
