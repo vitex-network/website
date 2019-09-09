@@ -1,5 +1,3 @@
-
-
 class DexFund {
   constructor(client) {
     this._client = client;
