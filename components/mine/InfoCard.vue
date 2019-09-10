@@ -15,8 +15,8 @@
               <div class="is-flex token">
                 <div class="token-left">
                   <div>{{ item.tokenSymbol }} </div>
-                  <div class="vx-amount">{{ item.amount }}</div>
-                  <div v-if="item.mainBtcAmount" class="amount-btc">≈ {{ item.mainBtcAmount }} BTC</div>
+                  <div class="vx-amount">{{ item.amount || '--'}}</div>
+                  <div v-if="item.mainBtcAmount" class="amount-btc">≈ {{ item.mainBtcAmount || '--'}} BTC</div>
                 </div>
                 <div class="token-right">
                   <img :src="imgMap[item.tokenSymbol]"/>
@@ -28,8 +28,8 @@
                     <div>{{ $t('indexPage.mine.tx.fee') }}</div>
                   </div>
                   <div class="token-right">
-                    <div>{{ item.fee }}</div>
-                    <div v-if="item.btcFee">≈ {{ item.btcFee }} BTC</div>
+                    <div>{{ item.fee || '--'}}</div>
+                    <div v-if="item.btcFee">≈ {{ item.btcFee || '--'}} BTC</div>
                   </div>
                 </div>
                 <div class="is-flex token-bottom-2">

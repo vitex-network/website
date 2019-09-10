@@ -2,7 +2,7 @@
     <div class="info-total-wrapper">
       <div class="item" v-for="(item, index) in totalInfo" :key="index">
         <div>{{ item.name }}</div>
-        <div class="value">{{ item.amount }}</div>
+        <div class="value">{{ item.amount || '--'}}</div>
       </div>
     </div>
 </template>
