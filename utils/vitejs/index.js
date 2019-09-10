@@ -10,7 +10,6 @@ const goViteServer = {
   test: 'wss://premainnet.vitewallet.com/test/ws',
   dev: 'wss://premainnet.vitewallet.com/test/ws'
 };
-
 // let serverUrl = env === 'production' ? goViteServer.production : goViteServer.test;
 
 let provider = new WS_RPC(goViteServer.production);

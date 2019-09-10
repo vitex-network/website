@@ -1,17 +1,17 @@
 <template>
     <div>
       <div class="card-wrapper">
-          <div class="item __pointer" v-for="(item, index) in showList" :key="index" 
-            @mouseenter="!isMobile && !isSimple ? item.showDesc = true : null" 
+          <div class="item __pointer" v-for="(item, index) in showList" :key="index">
+            <!-- @mouseenter="!isMobile && !isSimple ? item.showDesc = true : null" 
             @mouseleave="!isMobile && !isSimple? item.showDesc = false : null"
-            @click.prevent="isMobile && !isSimple? clickEvent(item, index) : null">
-            <div class="desc-wrapper is-flex" v-if="item.showDesc">
+            @click.prevent="isMobile && !isSimple? clickEvent(item, index) : null" -->
+            <!-- <div class="desc-wrapper is-flex" v-if="item.showDesc">
               <div>
                 <div class="desc-top">{{ $t('indexPage.mine.tx.predict') }}</div>
                 <div class="desc-bottom">{{ item.precentAmount || '--'}} BTC</div>
               </div>
-            </div>
-            <div v-else>
+            </div> -->
+            <div>
               <div class="is-flex token">
                 <div class="token-left">
                   <div>{{ item.tokenSymbol }} </div>
@@ -22,13 +22,23 @@
                   <img :src="item.img"/>
                 </div>
               </div>
-              <div class="is-flex token-bottom" v-if="!isSimple">
-                <div class="token-left">
-                  <div>{{ $t('indexPage.mine.tx.fee') }}</div>
+              <div class="token-bottom" v-if="!isSimple">
+                <div class="is-flex token-bottom-1">
+                  <div class="token-left">
+                    <div>{{ $t('indexPage.mine.tx.fee') }}</div>
+                  </div>
+                  <div class="token-right">
+                    <div>{{ item.fee }}</div>
+                    <div v-if="item.btcFee">≈ {{ item.btcFee }} BTC</div>
+                  </div>
                 </div>
-                <div class="token-right">
-                  <div>{{ item.fee }}</div>
-                  <div v-if="item.btcFee">≈ {{ item.btcFee }} BTC</div>
+                <div class="is-flex token-bottom-2">
+                  <div class="token-left">
+                    <div>{{ $t('indexPage.mine.tx.predict') }}</div>
+                  </div>
+                  <div class="token-right">
+                    <div>{{ item.precentAmount || '--'}} BTC</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -149,13 +159,20 @@ export default {
   }
   .token-bottom {
     padding: 9px 20px 20px 20px;
-    justify-content: space-between;
+    
     border-top: 1px solid #E7EAEE;
     font-size:12px;
     font-family:$font-family-light;
     font-weight:400;
     color:rgba(84,86,90,1);
     line-height:16px;
+    .token-bottom-1 {
+      justify-content: space-between;
+    }
+    .token-bottom-2 {
+      justify-content: space-between;
+      margin-top: 10px;
+    }
     .token-right {
       text-align: right;
     }
