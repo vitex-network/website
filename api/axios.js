@@ -1,7 +1,7 @@
 import axios from 'axios';
 import config from './config';
 
-config.baseURL = 'https://vitex.vite.net/test/api';
+config.baseURL = 'https://vitex.vite.net/api';
 
 const service = axios.create(config);
 
