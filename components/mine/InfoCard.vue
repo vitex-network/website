@@ -19,7 +19,7 @@
                   <div v-if="item.mainBtcAmount" class="amount-btc">≈ {{ item.mainBtcAmount }} BTC</div>
                 </div>
                 <div class="token-right">
-                  <img :src="item.img"/>
+                  <img :src="imgMap[item.tokenSymbol]"/>
                 </div>
               </div>
               <div class="token-bottom" v-if="!isSimple">
@@ -76,7 +76,13 @@ export default {
   data() {
     return {
       isMobile: isMobile(),
-      showList: []
+      showList: [],
+      imgMap: {
+        'VITE': require('~/assets/images/index/vite.svg'),
+        'BTC': require('~/assets/images/index/btc.svg'),
+        'ETH': require('~/assets/images/index/eth.svg'),
+        'USDT': require('~/assets/images/index/usd.svg')
+      }
     };
   },
   methods: {

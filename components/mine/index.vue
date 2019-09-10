@@ -144,27 +144,23 @@ export default {
     txMineList() {
       return this.vxMineInfo && this.minePool && [{
         tokenSymbol: 'VITE',
-        img: require('~/assets/images/index/vite.svg'),
         amount: `${this.formatVX(this.vxMineInfo.feeMineDetail['1'])} VX`,
         fee: this.minePool['VITE'] &&  `${parseInt(this.minePool['VITE'].fee)} VITE` || '-- VITE',
         btcFee: this.minePool['VITE'] && this.minePool['VITE'].btcFee || '--',
         precentAmount: this.minePool['VITE'] && (this.minePool['VITE'].btcFee /this.formatVX(this.vxMineInfo.feeMineDetail['1'])).toFixed(8)
       }, {
         tokenSymbol: 'BTC',
-        img: require('~/assets/images/index/btc.svg'),
         amount: `${this.formatVX(this.vxMineInfo.feeMineDetail['2'])} VX`,
         fee: this.minePool['BTC'] && `${this.minePool['BTC'].fee} BTC`|| '-- BTC',
         precentAmount: this.minePool['BTC'] && (this.minePool['BTC'].btcFee / this.formatVX(this.vxMineInfo.feeMineDetail['2'])).toFixed(8)
       }, {
         tokenSymbol: 'ETH',
-        img: require('~/assets/images/index/eth.svg'),
         amount: `${this.formatVX(this.vxMineInfo.feeMineDetail['3'])} VX`,
         fee: this.minePool['ETH'] && `${this.minePool['ETH'].fee} ETH`|| '-- ETH',
         btcFee: this.minePool['ETH'] && this.minePool['ETH'].btcFee || '--',
         precentAmount: this.minePool['ETH'] && (this.minePool['ETH'].btcFee / this.formatVX(this.vxMineInfo.feeMineDetail['3'])).toFixed(8)
       }, {
         tokenSymbol: 'USDT',
-        img: require('~/assets/images/index/usd.svg'),
         amount: `${this.formatVX(this.vxMineInfo.feeMineDetail['4'])} VX`,
         fee: this.minePool['USDT'] && `${this.minePool['USDT'].fee} USDT`|| '-- USDT',
         btcFee: this.minePool['USDT'] && this.minePool['USDT'].btcFee || '--',
@@ -174,40 +170,32 @@ export default {
     orderMineList() {
       return this.totalMineAmount && [{
         tokenSymbol: 'VITE',
-        img: require('~/assets/images/index/vite.svg'),
         amount: `${(this.totalMineAmount.order/4).toFixed(2) } VX`
       }, {
         tokenSymbol: 'BTC',
-        img: require('~/assets/images/index/btc.svg'),
         amount: `${(this.totalMineAmount.order/4).toFixed(2)} VX`
       }, {
         tokenSymbol: 'ETH',
-        img: require('~/assets/images/index/eth.svg'),
         amount: `${(this.totalMineAmount.order/4).toFixed(2)} VX`
       }, {
         tokenSymbol: 'USDT',
-        img: require('~/assets/images/index/usd.svg'),
         amount: `${(this.totalMineAmount.order/4).toFixed(2)} VX`
       }] || [];
     },
     dividendList() {
       return this.pool && [{
         tokenSymbol: 'VITE',
-        img: require('~/assets/images/index/vite.svg'),
         amount: this.pool['VITE'] && `${parseInt(this.pool['VITE'].amount)} VITE` || '-- VITE',
         mainBtcAmount: this.pool['VITE'] && `${this.pool['VITE'].btcAmount}` || '--',
       }, {
         tokenSymbol: 'BTC',
-        img: require('~/assets/images/index/btc.svg'),
         amount: this.pool['BTC'] && `${this.pool['BTC'].amount} BTC` || '-- BTC',
       }, {
         tokenSymbol: 'ETH',
-        img: require('~/assets/images/index/eth.svg'),
         amount: this.pool['ETH'] && `${this.pool['ETH'].amount} ETH` || '-- ETH',
         mainBtcAmount: this.pool['ETH'] && `${this.pool['ETH'].btcAmount}` || '--',
       }, {
         tokenSymbol: 'USDT',
-        img: require('~/assets/images/index/usd.svg'),
         amount: this.pool['USDT'] && `${this.pool['USDT'].amount} USDT` || '-- USDT',
         mainBtcAmount: this.pool['USDT'] && `${this.pool['USDT'].btcAmount}` || '--',
       }] || [];
