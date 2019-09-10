@@ -27,7 +27,7 @@
 <script>
   import { operatorVolumes } from '~/services/trade';
   import { timer } from '~/utils/asyncFlow';
-  const loopTime = 10000;
+  const loopTime = 300000;
 
   export default {
     components: {},
