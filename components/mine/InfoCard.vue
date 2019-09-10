@@ -1,7 +1,7 @@
 <template>
     <div>
       <div class="card-wrapper">
-          <div class="item __pointer" v-for="(item, index) in showList" :key="index">
+          <div class="item" v-for="(item, index) in showList" :key="index">
             <!-- @mouseenter="!isMobile && !isSimple ? item.showDesc = true : null" 
             @mouseleave="!isMobile && !isSimple? item.showDesc = false : null"
             @click.prevent="isMobile && !isSimple? clickEvent(item, index) : null" -->

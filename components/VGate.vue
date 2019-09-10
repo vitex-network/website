@@ -109,6 +109,7 @@
     .card-wrapper {
       display: flex;
       display: -webkit-flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       @include mobile {
         flex-direction: column;
@@ -120,7 +121,7 @@
         border-radius:5px;
         border:1px solid rgba(231,234,238,1);
         width: 255px;
-        
+        margin-bottom: 26px;
         @include mobile {
           width: 100%;
           margin-bottom: 10px;
