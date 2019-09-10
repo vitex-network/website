@@ -11,7 +11,7 @@
                   <div class="operator-name">{{ item.name }} </div>
                   <div class="operator-amount">
                     <div>{{$t('operator.index.amount')}}</div>
-                    <div class="operator-value">{{ item.volume || '--'}} BTC</div>
+                    <div class="operator-value">{{ item.volmue24h || '--'}} BTC</div>
                   </div>
                 </div>
                 <div class="token-right">
@@ -26,14 +26,26 @@
 
 <script>
   import { operatorVolumes } from '~/services/trade';
+  import { timer } from '~/utils/asyncFlow';
+  const loopTime = 300000;
+
   export default {
     components: {},
-    async beforeMount() {
+    beforeMount() {
       try {
-        this.list = await operatorVolumes([]);
+        this.stopLoopOperator();
+        const f = async ()=> {
+          this.list = await operatorVolumes([]);
+        };
+        this.operatorTimer = new timer(f, loopTime);
+        this.operatorTimer.start();
+        
       } catch(err) {
         console.log(err);
       }
+    },
+    destroyed() {
+      this.stopLoopOperator();
     },
     computed: {
       locales() {
@@ -45,10 +57,15 @@
     },
     data(){
       return{
-        list: []
+        list: [],
+        operatorTimer: null
       };
     },
     methods:{
+      stopLoopOperator() {
+        this.operatorTimer && this.operatorTimer.stop();
+        this.operatorTimer = null;
+      },
       gotoDetail(address) {
         let locale = this.$i18n.locale !== 'en' ? `/${this.$i18n.locale}` : '';
         this.$router.path = locale;
