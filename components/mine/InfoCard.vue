@@ -65,7 +65,7 @@ export default {
   },
   watch: {
     list(val) {
-      this.showList = val.map((item, index)=> {
+      this.showList = val && val.map((item, index)=> {
         return {
           ...item,
           showDesc: this.showList.length && this.showList[index].showDesc ? true : false
