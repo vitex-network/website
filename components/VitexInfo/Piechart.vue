@@ -1,7 +1,8 @@
 <template>
   <div class="detail">
-    <div class="piechart">
+    <div class="piechart" v-if="page === 'mine'">
       <img :src="piechart[page][$i18n.locale]" width="50%" height="50%">
+      <img :src="piechart['dividend'][$i18n.locale]" width="50%" height="50%">
     </div>
     <div class="question">
       <div class="answer" v-for="(item, index) in $t(`vitexInfo.questions.${page}`)" :key="index">
@@ -91,6 +92,7 @@
     }
     .piechart{
       justify-content: center;
+      margin-bottom: 30px;
       
     }
   }

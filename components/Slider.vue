@@ -19,24 +19,24 @@
 <script>
   import { urls } from '~/config.js';
   import en1 from '~/assets/images/banner/en.jpg';
-  import vitexTestEn from '~/assets/images/banner/vitexTestEn.png';
+  // import vitexTestEn from '~/assets/images/banner/vitexTestEn.png';
   import zh1 from '~/assets/images/banner/zh.jpg';
-  import vitexTestZh from '~/assets/images/banner/vitexTestZh.png';
+  // import vitexTestZh from '~/assets/images/banner/vitexTestZh.png';
 
   export default {
     data () {
       return {
         urls,
         banners: {
-          en: [vitexTestEn, en1],
-          zh: [vitexTestZh, zh1]
+          en: [en1],
+          zh: [zh1]
         },
         bannerUrls:{
-          en: [urls.vitexContest.en, urls.telegramx.en],
-          zh: [urls.vitexContest.zh, urls.forum]
+          en: [urls.telegramx.en],
+          zh: [urls.forum]
         },
         swiperOption: {
-          loop: true,
+          loop: false,
           slidesPerView: 1,
           centeredSlides: true,
           spaceBetween: 30,
