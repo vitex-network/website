@@ -170,7 +170,7 @@ export default {
     },
     dividendList() {
       if (this.pool) {
-        return this.tokenList.map(item=> {
+        return this.tokenDiviList.map(item=> {
           return {
             tokenSymbol: item,
             amount: this.pool[item] && (item !== 'VITE' ? `${this.pool[item].amount} ${item}` : `${parseInt(this.pool[item].amount)} ${item}`),
@@ -178,7 +178,7 @@ export default {
           };
         });
       } else {
-        return this.tokenList.map(item=> {
+        return this.tokenDiviList.map(item=> {
           return {
             tokenSymbol: item,
             amount: `-- ${item}`,
@@ -204,6 +204,7 @@ export default {
       dividendStat: null,
       pool: null,
       tokenList: ['VITE', 'BTC', 'ETH', 'USDT'],
+      tokenDiviList: ['VITE', 'ETH', 'BTC', 'USDT'],
       symbolRate: null,
       minePool: null,
       dividendAllPriceBtc: 0
@@ -230,7 +231,7 @@ export default {
 
       for (const tokenId in rawData) {
         const token = rawData[tokenId];
-        const tokenTypeName = this.tokenList[token.quoteTokenType - 1];
+        const tokenTypeName = this.tokenDiviList[token.quoteTokenType - 1];
 
         this.pool[tokenTypeName] = this.pool[tokenTypeName] || {
           amount: '0',
