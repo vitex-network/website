@@ -99,12 +99,25 @@ module.exports = {
   generate: {
     routes: async function () {
       let list = await operatorInfo([]);
-      return list.map((item) => {
-        return {
-          route: '/operatorDetail/' + item.address,
-          payload: item
-        };
+      let dynamicRouteList = [];
+      locales.forEach(locale=> {
+        if (locale.code === 'zh') {
+          list.forEach((item) => {
+            dynamicRouteList.push({
+              route: `/${locale.code}/operatorDetail/${item.address}`,
+              payload: item
+            });
+          });
+        } else {
+          list.forEach((item) => {
+            dynamicRouteList.push({
+              route: `/operatorDetail/${item.address}`,
+              payload: item
+            });
+          });
+        }
       });
+      return dynamicRouteList;
     }
   },
   modules: [
