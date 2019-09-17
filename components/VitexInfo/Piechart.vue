@@ -5,7 +5,7 @@
       <img :src="piechart['dividend'][$i18n.locale]" width="50%" height="50%">
     </div>
     <div class="question">
-      <div class="answer" v-for="(item, index) in $t(`vitexInfo.questions.${page}`)" :key="index">
+      <div class="answer" v-for="(item, index) in $t(`vitexInfo.questions.${page}`)" :key="index" :class="{'answer-en': $i18n.locale !== 'zh'}">
         <div class="title is-flex"><span class="dot"></span>{{`${item.question}`}}</div>
         <div class="content">
           <p v-for="(ansItem, index) in item.answer" :key="index">{{ ansItem }}</p>
@@ -62,6 +62,10 @@
   @import "~assets/vars";
   .question {
     text-indent: 2em;
+    .answer-en {
+      text-indent: 0;
+      white-space: pre-wrap;
+    }
   }
 
   .detail{
