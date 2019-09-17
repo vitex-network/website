@@ -16,7 +16,7 @@
           class="text-btn"
           target="_blank"
       >
-        {{$t('home.starttoUse')}}
+        {{$t('home.starttoUse')}}!
       </a>
     </div>
   </div>

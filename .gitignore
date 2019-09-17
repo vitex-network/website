@@ -6,4 +6,5 @@ package-lock.json
 
 .DS_Store
 assets/.DS_Store
+static.tar
 
