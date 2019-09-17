@@ -63,7 +63,7 @@ module.exports = {
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
       {name: 'author', content: 'vite lab'},
-      {name: 'keywords', content: 'vite, vitex, crypto,dag,bitcoin,vitecoin,contract platform'}
+      {name: 'keywords', content: 'vite, vitex, crypto,dag,bitcoin,vitecoin,contract platform, vgate, vgate exchange'}
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/icon.png'}
