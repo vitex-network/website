@@ -156,7 +156,7 @@ export default {
           amount: `${this.vxMineInfo && this.formatVX(this.vxMineInfo.feeMineDetail[tokenNumMap[item]]) || '--'} VX`,
           fee: this.minePool && this.minePool[item] && (item !== 'VITE' ? `${this.minePool[item].fee} ${item}` : `${parseInt(this.minePool[item].fee)} ${item}`) || `-- ${item}`,
           btcFee: this.minePool && item !== 'BTC' && (this.minePool[item] && this.minePool[item].btcFee || '--'),
-          precentAmount: this.minePool && this.vxMineInfo && this.minePool[item] && (this.minePool[item].btcFee /this.formatVX(this.vxMineInfo.feeMineDetail[tokenNumMap[item]])).toFixed(8)
+          precentAmount: this.minePool && this.vxMineInfo && this.minePool[item] && (this.minePool[item].btcFee / this.formatVX(this.vxMineInfo.feeMineDetail[tokenNumMap[item]]) * 1.25).toFixed(8)
         };
       });
     },
