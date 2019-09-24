@@ -1,10 +1,10 @@
 <template>
   <div class="detail">
-    <div class="question-en" v-if="$i18n.locale === 'en'">
+    <div class="question-en" v-if="page === 'mine' && $i18n.locale === 'en'">
       <div class="answer">
         <div class="title">What is ViteX?</div>
         <div class="content">
-          <p>ViteX is a high-throughput decentralized exchange built on the Vite public chain with its own mineable currency​—​VX. ​For more details on the benefits of ViteX and the underlying technology, you can see this article ​<a href="https://medium.com/vitelabs/vitex-101-update-489f6e49392">​here​</a>.</p>
+          <p>ViteX is a high-throughput decentralized exchange built on the Vite public chain with its own mineable currency​—​VX. ​For more details on the benefits of ViteX and the underlying technology, you can see this article ​<a href="https://medium.com/vitelabs/vitex-101-update-489f6e49392" target="_blank">​here​</a>.</p>
           <a
               :href="piechart.urls.vitex[$i18n.locale]"
               class="text-btn"
@@ -19,7 +19,7 @@
             <li>You can ​trade ​it. Currently, 1 VX ~ 1 USD on ViteX with the following trading pairs: VX/BTC, VX/ETH, VX/USDT, and VX/VITE</li>
             <li>Even better, you can ​hodl ​it to receive daily dividends in BTC, ETCH, USDT & VITE. Fees collected by the ViteX platform (transaction fees, listing fees, etc...) are put into a shared dividend pool that is distributed ​back​ to traders at a daily rate of 1%. All accounts with at least 10 VX are eligible to receive dividends. More details on dividends can be found <nuxt-link :to="localePath('dividend')">here</nuxt-link>​.</li>
           </ol>
-          <p>Sound interesting? Sign up for a trading account now at <a href="https://x.vite.net/​">​https://x.vite.net/​</a>!</p>
+          <p>Sound interesting? Sign up for a trading account now at <a href="https://x.vite.net/​" target="_blank">​https://x.vite.net/​</a>!</p>
         </div>
         <div class="title">How do I mine VX?</div>
         <div class="content">
@@ -32,7 +32,7 @@
             <li><span class="bold">Market-making as Mining.​</span> Place orders to boost liquidity on ViteX and you’ll be rewarded with VX.
             </li>
           </ol>
-          <p>You can find each mining method described in more detail <a href="https://medium.com/vitelabs/announcement-vx-mining-official-start-date-e66900b10888">here</a>​​.</p>
+          <p>You can find each mining method described in more detail <a href="https://medium.com/vitelabs/announcement-vx-mining-official-start-date-e66900b10888" target="_blank">here</a>​​.</p>
         </div>
         <div class="title">How is VX distributed?</div>
         <div class="content">
@@ -70,12 +70,13 @@
         </div>
         <div class="title">More questions?</div>
         <div class="content">
-          <p>Join our Telegram community: ​<a href="https://t.me/vitexexchange">https://t.me/vitexexchange</a></p>
-          <p>Check out the ViteX Official Website: ​<a href="https://vitex.net/">https://vitex.net/</a></p>
-          <p>Start trading at: ​<a href="https://x.vite.net">https://x.vite.net</a></p>
+          <p>Join our Telegram community: ​<a href="https://t.me/vitexexchange" target="_blank">https://t.me/vitexexchange</a></p>
+          <p>Check out the ViteX Official Website: ​<a href="https://vitex.net/" target="_blank">https://vitex.net/</a></p>
+          <p>Start trading at: ​<a href="https://x.vite.net" target="_blank">https://x.vite.net</a></p>
         </div>
       </div>
     </div>
+
     <div class="question" v-else>
       <div class="answer" v-for="(item, index) in $t(`vitexInfo.questions.${page}`)" :key="index" >
         <div class="title is-flex"><span class="dot"></span>{{`${item.question}`}}</div>
