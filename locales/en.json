@@ -84,6 +84,10 @@
       "content": "Token forging, gateway creation, coin listings, and order book information are completely transparent and open to the public."
     },
     "questions": {
+      "mineEnVersion": {
+        "q1":"What is VX?",
+        "a1":""
+      },
       "mine": [{
         "question":"What is VX?",
         "answer":[
