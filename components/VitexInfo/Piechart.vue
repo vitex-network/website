@@ -5,27 +5,28 @@
         <div class="title">What is ViteX?</div>
         <div class="content">
           <p>ViteX is a high-throughput decentralized exchange built on the Vite public chain with its own mineable currency​—​VX. ​For more details on the benefits of ViteX and the underlying technology, you can see this article ​<a href="https://medium.com/vitelabs/vitex-101-update-489f6e49392" target="_blank">​here​</a>.</p>
-          <a
-              :href="piechart.urls.vitex[$i18n.locale]"
-              class="text-btn"
-              target="_blank"
-          >
-            {{$t('home.starttoUse')}}!
-          </a>
+          <div class="main-btn">
+            <a
+                :href="piechart.urls.vitex[$i18n.locale]"
+                target="_blank"
+            >
+              {{$t('home.starttoUse')}}!
+            </a>
+          </div>
         </div>
         <div class="title">What can I do with VX?</div>
         <div class="content">
           <ol>
             <li>You can ​trade ​it. Currently, 1 VX ~ 1 USD on ViteX with the following trading pairs: VX/BTC, VX/ETH, VX/USDT, and VX/VITE</li>
-            <li>Even better, you can ​hodl ​it to receive daily dividends in BTC, ETCH, USDT & VITE. Fees collected by the ViteX platform (transaction fees, listing fees, etc...) are put into a shared dividend pool that is distributed ​back​ to traders at a daily rate of 1%. All accounts with at least 10 VX are eligible to receive dividends. More details on dividends can be found <nuxt-link :to="localePath('dividend')">here</nuxt-link>​.</li>
+            <li>Even better, you can ​hodl ​it to receive daily dividends in BTC, ETH, USDT & VITE. Fees collected by the ViteX platform (transaction fees, listing fees, etc...) are put into a shared dividend pool that is distributed ​back​ to traders at a daily rate of 1%. All accounts with at least 10 VX are eligible to receive dividends. More details on dividends can be found <nuxt-link :to="localePath('dividend')">here</nuxt-link>​.</li>
           </ol>
           <p>Sound interesting? Sign up for a trading account now at <a href="https://x.vite.net/​" target="_blank">​https://x.vite.net/​</a>!</p>
         </div>
         <div class="title">How do I mine VX?</div>
         <div class="content">
-          <p>Mining on ViteX is easy---no ASICs or complicated server set-ups required.</p>
+          <p>Mining on ViteX is easy——no ASICs or complicated server set-ups required.</p>
           <ol>
-            <li><span class="bold">Trading as mining.</span> ​Each time you execute a trade (i.e. take an order off the order book), you get some VX. The amount of VX you receive will be calculated based on the proportion of the amount of trading fees that you paid to the total amount of trading fees collected by ViteX that day.</li>
+            <li><span class="bold">Trading as Mining.</span> ​Each time you execute a trade (i.e. take an order off the order book), you get some VX. The amount of VX you receive will be calculated based on the proportion of the amount of trading fees that you paid to the total amount of trading fees collected by ViteX that day.</li>
             <li><span class="bold">Referring as Mining.​</span> Every trader will get a referral code that they can share with their friends. When your friends sign up, they get 10% off of all trading fees on ViteX indefinitely. You benefit as 5% of your referred friends' accumulated trading fees get counted towards your daily accumulated trading fees.</li>
             <li><span class="bold">Listing as Mining.</span> ​List new trading pairs to mine VX. A user (“token issuer” or an “operator”) that lists a new trading pair will also receive VX. The token issuer’s reward is calculated as if he/she executed a trade involving a transaction fee of 1,000 VITE.</li>
             <li><span class="bold">Staking as mining.</span> ​The Vite public chain requires quota to properly allocate is computing resources. Quota is obtained by staking VITE. If you stake VITE to help ViteX obtain the quota it requires to run, then you get VX.</li>
@@ -33,6 +34,14 @@
             </li>
           </ol>
           <p>You can find each mining method described in more detail <a href="https://medium.com/vitelabs/announcement-vx-mining-official-start-date-e66900b10888" target="_blank">here</a>​​.</p>
+          <div class="main-btn">
+            <a
+                :href="piechart.urls.vitex[$i18n.locale]"
+                target="_blank"
+            >
+              {{$t('home.starttoUse')}}!
+            </a>
+          </div>
         </div>
         <div class="title">How is VX distributed?</div>
         <div class="content">
@@ -84,13 +93,14 @@
           <p v-for="(ansItem, index) in item.answer" :key="index">{{ ansItem }}</p>
         </div>
       </div>
-      <a
-          :href="piechart.urls.vitex[$i18n.locale]"
-          class="text-btn"
-          target="_blank"
-      >
-        {{$t('home.starttoUse')}}!
-      </a>
+      <div class="main-btn">
+        <a
+            :href="piechart.urls.vitex[$i18n.locale]"
+            target="_blank"
+        >
+          {{$t('home.starttoUse')}}!
+        </a>
+      </div>
       <div class="piechart" v-if="page === 'mine'">
         <img :src="piechart[page][$i18n.locale]" width="50%" height="50%">
         <img :src="piechart['dividend'][$i18n.locale]" width="50%" height="50%">
@@ -146,6 +156,9 @@
     }
     .paragraph{
       margin: 1em 0;
+    }
+    a{
+      color: white;
     }
   }
   .question {

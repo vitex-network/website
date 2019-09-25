@@ -35,6 +35,21 @@ h1 {
   cursor: pointer;
 }
 
+// gradient button
+.main-btn{
+  display: inline-block;
+  min-width: 100px;
+  height: 40px;
+  line-height: 38px;
+  padding: 0 1em;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  background: linear-gradient(90deg, $common-active-color 30%, rgba(0,122,255,1) 96%);
+  cursor: pointer;
+}
+
 // transition
 
 .text-hover-transition {
