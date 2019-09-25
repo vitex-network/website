@@ -8,6 +8,7 @@
           <div class="main-btn">
             <a
                 :href="piechart.urls.vitex[$i18n.locale]"
+                class="text-white"
                 target="_blank"
             >
               {{$t('home.starttoUse')}}!
@@ -37,6 +38,7 @@
           <div class="main-btn">
             <a
                 :href="piechart.urls.vitex[$i18n.locale]"
+                class="text-white"
                 target="_blank"
             >
               {{$t('home.starttoUse')}}!
@@ -96,6 +98,7 @@
       <div class="main-btn">
         <a
             :href="piechart.urls.vitex[$i18n.locale]"
+            class="text-white"
             target="_blank"
         >
           {{$t('home.starttoUse')}}!
@@ -149,24 +152,16 @@
 
 <style rel="stylesheet/scss" lang="scss" scoped>
   @import "~assets/vars";
-  .question-en{
-    .bold{
-      font-weight: bold;
-      color: #000;
-    }
-    .paragraph{
-      margin: 1em 0;
-    }
-    a{
-      color: white;
-    }
+  .text-white{
+    color: white;
   }
-  .question {
-    text-indent: 2em;
-    .answer-en {
-      text-indent: 0;
-      white-space: pre-wrap;
-    }
+
+  .bold{
+    font-weight: bold;
+    color: #000;
+  }
+  .paragraph{
+    margin: 1em 0;
   }
 
   .detail{
