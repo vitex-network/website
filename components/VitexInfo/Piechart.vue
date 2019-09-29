@@ -5,6 +5,10 @@
         <div class="title">What is ViteX?</div>
         <div class="content">
           <p>ViteX is a high-throughput decentralized exchange built on the Vite public chain with its own mineable currency​—​VX. ​For more details on the benefits of ViteX and the underlying technology, you can see this article ​<a href="https://medium.com/vitelabs/vitex-101-update-489f6e49392" target="_blank">​here​</a>.</p>
+          <div class="referral" v-show="type === 'referral'">
+            <p>Use referral code <span class="num-blue">2279987214</span> to get 10% off all trading fees! </p>
+            <p>For more details on how to use a referral code, refer to this article <a href="https://forum.vite.net/topic/2377/how-to-referring-as-mining-on-vitex" target="_blank">​here​</a></p>
+          </div>
           <div class="main-btn">
             <a
                 :href="piechart.urls.vitex[$i18n.locale]"
@@ -30,7 +34,7 @@
             <li><span class="bold">Trading as Mining.</span> ​Each time you execute a trade (i.e. take an order off the order book), you get some VX. The amount of VX you receive will be calculated based on the proportion of the amount of trading fees that you paid to the total amount of trading fees collected by ViteX that day.</li>
             <li><span class="bold">Referring as Mining.​</span> Every trader will get a referral code that they can share with their friends. When your friends sign up, they get 10% off of all trading fees on ViteX indefinitely. You benefit as 5% of your referred friends' accumulated trading fees get counted towards your daily accumulated trading fees.</li>
             <li><span class="bold">Listing as Mining.</span> ​List new trading pairs to mine VX. A user (“token issuer” or an “operator”) that lists a new trading pair will also receive VX. The token issuer’s reward is calculated as if he/she executed a trade involving a transaction fee of 1,000 VITE.</li>
-            <li><span class="bold">Staking as mining.</span> ​The Vite public chain requires quota to properly allocate is computing resources. Quota is obtained by staking VITE. If you stake VITE to help ViteX obtain the quota it requires to run, then you get VX.</li>
+            <li><span class="bold">Staking as Mining.</span> ​The Vite public chain requires quota to properly allocate is computing resources. Quota is obtained by staking VITE. If you stake VITE to help ViteX obtain the quota it requires to run, then you get VX.</li>
             <li><span class="bold">Market-making as Mining.​</span> Place orders to boost liquidity on ViteX and you’ll be rewarded with VX.
             </li>
           </ol>
@@ -125,6 +129,10 @@
       page: {
         type: String,
         default: ''
+      },
+      type: {
+        type: String,
+        default: ''
       }
     },
     computed: {
@@ -163,6 +171,11 @@
   .paragraph{
     margin: 1em 0;
   }
+  .num-blue{
+    color: $light-blue;
+    font-size: 2em;
+    font-weight: bold;
+  }
 
   .detail{
     @include touch{
@@ -189,6 +202,15 @@
       color:$text-color;
       font-size: 14px;
       line-height: 20px;
+    }
+    .referral{
+      font-size: 16px;
+      color: #171C34;
+      border-radius: 10px;
+      border: 3px dotted #007AFF;
+      max-width: 600px;
+      padding: 1rem;
+      margin-bottom: 1rem;
     }
     .piechart{
       justify-content: center;
