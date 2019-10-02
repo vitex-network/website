@@ -30,7 +30,7 @@
             <li><span class="bold">Trading as Mining.</span> ​Each time you execute a trade (i.e. take an order off the order book), you get some VX. The amount of VX you receive will be calculated based on the proportion of the amount of trading fees that you paid to the total amount of trading fees collected by ViteX that day.</li>
             <li><span class="bold">Referring as Mining.​</span> Every trader will get a referral code that they can share with their friends. When your friends sign up, they get 10% off of all trading fees on ViteX indefinitely. You benefit as 5% of your referred friends' accumulated trading fees get counted towards your daily accumulated trading fees.</li>
             <li><span class="bold">Listing as Mining.</span> ​List new trading pairs to mine VX. A user (“token issuer” or an “operator”) that lists a new trading pair will also receive VX. The token issuer’s reward is calculated as if he/she executed a trade involving a transaction fee of 1,000 VITE.</li>
-            <li><span class="bold">Staking as mining.</span> ​The Vite public chain requires quota to properly allocate is computing resources. Quota is obtained by staking VITE. If you stake VITE to help ViteX obtain the quota it requires to run, then you get VX.</li>
+            <li><span class="bold">Staking as Mining.</span> ​The Vite public chain requires quota to properly allocate is computing resources. Quota is obtained by staking VITE. If you stake VITE to help ViteX obtain the quota it requires to run, then you get VX.</li>
             <li><span class="bold">Market-making as Mining.​</span> Place orders to boost liquidity on ViteX and you’ll be rewarded with VX.
             </li>
           </ol>
@@ -41,7 +41,7 @@
                 class="text-white"
                 target="_blank"
             >
-              {{$t('home.starttoUse')}}!
+              {{$t('home.startMining')}}!
             </a>
           </div>
         </div>
