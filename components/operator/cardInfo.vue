@@ -60,7 +60,6 @@ export default {
   border-radius:2px;
   border:1px solid rgba(0,60,255,0.02);
   background: url("~assets/images/bg/operator.png");
-  justify-content: space-between;
   padding: 30px;
   align-items: flex-start;
   @include mobile {

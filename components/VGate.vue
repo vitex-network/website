@@ -35,7 +35,8 @@
       try {
         this.stopLoopOperator();
         const f = async ()=> {
-          this.list = await operatorVolumes([]);
+          let rawList = await operatorVolumes([]);
+          this.list = rawList.sort((a, b)=> b.volume - a.volume);
         };
         this.operatorTimer = new timer(f, loopTime);
         this.operatorTimer.start();
@@ -110,7 +111,6 @@
       display: flex;
       display: -webkit-flex;
       flex-wrap: wrap;
-      justify-content: space-between;
       @include mobile {
         flex-direction: column;
         padding: 0 20px;
@@ -121,7 +121,7 @@
         border-radius:5px;
         border:1px solid rgba(231,234,238,1);
         width: 255px;
-        margin-bottom: 26px;
+        margin: 10px;
         @include mobile {
           width: 100%;
           margin-bottom: 10px;

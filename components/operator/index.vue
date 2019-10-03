@@ -41,7 +41,6 @@ export default {
   width: 100%;
   border:1px solid rgba(0,60,255,0.02);
   background: url("~assets/images/bg/operator.png");
-  justify-content: space-between;
   padding: 30px;
   .pic {
     width:70px;
