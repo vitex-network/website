@@ -1,7 +1,7 @@
 import { timer } from '~/utils/asyncFlow';
 import { rateToken, rateTokenSymbols } from '~/services/trade';
 
-const loopTime = 10000;
+const loopTime = 1000 * 60;
 let rateTimer = null;
 let rateSymbolTimer = null;
 

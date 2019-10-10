@@ -11,7 +11,8 @@
   "home": {
     "slogan": "ViteX",
     "content": "Exchange By the Community, For the Community",
-    "starttoUse": "Start Trading Now"
+    "starttoUse": "Start Trading Now",
+    "startMining": "Start Mining Now"
   },
   "indexPage": {
     "update": "Last updated on",
@@ -84,6 +85,10 @@
       "content": "Token forging, gateway creation, coin listings, and order book information are completely transparent and open to the public."
     },
     "questions": {
+      "mineEnVersion": {
+        "q1":"What is VX?",
+        "a1":""
+      },
       "mine": [{
         "question":"What is VX?",
         "answer":[
