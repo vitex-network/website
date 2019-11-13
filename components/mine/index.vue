@@ -120,7 +120,7 @@ export default {
       return {
         vite: this.formatVX(this.pledgeForVxSum) || '--',
         btc: BigNumber.multi(this.formatVX(this.pledgeForVxSum) || 0, this.getRateFromSymbol('VITE', 'btc') || 0) || '--', 
-        percentAmount: this.vxMineInfo && (1000/this.formatVX(this.pledgeForVxSum) * this.formatVX(this.vxMineInfo.pledgeMine)).toFixed(2) || '--'
+        percentAmount: this.vxMineInfo && (1000/this.formatVX(this.pledgeForVxSum) * this.formatVX(this.vxMineInfo.pledgeMine)).toFixed(4) || '--'
       };
     },
     mineTotalInfo() {
