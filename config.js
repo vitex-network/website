@@ -13,6 +13,10 @@ module.exports = {
       zh: 'https://x.vite.net',
       en: 'https://x.vite.net'
     },
+    cmc: {
+      zh: 'https://coinmarketcap.com/zh/exchanges/vitex/',
+      en: 'https://coinmarketcap.com/exchanges/vitex/'
+    },
     news: {
       rss: {
         zh: 'https://hidden-peak-43038.herokuapp.com/https://forum.vite.net/category/18.rss',
