@@ -19,6 +19,10 @@
     <div class="latest-update">{{ $t('indexPage.update') }} {{ getTime }}</div>
     <info-total-card :total-info="diviTotalInfo"></info-total-card>
     <info-card :is-simple="true" style="margin-top: 30px;" :list="dividendList"></info-card>
+
+    <div class="index-main-title">{{ $t('indexPage.vite_destory.title')}}</div>
+    <div class="latest-update">{{ $t('indexPage.update') }} {{ getTime }}</div>
+    <info-total-card :total-info="viteDestoryInfo"></info-total-card>
   </div>
 </template>
 <script>
@@ -141,6 +145,16 @@ export default {
         amount: `${this.dividendAllPriceBtc || '--'} BTC`
       }];
     },
+    viteDestoryInfo() {
+      console.log('pool', JSON.stringify(this.pool))
+      return [{
+        name: this.$t('indexPage.vite_destory.todayAmount'),
+        amount: `${(this.pool && this.pool.VITE && this.pool.VITE.amount) || '--'} VITE`
+      }, {
+        name: this.$t('indexPage.vite_destory.destroyedAmount'),
+        amount: `${this.allBtc || '--'} VITE`
+      }]
+    },
     totalMineAmount() {
       return {
         tx: `${this.vxMineInfo && this.formatVX(this.vxMineInfo.feeMineTotal) || '--'}`,
@@ -170,7 +184,7 @@ export default {
     },
     dividendList() {
       if (this.pool) {
-        return this.tokenDiviList.map(item=> {
+        return this.tokenDiviList.filter(x => x !== 'VITE').map(item=> {
           return {
             tokenSymbol: item,
             amount: this.pool[item] && (item !== 'VITE' ? `${this.pool[item].amount} ${item}` : `${parseInt(this.pool[item].amount)} ${item}`),
@@ -178,7 +192,7 @@ export default {
           };
         });
       } else {
-        return this.tokenDiviList.map(item=> {
+        return this.tokenDiviList.filter(x => x !== 'VITE').map(item=> {
           return {
             tokenSymbol: item,
             amount: `-- ${item}`,

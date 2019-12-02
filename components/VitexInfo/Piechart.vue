@@ -1,5 +1,6 @@
 <template>
   <div class="detail">
+    <img class="vx-curve" :src="piechart.curve[$i18n.locale]">
     <div class="question-en" v-if="page === 'mine' && $i18n.locale === 'en'">
       <div class="answer">
         <div class="title">What is ViteX?</div>
@@ -119,6 +120,8 @@
   import mine_en from '~/assets/images/index/mine_en.jpg';
   import mine_zh from '~/assets/images/index/mine_zh.jpg';
   import release from '~/assets/images/index/release.png';
+  import vx_curve_zh from '~/assets/images/vx_curve_zh.png';
+  import vx_curve_en from '~/assets/images/vx_curve_en.png';
 
   export default {
     props: {
@@ -139,7 +142,11 @@
             zh: mine_zh,
           },
           release,
-          urls: config.urls
+          urls: config.urls,
+          curve: {
+            en: vx_curve_en,
+            zh: vx_curve_zh
+          }
         };
       }
     },
@@ -196,4 +203,10 @@
       
     }
   }
+
+.vx-curve {
+  display: block;
+  margin: 0 auto 30px;
+  width: 580px;
+}
 </style>

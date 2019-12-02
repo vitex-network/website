@@ -38,6 +38,11 @@
       "title": "VX Dividend Dashboard",
       "currentPool": "Dividend Pool",
       "totalPool": "Total Distributed Value"
+    },
+    "vite_destory": {
+      "title": "VITE销毁概况",
+      "todayAmount": "今日待销毁量",
+      "destroyedAmount": "已销毁总量"
     }
   },
   "marketTable": {

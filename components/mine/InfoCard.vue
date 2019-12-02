@@ -111,7 +111,7 @@ export default {
     box-shadow:0px 2px 9px 0px rgba(0,0,0,0.07);
     border-radius:5px;
     border:1px solid rgba(231,234,238,1);
-    width: 255px;
+    flex: 1;
     font-size:14px;
     font-family:$font-family-light;
     color:rgba(84,86,90,1);
@@ -120,6 +120,9 @@ export default {
       width: 100%;
       margin-bottom: 10px;
     }
+  }
+  .item + .item {
+    margin-left: 30px;
   }
   .desc-wrapper {
     background:rgba(30,89,243,1);
