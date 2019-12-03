@@ -97,6 +97,9 @@ export default {
       console.log('pledgeForVxSum error');
     });
   },
+  created() {
+    this.getTotalBurnedVITE();
+  },
   watch: {
     dividendPools() {
       this.handleDividendPools();
@@ -152,7 +155,7 @@ export default {
         amount: `${(this.pool && this.pool.VITE && this.pool.VITE.amount) || '--'} VITE`
       }, {
         name: this.$t('indexPage.vite_destory.destroyedAmount'),
-        amount: `${this.allBtc || '--'} VITE`
+        amount: `${this.totalBurnedVITEAmount || '--'} VITE`
       }]
     },
     totalMineAmount() {
@@ -221,7 +224,8 @@ export default {
       tokenDiviList: ['VITE', 'ETH', 'BTC', 'USDT'],
       symbolRate: null,
       minePool: null,
-      dividendAllPriceBtc: 0
+      dividendAllPriceBtc: 0,
+      totalBurnedVITEAmount: 0,
     };
   },
   methods: {
@@ -310,9 +314,13 @@ export default {
       this.symbolRate = rateList[symbol][`${ coin }Rate`] || null;
 
       return this.symbolRate;
+    },
+    getTotalBurnedVITE() {
+      fetch('https://vitex.vite.net/api/v1/mining/burn').then(res => res.json()).then(data => {
+        this.totalBurnedVITEAmount = (data && data.data && data.data.vite) || 0
+      })
     }
   }
-  
 };
 </script>
 <style lang="scss" scoped>
