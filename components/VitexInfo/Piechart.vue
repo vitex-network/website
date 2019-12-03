@@ -1,6 +1,5 @@
 <template>
   <div class="detail">
-    <img class="vx-curve" :src="piechart.curve[$i18n.locale]">
     <div class="question-en" v-if="page === 'mine' && $i18n.locale === 'en'">
       <div class="answer">
         <div class="title">What is ViteX?</div>
@@ -96,18 +95,16 @@
           <p v-for="(ansItem, index) in item.answer" :key="index">{{ ansItem }}</p>
         </div>
       </div>
-      <div class="main-btn">
-        <a
-            :href="piechart.urls.vitex[$i18n.locale]"
-            class="text-white"
-            target="_blank"
-        >
-          {{$t('home.starttoUse')}}!
-        </a>
-      </div>
+
       <div class="piechart" v-if="page === 'mine'">
         <img :src="piechart[page][$i18n.locale]" width="50%" height="50%">
         <img :src="piechart['dividend'][$i18n.locale]" width="50%" height="50%">
+      </div>
+
+      <div class="main-btn">
+        <a :href="piechart.urls.vitex[$i18n.locale]" class="text-white" target="_blank">
+          {{$t('home.starttoUse')}}!
+        </a>
       </div>
     </div>
   </div>
@@ -115,13 +112,11 @@
 
 <script type="text/babel">
   import config from '~/config';
-  import dividend_en from '~/assets/images/index/dividend_en.jpg';
-  import dividend_zh from '~/assets/images/index/dividend_zh.jpg';
   import mine_en from '~/assets/images/index/mine_en.jpg';
   import mine_zh from '~/assets/images/index/mine_zh.jpg';
   import release from '~/assets/images/index/release.png';
-  import vx_curve_zh from '~/assets/images/vx_curve_zh.png';
-  import vx_curve_en from '~/assets/images/vx_curve_en.png';
+  import dividend_zh from '~/assets/images/vx_curve_zh.png';
+  import dividend_en from '~/assets/images/vx_curve_en.png';
 
   export default {
     props: {
@@ -143,10 +138,6 @@
           },
           release,
           urls: config.urls,
-          curve: {
-            en: vx_curve_en,
-            zh: vx_curve_zh
-          }
         };
       }
     },
