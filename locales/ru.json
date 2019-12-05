@@ -11,6 +11,8 @@
   "home": {
     "slogan": "ViteX",
     "content": "Exchange By the Community, For the Community",
+    "guide": "User Guide",
+    "guideUrl": "https://vite.wiki/dex/",
     "starttoUse": "Start Trading Now",
     "startMining": "Start Mining Now"
   },
