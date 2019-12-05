@@ -30,6 +30,8 @@
       <market class="container"></market>
     </div>
     <vitex-info></vitex-info>
+
+    <binance-vote />
   </div>
 </template>
 
@@ -41,6 +43,7 @@
   import { urls } from '~/config.js';
   import mine from '~/components/mine/index';
   import market from '~/components/market/market.vue';
+  import BinanceVote from '~/components/BinanceVote/index.vue'
 
   export default {
     components: {
@@ -49,7 +52,8 @@
       VGate,
       Slider,
       mine,
-      market
+      market,
+      BinanceVote
     },
     beforeMount() {
       this.$store.dispatch('startLoopExchangeRate');
