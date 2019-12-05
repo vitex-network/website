@@ -12,10 +12,8 @@
             </h1>
           </div>
           <div class="btn">
-            <div
-                class="start-btn"
-                @click="openViteX"
-            >{{$t('home.starttoUse')}}</div>
+            <a class="start-btn" :href="$t('home.guideUrl')">{{$t('home.guide')}}</a>
+            <div class="start-btn" @click="openViteX">{{$t('home.starttoUse')}}</div>
           </div>
         </div>
       </div>
@@ -149,4 +147,8 @@
       }
     }
   }
+
+.start-btn + .start-btn {
+  margin-left: 50px;
+}
 </style>

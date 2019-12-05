@@ -7,7 +7,10 @@
                  @mouseenter="!isMobile ? showRealPrice(txPair, i) : null"
                  @mouseleave="!isMobile ? hideRealPrice(txPair) : null"
                  @click="gotoVitex(txPair)">
-                <span class="__center-tb-item" style="max-width: 100px">
+
+                <a class="link-cmc" @click.stop v-if="hasCMC(txPair.symbol)" href="https://coinmarketcap.com/exchanges/vitex/" target="_blank"></a>
+
+                <span class="__center-tb-item" style="max-width: 100px;text-align:left;">
                     <span>{{ getTxPairShowSymbol(txPair) }}</span>
                 </span>
                 <span class="__center-tb-item is-hidden-mobile"
@@ -45,6 +48,16 @@
 import BigNumber from '~/utils/bigNumber';
 import isMobile from 'is-mobile';
 
+const CMCTxPairs = [
+'VITE_USDT-000', 'ETH-000_BTC-000', 'GRIN-000_VITE', 'VITE_ETH-000',
+'GRIN-000_BTC-000', 'GRIN-000_ETH-000', 'VITE_BTC-000',
+'ETH-000_USDT-000', 'BTC-000_USDT-000','BIS-000_BTC-000','DERO-000_BTC-000','ERG-000_BTC-000','BEAM-000_BTC-000','TRTL-000_ETH-000','TERA-000_BTC-000','ANKR-000_BTC-000','PASC-000_BTC-000','PASC-000_ETH-000','PASC-000_USDT-000'
+];
+
+function hasCMC(pair) {
+  return CMCTxPairs.includes(pair)
+}
+
 export default {
   props: {
     currentRule: {
@@ -75,6 +88,7 @@ export default {
     }
   },
   methods: {
+    hasCMC,
     gotoVitex(txPair) {
       let quoteTokenSymbol = txPair.quoteTokenSymbol.split('-')[0];
       window.open(`https://x.vite.net/trade?symbol=${txPair.symbol}&category=${quoteTokenSymbol}`, '_blank');
@@ -277,4 +291,16 @@ export default {
     }
 }
 
+.__center-tb-row {
+  padding-left: 1.2em;
+}
+
+.link-cmc {
+  position: absolute;
+  left: 0;
+  top: .8em;
+  width: 1.2em;
+  height: 1.2em;
+  background: url('~assets/icon/cmc.png') center / 100%;
+}
 </style>
