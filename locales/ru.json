@@ -312,5 +312,19 @@
       "russia": "Русский",
       "thailand": "Тайский"
     }
+  },
+  "bvote": {
+    "title": "VITE Binance Listing Coming!",
+    "body": [
+      "<span>VITE Binance Listing Coming! Please vote to have VITE listed on Binance.</span>",
+      "<span>Voting Period</span>: 12:00 pm Dec 12 to 12:00 pm Dec 13 (HKT)",
+      "<span>Voting Method</span>: Holding 50 BNB allows for 1 vote (10 votes max)",
+      "<span>Voting Rewards</span>: All voted users will be rewarded with an airdrop totaling 21,000,000 VITE based on executed votes.",
+      "<span>[Attention]</span>: You must have 50-500 BNBs in your Binance Account starting Dec 5 and last through Dec 13 to Qualify for Voting!"
+    ],
+    "btn": {
+      "text": "Vote Now",
+      "link": "https://www.binance.com/en/vote"
+    }
   }
 }
