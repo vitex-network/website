@@ -77,8 +77,23 @@ export default {
       console.warn(err);
       console.log('dividendStat error');
     });
+
     dexFund.getCurrentVxMineInfo().then(data=> {
-      this.vxMineInfo = data;
+      this.vxMineInfo = data
+      dexFund.getAllTotalVxBalance().then(data => {
+        let period = 0
+        let amount = ''
+        data.funds.forEach(fund => {
+          if (fund.period > period) {
+            amount = fund.amount
+            period = fund.period
+          }
+        })
+
+        this.vxMineInfo = Object.assign({}, this.vxMineInfo, {
+          lockAmount: amount
+        })
+      })
     }).catch(err=> {
       console.warn(err);
       console.log('vxMineInfo error');
@@ -137,6 +152,9 @@ export default {
       }, {
         name: this.$t('indexPage.mine.totalAmount'),
         amount: `${this.vxMineInfo && this.formatVX(this.vxMineInfo.historyMinedSum) || '--'} VX`
+      }, {
+        name: this.$t('indexPage.mine.lockAmount'),
+        amount: `${this.vxMineInfo && this.formatVX(this.vxMineInfo.lockAmount) || '--'} VX`
       }];
     },
     diviTotalInfo() {
@@ -152,10 +170,10 @@ export default {
       console.log('pool', JSON.stringify(this.pool))
       return [{
         name: this.$t('indexPage.vite_destory.todayAmount'),
-        amount: `${(this.pool && this.pool.VITE && this.pool.VITE.amount) || '--'} VITE`
+        amount: `${(this.pool && this.pool.VITE && (1*this.pool.VITE.amount).toFixed(2)) || '--'} VITE`
       }, {
         name: this.$t('indexPage.vite_destory.destroyedAmount'),
-        amount: `${this.totalBurnedVITEAmount || '--'} VITE`
+        amount: `${(this.totalBurnedVITEAmount && (1*this.totalBurnedVITEAmount).toFixed(2)) || '--'} VITE`
       }]
     },
     totalMineAmount() {
@@ -317,7 +335,7 @@ export default {
     },
     getTotalBurnedVITE() {
       fetch('https://vitex.vite.net/api/v1/mining/burn').then(res => res.json()).then(data => {
-        this.totalBurnedVITEAmount = (data && data.data && data.data.vite) || 0
+        this.totalBurnedVITEAmount = (data && data.data && data.data.vite && (1*data.data.vite).toFixed(8)) || 0
       })
     }
   }
