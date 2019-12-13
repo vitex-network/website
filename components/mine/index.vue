@@ -19,6 +19,10 @@
     <div class="latest-update">{{ $t('indexPage.update') }} {{ getTime }}</div>
     <info-total-card :total-info="diviTotalInfo"></info-total-card>
     <info-card :is-simple="true" style="margin-top: 30px;" :list="dividendList"></info-card>
+
+    <div class="index-main-title">{{ $t('indexPage.vite_destory.title')}}</div>
+    <div class="latest-update">{{ $t('indexPage.update') }} {{ getTime }}</div>
+    <info-total-card :total-info="viteDestoryInfo"></info-total-card>
   </div>
 </template>
 <script>
@@ -73,8 +77,23 @@ export default {
       console.warn(err);
       console.log('dividendStat error');
     });
+
     dexFund.getCurrentVxMineInfo().then(data=> {
-      this.vxMineInfo = data;
+      this.vxMineInfo = data
+      dexFund.getAllTotalVxBalance().then(data => {
+        let period = 0
+        let amount = ''
+        data.funds.forEach(fund => {
+          if (fund.period > period) {
+            amount = fund.amount
+            period = fund.period
+          }
+        })
+
+        this.vxMineInfo = Object.assign({}, this.vxMineInfo, {
+          lockAmount: amount
+        })
+      })
     }).catch(err=> {
       console.warn(err);
       console.log('vxMineInfo error');
@@ -92,6 +111,9 @@ export default {
       console.warn(err);
       console.log('pledgeForVxSum error');
     });
+  },
+  created() {
+    this.getTotalBurnedVITE();
   },
   watch: {
     dividendPools() {
@@ -130,6 +152,9 @@ export default {
       }, {
         name: this.$t('indexPage.mine.totalAmount'),
         amount: `${this.vxMineInfo && this.formatVX(this.vxMineInfo.historyMinedSum) || '--'} VX`
+      }, {
+        name: this.$t('indexPage.mine.lockAmount'),
+        amount: `${this.vxMineInfo && this.formatVX(this.vxMineInfo.lockAmount) || '--'} VX`
       }];
     },
     diviTotalInfo() {
@@ -140,6 +165,16 @@ export default {
         name: this.$t('indexPage.dividend.totalPool'),
         amount: `${this.dividendAllPriceBtc || '--'} BTC`
       }];
+    },
+    viteDestoryInfo() {
+      console.log('pool', JSON.stringify(this.pool))
+      return [{
+        name: this.$t('indexPage.vite_destory.todayAmount'),
+        amount: `${(this.pool && this.pool.VITE && (1*this.pool.VITE.amount).toFixed(2)) || '--'} VITE`
+      }, {
+        name: this.$t('indexPage.vite_destory.destroyedAmount'),
+        amount: `${(this.totalBurnedVITEAmount && (1*this.totalBurnedVITEAmount).toFixed(2)) || '--'} VITE`
+      }]
     },
     totalMineAmount() {
       return {
@@ -170,7 +205,7 @@ export default {
     },
     dividendList() {
       if (this.pool) {
-        return this.tokenDiviList.map(item=> {
+        return this.tokenDiviList.filter(x => x !== 'VITE').map(item=> {
           return {
             tokenSymbol: item,
             amount: this.pool[item] && (item !== 'VITE' ? `${this.pool[item].amount} ${item}` : `${parseInt(this.pool[item].amount)} ${item}`),
@@ -178,7 +213,7 @@ export default {
           };
         });
       } else {
-        return this.tokenDiviList.map(item=> {
+        return this.tokenDiviList.filter(x => x !== 'VITE').map(item=> {
           return {
             tokenSymbol: item,
             amount: `-- ${item}`,
@@ -207,7 +242,8 @@ export default {
       tokenDiviList: ['VITE', 'ETH', 'BTC', 'USDT'],
       symbolRate: null,
       minePool: null,
-      dividendAllPriceBtc: 0
+      dividendAllPriceBtc: 0,
+      totalBurnedVITEAmount: 0,
     };
   },
   methods: {
@@ -296,9 +332,13 @@ export default {
       this.symbolRate = rateList[symbol][`${ coin }Rate`] || null;
 
       return this.symbolRate;
+    },
+    getTotalBurnedVITE() {
+      fetch('https://vitex.vite.net/api/v1/mining/burn').then(res => res.json()).then(data => {
+        this.totalBurnedVITEAmount = (data && data.data && data.data.vite && (1*data.data.vite).toFixed(8)) || 0
+      })
     }
   }
-  
 };
 </script>
 <style lang="scss" scoped>

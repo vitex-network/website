@@ -49,6 +49,16 @@
                     /></a>
                   <wechat></wechat>
                   <qq v-if="$i18n.locale === 'zh'" class="margin-left"></qq>
+                  <a
+                      :href="urls.cmc[$i18n.locale]"
+                      target="_blank"
+                      class="text-hover-transition"
+                      style="margin-left: 22px;"
+                  >
+                    <img
+                        class="icon"
+                        src="~/assets/images/social/cmc.png"
+                    /></a>
                 </div>
               </div>
             </div>

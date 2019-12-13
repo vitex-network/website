@@ -17,7 +17,11 @@ class DexFund {
 
   async getCurrentDividendPools() {
     return this._client.request('dexfund_getCurrentDividendPools');
-  }  
+  }
+  
+  async getAllTotalVxBalance() {
+    return this._client.request('dex_getAllTotalVxBalance');
+  }
 }
 
 export default DexFund;

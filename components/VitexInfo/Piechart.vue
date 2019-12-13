@@ -99,18 +99,16 @@
           <p v-for="(ansItem, index) in item.answer" :key="index">{{ ansItem }}</p>
         </div>
       </div>
-      <div class="main-btn">
-        <a
-            :href="piechart.urls.vitex[$i18n.locale]"
-            class="text-white"
-            target="_blank"
-        >
-          {{$t('home.starttoUse')}}!
-        </a>
-      </div>
+
       <div class="piechart" v-if="page === 'mine'">
         <img :src="piechart[page][$i18n.locale]" width="50%" height="50%">
         <img :src="piechart['dividend'][$i18n.locale]" width="50%" height="50%">
+      </div>
+
+      <div class="main-btn">
+        <a :href="piechart.urls.vitex[$i18n.locale]" class="text-white" target="_blank">
+          {{$t('home.starttoUse')}}!
+        </a>
       </div>
     </div>
   </div>
@@ -118,11 +116,11 @@
 
 <script type="text/babel">
   import config from '~/config';
-  import dividend_en from '~/assets/images/index/dividend_en.jpg';
-  import dividend_zh from '~/assets/images/index/dividend_zh.jpg';
   import mine_en from '~/assets/images/index/mine_en.jpg';
   import mine_zh from '~/assets/images/index/mine_zh.jpg';
   import release from '~/assets/images/index/release.png';
+  import dividend_zh from '~/assets/images/vx_curve_zh.png';
+  import dividend_en from '~/assets/images/vx_curve_en.png';
 
   export default {
     props: {
@@ -147,7 +145,7 @@
             zh: mine_zh,
           },
           release,
-          urls: config.urls
+          urls: config.urls,
         };
       }
     },
@@ -218,4 +216,10 @@
       
     }
   }
+
+.vx-curve {
+  display: block;
+  margin: 0 auto 30px;
+  width: 580px;
+}
 </style>

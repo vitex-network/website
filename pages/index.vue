@@ -12,10 +12,8 @@
             </h1>
           </div>
           <div class="btn">
-            <div
-                class="start-btn"
-                @click="openViteX"
-            >{{$t('home.starttoUse')}}</div>
+            <a class="start-btn" :href="$t('home.guideUrl')">{{$t('home.guide')}}</a>
+            <div class="start-btn" @click="openViteX">{{$t('home.starttoUse')}}</div>
           </div>
         </div>
       </div>
@@ -32,6 +30,8 @@
       <market class="container"></market>
     </div>
     <vitex-info></vitex-info>
+
+    <binance-vote />
   </div>
 </template>
 
@@ -43,6 +43,7 @@
   import { urls } from '~/config.js';
   import mine from '~/components/mine/index';
   import market from '~/components/market/market.vue';
+  import BinanceVote from '~/components/BinanceVote/index.vue'
 
   export default {
     components: {
@@ -51,7 +52,8 @@
       VGate,
       Slider,
       mine,
-      market
+      market,
+      BinanceVote
     },
     beforeMount() {
       this.$store.dispatch('startLoopExchangeRate');
@@ -149,4 +151,8 @@
       }
     }
   }
+
+.start-btn + .start-btn {
+  margin-left: 50px;
+}
 </style>
