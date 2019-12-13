@@ -22,6 +22,7 @@
       "title": "VX Mining Dashboard",
       "todayTotal": "Today's Minable VX",
       "totalAmount": "Total Mined VX",
+      "lockAmount": "Staked",
       "tx": {
         "title": "Trading as Mining Total Income",
         "fee": "Live Trading Fees",
