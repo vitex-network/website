@@ -76,7 +76,7 @@
           <p><span class="bold">Phase 1:​ </span>For the first one or two months, 10,000 VX will be released daily (“Buffer Phase”). Once the ViteX team believes enough users have joined the platform, the second phase will start.</p>
           <p><span class="bold">Phase 2:​ </span>During the first year of this phase, the number of VX released per day will decrease by 0.5% daily. 477,032 VX will be released on the first day. According to this formula, 80.13% of the total supply of VX will be released in the first year. In the second year, the number of VX released will decrease by 0.2% daily. 37,051 VX will be released on the final day of the second year.</p>
           <div class="piechart" v-if="page === 'mine'">
-            <img :src="piechart.release" width="70%" height="70%">
+            <img :src="piechart['dividend'][$i18n.locale]" width="70%" height="70%">
           </div>
         </div>
         <div class="title">More questions?</div>
