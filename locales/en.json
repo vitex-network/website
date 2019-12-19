@@ -263,7 +263,11 @@
       {
         "question": "How do I get VX dividends?",
         "answer": [
-          "Traders must have a minimum of 10 VX in order to receive dividends. The amount of dividends received is calculated based on the proportion of a single address's VX balance (including available and frozen assets) to the total amount of VX held by all addresses. "
+          "You will only receive dividends after staking your VX",
+          "1. A minimum of 10 VX must be staked to receive dividends",
+          "2. Participant is entitled to receive a dividend starting with the next distribution, after submission of staking request",
+          "3. The staked amount will be released after a 7-day waiting period. No dividend will be received during this waiting period",
+          "Users can enable automatic staking. After enabling, the VX obtained from mining will be automatically staked, whereas purchased VX will not be automatically staked."
         ]
       },
       {
