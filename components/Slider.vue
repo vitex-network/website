@@ -19,8 +19,8 @@
 <script>
   import { urls } from '~/config.js';
   import en1 from '~/assets/images/banner/en.jpg';
-  import vote_en from '~/assets/images/banner/vote_en.jpg';
-  import vote_zh from '~/assets/images/banner/vote_zh.jpg';
+  // import vote_en from '~/assets/images/banner/vote_en.jpg';
+  // import vote_zh from '~/assets/images/banner/vote_zh.jpg';
   // import vitexTestEn from '~/assets/images/banner/vitexTestEn.png';
   import zh1 from '~/assets/images/banner/zh.jpg';
   // import vitexTestZh from '~/assets/images/banner/vitexTestZh.png';
@@ -30,12 +30,12 @@
       return {
         urls,
         banners: {
-          en: [vote_en, en1],
-          zh: [vote_zh, zh1]
+          en: [en1],
+          zh: [zh1]
         },
         bannerUrls:{
-          en: ['https://www.binance.com/en/vote', urls.telegramx.en],
-          zh: ['https://www.binancezh.com/cn/vote', urls.forum]
+          en: [urls.telegramx.en],
+          zh: [urls.forum]
         },
         swiperOption: {
           loop: false,
