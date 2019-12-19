@@ -86,7 +86,6 @@
         <div class="title">More questions?</div>
         <div class="content">
           <p>Join our Telegram community: ​<a href="https://t.me/vitexexchange" target="_blank">https://t.me/vitexexchange</a></p>
-          <p>Check out the ViteX Official Website: ​<a href="https://vitex.net/" target="_blank">https://vitex.net/</a></p>
           <p>Start trading at: ​<a href="https://x.vite.net" target="_blank">https://x.vite.net</a></p>
         </div>
       </div>
