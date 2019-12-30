@@ -196,11 +196,10 @@ export default {
       });
     },
     orderMineList() {
-      const perc = [50, 15, 15, 20]
       return this.tokenList.map((item, i)=> {
         return {
           tokenSymbol: item,
-          amount: `${this.totalMineAmount && (this.totalMineAmount.order*perc[i]/100).toFixed(2) || '--'} VX`
+          amount: `${this.totalMineAmount && (this.totalMineAmount.order*this.percList[i]/100).toFixed(2) || '--'} VX`
         };
       });
     },
@@ -240,6 +239,7 @@ export default {
       dividendStat: null,
       pool: null,
       tokenList: ['VITE', 'BTC', 'ETH', 'USDT'],
+      percList: [15, 50, 15, 20],
       tokenDiviList: ['VITE', 'ETH', 'BTC', 'USDT'],
       symbolRate: null,
       minePool: null,
