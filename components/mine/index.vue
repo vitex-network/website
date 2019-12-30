@@ -196,10 +196,11 @@ export default {
       });
     },
     orderMineList() {
-      return this.tokenList.map(item=> {
+      const perc = [50, 15, 15, 20]
+      return this.tokenList.map((item, i)=> {
         return {
           tokenSymbol: item,
-          amount: `${this.totalMineAmount && (this.totalMineAmount.order/4).toFixed(2) || '--'} VX`
+          amount: `${this.totalMineAmount && (this.totalMineAmount.order*perc[i]/100).toFixed(2) || '--'} VX`
         };
       });
     },
