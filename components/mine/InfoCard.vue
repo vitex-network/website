@@ -118,11 +118,14 @@ export default {
     line-height:18px;
     @include mobile {
       width: 100%;
-      margin-bottom: 10px;
+      margin: 0 0 10px 0;
     }
   }
   .item + .item {
     margin-left: 30px;
+    @include mobile {
+      margin-left: 0;
+    }
   }
   .desc-wrapper {
     background:rgba(30,89,243,1);
@@ -187,6 +190,4 @@ export default {
     }
   }
 }
-
-
 </style>

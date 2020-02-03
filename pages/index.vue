@@ -4,12 +4,8 @@
       <div class="hero-body">
         <div class="container">
           <div class="is-size-1-desktop is-size-2-touch slogan-wrapper">
-            <h1>
-              {{$t("home.slogan")}}
-            </h1>
-            <h1>
-              {{$t("home.content")}}
-            </h1>
+            <h1>{{$t("home.slogan")}}</h1>
+            <h1>{{$t("home.content")}}</h1>
           </div>
           <div class="btn">
             <a class="start-btn" :href="$t('home.guideUrl')">{{$t('home.guide')}}</a>
@@ -36,123 +32,134 @@
 </template>
 
 <script>
-  import VitexInfo from '~/components/VitexInfo';
-  import UseVitex from '~/components/UseVitex';
-  import VGate from '~/components/VGate';
-  import Slider from '~/components/Slider';
-  import { urls } from '~/config.js';
-  import mine from '~/components/mine/index';
-  import market from '~/components/market/market.vue';
-  // import BinanceVote from '~/components/BinanceVote/index.vue'
+import VitexInfo from "~/components/VitexInfo";
+import UseVitex from "~/components/UseVitex";
+import VGate from "~/components/VGate";
+import Slider from "~/components/Slider";
+import { urls } from "~/config.js";
+import mine from "~/components/mine/index";
+import market from "~/components/market/market.vue";
+// import BinanceVote from '~/components/BinanceVote/index.vue'
 
-  export default {
-    components: {
-      VitexInfo,
-      UseVitex,
-      VGate,
-      Slider,
-      mine,
-      market,
-      // BinanceVote
-    },
-    beforeMount() {
-      this.$store.dispatch('startLoopExchangeRate');
-      this.$store.dispatch('startLoopRateBySymbol');
-    },
-    methods:{
-      openViteX(){
-        window.open(urls.vitex[this.$i18n.locale]);
-      }
+export default {
+  components: {
+    VitexInfo,
+    UseVitex,
+    VGate,
+    Slider,
+    mine,
+    market
+    // BinanceVote
+  },
+  beforeMount() {
+    this.$store.dispatch("startLoopExchangeRate");
+    this.$store.dispatch("startLoopRateBySymbol");
+  },
+  methods: {
+    openViteX() {
+      window.open(urls.vitex[this.$i18n.locale]);
     }
-  };
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-  @import "assets/vars.scss";
-  .mine-wrapper {
-    background: #F6F8F9; 
-    padding-bottom: 80px; 
-    padding-top: 150px;
-    @include touch {
-      padding-top: 32px;
-      padding-bottom: 30px; 
+@import "assets/vars.scss";
+.mine-wrapper {
+  background: #f6f8f9;
+  padding-bottom: 80px;
+  padding-top: 150px;
+  @include touch {
+    padding-top: 32px;
+    padding-bottom: 30px;
+  }
+}
+.market-wrapper {
+  padding: 60px 0 88px 0;
+  background-color: #131c34;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #111111;
+  font-family: $font-family-light;
+  font-weight: normal;
+  margin-bottom: 3rem;
+}
+.slider {
+  position: absolute;
+  top: -150px;
+  width: 100%;
+  @include touch {
+    top: -50px;
+  }
+}
+.home {
+  position: relative;
+  font-family: $font-family-title;
+  .hero-body {
+    padding: 64px 10px 205px 10px;
+  }
+  @include touch {
+    .hero-body {
+      display: block;
+      padding-bottom: 127px;
     }
   }
-  .market-wrapper {
-    padding: 60px 0 88px 0;
-    background-color: #131C34;
-  }
 
-  .section-title {
+  .slogan-wrapper {
+    margin-top: 14%;
+    padding-bottom: 40px;
     text-align: center;
-    font-size: 2rem;
-    color: #111111;
-    font-family: $font-family-light;
-    font-weight: normal;
-    margin-bottom: 3rem;
-  }
-  .slider {
-    position: absolute; 
-    top: -150px; 
-    width: 100%;
-    @include touch {
-      top: -50px; 
-    }
-  }
-  .home {
-    position: relative;
-    font-family: $font-family-title;
-    .hero-body{
-      padding: 64px 10px 205px 10px;
+    h1 {
+      font-size: 32px;
     }
     @include touch {
-      .hero-body {
-        display: block;
-        padding-bottom: 127px;
-      }
-    }
-
-    .slogan-wrapper {
-      margin-top: 14%;
-      padding-bottom: 40px;
-      text-align: center;
+      max-width: unset;
       h1 {
-        font-size: 32px;
-      }
-      @include touch {
-        max-width: unset;
-        h1{
-          font-size: 28px;
-        }
-      }
-      @include mobile {
-        margin-top: 0;
-        h1{
-          font-size: 28px;
-        }
+        font-size: 28px;
       }
     }
-    .btn{
-      text-align: center;
-      .start-btn {
-        display: inline-block;
-        width: 170px;
-        height: 55px;
-        line-height: 53px;
-        border-radius: 5px;
-        color: white;
-        font-size: 16px;
-        background: $common-active-color;
-        cursor: pointer;
-        @include touch {
-          height: 44px;
-          line-height: 42px;
-        }
+    @include mobile {
+      margin-top: 0;
+      h1 {
+        font-size: 28px;
       }
     }
   }
+}
 
-.start-btn + .start-btn {
-  margin-left: 50px;
+.btn {
+  margin: 0 auto;
+  max-width: 400px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .start-btn {
+    flex-shrink: 0;
+    display: block;
+    width: 170px;
+    line-height: 53px;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    background: $common-active-color;
+    cursor: pointer;
+    @include touch {
+      height: 44px;
+      line-height: 42px;
+    }
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .btn {
+    justify-content: center;
+  }
+  .start-btn + .start-btn {
+    margin-top: 16px;
+  }
 }
 </style>

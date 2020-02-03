@@ -111,23 +111,25 @@
       display: flex;
       display: -webkit-flex;
       flex-wrap: wrap;
+      justify-content: space-between;
       @include mobile {
         flex-direction: column;
         padding: 0 20px;
+        // align-items: stretch;
       }
       .item {
         background:rgba(255,255,255,1);
         box-shadow:0px 2px 9px 0px rgba(0,0,0,0.07);
         border-radius:5px;
         border:1px solid rgba(231,234,238,1);
-        width: 255px;
-        margin: 10px;
+        width: 260px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
         @include mobile {
           width: 100%;
-          margin-bottom: 10px;
         }
       }
-      
+
       .token {
         box-sizing: border-box;
         padding: 20px;
