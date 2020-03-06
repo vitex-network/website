@@ -72,10 +72,10 @@
         <div class="title">VX Release Schedule</div>
         <div class="content">
           <!-- <p class="bold">**Note: this release schedule is subject to change**</p> -->
-          <!-- <p><span class="bold">Total supply​: </span>29328797.8 VX</p> -->
+          <!-- <p><span class="bold">Total supply​: </span>29328807.8 VX</p> -->
           <div class="paragraph">
             <div class="bold">Dual Phase VX Release Model</div>
-            <div>After the official launch of VX mining, there will be two phases of VX release with the total supply set to 29328797.8 VX with no inflation.</div>
+            <div>After the official launch of VX mining, there will be two phases of VX release with the total supply set to 29328807.8 VX with no inflation.</div>
           </div>
           <p><span class="bold">Phase 1:​ </span>10,000 VX daily release for the first 88 days.</p>
           <p><span class="bold">Phase 2:​ </span>Daily release increases from 10,000 VX to 50,000 VX in the following 90 days, then start to decrease until being fully released after 8 years.</p>
