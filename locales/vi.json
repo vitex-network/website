@@ -199,7 +199,8 @@
   "user": {
     "protocol": "Policy Terms",
     "list": "Become an Operator",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "support": "Help Center"
   },
   "info": {
     "faq": "FAQ",
