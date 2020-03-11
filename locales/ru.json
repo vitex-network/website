@@ -199,7 +199,8 @@
   "user": {
     "protocol": "Policy Terms",
     "list": "Become an Operator",
-    "contact": "Связаться с нами"
+    "contact": "Связаться с нами",
+    "support": "Help Center"
   },
   "info": {
     "faq": "FAQ",
