@@ -1,6 +1,7 @@
 module.exports = {
   urls: {
     weibo: 'http://m.weibo.cn/u/6840230204',
+    support: 'https://vitex.zendesk.com/',
     viteNet: {
       zh: 'https://vite.net/zh',
       en: 'https://vite.net'

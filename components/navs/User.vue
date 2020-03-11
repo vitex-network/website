@@ -42,6 +42,7 @@ export default {
   computed:{
     url(){
       return {
+        support: config.urls.support,
         protocol:config.urls.privacy,
         list:config.urls.list[this.$i18n.locale],
         contact:'mailto:info@vite.org'
@@ -50,7 +51,7 @@ export default {
   },
   data(){
     return{
-      userArr: ['protocol','list','contact']
+      userArr: ['support','protocol','list','contact']
     };
   }
 

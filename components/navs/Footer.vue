@@ -109,6 +109,12 @@
             <div class="item user">
               <div class="subtitle">{{$t('footer.user')}}</div>
               <a class="content"
+                 :href="urls.support"
+                 target="_blank"
+              >
+                {{$t('user.support')}}
+              </a>
+              <a class="content"
                  :href="urls.privacy"
                  target="_blank"
               >

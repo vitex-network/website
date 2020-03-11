@@ -13,6 +13,10 @@
             <img src="~/assets/images/operators/link.svg"/>
             <a :href="operatorInfo.links.website[0]" target="_blank">{{ operatorInfo.links.website[0] }}</a>
           </div>
+          <div class="is-flex" v-if="operatorInfo.support">
+            <img src="~/assets/images/operators/link.svg"/>
+            <a :href="operatorInfo.support" target="_blank">{{ operatorInfo.support }}</a>
+          </div>
         </div>
       </div>
       <div class="right is-flex __pointer" v-if="operatorInfo.links">

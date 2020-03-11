@@ -8,4 +8,4 @@ package-lock.json
 assets/.DS_Store
 static/
 static.tar
-
+*.log
