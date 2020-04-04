@@ -122,8 +122,8 @@ module.exports = {
       zh: 'https://forum.vite.net/topic/2420/%E7%A6%8F%E5%88%A9%E6%B4%BB%E5%8A%A8-vitex%E4%BA%A4%E6%98%93%E6%89%80%E4%B8%8A%E7%BA%BF-%E5%85%85%E5%80%BC%E4%BA%A4%E6%98%93%E8%B5%A2200000vite%E5%A4%A7%E5%A5%96'
     },
     list:{
-      en: 'https://docs.google.com/forms/d/1jtUlBENRfDSEE-D7n6o5dTMOg-qa0NGP3vnZBtwKBnQ/viewform?edit_requested=true',
-      zh: 'https://forms.gle/eG66BnL3btbFNvH59'
+      en: 'https://vitex.zendesk.com/hc/en-001/requests/new?ticket_form_id=360003256214',
+      zh: 'https://vitex.zendesk.com/hc/en-001/requests/new?ticket_form_id=360003256214'
     },
     wallet:{
       login: 'https://x.vite.net/start',
