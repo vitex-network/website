@@ -208,17 +208,20 @@
           "  1. ViteX charges a Base Transaction Fee of 0.2% paid by all traders who use the ViteX platform. ",
           "  2. ViteX Operators running their own Zones may charge an additional fee (\"Operator Fee\") up to 0.2%. In other words, the minimum fees that a trader can pay is 0.2% (Base Transaction Fee with no Operator Fee) and the maximum is 0.4% (Base Transaction Fee + 0.2% Operator Fee). Operators also reserve the right to adjust their individual Operator Fees.",
           "The above fees are the same for both the makers and the takers.",
-          "A trader can choose to stake 10,000 VITE to lower the Base Transaction fee from 0.2% to 0.1%. However, any additional Operator fees will remain the same.",
+          "A trader can choose to stake 10,000 (or 1,000,000) VITE to lower the Base Transaction fee from 0.2% to 0.1% (or 0%). However, any additional Operator fees will remain the same.",
           "All the fees collected from the Base Transaction Fee charge will be re-distributed as dividends to VX holders.",
 
+          "Is there token transfer fee?",
+          "There are no transfer fee for sending token between the Vite wallet and ViteX.",
+
           "How do withdrawal fees work?",
-          "There are no fees for deposits and withdrawals between the Vite wallet and ViteX; only quota will be consumed in these cases."
+          "ViteX's gateways charge withdrawal fees when redeeming cross-chain coins to outside address. The fees will be mainly used for covering transaction cost that may occur on the other blockchain."
         ]
       },
       {
         "question": "Why release VX? Will it affect VITE? What is the relationship between VX and VITE?",
         "answer": [
-          "VX can be understood as a “proof-of-equity” on the ViteX platform, which is a standalone application running on the Vite blockchain. ViteX has its own incentive model to encourage user trading. The value of VX is positively related to user and transaction volumes on ViteX. This will not affect the value of VITE, which is related to the Vite public chain. The value of VITE and the Vite chain increases as more dApps are run on Vite. VITE and VX are connected in some ways. For example, if VITE is staked to obtain certain quotas, VX can be earned. This means that resources on Vite can be used for transactions on ViteX."
+          "VX can be understood as a “proof-of-equity” on the ViteX platform, which is a standalone application running on the Vite blockchain. ViteX has its own incentive model to encourage user trading. The value of VX is positively related to user and transaction volumes on ViteX. This will not affect the value of VITE. The value of VITE and the Vite chain increases as more dApps are running on it. VITE and VX are connected in many ways. For example, if VITE is staked to obtain certain quotas on ViteX, VX can be earned. The relationship between Vite and ViteX is organic and positively correlative, so are the values."
         ]
       },
       {
@@ -233,19 +236,25 @@
         ]
       },
       {
+        "question": "Is it safe to put assets in ViteX?",
+        "answer": [
+          "Absolutely. As a complete decentralized exchange, the assets are secured by user's private key and cannot be misappropriated by others. Tradings take place in smart contract, which is fully transparent and traceable."
+        ]
+      },
+      {
         "question": "The Vite chain has a transaction model without fees. Why does the Vite exchange charge a fee? Is the fee charged by VITE or other tokens?",
-        "answer": "Transactions on the Vite chain do not consume gas like those on Ethereum, but another resource referred to as “quota.” Low-frequency traders can reach this quota by running a PoW on the local device. Since PoW takes time to complete, this mechanism is suitable for low-frequency usage. On the other hand, to accommodate high-frequency usage, traders will need to stake VITE in order to obtain the required quota. As a high frequency application, ViteX will also consume resources, which will be collected in the form of transaction fees on ViteX. Users can choose to stake VITE in order to fill quota on ViteX to lower the transaction fees. All collected transaction fees will be re-distributed to VX holders. The transaction fees will be paid out in “basic currencies” such as VITE, ETH, BTC and stablecoins. "
+        "answer": "Transactions on the Vite chain do not consume gas like those on Ethereum, but another resource referred to as “quota.” Low-frequency traders can reach this quota by solving a simple PoW puzzle on the local device. Since PoW takes a while to complete, this mechanism is suitable for low-frequency usage. On the other hand, to accommodate high-frequency usage, traders will need to stake VITE in order to obtain the required quota. As a high frequency application, ViteX will also consume resources, which will be collected in the form of transaction fees on ViteX. Users can choose to stake VITE in order to fill quota on ViteX to lower the trading cost. All collected transaction fees will be re-distributed to VX holders. The transaction fees will be paid out in “basic currencies” such as VITE, ETH, BTC and USDT. "
       },
       {
         "question": "What is VX?",
         "answer": [
-          "VX is the token related to ViteX. Users who hold VX enjoy payouts from a shared dividend pool comprised of transaction fees. There will be no public nor private sale for VX. Users can only get VX through mining. The total supply of VX is 100 million. All VX will be distributed in two years, with zero inflation. The daily average VX distribution is proportionally decreasing."
+          "ViteX Coin, VX, is the platform token of the ViteX exchange. Users who hold VX enjoy payouts from a shared dividend pool comprised of transaction fees. There is no public nor private sale for VX. Users can only get VX through mining. The total supply of VX is 29328807.8. All VX will be distributed in eight years, with zero inflation."
         ]
       },
       {
         "question": "How is VX distributed?",
         "answer": [
-          "Based on the results of the community voting on the VX release curve in October, we plan to burn a total amount of 70,671,202.2 VX On December 7. After the burning event, the total VX will be 29,328,807.8, which will be released in 8 years. The release of VX will start from 10,000 on December 7, 2019, and continue to increase for 90 days, reaching 50,000 on March 6, 2020 (10,000 on December 7, and 50,000 on March 6, 2020). The daily release of VX begins to decline after March 6, 2020. "
+          "Based on the results of the community voting on the VX release curve, we burned a total amount of 70,671,202.2 VX On December 7, 2019. After the burning event, the total VX supply is 29,328,807.8, which will be fully released in 8 years. The release of VX starts from 10,000 on December 7, 2019, and continued to increase for 90 days, reaching 50,000 on March 6, 2020 (10,000 on December 7, and 50,000 on March 6, 2020). The daily release of VX begins to decline after March 6, 2020. "
         ]
       },
       {
@@ -263,35 +272,35 @@
         "question": "How do I get VX dividends?",
         "answer": [
           "You will only receive dividends after staking your VX",
-          "1. A minimum of 10 VX must be staked to receive dividends",
-          "2. Participant is entitled to receive a dividend starting with the next distribution, after submission of staking request",
-          "3. The staked amount will be released after a 7-day waiting period. No dividend will be received during this waiting period",
+          "  1. A minimum of 10 VX must be staked to receive dividends",
+          "  2. Participant is entitled to receive a dividend starting with the next distribution, after submission of staking request",
+          "  3. The staked amount will be released after a 7-day waiting period. No dividend will be received during this waiting period",
           "Users can enable automatic staking. After enabling, the VX obtained from mining will be automatically staked, whereas purchased VX will not be automatically staked."
         ]
       },
       {
         "question": "How much dividends will be distributed every day?",
         "answer": [
-          "The system will distribute 1% of the total pool to all VX users proportional to the amount of VX they hold. The initial dividend pool will start at 0 and will grow according to the amount of fees collected by ViteX.",
-          "Dividends will be distributed in BTC, ETH, USDT."
+          "The system will distribute 1% of the total pool to all VX users proportional to the amount of VX they stake in exchange. The initial dividend pool will start at 0 and will grow according to the amount of fees collected by ViteX.",
+          "Dividends will be distributed in BTC, ETH, and USDT."
         ]
       },
       {
         "question": "What goes into the dividend pool?",
         "answer": [
-          "All trading fees collected by the exchange, with the exception of Operator Fees charged by ViteX Operators."
+          "All trading fees collected in BTC, ETH and USDT, with the exception of Operator Fees charged by ViteX Operators. The base trading fee collected in VITE will be burned."
         ]
       },
       {
         "question": "What are the requirements for listing tokens?",
         "answer": [
           "There are two scenarios for listing trading pairs on ViteX: ",
-          "  1. For assets listed on the Vite chain, a fee of 10,000 VITE needs to be paid to ViteX in order to open a new trading pair.",
+          "  1. For assets listed on the Vite chain, a fee of 10,000 VITE needs to be paid in order to open a new trading pair.",
           "  2. For assets not listed on the Vite chain, a gateway will be required. The asset to be listed is first transferred to the gateway, which then transfers the asset to the appropriate ViteX address in order to open the trading pair.\n",
           "If you want to list an asset and are not a ViteX operator, you will need to enlist help from an Operator:",
-          "  1) Contact an Operator to mint your asset. ViteX charges a flat fee of 1,000 VITE each time you want to issue an token.",
-          "  2) Pay the service or listing fee charged by the Operator to open the cross-chain gateway for the new asset.",
-          "  3) Pay the 10,000 VITE listing fee to open the new trading pair on ViteX.  (10,000 VITE payment will be burned)"
+          "  a) Contact an Operator to mint your asset. A flat fee of 1,000 VITE is charged each time you want to issue an token.",
+          "  b) Pay the service or listing fee charged by the Operator to open the cross-chain gateway for the new asset.",
+          "  c) Pay the 10,000 VITE listing fee to open the new trading pair on ViteX.  (10,000 VITE payment will be burned)"
         ]
       }
     ]
