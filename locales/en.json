@@ -114,7 +114,7 @@
           "  2. Referring as Mining. Referee will receive the following benefits: Spend 1,000 VITE to generate an invitation code and become a qualified referee (1,000 VITE payment will be burned). Receive a weighted 5% of invited users' Trading as Mining rewards. Receive a weighted 2.5% of invited users' Market-Making as Mining rewards. Invited user will receive the following benefits: An extra 2.5% of occurred trading fees being counted towards Trading as Mining rewards calculation. An extra 1.25% being counted towards Market-Making as Mining rewards calculation. 10% off total trading fees, including operator fee and base fee.\n",
           "  3. Staking as mining. The Vite public chain requires quota to properly allocate is computing resources. Quota is obtained by staking VITE. If you stake VITE to help ViteX obtain the quota it requires to run, then you get VX. \n",
           "  4. Market-making as Mining. Place orders to boost liquidity on ViteX and you’ll be rewarded with VX. ",
-          "  5. Listing as Mining. ​List new trading pairs to mine VX. A user (“token issuer” or an “operator”) that lists a new trading pair will also receive VX. The token issuer’s reward is calculated as if he/she executed a trade involving a transaction fee of 1,000 VITE. "
+          "  5. Listing as Mining. ​List new trading pairs to mine VX. A user (“token issuer” or an “operator”) that lists a new trading pair will also receive VX. The token issuer’s reward is calculated as if he/she executed a trade involving a trading fee of 1,000 VITE. "
         ]
       }],
       "dividend": [{
@@ -205,11 +205,11 @@
         "answer": [
           "How do trading fees work?",
           "There are two types of fee charges:",
-          "  1. ViteX charges a Base Transaction Fee of 0.2% paid by all traders who use the ViteX platform. ",
-          "  2. ViteX Operators running their own Zones may charge an additional fee (\"Operator Fee\") up to 0.2%. In other words, the minimum fees that a trader can pay is 0.2% (Base Transaction Fee with no Operator Fee) and the maximum is 0.4% (Base Transaction Fee + 0.2% Operator Fee). Operators also reserve the right to adjust their individual Operator Fees.",
+          "  1. ViteX charges a Base Trading Fee of 0.2% paid by all traders who use the ViteX platform. ",
+          "  2. ViteX Operators running their own Zones may charge an additional fee (\"Operator Fee\") up to 0.2%. In other words, the minimum fees that a trader can pay is 0.2% (Base Trading Fee with no Operator Fee) and the maximum is 0.4% (Base Trading Fee + 0.2% Operator Fee). Operators also reserve the right to adjust their individual Operator Fees.",
           "The above fees are the same for both the makers and the takers.",
-          "A trader can choose to stake 10,000 (or 1,000,000) VITE to lower the Base Transaction fee from 0.2% to 0.1% (or 0%). However, any additional Operator fees will remain the same.",
-          "All the fees collected from the Base Transaction Fee charge will be re-distributed as dividends to VX holders.",
+          "A trader can choose to stake 10,000 (or 1,000,000) VITE to lower the Base Trading Fee from 0.2% to 0.1% (or 0%). However, any additional Operator fees will remain the same.",
+          "All the fees collected from the Base Trading Fee charge will be re-distributed as dividends to VX holders.",
 
           "Is there token transfer fee?",
           "There are no transfer fee for sending token between the Vite wallet and ViteX.",
@@ -243,12 +243,12 @@
       },
       {
         "question": "The Vite chain has a transaction model without fees. Why does the Vite exchange charge a fee? Is the fee charged by VITE or other tokens?",
-        "answer": "Transactions on the Vite chain do not consume gas like those on Ethereum, but another resource referred to as “quota.” Low-frequency traders can reach this quota by solving a simple PoW puzzle on the local device. Since PoW takes a while to complete, this mechanism is suitable for low-frequency usage. On the other hand, to accommodate high-frequency usage, traders will need to stake VITE in order to obtain the required quota. As a high frequency application, ViteX will also consume resources, which will be collected in the form of transaction fees on ViteX. Users can choose to stake VITE in order to fill quota on ViteX to lower the trading cost. All collected transaction fees will be re-distributed to VX holders. The transaction fees will be paid out in “basic currencies” such as VITE, ETH, BTC and USDT. "
+        "answer": "Transactions on the Vite chain do not consume gas like those on Ethereum, but another resource referred to as “quota.” Low-frequency traders can reach this quota by solving a simple PoW puzzle on the local device. Since PoW takes a while to complete, this mechanism is suitable for low-frequency usage. On the other hand, to accommodate high-frequency usage, traders will need to stake VITE in order to obtain the required quota. As a high frequency application, ViteX will also consume resources, which will be collected in the form of trading fees on ViteX. Users can choose to stake VITE in order to fill quota on ViteX to lower the trading cost. All collected trading fees will be re-distributed to VX holders. The trading fees will be paid out in “basic currencies” such as VITE, ETH, BTC and USDT. "
       },
       {
         "question": "What is VX?",
         "answer": [
-          "ViteX Coin, VX, is the platform token of the ViteX exchange. Users who hold VX enjoy payouts from a shared dividend pool comprised of transaction fees. There is no public nor private sale for VX. Users can only get VX through mining. The total supply of VX is 29328807.8. All VX will be distributed in eight years, with zero inflation."
+          "ViteX Coin, VX, is the coin native to the ViteX platform. It is mined exclusively by the ViteX community and is used to allocate rewards back to the community. VX holders can receive daily ViteX Dividends from a shared dividend pool which aggregates all trading fees accumulated by ViteX and redistributes back to VX holders. VX has no pre-sale. The only way to get VX is through mining. The total supply of VX is 29328807.8 which will be completely distributed in eight years with zero inflation."
         ]
       },
       {

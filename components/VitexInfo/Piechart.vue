@@ -4,7 +4,7 @@
       <div class="answer">
         <div class="title">What is ViteX?</div>
         <div class="content">
-          <p>ViteX is a high-throughput decentralized exchange built on the Vite public chain with its own mineable currency​—​VX. ​For more details on the benefits of ViteX and the underlying technology, you can see this article ​<a href="https://medium.com/vitelabs/vitex-101-update-489f6e49392" target="_blank">​here​</a>.</p>
+          <p>ViteX, developed by Vite Labs, is the world's first decentralized exchange built on DAG technology. ViteX Coin, VX, is the coin native to the ViteX platform. It is mined exclusively by the ViteX community and is used to allocate rewards back to the community. ​For more details on the benefits of ViteX and VX, please refer to this article ​<a href="https://medium.com/vitelabs/vitex-101-update-489f6e49392" target="_blank">​here​</a>.</p>
           <div class="referral" v-show="type === 'referral'">
             <p>Use referral code <span class="num-blue">2279987214</span> to get 10% off all trading fees! </p>
             <p>For more details on how to use a referral code, refer to this article <a href="https://forum.vite.net/topic/2377/how-to-referring-as-mining-on-vitex" target="_blank">​here​</a></p>
@@ -22,8 +22,8 @@
         <div class="title">What can I do with VX?</div>
         <div class="content">
           <ol>
-            <li>You can ​trade ​it. Currently, 1 VX ~ 1 USD on ViteX with the following trading pairs: VX/BTC, VX/ETH, VX/USDT, and VX/VITE</li>
-            <li>Even better, you can ​hodl ​it to receive daily dividends in BTC, ETH, USDT. Fees collected by the ViteX platform (transaction fees, listing fees, etc...) are put into a shared dividend pool that is distributed ​back​ to traders at a daily rate of 1%. All accounts with at least 10 VX are eligible to receive dividends. More details on dividends can be found <nuxt-link :to="localePath('dividend')">here</nuxt-link>​.</li>
+            <li>You can ​trade ​it on ViteX with the following trading pairs: VX/BTC, VX/ETH, VX/USDT, and VX/VITE</li>
+            <li>Even better, you can ​hodl ​it to receive daily dividends in BTC, ETH, USDT. Trading fees collected by the ViteX platform are put into a shared dividend pool that is distributed ​back​ to traders at a daily rate of 1%. All accounts staking at least 10 VX in the exchange are eligible to receive dividends. More details on dividends can be found <nuxt-link :to="localePath('dividend')">here</nuxt-link>​.</li>
           </ol>
           <p>Sound interesting? Sign up for a trading account now at <a href="https://x.vite.net/​" target="_blank">​https://x.vite.net/​</a>!</p>
         </div>
@@ -32,9 +32,9 @@
           <p>Mining on ViteX is easy——no ASICs or complicated server set-ups required.</p>
           <ol>
             <li><span class="bold">Trading as Mining.</span> ​Each time you execute a trade (i.e. take an order off the order book), you get some VX. The amount of VX you receive will be calculated based on the proportion of the amount of trading fees that you paid to the total amount of trading fees collected by ViteX that day.</li>
-            <li><span class="bold">Referring as Mining.​</span> Every trader will get a referral code that they can share with their friends. When your friends sign up, they get 10% off of all trading fees on ViteX indefinitely, and an additional 2.5% mining rewards on trading. You benefit as 5% of your referred friends' accumulated trading fees get counted towards your daily accumulated trading fees.</li>
+            <li><span class="bold">Referring as Mining.​</span> Every trader will get a referral code that they can share with their friends. When your friends sign up, they get 10% off of all trading fees on ViteX indefinitely, and an additional 2.5% mining rewards on trading as well as 1.25% on market making. You benefit as 5% of your referred friends' trading as mining proceeds, as well as 2.5% of their market making as mining proceeds.</li>
             <li><span class="bold">Listing as Mining.</span> ​List new trading pairs to mine VX. A user (“token issuer” or an “operator”) that lists a new trading pair will also receive VX. The token issuer’s reward is calculated as if he/she executed a trade involving a transaction fee of 1,000 VITE.</li>
-            <li><span class="bold">Staking as Mining.</span> ​The Vite public chain requires quota to properly allocate is computing resources. Quota is obtained by staking VITE. If you stake VITE to help ViteX obtain the quota it requires to run, then you get VX.</li>
+            <li><span class="bold">Staking as Mining.</span> ​The Vite public chain requires quota to properly allocate its computing resources. Quota is obtained by staking VITE. If you stake VITE to help ViteX obtain the quota it requires to run, then you get VX.</li>
             <li><span class="bold">Market-making as Mining.​</span> Place orders to boost liquidity on ViteX and you’ll be rewarded with VX.
             </li>
           </ol>
@@ -51,7 +51,8 @@
         </div>
         <div class="title">How is VX distributed?</div>
         <div class="content">
-          <p>Since the VX mining function went live on September 9, we are still gathering data for how best to implement VX distribution.</p>
+          <p>A total VX supply of 29,328,807.8 will be fully released in 8 years. The release of VX starts from 10,000 on December 7, 2019, and continued to increase for 90 days, reaching 50,000 on March 6, 2020 (10,000 on December 7, and 50,000 on March 6, 2020). The daily release of VX begins to decline after March 6, 2020.
+          </p>
           <div class="paragraph">
             <div class="bold">Trading, Referring and Listing</div>
             <div>60% of VX released daily will be distributed to traders who mine within this category. There are currently four markets: BTC, ETH, VITE and USDT. Each market will account for 15% of the daily VX distribution.</div>
@@ -78,7 +79,7 @@
             <div>After the official launch of VX mining, there will be two phases of VX release with the total supply set to 29328807.8 VX with no inflation.</div>
           </div>
           <p><span class="bold">Phase 1:​ </span>10,000 VX daily release for the first 88 days.</p>
-          <p><span class="bold">Phase 2:​ </span>Daily release increases from 10,000 VX to 50,000 VX in the following 90 days, then start to decrease until being fully released after 8 years.</p>
+          <p><span class="bold">Phase 2:​ </span>Daily release increases from 10,000 VX to 50,000 VX in the following 90 days, then starts decrease until being fully released in 8 years.</p>
           <div class="piechart" v-if="page === 'mine'">
             <img :src="piechart['dividend'][$i18n.locale]" width="70%" height="70%">
           </div>
