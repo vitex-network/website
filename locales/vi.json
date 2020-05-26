@@ -39,8 +39,9 @@
     },
     "dividend": {
       "title": "VX Dividend Dashboard",
-      "currentPool": "Dividend Pool",
-      "totalPool": "Total Distributed Value"
+      "currentPool": "Current Dividend Pool",
+      "totalPool": "Cumulative Distributed Value",
+      "predict": "1000 VX receive"
     },
     "vite_destory": {
       "title": "VITE Burn Dashboard",
