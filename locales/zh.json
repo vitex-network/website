@@ -40,7 +40,8 @@
     "dividend": {
       "title": "VX当日分红概况",
       "currentPool": "当前分红池",
-      "totalPool": "已发放分红总估值"
+      "totalPool": "已发放分红总估值",
+      "predict": "1000 VX 可分红"
     },
     "vite_destory": {
       "title": "VITE销毁概况",

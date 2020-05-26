@@ -208,8 +208,9 @@ export default {
         return this.tokenDiviList.filter(x => x !== 'VITE').map(item=> {
           return {
             tokenSymbol: item,
-            amount: this.pool[item] && (item !== 'VITE' ? `${this.pool[item].amount} ${item}` : `${parseInt(this.pool[item].amount)} ${item}`),
-            mainBtcAmount: item !== 'BTC' && this.pool[item] && `${this.pool[item].btcAmount}`,
+            amount: this.pool && this.pool[item] && (item !== 'VITE' ? `${this.pool[item].amount} ${item}` : `${parseInt(this.pool[item].amount)} ${item}`),
+            mainBtcAmount: item !== 'BTC' && this.pool && this.pool[item] && `${this.pool[item].btcAmount}`,
+            amountPerVx: `${this.pool && this.pool[item] && this.vxMineInfo && (this.pool[item].amount * 10 / this.formatVX(this.vxMineInfo.lockAmount)).toFixed(8)} ${item}`
           };
         });
       } else {
@@ -218,6 +219,7 @@ export default {
             tokenSymbol: item,
             amount: `-- ${item}`,
             mainBtcAmount: item !== 'BTC' && '--',
+            amountPerVx: `-- ${item}`
           };
         });
       }

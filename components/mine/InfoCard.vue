@@ -17,6 +17,7 @@
                   <div>{{ item.tokenSymbol }} </div>
                   <div class="vx-amount">{{ item.amount || '--'}}</div>
                   <div v-if="item.mainBtcAmount" class="amount-btc">≈ {{ item.mainBtcAmount || '--'}} BTC</div>
+                  <div v-if="item.amountPerVx" class="amount-btc">{{ $t('indexPage.dividend.predict')}} {{item.amountPerVx || '--'}}</div>
                 </div>
                 <div class="token-right">
                   <img :src="imgMap[item.tokenSymbol]"/>
