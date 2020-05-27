@@ -210,7 +210,7 @@ export default {
             tokenSymbol: item,
             amount: this.pool && this.pool[item] && (item !== 'VITE' ? `${this.pool[item].amount} ${item}` : `${parseInt(this.pool[item].amount)} ${item}`),
             mainBtcAmount: item !== 'BTC' && this.pool && this.pool[item] && `${this.pool[item].btcAmount}`,
-            amountPerVx: `${this.pool && this.pool[item] && this.vxMineInfo && (this.pool[item].amount * 10 / this.formatVX(this.vxMineInfo.lockAmount)).toFixed(8) || '--'} ${item}`
+            amountPerVx: this.pool && this.pool[item] && this.vxMineInfo && (`${(this.pool[item].amount * 10 / this.formatVX(this.vxMineInfo.lockAmount)).toFixed(8) || '--'} ${item}`)
           };
         });
       } else {
@@ -242,7 +242,7 @@ export default {
       pool: null,
       tokenList: ['VITE', 'BTC', 'ETH', 'USDT'],
       percList: [15, 50, 15, 20],
-      tokenDiviList: ['VITE', 'ETH', 'BTC', 'USDT'],
+      tokenDiviList: ['VITE', 'BTC', 'ETH', 'USDT'],
       symbolRate: null,
       minePool: null,
       dividendAllPriceBtc: 0,
