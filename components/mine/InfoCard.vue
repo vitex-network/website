@@ -14,7 +14,7 @@
             <div>
               <div class="is-flex token">
                 <div class="token-left">
-                  <div>{{ $t('indexPage.dividend.subPool', { symbol : item.tokenSymbol }) }} </div>
+                  <div>{{ item.title }} </div>
                   <div class="vx-amount">{{ item.amount || '--'}}</div>
                   <div v-if="item.mainBtcAmount" class="amount-btc">≈ {{ item.mainBtcAmount || '--'}} BTC</div>
                   <div v-if="item.amountPerVx" class="amount-btc">{{ $t('indexPage.dividend.predict')}} {{item.amountPerVx || '--'}}</div>

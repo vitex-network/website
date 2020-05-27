@@ -188,6 +188,7 @@ export default {
       return this.tokenList.map(item=> {
         return {
           tokenSymbol: item,
+          title: item,
           amount: `${this.vxMineInfo && this.formatVX(this.vxMineInfo.feeMineDetail[tokenNumMap[item]]) || '--'} VX`,
           fee: this.minePool && this.minePool[item] && (item !== 'VITE' ? `${this.minePool[item].fee} ${item}` : `${parseInt(this.minePool[item].fee)} ${item}`) || `-- ${item}`,
           btcFee: this.minePool && item !== 'BTC' && (this.minePool[item] && this.minePool[item].btcFee || '--'),
@@ -199,6 +200,7 @@ export default {
       return this.tokenList.map((item, i)=> {
         return {
           tokenSymbol: item,
+          title: item,
           amount: `${this.totalMineAmount && (this.totalMineAmount.order*this.percList[i]/100).toFixed(2) || '--'} VX`
         };
       });
@@ -208,6 +210,7 @@ export default {
         return this.tokenDiviList.filter(x => x !== 'VITE').map(item=> {
           return {
             tokenSymbol: item,
+            title: this.$t('indexPage.dividend.subPool', { symbol : item }),
             amount: this.pool && this.pool[item] && (item !== 'VITE' ? `${this.pool[item].amount} ${item}` : `${parseInt(this.pool[item].amount)} ${item}`),
             mainBtcAmount: item !== 'BTC' && this.pool && this.pool[item] && `${this.pool[item].btcAmount}`,
             amountPerVx: this.pool && this.pool[item] && this.vxMineInfo && (`${(this.pool[item].amount * 10 / this.formatVX(this.vxMineInfo.lockAmount)).toFixed(8) || '--'} ${item}`)
@@ -217,6 +220,7 @@ export default {
         return this.tokenDiviList.filter(x => x !== 'VITE').map(item=> {
           return {
             tokenSymbol: item,
+            title: this.$t('indexPage.dividend.subPool', { symbol : item }),
             amount: `-- ${item}`,
             mainBtcAmount: item !== 'BTC' && '--',
             amountPerVx: `-- ${item}`
@@ -242,7 +246,7 @@ export default {
       pool: null,
       tokenList: ['VITE', 'BTC', 'ETH', 'USDT'],
       percList: [15, 50, 15, 20],
-      tokenDiviList: ['VITE', 'BTC', 'ETH', 'USDT'],
+      tokenDiviList: ['VITE', 'ETH', 'BTC', 'USDT'],
       symbolRate: null,
       minePool: null,
       dividendAllPriceBtc: 0,
