@@ -1,0 +1,1 @@
+export const VX_TTI = 'tti_564954455820434f494e69b5';

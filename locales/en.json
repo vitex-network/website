@@ -23,6 +23,8 @@
       "todayTotal": "Today's Minable VX",
       "totalAmount": "Total Mined VX",
       "lockAmount": "Staked",
+      "minedRatio": "{ratio} Mined",
+      "lockRatio": "{ratio} Staked",
       "tx": {
         "title": "Trading as Mining Total Income",
         "fee": "Live Trading Fees",

@@ -77,6 +77,12 @@ export default {
     }).catch(err=> {
       console.warn(err);
     });
+
+    dexFund.getTotalVxSupply().then(data=> {
+      this.vxTotalSupply = data.totalSupply;
+    }).catch(err=> {
+      console.warn(err);
+    });
     
     getMiningStat().then(data=> {
       this.dividendStat = data.userDividendStat;
@@ -158,10 +164,12 @@ export default {
         amount: `${this.vxMineInfo && this.formatVX(this.vxMineInfo.total) || '--'} VX`
       }, {
         name: this.$t('indexPage.mine.totalAmount'),
-        amount: `${this.vxMineInfo && this.formatVX(this.vxMineInfo.historyMinedSum) || '--'} VX`
+        amount: `${this.vxMineInfo && this.formatVX(this.vxMineInfo.historyMinedSum) || '--'} VX`,
+        ratio: this.$t('indexPage.mine.minedRatio', { ratio : `${this.vxMineInfo && this.vxTotalSupply && BigNumber.multi(this.vxMineInfo.historyMinedSum / this.vxTotalSupply, 100, 2) || '--'} %` })
       }, {
         name: this.$t('indexPage.mine.lockAmount'),
-        amount: `${this.vxMineInfo && this.formatVX(this.vxMineInfo.lockAmount) || '--'} VX`
+        amount: `${this.vxMineInfo && this.formatVX(this.vxMineInfo.lockAmount) || '--'} VX`,
+        ratio: this.$t('indexPage.mine.lockRatio', { ratio : `${this.vxMineInfo && BigNumber.multi(this.vxMineInfo.lockAmount / this.vxMineInfo.historyMinedSum, 100, 2) || '--'} %` })
       }];
     },
     diviTotalInfo() {
@@ -258,6 +266,7 @@ export default {
       minePool: null,
       dividendAllPriceBtc: 0,
       totalBurnedVITEAmount: 0,
+      vxTotalSupply: 0
     };
   },
   methods: {

@@ -23,6 +23,8 @@
       "todayTotal": "今日可挖量",
       "totalAmount": "累计挖矿总量",
       "lockAmount": "已锁仓",
+      "minedRatio": "累计挖矿占比 {ratio}",
+      "lockRatio": "累计锁仓占比 {ratio}",
       "tx": {
         "title": "交易挖矿总收益",
         "fee": "实时交易手续费",

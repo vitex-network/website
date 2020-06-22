@@ -1,8 +1,11 @@
 <template>
     <div class="info-total-wrapper">
       <div class="item" v-for="(item, index) in totalInfo" :key="index">
-        <div>{{ item.name }}</div>
-        <div class="value">{{ item.amount || '--'}}</div>
+        <div class="is-flex info">
+          <div>{{ item.name }}</div>
+          <div class="value">{{ item.amount || '--'}}</div>
+        </div>
+        <div v-if="item.ratio" class="info-bottom">{{item.ratio || '--'}}</div>
       </div>
     </div>
 </template>
@@ -26,10 +29,11 @@ export default {
 .info-total-wrapper {
   margin-top: 30px;
   background: url("~assets/images/index/bg.png") no-repeat center;
+  background-size: cover;
   background-color: white;
   box-shadow:0px 2px 9px 0px rgba(0,0,0,0.07);
   border-radius:5px;
-  height:80px;
+  /*height:80px;*/
   display: flex;
   display: -webkit-flex;
   @include mobile {
@@ -48,6 +52,7 @@ export default {
   border-right: 1px solid #E7EAEE;
   padding: 20px;
   display: flex;
+  flex-direction: column;
   display: -webkit-flex;
   justify-content: space-between;
   font-family: $font-family-light;
@@ -64,7 +69,7 @@ export default {
     background-size: cover;
     background-color: white;
     margin-bottom: 10px;
-    height: 102px;
+    /*height: 102px;*/
   }
   .value {
     font-family: $font-family-title;
@@ -74,6 +79,28 @@ export default {
       font-size: 22px;
       line-height: 26px;
       margin-top: 16px;
+    }
+  }
+  .info {
+    flex-direction: row;
+    box-sizing: border-box;
+    justify-content: space-between;
+    @include mobile {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+  .info-bottom {
+    width: 100%;
+    font-size:14px;
+    font-family:$font-family-light;
+    font-weight:400;
+    color:rgba(84,86,90,1);
+    line-height:16px;
+    justify-content: space-between;
+    text-align: right;
+    @include mobile {
+      text-align: left;
     }
   }
 }

@@ -1,3 +1,5 @@
+import {VX_TTI} from "../constant";
+
 class DexFund {
   constructor(client) {
     this._client = client;
@@ -21,6 +23,10 @@ class DexFund {
   
   async getAllTotalVxBalance() {
     return this._client.request('dex_getAllTotalVxBalance');
+  }
+
+  async getTotalVxSupply() {
+    return this._client.request('mintage_getTokenInfoById', VX_TTI);
   }
 }
 
