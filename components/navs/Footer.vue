@@ -64,6 +64,16 @@
             </div>
           </div>
           <div class="footer-tab is-half">
+            <div class="item market">
+              <div class="subtitle">{{$t('footer.market')}}</div>
+               <div v-for="(market, i) in urls.market" :key="i">
+                 <a v-if="market[$i18n.locale]" class="content"
+                   :href="market[$i18n.locale]"
+                   target="_blank">
+                   {{$t(`market.${i}`)}}
+                  </a>
+               </div>
+            </div>
             <div class="item exchange">
               <a
                   class="subtitle"
@@ -238,7 +248,7 @@
           display: block;
         }
         @include touch {
-          width: 83px;
+          width: 75px;
           min-height: 48px;
           display: inline-block;
           margin-right: 0px;

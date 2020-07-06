@@ -94,6 +94,22 @@ module.exports = {
       en: 'https://t.me/vitexexchange',
       zh: 'https://t.me/vitexexchangechinese'
     },
+    market: {
+      cmc: {
+        zh: 'https://coinmarketcap.com/zh/exchanges/vitex/',
+        en: 'https://coinmarketcap.com/exchanges/vitex/'
+      },
+      coingecko: {
+        zh: 'https://www.coingecko.com/zh/exchanges/vitex/',
+        en: 'https://www.coingecko.com/exchanges/vitex/'
+      },
+      mytoken: {
+        zh: 'https://www.mytokencap.com/exchange/vitex/'
+      },
+      fxh: {
+        zh: 'https://www.feixiaohao.com/exchange/vitex/'
+      }
+    },
     exchange: {
       bittrex: 'https://international.bittrex.com/Market/Index?MarketName=BTC-VITE',
       okex: 'https://www.okex.com/spot/trade#product=vite_eth',

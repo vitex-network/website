@@ -177,7 +177,7 @@
     "slogan": "社区治理、社区受益的真正去中心化交易所",
     "trade": "交易",
     "mine": "挖矿",
-    "market": "行情",
+    "market": "行情网站",
     "about": "关于我们",
     "user": "用户支持",
     "info": "常见说明"
@@ -195,6 +195,12 @@
   "info": {
     "faq": "常见问题",
     "fee": "费率说明"
+  },
+  "market" : {
+    "cmc": "CoinMarketCap",
+    "coingecko": "CoinGecko",
+    "mytoken": "MyToken",
+    "fxh": "非小号"
   },
   "faq": {
     "title": "常见问题",
