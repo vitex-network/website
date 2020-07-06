@@ -210,6 +210,10 @@
     "faq": "FAQ",
     "fee": "Fees"
   },
+  "market": {
+    "cmc": "CoinMarketCap",
+    "coingecko": "CoinGecko"
+  },
   "faq": {
     "title": "ViteX FAQs",
     "questions": [
