@@ -8,9 +8,10 @@
                  @mouseleave="!isMobile ? hideRealPrice(txPair) : null"
                  @click="gotoVitex(txPair)">
 
+                <a class="link-gecko" @click.stop v-if="hasGecko(txPair.symbol)" href="https://www.coingecko.com/zh/exchanges/vitex/" target="_blank"></a>
                 <a class="link-cmc" @click.stop v-if="hasCMC(txPair.symbol)" href="https://coinmarketcap.com/exchanges/vitex/" target="_blank"></a>
 
-                <span class="__center-tb-item" style="max-width: 100px;text-align:left;">
+                <span class="__center-tb-item" style="max-width: 120px;text-align:left;">
                     <span>{{ getTxPairShowSymbol(txPair) }}</span>
                 </span>
                 <span class="__center-tb-item is-hidden-mobile"
@@ -19,7 +20,7 @@
                   @click.stop="txPair.operatorAddress ? gotoDetail(txPair.operatorAddress) : null">
                     <span>{{ txPair.operatorName || '--'}}</span>
                 </span>
-                <span class="__center-tb-item" style="min-width: 180px">
+                <span class="__center-tb-item" style="min-width: 160px">
                     <span :class="{
                       'up': +txPair.priceChange > 0,
                       'down': +txPair.priceChange < 0}">
@@ -49,13 +50,24 @@ import BigNumber from '~/utils/bigNumber';
 import isMobile from 'is-mobile';
 
 const CMCTxPairs = [
-'VITE_USDT-000', 'ETH-000_BTC-000', 'GRIN-000_VITE', 'VITE_ETH-000',
-'GRIN-000_BTC-000', 'GRIN-000_ETH-000', 'VITE_BTC-000',
-'ETH-000_USDT-000', 'BTC-000_USDT-000','BIS-000_BTC-000','DERO-000_BTC-000','ERG-000_BTC-000','BEAM-000_BTC-000','TRTL-000_ETH-000','TERA-000_BTC-000','ANKR-000_BTC-000','PASC-000_BTC-000','PASC-000_ETH-000','PASC-000_USDT-000'
+  'VX_ETH-000', 'VX_USDT-000', 'VX_BTC-000', 'VITE_BTC-000', 'VITE_USDT-000', 'VITE_ETH-000',
+  'ETH-000_BTC-000', 'BTC-000_USDT-000', 'ETH-000_USDT-000', 'EOS-003_BTC-000', 'GRIN-000_VITE', 'GRIN-000_BTC-000', 'GRIN-000_ETH-000', 'BSV-000_USDT-000', 'XMR-000_BTC-000', 'WAVES-000_BTC-000', 'BCH-001_BTC-000', 'XRP-001_BTC-000', 'OKB-001_BTC-000',
+  'ONE-000_BTC-000', 'BUSD-000_USDT-000', 'LINK-001_BTC-000', 'GRIMM-000_USDT-000', 'GRIMM-000_BTC-000', 'TRB-000_BTC-000', 'EPIC-001_BTC-000', 'BAN-000_ETH-000', 'PEG-000_BTC-000', 'PEG-000_ETH-000',
+  'BIS-000_BTC-000','DERO-000_BTC-000','ERG-000_BTC-000','BEAM-000_BTC-000','TRTL-000_ETH-000','TERA-000_BTC-000','ANKR-000_BTC-000','PASC-000_BTC-000','PASC-000_ETH-000','PASC-000_USDT-000', 'FRM-001_BTC-000', 'DUN-000_BTC-000', 'CASH-000_BTC-000'
+];
+
+const CoinGeckoTxPairs = [
+  'VX_VITE', 'VX_USDT-000', 'VX_ETH-000', 'VX_BTC-000', 'VITE_BTC-000', 'VITE_USDT-000', 'VITE_ETH-000',
+  'ETH-000_BTC-000', 'BTC-000_USDT-000', 'ETH-000_USDT-000', 'EOS-003_BTC-000', 'GRIN-000_VITE', 'GRIN-000_BTC-000', 'GRIN-000_ETH-000', 'GRIN-000_VITE',
+  'EPIC-001_BTC-000', 'BAN-000_ETH-000', 'PEG-000_BTC-000', 'BIS-000_BTC-000', 'ATOM-000_VITE', 'CGLD-000_USDT-000', 'IXI-000_USDT-000'
 ];
 
 function hasCMC(pair) {
-  return CMCTxPairs.includes(pair)
+  return CMCTxPairs.includes(pair);
+}
+
+function hasGecko(pair) {
+  return CoinGeckoTxPairs.includes(pair);
 }
 
 export default {
@@ -88,7 +100,7 @@ export default {
     }
   },
   methods: {
-    hasCMC,
+    hasCMC, hasGecko,
     gotoVitex(txPair) {
       let quoteTokenSymbol = txPair.quoteTokenSymbol.split('-')[0];
       window.open(`https://x.vite.net/trade?symbol=${txPair.symbol}&category=${quoteTokenSymbol}`, '_blank');
@@ -292,15 +304,23 @@ export default {
 }
 
 .__center-tb-row {
-  padding-left: 1.2em;
+  padding-left: 2.4em;
 }
 
 .link-cmc {
   position: absolute;
-  left: 0;
+  left: 1.2em;
   top: .8em;
   width: 1.2em;
   height: 1.2em;
   background: url('~assets/icon/cmc.png') center / 100%;
+}
+.link-gecko {
+    position: absolute;
+    left: 0;
+    top: .8em;
+    width: 1.2em;
+    height: 1.2em;
+    background: url('~assets/icon/gecko.png') center / 100%;
 }
 </style>

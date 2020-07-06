@@ -12,8 +12,8 @@
         </vitex-input>
       </div>
 
-      <div class="__center-tb-title">
-        <div class="__center-tb-item __pointer" style="max-width: 100px">
+      <div class="__center-tb-title" style="padding-left: 2.4em">
+        <div class="__center-tb-item __pointer" style="max-width: 120px">
           <span class="describe-r">{{ $t('marketTable.header.txPair') }}</span>
           <order-arrow orderItem="txPair" :setOrderRule="setOrderRule"></order-arrow>
         </div>
