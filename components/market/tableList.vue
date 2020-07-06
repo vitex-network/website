@@ -127,10 +127,10 @@ export default {
       const height = this.$refs.txList.clientHeight;
       const top = elTop - listTop;
 
-      if (top > listTop + height) {
-        this.hideRealPrice();
-        return;
-      }
+      // if (top > listTop + height) {
+      //   this.hideRealPrice();
+      //   return;
+      // }
 
       this.top = top;
       this.symbol = txPair.symbol;
