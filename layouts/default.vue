@@ -86,9 +86,16 @@
                 {{$t('nav.faq')}}
               </nuxt-link>
             </div>
-            <div class="nav-item">
-              <about></about>
-            </div>
+<!--            <div class="nav-item">-->
+<!--              <about></about>-->
+<!--            </div>-->
+            <a
+              :href="urls.vitexapi[this.$i18n.locale]"
+              class="nav-item text-hover-transition"
+              target="_blank"
+            >
+              {{$t(`nav.api`)}}
+            </a>
           </div>
           <div
               ref="navbarEnd"

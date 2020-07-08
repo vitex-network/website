@@ -71,6 +71,10 @@ module.exports = {
       en: 'https://vite.wiki/api/rpc/',
       zh: 'https://vite.wiki/zh/api/rpc/'
     },
+    vitexapi: {
+      en: 'https://vite.wiki/dex/api/dex-apis.html',
+      zh: 'https://vite.wiki/zh/dex/api/dex-apis.html'
+    },
     website: {
       en: 'http://vite.org/',
       zh: 'http://vite.org/zh'
