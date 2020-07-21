@@ -79,6 +79,9 @@
               <user></user>
             </div>
             <div class="nav-item">
+              <download></download>
+            </div>
+            <div class="nav-item">
               <nuxt-link
                   :to="localePath('faq')"
                   class="text-hover-transition"
@@ -132,10 +135,12 @@
   import About from '~/components/navs/About';
   import WalletBtn from '~/components/navs/WalletBtn';
   import VFooter from '~/components/navs/Footer';
+  import Download from "../components/navs/Download";
 
 
   export default {
     components: {
+      Download,
       Logo,
       LangSelect,
       About,

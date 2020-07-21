@@ -168,6 +168,7 @@
     "dividend": "分红",
     "about": "关于",
     "api": "API",
+    "download": "下载",
     "faq": "常见问题",
     "create": "创建钱包",
     "info": "常见说明",
@@ -192,6 +193,10 @@
     "list": "成为运营商",
     "contact": "联系我们",
     "support": "帮助中心"
+  },
+  "download": {
+    "app": "Vite App",
+    "desktop": "Vite 桌面版钱包"
   },
   "info": {
     "faq": "常见问题",

@@ -79,6 +79,10 @@ module.exports = {
       en: 'http://vite.org/',
       zh: 'http://vite.org/zh'
     },
+    download: {
+      app: 'https://app.vite.net',
+      desktop: 'https://github.com/vitelabs/vite-wallet/releases'
+    },
     blog: {
       en: 'https://vite.blog/',
       zh: 'https://vite.blog/zh-cn/',
