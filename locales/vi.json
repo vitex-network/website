@@ -182,6 +182,7 @@
     "dividend": "Dividends",
     "about": "About",
     "api": "API",
+    "download": "Download",
     "user": "Support",
     "faq": "FAQ",
     "info": "FAQ",
@@ -206,6 +207,10 @@
     "list": "Become an Operator",
     "contact": "Contact Us",
     "support": "Help Center"
+  },
+  "download": {
+    "app": "Vite App",
+    "desktop": "Vite Desktop Wallet"
   },
   "info": {
     "faq": "FAQ",
