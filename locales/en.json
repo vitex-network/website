@@ -194,8 +194,9 @@
     "website": "Vite.org"
   },
   "user": {
+    "listing": "Apply for Listing",
     "protocol": "Policy Terms",
-    "list": "Become an Operator",
+    "operator": "Become an Operator",
     "contact": "Contact Us",
     "support": "Help Center"
   },

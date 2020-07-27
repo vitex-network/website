@@ -119,6 +119,18 @@
             <div class="item user">
               <div class="subtitle">{{$t('footer.user')}}</div>
               <a class="content"
+                 :href="urls.listing[$i18n.locale]"
+                 target="_blank"
+              >
+                {{$t('user.listing')}}
+              </a>
+              <a class="content"
+                 :href="urls.operator[$i18n.locale]"
+                 target="_blank"
+              >
+                {{$t('user.operator')}}
+              </a>
+              <a class="content"
                  :href="urls.support"
                  target="_blank"
               >
@@ -129,12 +141,6 @@
                  target="_blank"
               >
                 {{$t('user.protocol')}}
-              </a>
-              <a class="content"
-                 :href="urls.list[$i18n.locale]"
-                 target="_blank"
-              >
-                {{$t('user.list')}}
               </a>
               <a class="content" :href="`mailto:info@vite.org`">{{$t('user.contact')}}</a>
             </div>

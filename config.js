@@ -145,9 +145,13 @@ module.exports = {
       en: 'https://medium.com/vitelabs/new-campaign-alert-vitex-deposit-trading-contest-42779fa92f4',
       zh: 'https://forum.vite.net/topic/2420/%E7%A6%8F%E5%88%A9%E6%B4%BB%E5%8A%A8-vitex%E4%BA%A4%E6%98%93%E6%89%80%E4%B8%8A%E7%BA%BF-%E5%85%85%E5%80%BC%E4%BA%A4%E6%98%93%E8%B5%A2200000vite%E5%A4%A7%E5%A5%96'
     },
-    list:{
+    operator:{
       en: 'https://vitex.zendesk.com/hc/en-001/requests/new?ticket_form_id=360003256214',
       zh: 'https://vitex.zendesk.com/hc/en-001/requests/new?ticket_form_id=360003256214'
+    },
+    listing:{
+      en: 'https://forms.gle/6qjktGoiBiCz9UX57',
+      zh: 'https://forms.gle/6qjktGoiBiCz9UX57'
     },
     wallet:{
       login: 'https://x.vite.net/start',

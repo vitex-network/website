@@ -42,16 +42,17 @@ export default {
   computed:{
     url(){
       return {
+        listing: config.urls.listing[this.$i18n.locale],
         support: config.urls.support,
         protocol:config.urls.privacy,
-        list:config.urls.list[this.$i18n.locale],
+        operator:config.urls.operator[this.$i18n.locale],
         contact:'mailto:info@vite.org'
       };
     }
   },
   data(){
     return{
-      userArr: ['support','protocol','list','contact']
+      userArr: ['listing','operator','support','protocol','contact']
     };
   }
 

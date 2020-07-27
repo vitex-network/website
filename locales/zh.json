@@ -189,8 +189,9 @@
     "website": "Vite官网"
   },
   "user": {
+    "listing": "申请上币",
     "protocol": "政策条款",
-    "list": "成为运营商",
+    "operator": "成为运营商",
     "contact": "联系我们",
     "support": "帮助中心"
   },
