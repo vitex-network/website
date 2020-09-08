@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "HOST=0.0.0.0 nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "PORT=3001 nuxt start",
     "generate": "nuxt generate",
     "p": "npm run build && npm run generate"
   },
