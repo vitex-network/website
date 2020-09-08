@@ -9,7 +9,7 @@ export default {
     'X-Requested-With': 'XMLHttpRequest'
   },
   timeout: 10000,
-  withCredentials: false,
+  withCredentials: true,
   responseType: 'json',
   httpAgent: new http.Agent({
     keepAlive: true
