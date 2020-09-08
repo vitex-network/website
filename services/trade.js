@@ -179,3 +179,7 @@ export function operatorVolumes(addresslist) {
 export function getMiningStat() {
   return get(`${ version }/mining/stat`);
 }
+
+export function getBurnedVite() {
+  return get(`${ version }/mining/burn`);
+}

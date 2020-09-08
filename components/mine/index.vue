@@ -32,7 +32,7 @@ import pledgeCard from './pledgeCard';
 import { dexFund } from '~/utils/vitejs/index.js';
 import BigNumber from '~/utils/bigNumber';
 import commonTitle from './commonTitle';
-import { getMiningStat } from '~/services/trade.js';
+import { getMiningStat, getBurnedVite } from '~/services/trade.js';
 const tokenMap = {
   1: 'VITE',
   2: 'ETH',
@@ -357,8 +357,8 @@ export default {
       return this.symbolRate;
     },
     getTotalBurnedVITE() {
-      fetch('https://vitex.vite.net/api/v1/mining/burn').then(res => res.json()).then(data => {
-        this.totalBurnedVITEAmount = (data && data.data && data.data.vite && (1*data.data.vite).toFixed(8)) || 0
+      getBurnedVite().then(data => {
+        this.totalBurnedVITEAmount = (data && data.vite && (1*data.vite).toFixed(8)) || 0
       })
     }
   }
