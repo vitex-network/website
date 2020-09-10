@@ -70,7 +70,7 @@
       gotoDetail(address) {
         let locale = this.$i18n.locale !== 'en' ? `/${this.$i18n.locale}` : '';
         this.$router.path = locale;
-        this.$router.push({path: `${locale}/operatorDetail/${address}`});
+        this.$router.push({path: `${locale}/operator?operator=${address}`});
       },
       openVGate(){
         window.open(

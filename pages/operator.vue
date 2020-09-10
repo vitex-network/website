@@ -27,7 +27,7 @@ export default {
     }
   },
   created() {
-    this.$store.commit('setCurrentOperator', this.$route.params.operator);
+    this.$store.commit('setCurrentOperator', this.$route.query.operator);
   },
   data() {
     return {

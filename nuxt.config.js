@@ -96,30 +96,6 @@ module.exports = {
   router: {
     middleware: 'i18n'
   },
-  generate: {
-    routes: async function () {
-      let list = await operatorInfo([]);
-      let dynamicRouteList = [];
-      locales.forEach(locale=> {
-        if (locale.code === 'zh') {
-          list.forEach((item) => {
-            dynamicRouteList.push({
-              route: `/${locale.code}/operatorDetail/${item.address}`,
-              payload: item
-            });
-          });
-        } else {
-          list.forEach((item) => {
-            dynamicRouteList.push({
-              route: `/operatorDetail/${item.address}`,
-              payload: item
-            });
-          });
-        }
-      });
-      return dynamicRouteList;
-    }
-  },
   modules: [
     // '@nuxtjs/webpackmonitor',
     // '@nuxtjs/pwa',
