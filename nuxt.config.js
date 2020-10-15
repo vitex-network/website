@@ -1,5 +1,3 @@
-import { operatorInfo } from './services/trade';
-
 const hostname = 'https://vitex.net';
 const routes = [
   {
@@ -90,6 +88,7 @@ module.exports = {
     }
   },
   plugins: ['~/plugins/fontawesome',
+    { src: '~/plugins/utils.js', ssr: false },
     { src: '~/plugins/element-ui.js', ssr: true },
     {src: '~/plugins/vue-headroom', ssr: false},
     {src: '~/plugins/nuxt-swiper-plugin.js', ssr: false}],

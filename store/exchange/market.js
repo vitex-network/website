@@ -1,8 +1,10 @@
-import { baseToken } from '~/services/trade';
+import { baseToken, assignPair } from '~/services/trade';
 
 let quoteTokenCategory = [ 'BTC', 'ETH', 'VITE', 'USDT'];
 
 let DefaultCategory = 'BTC';
+
+const landingMarkets = ['VITE_BTC-000', 'VITE_USDT-000', 'VX_BTC-000', 'VX_USDT-000'];
 
 let state = function() {
   return {
@@ -11,7 +13,8 @@ let state = function() {
     quoteTokenCategory,
     curentCategory: DefaultCategory,
     marketMap: [],
-    marketClosed: []
+    marketClosed: [],
+    landingMarkets: [],
   };
 };
 
@@ -27,6 +30,9 @@ const mutations = {
   },
   setCurrentOperator(state, address) {
     state.currentOperatorInfo = state.operatorInfoMap[address];
+  },
+  setLandingMarkets(state, data) {
+    state.landingMarkets = data;
   }
 };
 
@@ -42,6 +48,13 @@ const actions = {
         tokenIds.push(tokenId);
       });
       dispatch('addRateTokens', tokenIds);
+    });
+  },
+  getLandingMarkets({ commit }) {
+    assignPair({
+      symbols: landingMarkets
+    }).then(data => {
+      commit('setLandingMarkets', data);
     });
   }
 };

@@ -29,6 +29,7 @@
     "headroom.js": "^0.9.4",
     "is-mobile": "^2.0.0",
     "ismobilejs": "^0.4.1",
+    "numeral": "^2.0.6",
     "nuxt": "2.8.1",
     "nuxt-i18n": "6.0.0",
     "protobufjs": "^6.8.8",

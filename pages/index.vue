@@ -14,8 +14,8 @@
         </div>
       </div>
     </section>
-    <div style="position: relative;" class="container">
-      <slider class="slider"></slider>
+    <div class="container">
+      <landing-dashbord></landing-dashbord>
     </div>
     <div class="mine-wrapper">
       <mine></mine>
@@ -36,6 +36,7 @@ import VitexInfo from "~/components/VitexInfo";
 import UseVitex from "~/components/UseVitex";
 import VGate from "~/components/VGate";
 import Slider from "~/components/Slider";
+import LandingDashbord from '~/components/LandingDashbord';
 import { urls } from "~/config.js";
 import mine from "~/components/mine/index";
 import market from "~/components/market/market.vue";
@@ -48,12 +49,14 @@ export default {
     VGate,
     Slider,
     mine,
-    market
+    market,
+    LandingDashbord
     // BinanceVote
   },
   beforeMount() {
     this.$store.dispatch("startLoopExchangeRate");
     this.$store.dispatch("startLoopRateBySymbol");
+    this.$store.dispatch("getLandingMarkets");
   },
   methods: {
     openViteX() {
