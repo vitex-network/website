@@ -13,13 +13,16 @@
                     <div>{{$t('marketTable.header.closePrice')}}</div>
                     <div>{{$t('marketTable.header.change')}}</div>
                 </div>
-                <div class="market-item" v-for="item in markets" :key="item.symbol">
+                <a class="market-item" v-for="item in markets" :key="item.symbol" :href="`https://x.vite.net/trade?symbol=${item.symbol}`" target="_blank">
                     <div>{{item.symbol}}</div>
                     <div> <strong>{{item.closePrice}}</strong> {{item.quoteTokenSymbol}}</div>
                     <div class="item-percent" :class="{'is-up': Number(item.priceChangePercent) > 0, 'is-down': Number(item.priceChangePercent) < 0 }">
                         <strong>{{item.priceChangePercent | percent}}</strong>
                     </div>
-                </div>
+                </a>
+                <a href="https://x.vite.net/trade" class="market-item" target="_blank" key="another">
+                    {{$t('indexPage.landingDashbord.more')}}
+                </a>
             </div>
         </div>
         <div class="col">
@@ -36,16 +39,24 @@ export default {
     computed: {
         markets() {
             return this.$store.state.exchangeMarket.landingMarkets;
+        },
+        setMineInfo() {
+            return this.$store.state.mine.setMineInfo;
         }
     }
-    
 }
 </script>
 
 <style lang="scss" scoped>
+$landing-border-radius: 5px;
+
 .landing-dashbord {
     display: flex;
     flex-direction: row;
+    top: -120px;
+    position: absolute;
+    width: 100%;
+    margin: 0 -15px;
     & > div {
         flex: 1;
     }
@@ -59,13 +70,11 @@ export default {
 .market-col {
     box-shadow: 0px 2px 9px 0px rgba(0,0,0,0.07);
     position: relative;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    & > div {
+    border-bottom-left-radius: $landing-border-radius;
+    border-bottom-right-radius: $landing-border-radius;
+    .market-item {
         display: flex;
         flex-direction: row;
-    }
-    .market-item {
         padding-left: 12px;
         padding-right: 12px;
         border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -74,8 +83,14 @@ export default {
         align-items: center;
         justify-content: space-between;
         color: #54565A;
-        &:nth-last-child() {
+        background-color: white;
+        &:last-child {
             border-bottom: none;
+            border-bottom-right-radius: $landing-border-radius;
+            border-bottom-left-radius: $landing-border-radius;
+            justify-content: center;
+            color: #2F5BEA;
+            font-weight: 600;
         }
         & > div {
             &:nth-child(1) {
@@ -91,12 +106,17 @@ export default {
         &.header {
             color: #7E8085;
             font-size: 12px;
+            border-top-right-radius: $landing-border-radius;
         }
         .is-up {
-            color: #00D764;
+            strong {
+                color: #00D764;
+            }
         }
         .is-down {
-            color: red;
+            strong {
+                color: red;
+            }
         }
         strong {
             font-weight: 600;
@@ -107,6 +127,8 @@ export default {
         top: -28px;
         height: 30px;
         width: 100%;
+        display: flex;
+        flex-direction: row;
         & > div {
             background-color: white;
             padding: 7px 12px;

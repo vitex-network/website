@@ -14,8 +14,10 @@
         </div>
       </div>
     </section>
-    <div class="container">
-      <landing-dashbord></landing-dashbord>
+    <div class="landing-dashbord-wrapper">
+      <div class="container">
+        <landing-dashbord></landing-dashbord>        
+      </div>
     </div>
     <div class="mine-wrapper">
       <mine></mine>
@@ -57,6 +59,11 @@ export default {
     this.$store.dispatch("startLoopExchangeRate");
     this.$store.dispatch("startLoopRateBySymbol");
     this.$store.dispatch("getLandingMarkets");
+
+
+    this.$store.dispatch("getTotalVxSupply");
+    this.$store.dispatch("getDividendInfo");
+    this.$store.dispatch("getMineInfo");
   },
   methods: {
     openViteX() {
@@ -68,6 +75,11 @@ export default {
 
 <style lang="scss" scoped>
 @import "assets/vars.scss";
+.landing-dashbord-wrapper {
+  background: #f6f8f9;
+  padding-bottom: 30px;
+  min-height: 200px;
+}
 .mine-wrapper {
   background: #f6f8f9;
   padding-bottom: 80px;
@@ -102,7 +114,7 @@ export default {
   position: relative;
   font-family: $font-family-title;
   .hero-body {
-    padding: 64px 10px 205px 10px;
+    padding: 0 10px 205px 10px;
   }
   @include touch {
     .hero-body {

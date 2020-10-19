@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import numeral from 'numeral';
+import BigNumber from '~/utils/bigNumber';
 
 
 export default () => {
@@ -14,5 +15,9 @@ export default () => {
       str = '+' + str;
     }
     return str;
+  });
+
+  Vue.filter('vxFormat', function (val, placeholder = '--') {
+    return BigNumber.originFormat(val, 18, 2) || placeholder;
   });
 };

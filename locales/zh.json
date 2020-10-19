@@ -19,7 +19,8 @@
   "indexPage": {
     "update": "已更新至",
     "landingDashbord": {
-      "title": "VX抵押收益率（年化）：{percent}"
+      "title": "VX抵押收益率（年化）：{percent}",
+      "more": "查看更多"
     },
     "mine": {
       "title": "VX当日挖矿概况",
