@@ -24,8 +24,15 @@
       "vxStakingRatio": "VX抵押率：{ratio} %",
       "more": "查看更多",
       "vxStakingAmountInput": "锁仓 VX 数量",
-      "reardInYear": "分红收益（一年）",
-      "total": "总计：≈ {total}"
+      "reardInYear": "分红收益",
+      "total": "总计：≈ {total}",
+      "time": {
+        "year": "年",
+        "halfYear": "半年",
+        "month": "月",
+        "week": "周",
+        "day": "天"
+      }
     },
     "mine": {
       "title": "VX当日挖矿概况",

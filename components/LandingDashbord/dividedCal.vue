@@ -14,6 +14,12 @@
         <div class="col">
             <div class="header">
                 {{$t('indexPage.landingDashbord.reardInYear')}}
+                (
+                    <span v-for="(item, index) in timeList" :key="item" style="cursor: pointer;" @click="onTimeSelected(item)">
+                        <span :class="{ 'selected-time': item === selectedTime }">{{$t(`indexPage.landingDashbord.time.${item}`)}}</span>
+                        <span v-if="index < timeList.length - 1">/</span>
+                    </span>
+                )
             </div>
             <div class="reward-detail">
                 <div v-for="item in rewardList" :key="item.name">
@@ -39,14 +45,27 @@ const logoMaps = {
     'USDT': require('~/assets/images/index/usd.svg')
 };
 
+const timeMaps = {
+    year: 365,
+    halfYear: 365/2,
+    month: 30,
+    week: 28,
+    day: 1
+};
+
 
 export default {
     data() {
         return {
-            amount: 10000
+            amount: 10000,
+            selectedTime: "year",
+            timeList: ['year', 'month', 'week', 'day']
         }
     },
     computed: {
+        time() {
+            return timeMaps[this.selectedTime]
+        },
         dividendPools() {
             return this.$store.getters.dividendPools;
         },
@@ -55,7 +74,7 @@ export default {
                 return {
                     ...this.dividendPools[key],
                     name: key,
-                    amount: bigNumber.multi(bigNumber.multi(this.amount, this.dividendPools[key].amountPerVx), 365),
+                    amount: bigNumber.multi(bigNumber.multi(this.amount, this.dividendPools[key].amountPerVx), this.time),
                     logo: logoMaps[key],
                     value: {
                         cny: bigNumber.multi(this.amount, this.dividendPools[key].valuePerVx.cny),
@@ -70,7 +89,12 @@ export default {
                 targetCurrency = 'cny';
             }
             let total = this.rewardList.reduce((pre, cur) => bigNumber.plus(pre, cur.value[targetCurrency]), 0);
-            return `${targetCurrency === 'cny' ? '¥' : '$'} ${bigNumber.multi(total, 365, 2)}`;
+            return `${targetCurrency === 'cny' ? '¥' : '$'} ${bigNumber.multi(total, this.time, 2)}`;
+        }
+    },
+    methods: {
+        onTimeSelected(time) {
+            this.selectedTime = time;
         }
     }
 }
@@ -109,6 +133,9 @@ export default {
             display: flex;
             flex-direction: row;
             align-items: center;
+        }
+        .selected-time {
+            color: #2F5BEA;
         }
         .reward-footer {
             position: absolute;
