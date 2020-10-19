@@ -37,7 +37,7 @@ const actions = {
   startLoopRateBySymbol({ commit, dispatch }) {
     dispatch('stopLoopRateBySymbol');
     const f = () => {
-      return rateTokenSymbols({ tokenSymbolList: ['ETH-000','VITE','BTC-000','USDT-000'] }).then(data => {
+      return rateTokenSymbols({ tokenSymbolList: ['ETH-000','VITE','BTC-000','USDT-000', 'VX'] }).then(data => {
         commit('setRateSymbol', data);
       });
     };

@@ -19,8 +19,13 @@
   "indexPage": {
     "update": "已更新至",
     "landingDashbord": {
-      "title": "VX抵押收益率（年化）：{percent}",
-      "more": "查看更多"
+      "apy": "VX抵押收益率（年化）：{apy}",
+      "vxStakingAmount": "VX抵押数量： {amount} VX",
+      "vxStakingRatio": "VX抵押率：{ratio} %",
+      "more": "查看更多",
+      "vxStakingAmountInput": "锁仓 VX 数量",
+      "reardInYear": "分红收益（一年）",
+      "total": "总计：≈ {total}"
     },
     "mine": {
       "title": "VX当日挖矿概况",

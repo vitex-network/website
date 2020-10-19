@@ -1,10 +1,9 @@
-import BigNumber from '~/utils/bigNumber';
 import { dexFund } from '~/utils/vitejs/index.js';
 import { getMiningStat, getBurnedVite } from '~/services/trade.js';
 import bigNumber from '../utils/bigNumber';
 
 function formatVX(num) {
-  return BigNumber.originFormat(num, 18, 2);
+  return bigNumber.originFormat(num, 18, 2);
 }
 
 function getRateFromSymbol(rootState, symbol, coin) {
@@ -54,15 +53,37 @@ const state = function() {
 };
 
 const getters = {
+  vxApy(state, getters, rootState) {
+    const { dividendPools } = getters;
+    const { lockAmount } = state.mineInfo;
+    
+
+    let allAmountInUsd = 0;
+    const vxPriceInUsd = getRateFromSymbol(rootState, 'VX', 'usd');
+    for (const tokenTypeName in dividendPools) {
+      if (tokenTypeName !== 'VITE') {
+        allAmountInUsd = bigNumber.plus(dividendPools[tokenTypeName].usdAmount, allAmountInUsd);
+      }
+    }
+    const dividedTodayInTotal = bigNumber.dividedToNumber(allAmountInUsd, 100, 18);
+    const todayRewardPerVx = bigNumber.dividedToNumber(dividedTodayInTotal, bigNumber.toBasic(lockAmount, 18), 18);
+    const yearRewardPerVx = bigNumber.multi(todayRewardPerVx, 365, 18);
+    return bigNumber.dividedToNumber(yearRewardPerVx, vxPriceInUsd, 8);
+  },
+  vxMarketCap(state, getters, rootState) {
+    const vxPriceInBtc= getRateFromSymbol(rootState, 'VX', 'btc');
+    const { historyMinedSum } = state.mineInfo;
+    return bigNumber.multi(bigNumber.toBasic(historyMinedSum, 18), vxPriceInBtc, 8);
+  },
   pledgeForVx(state, getters, rootState) {
     const { pledgeMine } = state.mineInfo;
     const { pledgeForVxSum } = state;
-    const rewardPerVite = BigNumber.dividedToNumber(BigNumber.originFormat(pledgeMine, 18), BigNumber.originFormat(pledgeForVxSum, 18), 8);
+    const rewardPerVite = bigNumber.dividedToNumber(bigNumber.originFormat(pledgeMine, 18), bigNumber.originFormat(pledgeForVxSum, 18), 8);
 
     return {
       vite: formatVX(pledgeForVxSum),
-      btc: BigNumber.multi(formatVX(pledgeForVxSum) || 0, getRateFromSymbol(rootState, 'VITE', 'btc') || 0),
-      percentAmount: pledgeForVxSum && BigNumber.multi(rewardPerVite, 1000, 6)
+      btc: bigNumber.multi(formatVX(pledgeForVxSum) || 0, getRateFromSymbol(rootState, 'VITE', 'btc') || 0),
+      percentAmount: pledgeForVxSum && bigNumber.multi(rewardPerVite, 1000, 6)
     };
   },
   dividendPools(state, getters, rootState) {
@@ -85,17 +106,22 @@ const getters = {
         btcAmount: '0'
       };
 
-      let amount = BigNumber.toBasic(token.amount, token.tokenInfo.decimals);
+      let amount = bigNumber.toBasic(token.amount, token.tokenInfo.decimals);
 
-      console.log(tokenTypeName);
-      console.log(amount);
-      console.log(BigNumber.toBasic(lockAmount, 18));
-      let amountToDivided = BigNumber.dividedToNumber(amount, 100, 18);
+      let amountToDivided = bigNumber.dividedToNumber(amount, 100, 18);
 
 
       pool[tokenTypeName].amount = amount;
-      pool[tokenTypeName].btcAmount = BigNumber.multi(amount || 0, getRate(rootState, token.tokenInfo.tokenId, 'btc') || 0);
-      pool[tokenTypeName].amountPerVx = BigNumber.dividedToNumber(amountToDivided, BigNumber.toBasic(lockAmount, 18), 18);
+      pool[tokenTypeName].btcAmount = bigNumber.multi(amount || 0, getRate(rootState, token.tokenInfo.tokenId, 'btc') || 0);
+      pool[tokenTypeName].usdAmount = bigNumber.multi(amount || 0, getRate(rootState, token.tokenInfo.tokenId, 'usd') || 0);
+      pool[tokenTypeName].cnyAmount = bigNumber.multi(amount || 0, getRate(rootState, token.tokenInfo.tokenId, 'cny') || 0);
+
+      const amountPerVx = bigNumber.dividedToNumber(amountToDivided, bigNumber.toBasic(lockAmount, 18), 18);
+      pool[tokenTypeName].amountPerVx = amountPerVx;
+      pool[tokenTypeName].valuePerVx = {
+        cny: bigNumber.multi(amountPerVx, getRate(rootState, token.tokenInfo.tokenId, 'cny') || 0),
+        usd: bigNumber.multi(amountPerVx, getRate(rootState, token.tokenInfo.tokenId, 'usd') || 0),
+      };
 
       tokenIds.push(token.tokenInfo.tokenId);
     }
@@ -108,14 +134,14 @@ const getters = {
       let tokenName = tokenMap[tokenNum];
       let rate = getRateFromSymbol(rootState, tokenName, 'btc');
       let originAmount = feesForMine[tokenNum];
-      let amount = BigNumber.toBasic(originAmount, decimals[tokenName]);
+      let amount = bigNumber.toBasic(originAmount, decimals[tokenName]);
 
       minePool[tokenName] = minePool[tokenName] || {
         fee: '',
         btcFee: ''
       };
-      minePool[tokenName].fee = amount; // parseInt(BigNumber.multi(amount || 0, viteRate || 0));
-      minePool[tokenName].btcFee = BigNumber.multi(amount || 0, rate || 0);
+      minePool[tokenName].fee = amount; // parseInt(bigNumber.multi(amount || 0, viteRate || 0));
+      minePool[tokenName].btcFee = bigNumber.multi(amount || 0, rate || 0);
     }
     return minePool;
   },
@@ -125,8 +151,8 @@ const getters = {
     for (const tokenName in dividendStat) {
       let rate = getRateFromSymbol(rootState, tokenName, 'btc');
       let originAmount = dividendStat[tokenName].dividendAmount;
-      let btcAmount = BigNumber.multi(originAmount || 0, rate || 0);
-      allPrice = BigNumber.plus(btcAmount, allPrice);
+      let btcAmount = bigNumber.multi(originAmount || 0, rate || 0);
+      allPrice = bigNumber.plus(btcAmount, allPrice);
     }
     return allPrice;
   },
@@ -134,7 +160,7 @@ const getters = {
     const { dividendPools } = getters;
     let amount = 0;
     for (let key in dividendPools) {
-      amount = BigNumber.plus(dividendPools[key].btcAmount, amount);
+      amount = bigNumber.plus(dividendPools[key].btcAmount, amount);
     }
     return amount;
   },
@@ -153,9 +179,9 @@ const getters = {
     let minedRatio = null;
     let lockRatio = null;
     if (totalSupply) {
-      minedRatio = BigNumber.multi(historyMinedSum / totalSupply, 100, 2);
+      minedRatio = bigNumber.multi(historyMinedSum / totalSupply, 100, 2);
     }
-    lockRatio = BigNumber.multi(lockAmount / historyMinedSum, 100, 2);
+    lockRatio = bigNumber.multi(lockAmount / historyMinedSum, 100, 2);
     return {
       ...state.mineInfo,
       minedRatio,

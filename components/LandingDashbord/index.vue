@@ -27,21 +27,41 @@
         </div>
         <div class="col">
             <div class="reward-col">
-                <h2>{{$t('indexPage.landingDashbord.title')}}</h2>
-                <div class="sub-title"></div>
+                <h2>{{$t('indexPage.landingDashbord.apy', { apy: vxApy })}}</h2>
+                <div class="sub-title">
+                    <div>{{$t('indexPage.landingDashbord.vxStakingAmount', { amount: mineInfo.lockAmount })}}</div>
+                    <div>{{$t('indexPage.landingDashbord.vxStakingRatio', { ratio: mineInfo.lockRatio })}}</div>
+                </div>
+                {{vxMarketCap}}
+                <div class="dividedCal">
+                    <divided-cal></divided-cal>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import numeral from 'numeral';
+import DividedCal from './dividedCal.vue';
+
+
 export default {
+    components: {
+        DividedCal
+    },
     computed: {
         markets() {
             return this.$store.state.exchangeMarket.landingMarkets;
         },
-        setMineInfo() {
-            return this.$store.state.mine.setMineInfo;
+        mineInfo() {
+            return this.$store.getters.mineInfo;
+        },
+        vxApy() {
+            return numeral(Number(this.$store.getters.vxApy)).format('0 %');
+        },
+        vxMarketCap() {
+            return this.$store.getters.vxMarketCap;
         }
     }
 }
@@ -142,7 +162,25 @@ $landing-border-radius: 5px;
 }
 
 .reward-col {
+    background-color: white;
+    border-radius: $landing-border-radius;
     padding: 20px;
+    h2 {
+        font-size: 28px;
+        font-weight: 600;
+        text-align: left;
+        color: #171c34;
+        line-height: 32px;
+    }
+    .sub-title {
+        font-size: 14px;
+        font-weight: 400;
+        color: #54565a;
+        margin-top: 7px;
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 </style>
