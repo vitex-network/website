@@ -49,7 +49,7 @@ const timeMaps = {
     year: 365,
     halfYear: 365/2,
     month: 30,
-    week: 28,
+    week: 7,
     day: 1
 };
 

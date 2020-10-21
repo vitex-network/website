@@ -26,6 +26,10 @@
       "vxStakingAmountInput": "锁仓 VX 数量",
       "reardInYear": "分红收益",
       "total": "总计：≈ {total}",
+      "dividedCal": "分红计算器",
+      "aboutMining": "关于挖矿",
+      "emissionChart": "VX 挖矿释放曲线",
+      "marketCap": "VX 市值: {cap} BTC",
       "time": {
         "year": "年",
         "halfYear": "半年",

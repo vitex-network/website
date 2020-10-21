@@ -73,7 +73,7 @@ const getters = {
   vxMarketCap(state, getters, rootState) {
     const vxPriceInBtc= getRateFromSymbol(rootState, 'VX', 'btc');
     const { historyMinedSum } = state.mineInfo;
-    return bigNumber.multi(bigNumber.toBasic(historyMinedSum, 18), vxPriceInBtc, 8);
+    return bigNumber.multi(bigNumber.toBasic(historyMinedSum, 18), vxPriceInBtc, 0);
   },
   pledgeForVx(state, getters, rootState) {
     const { pledgeMine } = state.mineInfo;

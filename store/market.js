@@ -4,7 +4,7 @@ let quoteTokenCategory = [ 'BTC', 'ETH', 'VITE', 'USDT'];
 
 let DefaultCategory = 'BTC';
 
-const landingMarkets = ['VITE_BTC-000', 'VITE_USDT-000', 'VX_BTC-000', 'VX_USDT-000'];
+const landingMarkets = ['VITE_BTC-000', 'VITE_USDT-000', 'VX_BTC-000', 'VX_USDT-000', 'HNS-000_USDT-000', 'PRV-000_USDT-000', 'VX_VITE', 'PEG-000_BTC-000'];
 
 let state = function() {
   return {

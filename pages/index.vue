@@ -75,15 +75,15 @@ export default {
 
 <style lang="scss" scoped>
 @import "assets/vars.scss";
+
 .landing-dashbord-wrapper {
   background: #f6f8f9;
   padding-bottom: 30px;
-  min-height: 200px;
+  min-height: 500px;
 }
 .mine-wrapper {
   background: #f6f8f9;
   padding-bottom: 80px;
-  padding-top: 150px;
   @include touch {
     padding-top: 32px;
     padding-bottom: 30px;
