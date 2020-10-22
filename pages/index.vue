@@ -14,8 +14,10 @@
         </div>
       </div>
     </section>
-    <div style="position: relative;" class="container">
-      <slider class="slider"></slider>
+    <div class="landing-dashbord-wrapper">
+      <div class="container">
+        <landing-dashbord></landing-dashbord>        
+      </div>
     </div>
     <div class="mine-wrapper">
       <mine></mine>
@@ -36,6 +38,7 @@ import VitexInfo from "~/components/VitexInfo";
 import UseVitex from "~/components/UseVitex";
 import VGate from "~/components/VGate";
 import Slider from "~/components/Slider";
+import LandingDashbord from '~/components/LandingDashbord';
 import { urls } from "~/config.js";
 import mine from "~/components/mine/index";
 import market from "~/components/market/market.vue";
@@ -48,12 +51,19 @@ export default {
     VGate,
     Slider,
     mine,
-    market
+    market,
+    LandingDashbord
     // BinanceVote
   },
   beforeMount() {
     this.$store.dispatch("startLoopExchangeRate");
     this.$store.dispatch("startLoopRateBySymbol");
+    this.$store.dispatch("getLandingMarkets");
+
+
+    this.$store.dispatch("getTotalVxSupply");
+    this.$store.dispatch("getDividendInfo");
+    this.$store.dispatch("getMineInfo");
   },
   methods: {
     openViteX() {
@@ -65,10 +75,15 @@ export default {
 
 <style lang="scss" scoped>
 @import "assets/vars.scss";
+
+.landing-dashbord-wrapper {
+  background: #f6f8f9;
+  padding-bottom: 30px;
+  min-height: 500px;
+}
 .mine-wrapper {
   background: #f6f8f9;
   padding-bottom: 80px;
-  padding-top: 150px;
   @include touch {
     padding-top: 32px;
     padding-bottom: 30px;
@@ -99,7 +114,7 @@ export default {
   position: relative;
   font-family: $font-family-title;
   .hero-body {
-    padding: 64px 10px 205px 10px;
+    padding: 0 10px 205px 10px;
   }
   @include touch {
     .hero-body {
@@ -109,7 +124,7 @@ export default {
   }
 
   .slogan-wrapper {
-    margin-top: 14%;
+    margin-top: 8%;
     padding-bottom: 40px;
     text-align: center;
     h1 {
