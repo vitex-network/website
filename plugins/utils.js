@@ -27,4 +27,9 @@ export default () => {
     arr = arr.map(item => item.split('-')[0]);
     return arr.join('/');
   });
+
+  Vue.filter('formatSymbol', function(val) {
+    if (!val) return val;
+    return val.split('-')[0];
+  });
 };

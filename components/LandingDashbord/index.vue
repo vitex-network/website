@@ -23,7 +23,7 @@
           >
             <div>{{ item.symbol | formatTradeSymbol}}</div>
             <div>
-              <strong>{{ item.closePrice }}</strong> {{ item.quoteTokenSymbol }}
+              <strong>{{ item.closePrice }}</strong> {{ item.quoteTokenSymbol | formatSymbol}}
             </div>
             <div
               class="item-percent"
