@@ -19,25 +19,25 @@
   "indexPage": {
     "update": "Last updated on",
     "landingDashbord": {
-      "apy": "APY：{apy}",
-      "vxStakingAmount": "VX Staking Amount： {amount} VX",
-      "vxStakingRatio": "VX Staking Ratio：{ratio} %",
+      "apy": "VX Staking APY：{apy}",
+      "vxStakingAmount": "Total Stake： {amount} VX",
+      "vxStakingRatio": "Staking Ratio：{ratio} %",
       "more": "More",
       "vxStakingAmountInput": "VX Staking Amount",
-      "reardInYear": "Reward ({time} Day)",
-      "stakingTime": "Staking Time: ",
-      "curValue": "Current Value: {curValue}",
-      "rewardValue": "Reward Value: {rewardValue}",
+      "reardInYear": "Dividends ({time} Day)",
+      "stakingTime": "Staking Period: ",
+      "curValue": "Current Market Value: {curValue}",
+      "rewardValue": "Current Market Value: {rewardValue}",
       "dividedCal": "Staking Calculator",
       "aboutMining": "Mining VX",
       "emissionChart": "VX Emission",
       "marketCap": "VX Market Cap: {cap} BTC",
       "time": {
-        "year": "Annual",
-        "halfYear": "Semi-annual",
-        "month": "Month",
-        "week": "Week",
-        "day": "Day"
+        "year": "1 Year",
+        "halfYear": "6 Months",
+        "month": "1 Month",
+        "week": "1 Week",
+        "day": "1 Day"
       }
     },
     "mine": {

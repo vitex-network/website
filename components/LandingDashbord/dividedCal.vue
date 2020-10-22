@@ -12,7 +12,7 @@
           <span :class="{ 'selected-time': item === selectedTime }">{{
             $t(`indexPage.landingDashbord.time.${item}`)
           }}</span>
-          <span v-if="index < timeList.length - 1">/</span>
+          <span v-if="index < timeList.length - 1">/ </span>
         </span>
       </div>
     </div>
