@@ -71,9 +71,16 @@ const getters = {
     return bigNumber.dividedToNumber(yearRewardPerVx, vxPriceInUsd, 8);
   },
   vxMarketCap(state, getters, rootState) {
-    const vxPriceInBtc= getRateFromSymbol(rootState, 'VX', 'btc');
+    const vxPriceInBtc= getters.vxPrice.btc;
     const { historyMinedSum } = state.mineInfo;
     return bigNumber.multi(bigNumber.toBasic(historyMinedSum, 18), vxPriceInBtc, 0);
+  },
+  vxPrice(state, getters, rootState) {
+    return {
+      btc: getRateFromSymbol(rootState, 'VX', 'btc'),
+      usd: getRateFromSymbol(rootState, 'VX', 'usd'),
+      cny: getRateFromSymbol(rootState, 'VX', 'cny'),
+    };
   },
   pledgeForVx(state, getters, rootState) {
     const { pledgeMine } = state.mineInfo;

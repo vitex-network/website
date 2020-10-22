@@ -4,36 +4,39 @@
       <div class="market-col __col-content">
         <div class="header-info">
           <div>
-            <img src="~/assets/images/index/cmc.png" alt="" />
-            <img src="~/assets/images/index/cg.png" alt="" />
+            <a href="https://coinmarketcap.com/exchanges/vitex/" target="_blank"><img src="~/assets/images/index/cmc.png" alt="" /></a>
+            <a href="https://www.coingecko.com/en/exchanges/vitex" target="_blank"><img src="~/assets/images/index/cg.png" alt="" /></a>
           </div>
         </div>
-        <div class="market-item header">
-          <div>{{ $t("marketTable.header.txPair") }}</div>
-          <div>{{ $t("marketTable.header.closePrice") }}</div>
-          <div>{{ $t("marketTable.header.change") }}</div>
-        </div>
-        <a
-          class="market-item"
-          v-for="item in markets"
-          :key="item.symbol"
-          :href="`https://x.vite.net/trade?symbol=${item.symbol}`"
-          target="_blank"
-        >
-          <div>{{ item.symbol }}</div>
-          <div>
-            <strong>{{ item.closePrice }}</strong> {{ item.quoteTokenSymbol }}
+        <div class="market-wrapper">
+          <div class="market-item header">
+            <div>{{ $t("marketTable.header.txPair") }}</div>
+            <div>{{ $t("marketTable.header.closePrice") }}</div>
+            <div>{{ $t("marketTable.header.change") }}</div>
           </div>
-          <div
-            class="item-percent"
-            :class="{
-              'is-up': Number(item.priceChangePercent) > 0,
-              'is-down': Number(item.priceChangePercent) < 0,
-            }"
+          <a
+            class="market-item"
+            v-for="item in markets"
+            :key="item.symbol"
+            :href="`https://x.vite.net/trade?symbol=${item.symbol}`"
+            target="_blank"
           >
-            <strong>{{ item.priceChangePercent | percent }}</strong>
-          </div>
-        </a>
+            <div>{{ item.symbol }}</div>
+            <div>
+              <strong>{{ item.closePrice }}</strong> {{ item.quoteTokenSymbol }}
+            </div>
+            <div
+              class="item-percent"
+              :class="{
+                'is-up': Number(item.priceChangePercent) > 0,
+                'is-down': Number(item.priceChangePercent) < 0,
+              }"
+            >
+              <strong>{{ item.priceChangePercent | percent }}</strong>
+            </div>
+          </a>
+        </div>
+
         <a
           href="https://x.vite.net/trade"
           class="__footer"
@@ -136,7 +139,6 @@ $landing-border-radius: 5px;
   flex: 1;
   flex-direction: column;
   padding: 0 15px;
-  overflow: hidden;
   .__col-content {
     box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.07);
     height: 100%;
@@ -187,8 +189,6 @@ $landing-border-radius: 5px;
       border-bottom-right-radius: $landing-border-radius;
       border-bottom-left-radius: $landing-border-radius;
       justify-content: center;
-      color: #2f5bea;
-      font-weight: 600;
     }
     & > div {
       &:nth-child(1) {
@@ -225,6 +225,8 @@ $landing-border-radius: 5px;
     width: 100%;
     display: flex;
     flex-direction: row;
+    position: absolute;
+    top: -30px;
     & > div {
       background-color: white;
       padding: 7px 12px;
@@ -234,6 +236,10 @@ $landing-border-radius: 5px;
     img {
       height: 16px;
     }
+  }
+
+  .__footer {
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
   }
 }
 

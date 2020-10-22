@@ -18,6 +18,28 @@
   },
   "indexPage": {
     "update": "Last updated on",
+    "landingDashbord": {
+      "apy": "APY：{apy}",
+      "vxStakingAmount": "VX Staking Amount： {amount} VX",
+      "vxStakingRatio": "VX Staking Ratio：{ratio} %",
+      "more": "More",
+      "vxStakingAmountInput": "VX Staking Amount",
+      "reardInYear": "Reward ({time} Day)",
+      "stakingTime": "Staking Time: ",
+      "curValue": "Current Value: {curValue}",
+      "rewardValue": "Reward Value: {rewardValue}",
+      "dividedCal": "Staking Calculator",
+      "aboutMining": "Mining VX",
+      "emissionChart": "VX Emission",
+      "marketCap": "VX Market Cap: {cap} BTC",
+      "time": {
+        "year": "Year",
+        "halfYear": "Half Year",
+        "month": "Month",
+        "week": "Week",
+        "day": "Day"
+      }
+    },
     "mine": {
       "title": "VX Mining Dashboard",
       "todayTotal": "Today's Minable VX",
