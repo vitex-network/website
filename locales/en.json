@@ -33,8 +33,8 @@
       "emissionChart": "VX Emission",
       "marketCap": "VX Market Cap: {cap} BTC",
       "time": {
-        "year": "Year",
-        "halfYear": "Half Year",
+        "year": "Annual",
+        "halfYear": "Semi-annual",
         "month": "Month",
         "week": "Week",
         "day": "Day"
