@@ -21,7 +21,7 @@
             :href="`https://x.vite.net/trade?symbol=${item.symbol}`"
             target="_blank"
           >
-            <div>{{ item.symbol }}</div>
+            <div>{{ item.symbol | formatTradeSymbol}}</div>
             <div>
               <strong>{{ item.closePrice }}</strong> {{ item.quoteTokenSymbol }}
             </div>
@@ -127,7 +127,7 @@ $landing-border-radius: 5px;
   flex-direction: row;
   position: absolute;
   width: 100%;
-  margin-top: -120px;
+  margin-top: -150px;
   @include until($desktop) {
     flex-direction: column;
     position: relative;

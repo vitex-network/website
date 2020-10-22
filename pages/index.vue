@@ -124,7 +124,7 @@ export default {
   }
 
   .slogan-wrapper {
-    margin-top: 14%;
+    margin-top: 8%;
     padding-bottom: 40px;
     text-align: center;
     h1 {
