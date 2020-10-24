@@ -31,6 +31,7 @@
       "dividedCal": "分红计算器",
       "aboutMining": "关于挖矿",
       "emissionChart": "VX 挖矿释放曲线",
+      "rewardPerDay": "每日释放量",
       "marketCap": "VX 市值: {cap} BTC",
       "time": {
         "year": "年",
