@@ -17,7 +17,6 @@ const datasetConfig = {
   fill: false,
   lineTension: 0,
   borderWidth: 2,
-  label: "每日释放量",
   backgroundColor: "rgb(109,208,191)",
   borderColor: "rgb(109,208,191)",
   fill: "start",
@@ -33,7 +32,7 @@ export default {
       chartdata: {},
       chartOptions: {
         legend: {
-            display: false
+          display: false,
         },
         scales: {
           xAxes: [
@@ -77,6 +76,16 @@ export default {
       },
     };
   },
+  computed: {
+    lang() {
+      return this.$i18n.locale;
+    },
+  },
+  watch: {
+    lang(val) {
+      this.getDataset();
+    },
+  },
   methods: {
     getDataset() {
       const data = [];
@@ -89,7 +98,7 @@ export default {
       while (loop) {
         // 第一阶段: 每天 10000 vx
         if (day.isBefore(moment("2019-12-07"))) {
-            rewardPerDay = 10000;
+          rewardPerDay = 10000;
         } else if (day.isBefore(moment("2020-03-06"))) {
           rewardPerDay = rewardPerDay * 1.0180435;
         } else if (day.isSame(moment("2020-03-06"))) {
@@ -116,14 +125,17 @@ export default {
 
         day.add("1", "days");
       }
+      const label = this.$t("indexPage.landingDashbord.rewardPerDay");
       this.chartdata = {
         datasets: [
           {
             ...datasetConfig,
+            label,
             data,
           },
           {
             ...datasetConfig,
+            label,
             fill: false,
             data: data2,
           },
