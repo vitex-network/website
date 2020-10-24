@@ -49,13 +49,10 @@ export default {
   components: {
     commonTitle
   },
-  created() {
-    this.operatorInfo = this.$store.state.exchangeMarket.currentOperatorInfo;
-  },
-  data() {
-    return {
-      operatorInfo: null
-    };
+  computed: {
+    operatorInfo() {
+      return this.$store.state.exchangeMarket.currentOperatorInfo;
+    }
   }
 };
 </script>
