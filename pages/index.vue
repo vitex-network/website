@@ -37,7 +37,6 @@
 import VitexInfo from "~/components/VitexInfo";
 import UseVitex from "~/components/UseVitex";
 import VGate from "~/components/VGate";
-import Slider from "~/components/Slider";
 import LandingDashbord from '~/components/LandingDashbord';
 import { urls } from "~/config.js";
 import mine from "~/components/mine/index";
@@ -49,7 +48,6 @@ export default {
     VitexInfo,
     UseVitex,
     VGate,
-    Slider,
     mine,
     market,
     LandingDashbord
@@ -101,14 +99,6 @@ export default {
   font-family: $font-family-light;
   font-weight: normal;
   margin-bottom: 3rem;
-}
-.slider {
-  position: absolute;
-  top: -150px;
-  width: 100%;
-  @include touch {
-    top: -50px;
-  }
 }
 .home {
   position: relative;

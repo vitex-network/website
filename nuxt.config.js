@@ -55,6 +55,7 @@ routes.forEach((route) => {
 
 
 module.exports = {
+  target: 'static',
   head: {
     title: 'ViteX, Exchange By the Community, For the Community',
     meta: [
@@ -90,11 +91,7 @@ module.exports = {
   plugins: ['~/plugins/fontawesome',
     { src: '~/plugins/utils.js', ssr: false },
     { src: '~/plugins/element-ui.js', ssr: true },
-    {src: '~/plugins/vue-headroom', ssr: false},
-    {src: '~/plugins/nuxt-swiper-plugin.js', ssr: false}],
-  router: {
-    middleware: 'i18n'
-  },
+    {src: '~/plugins/vue-headroom', ssr: false}],
   modules: [
     // '@nuxtjs/webpackmonitor',
     // '@nuxtjs/pwa',
@@ -125,8 +122,7 @@ module.exports = {
     '@nuxtjs/sitemap'
   ],
   css: [
-    '~/assets/main.scss',
-    'swiper/dist/css/swiper.css'
+    '~/assets/main.scss'
   ],
   render: {
     compressor: {threshold: 1}
@@ -135,7 +131,6 @@ module.exports = {
     path: '/sitemap.xml',
     hostname: hostname,
     gzip: true,
-    generate: true,
     exclude: [
       '/',
       '/faq'
