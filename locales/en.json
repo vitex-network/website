@@ -19,7 +19,7 @@
   "indexPage": {
     "update": "Last updated on",
     "landingDashbord": {
-      "apy": "VX Staking APY：{apy}",
+      "apy": "VX Staking APR：{apy}",
       "vxStakingAmount": "Total Stake： {amount} VX",
       "vxStakingRatio": "Staking Ratio：{ratio} %",
       "more": "More",
