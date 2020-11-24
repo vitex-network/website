@@ -2,7 +2,7 @@
   <div>
     <div class="card is-flex"  v-if="operatorInfo">
       <div class="left is-flex">
-        <img :src="operatorInfo.icon" class="pic"/>
+        <img :src="operatorInfo.icon" class="pic" referrerPolicy="no-referrer"/>
         <div class="info">
           <div class="name">{{ operatorInfo.name }}</div>
           <div class=" is-flex">

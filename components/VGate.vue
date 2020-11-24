@@ -15,7 +15,7 @@
                   </div>
                 </div>
                 <div class="token-right">
-                  <img :src="item.icon"/>
+                  <img :src="item.icon" referrerPolicy="no-referrer"/>
                 </div>
               </div>
           </div>
