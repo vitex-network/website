@@ -19,7 +19,7 @@
   "indexPage": {
     "update": "Last updated on",
     "landingDashbord": {
-      "apy": "VX Staking APY：{apy}",
+      "apy": "VX Staking APR：{apy}",
       "vxStakingAmount": "Total Stake： {amount} VX",
       "vxStakingRatio": "Staking Ratio：{ratio} %",
       "more": "More",
@@ -261,6 +261,12 @@
           "There are no transfer fee for sending token between the Vite wallet and ViteX.",
           "How do withdrawal fees work?",
           "ViteX's gateways charge withdrawal fees when redeeming cross-chain coins to outside address. The fees will be mainly used for covering transaction cost that may occur on the other blockchain."
+        ]
+      },
+      {
+        "question": "What order types does ViteX support?",
+        "answer": [
+          "ViteX currently supports limit orders. Market orders and stop orders will soon be supported too. Please be noted that limit orders (including partially-matched limit orders) have a 30-day validity period on the order book. Orders over 30 days will be automatically removed by the ViteX contract, and the removed orders due to expiration will show a \"Canceled\" status."
         ]
       },
       {
