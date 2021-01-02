@@ -257,6 +257,12 @@
         ]
       },
       {
+        "question": "What order types does ViteX support?",
+        "answer": [
+          "ViteX currently supports limit orders. Market orders and stop orders will soon be supported too. Please be noted that limit orders (including partially-matched limit orders) have a 30-day validity period on the order book. Orders over 30 days will be automatically removed by the ViteX contract, and the removed orders due to expiration will show a \"Canceled\" status."
+        ]
+      },
+      {
         "question": "Why release VX? Will it affect VITE? What is the relationship between VX and VITE?",
         "answer": [
           "VX can be understood as a “proof-of-equity” on the ViteX platform, which is a standalone application running on the Vite blockchain. ViteX has its own incentive model to encourage user trading. The value of VX is positively related to user and transaction volumes on ViteX. This will not affect the value of VITE. The value of VITE and the Vite chain increases as more dApps are running on it. VITE and VX are connected in many ways. For example, if VITE is staked to obtain certain quotas on ViteX, VX can be earned. The relationship between Vite and ViteX is organic and positively correlative, so are the values."
