@@ -7,7 +7,7 @@
     "generate": "nuxt generate",
     "p": "npm run build && npm run generate",
     "publish": "npm run p && wrangler publish --env production",
-    "publish:stage": "npm run p && wrangler publish --env stage"
+    "publish:test": "npm run p && wrangler publish --env test"
   },
   "dependencies": {
     "@babel/parser": "^7.4.3",
