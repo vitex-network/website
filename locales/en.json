@@ -210,7 +210,8 @@
     "market": "Market",
     "about": "About Us",
     "user": "Support",
-    "info": "FAQ"
+    "info": "FAQ",
+    "start": "Start"
   },
   "about": {
     "api": "API",

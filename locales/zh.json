@@ -214,7 +214,8 @@
     "market": "行情网站",
     "about": "关于我们",
     "user": "用户支持",
-    "info": "常见说明"
+    "info": "常见说明",
+    "start": "开始"
   },
   "about": {
     "api": "API",

@@ -75,26 +75,26 @@
                </div>
             </div>
             <div class="item exchange">
+              <div class="subtitle">{{$t('footer.start')}}</div>
+
               <a
-                  class="subtitle"
+                  class="content"
                   :href="urls.vitex[$i18n.locale]"
                   target="_blank"
               >
                 {{$t('footer.trade')}}
               </a>
-            </div>
-            <div class="item">
+
               <nuxt-link
                   :to="localePath('mine')"
-                  class="subtitle"
+                  class="content"
               >
                 {{$t('nav.mine')}}
               </nuxt-link>
-            </div>
-            <div class="item">
+
               <nuxt-link
                   :to="localePath('dividend')"
-                  class="subtitle"
+                  class="content"
               >
                 {{$t('nav.dividend')}}
               </nuxt-link>
@@ -233,11 +233,22 @@
           color: white;
         }
       }
+      .icons {
+        text-align: left;
+        color: white;
+      }
+      @include touch {
+        text-align: center;
+        .icons {
+          text-align: center;
+        }
+      }
     }
+
     .footer-tab {
       display: flex;
       font-size: 12px;
-      justify-self: flex-end;
+      justify-content: space-around;
       .item{
         margin-left: 50px;
         .subtitle{
@@ -264,7 +275,6 @@
       }
       @include touch {
         width: 100%;
-        display: inline-block;
         margin: 48px auto;
       }
       .social-icons {
@@ -273,10 +283,6 @@
           width: 28px;
         }
       }
-    }
-    .icons {
-      text-align: left;
-      color: white;
     }
     .copyright {
       padding-bottom: 38px;
