@@ -89,9 +89,6 @@
                 {{$t('nav.faq')}}
               </nuxt-link>
             </div>
-<!--            <div class="nav-item">-->
-<!--              <about></about>-->
-<!--            </div>-->
             <a
               :href="urls.vitexapi[this.$i18n.locale]"
               class="nav-item text-hover-transition"
@@ -104,15 +101,6 @@
               ref="navbarEnd"
               class="navbar-end"
           >
-            <!--<div class="nav-end-item">-->
-              <!--<wallet-btn :btn-type="'create'"></wallet-btn>-->
-            <!--</div>-->
-            <!--<div class="nav-end-item">-->
-              <!--<wallet-btn :btn-type="'login'"></wallet-btn>-->
-            <!--</div>-->
-            <div class="nav-end-item">
-              <lang-select></lang-select>
-            </div>
           </div>
         </div>
       </div>

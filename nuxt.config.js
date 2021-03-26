@@ -22,11 +22,6 @@ const locales = [
     code: 'en',
     name: 'EN',
     langFile: 'en.json'
-  },
-  {
-    code: 'zh',
-    name: '中文',
-    langFile: 'zh.json'
   }
 ];
 const defaultLocale = 'en';
@@ -110,8 +105,7 @@ module.exports = {
           /*
           * make the default locale can work in fallback in ssr.
           * */
-          en: require('./locales/en.json'),
-          zh: require('./locales/zh.json')
+          en: require('./locales/en.json')
         },
         silentTranslationWarn: true
       }
