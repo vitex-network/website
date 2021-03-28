@@ -1,16 +1,16 @@
 {
   "lang": "EN",
   "head": {
-    "title": "ViteX - Exchange By the Community, For the Community",
+    "title": "ViteX - Cross-Chain DEX By the Community, For the Community",
     "document": "Документация",
     "description": {
-      "index": "ViteX - Exchange By the Community, For the Community",
+      "index": "ViteX - Cross-Chain DEX By the Community, For the Community",
       "faq": "ViteX FAQ"
     }
   },
   "home": {
     "slogan": "ViteX",
-    "content": "Cross-Chain Exchange By the Community, For the Community",
+    "content": "Cross-Chain DEX By the Community, For the Community",
     "guide": "User Guide",
     "guideUrl": "https://vite.wiki/dex/",
     "starttoUse": "Start Trading Now",
@@ -213,7 +213,7 @@
     "login": "Log In"
   },
   "footer": {
-    "slogan": "Exchange By the Community, For the Community",
+    "slogan": "Cross-Chain DEX By the Community, For the Community",
     "trade": "Trade",
     "mine": "Mining",
     "market": "Market",
