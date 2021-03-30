@@ -38,16 +38,6 @@
                         class="icon forum"
                         src="~/assets/images/social/forum.svg"
                     /></a>
-                  <a
-                      :href="urls.weibo"
-                      target="_blank"
-                      class="text-hover-transition"
-                  >
-                    <fa-icon
-                        class="icon"
-                        :icon="['fab', 'weibo']"
-                    /></a>
-                  <wechat></wechat>
                   <qq v-if="$i18n.locale === 'zh'" class="margin-left"></qq>
                   <a
                       :href="urls.cmc[$i18n.locale]"
