@@ -30,7 +30,7 @@
       "rewardValue": "Current Market Value: {rewardValue}",
       "dividedCal": "Staking Calculator",
       "aboutMining": "Mining VX",
-      "emissionChart": "VX Emission",
+      "emissionChart": "VX Mining",
       "rewardPerDay": "Today's Minable VX",
       "marketCap": "VX Market Cap: {cap} BTC",
       "time": {
@@ -105,7 +105,7 @@
     "more": "Learn More",
     "dex": {
       "title": "Truly Decentralized",
-      "content": "On-chain order matching and asset management. Smart contract driven dividend distribution. Locally private key storage."
+      "content": "On-chain order matching and asset management. Dividend distributions through smart contracts. Locally stored private keys."
     },
     "performance": {
       "title": "Ultra-High Performance",
@@ -113,7 +113,7 @@
     },
     "mine": {
       "title": "Collect Dividends ",
-      "content": "Mine VX by trading, staking, market-making and referring. Hold VX to receive daily dividends."
+      "content": "Mine VX by trading, staking, market-making, listing, and referring. Hold VX to receive daily dividends."
     },
     "open": {
       "title": "Open-Source Protocol",
@@ -152,19 +152,19 @@
         {
           "question": "VX Holder Dividends",
           "answer": [
-            "All fees collected by the ViteX platform will be collected into a shared dividend pool and distributed at a rate of 1% daily. For any given day, the total fees collected during that day will be fully distributed by the 100th day."
+            "All fees collected by ViteX will be deposited into a shared dividend pool and distributed at the rate of 1% daily. For fees collected on any given day, they will be fully distributed on the 100th day."
           ]
         },
         {
-          "question": "This shared dividend pools will consist of the following:",
+          "question": "The shared dividend pool will consist of the following: ",
           "answer": [
-            "All trading fees collected by ViteX (excluding Operator fees)"
+            "All trading fees collected by ViteX, excluding Operator fees."
           ]
         },
         {
-          "question": "The following VITE payments incurred will be destroyed:",
+          "question": "Dividends are only paid out in BTC, ETH, and USDT. Some payments made in VITE which are incurred over the course of the DEX’s operations will be burned as:",
           "answer": [
-            "VITE payments of platform trading fees (excluding payments to operators)",
+            "ViteX platform trading fees paid in VITE (excluding payments to Operators)",
             "10,000 VITE to list any trading pair",
             "1,000 VITE to generate an invitation code"
           ]
@@ -172,9 +172,9 @@
         {
           "question": "In order to receive dividends:",
           "answer": [
-            "A minimum of 10 VX must be locked up with the exchange account to receive dividends",
-            "Participant is entitled to receive dividend starting the most recent term once a lock-up request has been submitted",
-            "The locked-up amount will be released after a 7-day waiting period, no dividend will be received during the waiting period"
+            "A minimum 10 VX must be staked in the exchange account to receive dividends.",
+            "Once a staking request is submitted, the user will receive dividend payments starting the same day at 12 pm (UTC+8), or the next day at 12 pm (UTC+8) if the staking request is submitted after 12 pm (UTC+8) on that particular day.",
+            "Once an unstaking request for VX is submitted, that VX will be released after seven days. No dividends will be distributed during that period."
           ]
         }
       ]
@@ -290,12 +290,12 @@
       {
         "question": "Is it safe to put assets in ViteX?",
         "answer": [
-          "Absolutely. As a complete decentralized exchange, the assets are secured by user's private key and cannot be misappropriated by others. Tradings take place in smart contract, which is fully transparent and traceable."
+          "Absolutely. As a completely decentralized exchange, assets are secured by users' private keys and cannot be misappropriated by others. Tradings take place in smart contracts, which are fully transparent and traceable."
         ]
       },
       {
         "question": "The Vite chain has a transaction model without fees. Why does the Vite exchange charge a fee? Is the fee charged by VITE or other tokens?",
-        "answer": "Transactions on the Vite chain do not consume gas like those on Ethereum, but another resource referred to as “quota.” Low-frequency traders can reach this quota by solving a simple PoW puzzle on the local device. Since PoW takes a while to complete, this mechanism is suitable for low-frequency usage. On the other hand, to accommodate high-frequency usage, traders will need to stake VITE in order to obtain the required quota. As a high frequency application, ViteX will also consume resources, which will be collected in the form of trading fees on ViteX. Users can choose to stake VITE in order to fill quota on ViteX to lower the trading cost. All collected trading fees will be re-distributed to VX holders. The trading fees will be paid out in “basic currencies” such as VITE, ETH, BTC and USDT. "
+        "answer": "Transactions on the Vite chain do not consume gas like those on Ethereum, but another resource referred to as “quota.” Low-frequency traders can reach this quota by solving a simple PoW puzzle on the local device. Since PoW takes a while to complete, this mechanism is suitable for low-frequency usage. On the other hand, to accommodate high-frequency usage, traders will need to stake VITE in order to obtain the required quota. As a high frequency application, ViteX will also consume resources, which will be collected in the form of trading fees on ViteX. Users can choose to stake VITE in order to fill quota on ViteX to lower the trading cost. Trading fees will be paid out through “basic currencies“ such as ETH, BTC, and USDT. Trading fees collected in VITE by ViteX will be burned. "
       },
       {
         "question": "What is VX?",
@@ -324,17 +324,16 @@
         "question": "How do I get VX dividends?",
         "answer": [
           "You will only receive dividends after staking your VX",
-          "  1. A minimum of 10 VX must be staked to receive dividends",
-          "  2. Participant is entitled to receive a dividend starting with the next distribution, after submission of staking request",
-          "  3. The staked amount will be released after a 7-day waiting period. No dividend will be received during this waiting period",
+          "  1. A minimum 10 VX must be staked in the exchange account to receive dividends.",
+          "  2. Once a staking request is submitted, the user will receive dividend payments starting the same day at 12 pm (UTC+8), or the next day at 12 pm (UTC+8) if the staking request is submitted after 12 pm (UTC+8) on that particular day.",
+          "  3. Once an unstaking request for VX is submitted, that VX will be released after seven days. No dividends will be distributed during that period.",
           "Users can enable automatic staking. After enabling, the VX obtained from mining will be automatically staked, whereas purchased VX will not be automatically staked."
         ]
       },
       {
-        "question": "How much dividends will be distributed every day?",
+        "question": "How much is paid out in dividends each day?",
         "answer": [
-          "The system will distribute 1% of the total pool to all VX users proportional to the amount of VX they stake in exchange. The initial dividend pool will start at 0 and will grow according to the amount of fees collected by ViteX.",
-          "Dividends will be distributed in BTC, ETH, and USDT."
+          "The system distributes 1% of the total pool to all VX stakers proportional to the VX they have staked in the exchange. The initial dividend pool starts at 0 and will increase with fees collected by ViteX. Dividends are paid out in BTC, ETH, and USDT only."
         ]
       },
       {
