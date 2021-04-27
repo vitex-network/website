@@ -23,19 +23,28 @@
         <div class="content">
           <ol>
             <li>You can ​trade ​it on ViteX with the following trading pairs: VX/BTC, VX/ETH, VX/USDT, and VX/VITE</li>
-            <li>Even better, you can ​hodl ​it to receive daily dividends in BTC, ETH, USDT. Trading fees collected by the ViteX platform are put into a shared dividend pool that is distributed ​back​ to traders at a daily rate of 1%. All accounts staking at least 10 VX in the exchange are eligible to receive dividends. More details on dividends can be found <nuxt-link :to="localePath('dividend')">here</nuxt-link>​.</li>
+            <li>Even better, you can “hodl” it to receive daily dividends in BTC, ETH, and USDT (wrapped on the Vite chain). Trading fees collected by ViteX are put into a shared dividend pool that is distributed ​back​ to traders at a daily rate of 1%. All accounts staking at least 10 VX in the exchange are eligible to receive dividends. More details on dividends can be found   
+            <nuxt-link :to="localePath('dividend')">here</nuxt-link>​.
+            </li>
           </ol>
           <p>Sound interesting? Sign up for a trading account now at <a href="https://x.vite.net/​" target="_blank">​https://x.vite.net/​</a>!</p>
         </div>
-        <div class="title">How do I mine VX?</div>
+        <div class="title">How do I mine VX? </div>
         <div class="content">
-          <p>Mining on ViteX is easy——no ASICs or complicated server set-ups required.</p>
+          <p>Mining on ViteX is easy - No ASICs or complicated server setup is required.</p>
           <ol>
-            <li><span class="bold">Trading as Mining.</span> ​Each time you execute a trade (i.e. take an order off the order book), you get some VX. The amount of VX you receive will be calculated based on the proportion of the amount of trading fees that you paid to the total amount of trading fees collected by ViteX that day.</li>
-            <li><span class="bold">Referring as Mining.​</span> Every trader will get a referral code that they can share with their friends. When your friends sign up, they get 10% off of all trading fees on ViteX indefinitely, and an additional 2.5% mining rewards on trading as well as 1.25% on market making. You benefit as 5% of your referred friends' trading as mining proceeds, as well as 2.5% of their market making as mining proceeds.</li>
-            <li><span class="bold">Listing as Mining.</span> ​List new trading pairs to mine VX. A user (“token issuer” or an “operator”) that lists a new trading pair will also receive VX. The token issuer’s reward is calculated as if he/she executed a trade involving a transaction fee of 1,000 VITE.</li>
-            <li><span class="bold">Staking as Mining.</span> ​The Vite public chain requires quota to properly allocate its computing resources. Quota is obtained by staking VITE. If you stake VITE to help ViteX obtain the quota it requires to run, then you get VX.</li>
-            <li><span class="bold">Market-making as Mining.​</span> Place orders to boost liquidity on ViteX and you’ll be rewarded with VX.
+            <li><span class="bold">Trading as Mining. </span> 
+              Each time a trade is executed (i.e. an order is taken off the order book), the trader will be rewarded with VX. The amount of VX rewarded varies daily and is determined by the proportion of fees charged to the trader against the total amount of trading fees collected by ViteX that particular day.
+            </li>
+            <li><span class="bold">Referring as Mining. ​</span> 
+              Every trader will receive a referral code that they can share with their friends. Each new trader who signs up with the referral code will get 10% off of all trading fees on ViteX indefinitely, an additional 2.5% mining rewards on trading, and an additional 1.25% on market making. Traders that make a successful referral will be rewarded with 5% of the referred friend’s trading-as-mining proceeds, and 2.5% of their market-making-as-mining proceeds.
+            </li>
+            <li><span class="bold">Listing as Mining. </span> ​List new trading pairs to mine VX. A user (“token issuer” or an “operator”) that lists a new trading pair will also receive VX. The token issuer’s reward is calculated as if he/she executed a trade involving a transaction fee of 1,000 VITE.</li>
+            <li><span class="bold">Staking as Mining. </span> ​
+              Vite’s public chain requires quota to properly allocate its computing resources. Quota is obtained by staking VITE. If a user stakes VITE to help ViteX obtain the quota it needs to operate, they will be rewarded with VX.
+            </li>
+            <li><span class="bold">Market-making as Mining.​ </span> 
+              Market-making refers to placing orders on ViteX to boost liquidity on the platform. Even without an order execution, traders will be rewarded with VX. If and when the order is executed, users will receive trading-as-mining rewards. See the <strong>"Trading as Mining"</strong> section above for additional details.
             </li>
           </ol>
           <p>You can find each mining method described in more detail <a href="https://medium.com/vitelabs/announcement-vx-mining-official-start-date-e66900b10888" target="_blank">here</a>​​.</p>
@@ -78,10 +87,13 @@
             <div class="bold">Dual Phase VX Release Model</div>
             <div>After the official launch of VX mining, there will be two phases of VX release with the total supply set to 29328807.8 VX with no inflation.</div>
           </div>
-          <p><span class="bold">Phase 1:​ </span>10,000 VX daily release for the first 88 days.</p>
-          <p><span class="bold">Phase 2:​ </span>Daily release increases from 10,000 VX to 50,000 VX in the following 90 days, then starts decrease until being fully released in 8 years.</p>
+          <p><span class="bold">Phase 1:​  </span> 
+            10,000 VX daily release amount for the first 88 days.</p>
+          <p><span class="bold">Phase 2:​  </span>
+            After Phase 1, the daily release amount gradually increases for 90 days, peaking at 50,000 VX. From that point on, the daily release amount decreases untill all VX tokens are in circulation for 8 years.
+          </p>
           <div class="piechart" v-if="page === 'mine'">
-            <img :src="piechart['dividend'][$i18n.locale]" width="70%" height="70%">
+            <emission-chart class="emission-chart"></emission-chart>
           </div>
         </div>
         <div class="title">More questions?</div>
@@ -116,6 +128,8 @@
 
 <script type="text/babel">
   import config from '~/config';
+  import EmissionChart from "~/components/LandingDashbord/emissionChart";
+
   import mine_en from '~/assets/images/release_en.png';
   import mine_zh from '~/assets/images/release_zh.png';
   import release from '~/assets/images/index/release.png';
@@ -123,6 +137,7 @@
   import dividend_en from '~/assets/images/vx_curve_en.png';
 
   export default {
+    components: { EmissionChart },
     props: {
       page: {
         type: String,
@@ -221,5 +236,9 @@
   display: block;
   margin: 0 auto 30px;
   width: 580px;
+}
+
+.emission-chart {
+  height: 250px;
 }
 </style>

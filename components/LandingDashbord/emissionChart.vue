@@ -1,11 +1,9 @@
 <template>
-  <div>
     <line-chart
       class="line-chart"
       :chart-data="chartdata"
       :options="chartOptions"
     ></line-chart>
-  </div>
 </template>
 
 <script>
