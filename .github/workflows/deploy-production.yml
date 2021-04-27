@@ -22,10 +22,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Read .nvmrc
+        run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+        id: nvm
+
       - name: Setup Node
         uses: actions/setup-node@v2.1.2
         with:
-          node-version: '12.x'
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
           
       - uses: bahmutov/npm-install@v1
 
@@ -34,7 +38,7 @@ jobs:
         run: yarn run p
           
       - name: Deploy
-        uses: cloudflare/wrangler-action@1.2.0
+        uses: cloudflare/wrangler-action@1.3.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           environment: 'production'
