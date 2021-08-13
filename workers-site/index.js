@@ -1,4 +1,4 @@
-import { getAssetFromKV, mapRequestToAsset } from '@cloudflare/kv-asset-handler';
+import { getAssetFromKV, mapRequestToAsset, NotFoundError } from '@cloudflare/kv-asset-handler';
 
 /**
  * The DEBUG flag will do two things that help during development:
@@ -54,6 +54,7 @@ async function handleEvent(event) {
     }
     return await getAssetFromKV(event, options);
   } catch (e) {
+    
     // if an error is thrown try to serve the asset at 404.html
     if (!DEBUG) {
       try {
@@ -62,7 +63,11 @@ async function handleEvent(event) {
         });
 
         return new Response(notFoundResponse.body, { ...notFoundResponse, status: 404 });
-      } catch (e) {}
+      } catch (e) {
+        if (e instanceof NotFoundError) {
+          return new Response(e.message || e.toString(), { status: 404 });
+        }
+      }
     }
 
     return new Response(e.message || e.toString(), { status: 500 });
