@@ -52,7 +52,7 @@ routes.forEach((route) => {
 module.exports = {
   target: 'static',
   head: {
-    title: 'ViteX, Exchange By the Community, For the Community',
+    title: 'ViteX - Cross-Chain DEX By the Community, For the Community',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
