@@ -7,7 +7,7 @@
           <div class="name">{{ operatorInfo.name }}</div>
           <div class=" is-flex">
             <img src="~/assets/images/operators/address.svg"/>
-            <a :href="`https://explorer.vite.net/account/${operatorInfo.address}`" target="_blank" class="address">{{ operatorInfo.address }}</a>
+            <a :href="`${explorerUrl}/account/${operatorInfo.address}`" target="_blank" class="address">{{ operatorInfo.address }}</a>
           </div>
           <div class="is-flex" v-if="operatorInfo.links && operatorInfo.links.website">
             <img src="~/assets/images/operators/link.svg"/>
@@ -45,6 +45,7 @@
 </template>
 <script>
 import commonTitle from './commonTitle';
+import config from '~/config.js';
 export default {
   components: {
     commonTitle
@@ -52,6 +53,11 @@ export default {
   computed: {
     operatorInfo() {
       return this.$store.state.exchangeMarket.currentOperatorInfo;
+    }
+  },
+  data() {
+    return {
+      explorerUrl: config.urls.explorer[this.$i18n.locale],
     }
   }
 };

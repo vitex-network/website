@@ -1,14 +1,9 @@
 module.exports = {
   urls: {
-    weibo: 'http://m.weibo.cn/u/6840230204',
     support: 'https://vitex.zendesk.com/',
-    viteNet: {
-      zh: 'https://vite.net/zh',
-      en: 'https://vite.net'
-    },
     explorer: {
-      zh: 'https://explorer.vite.net/zh',
-      en: 'https://explorer.vite.net'
+      zh: 'https://viteview.xyz/#',
+      en: 'https://viteview.xyz/#'
     },
     webWallet: {
       zh: 'https://x.vite.net',
@@ -51,33 +46,33 @@ module.exports = {
     discord: 'https://discordapp.com/invite/CsVY76q',
     reddit: 'https://www.reddit.com/r/vitelabs',
     github: 'https://github.com/vitelabs',
-    document: 'https://vite.wiki',
+    document: 'https://docs.vite.org',
     loopring: 'https://loopring.org',
     faq: '/faq',
     medium: 'https://medium.com/vitelabs',
     tokenUrl: 'https://etherscan.io/token/0x1b793E49237758dBD8b752AFC9Eb4b329d5Da016',
     btt: 'https://bitcointalk.org/index.php?topic=4438416',
     youtube: 'https://www.youtube.com/channel/UC8qft2rEzBnP9yJOGdsJBVg',
-    testnet: 'https://vite.net',
+    testnet: 'https://buidl.vite.net',
     introduction: {
-      en: 'https://vite.wiki/introduction/',
-      zh: 'https://vite.wiki/zh/introduction/',
+      en: 'https://docs.vite.org/go-vite/introduction/',
+      zh: 'https://docs.vite.org/go-vite/introduction/',
     },
     wiki: {
-      en: 'https://vite.wiki/introduction/',
-      zh: 'https://vite.wiki/zh/introduction/'
+      en: 'https://docs.vite.org/go-vite/introduction/',
+      zh: 'https://docs.vite.org/go-vite/introduction/'
     },
     api: {
-      en: 'https://vite.wiki/api/rpc/',
-      zh: 'https://vite.wiki/zh/api/rpc/'
+      en: 'https://docs.vite.org/go-vite/api/rpc/',
+      zh: 'https://docs.vite.org/go-vite/api/rpc/'
     },
     vitexapi: {
-      en: 'https://vite.wiki/dex/api/dex-apis.html',
-      zh: 'https://vite.wiki/zh/dex/api/dex-apis.html'
+      en: 'https://docs.vite.org/go-vite/dex/api/dex-apis.html',
+      zh: 'https://docs.vite.org/go-vite/dex/api/dex-apis.html'
     },
     website: {
       en: 'http://vite.org/',
-      zh: 'http://vite.org/zh'
+      zh: 'http://vite.org/'
     },
     download: {
       app: 'https://app.vite.net',
