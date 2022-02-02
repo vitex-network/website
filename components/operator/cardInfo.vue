@@ -33,6 +33,12 @@
         <a :href="operatorInfo.links.telegram[0]" v-if="operatorInfo.links.telegram" target="_blank">
           <img src="~/assets/images/operators/twitter.svg"/>
         </a>
+        <a :href="operatorInfo.links.discord[0]" v-if="operatorInfo.links.discord" target="_blank">
+          <img src="~/assets/images/operators/discord.svg"/>
+        </a>
+        <a :href="operatorInfo.links.reddit[0]" v-if="operatorInfo.links.reddit" target="_blank">
+          <img src="~/assets/images/operators/reddit.svg"/>
+        </a>
       </div>
     </div>
     <div class="desc-wrapper">
