@@ -4,7 +4,7 @@
       <div class="answer">
         <div class="title">What is ViteX?</div>
         <div class="content">
-          <p>ViteX, developed by Vite Labs, is the world's first decentralized exchange built on DAG technology. ViteX Coin, VX, is the coin native to the ViteX platform. It is mined exclusively by the ViteX community and is used to allocate rewards back to the community. ​For more details on the benefits of ViteX and VX, please refer to this article ​<a href="https://medium.com/vitelabs/vitex-101-update-489f6e49392" target="_blank">​here​</a>.</p>
+          <p>ViteX, developed by Vite Labs, is the world's first decentralized exchange built on DAG technology. ViteX Coin, VX, is the coin native to the ViteX platform. It is mined exclusively by the ViteX community and is used to allocate rewards back to the community.</p>
           <div class="referral" v-show="type === 'referral'">
             <p>Use referral code <span class="num-blue">2279987214</span> to get 10% off all trading fees! </p>
             <p>For more details on how to use a referral code, refer to this article <a href="https://forum.vite.net/topic/2377/how-to-referring-as-mining-on-vitex" target="_blank">​here​</a></p>
