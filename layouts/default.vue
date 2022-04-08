@@ -172,8 +172,6 @@
           {name: 'og:type', content: 'website', hid: 'og:type'},
           {name: 'og:url', content: 'https://vitex.net', hid: 'og:url'},
           {name: 'og:image', content: 'https://vitex.net/og-logo.png', hid: 'og:image'},
-          {name: 'og:image:width', content: '284', hid: 'og:image:width'},
-          {name: 'og:image:height', content: '90', hid: 'og:image:height'},
 
           // Twitter Card
           {name: 'twitter:card', content: 'summary', hid: 'twitter:card'},
