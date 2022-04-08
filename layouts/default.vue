@@ -179,20 +179,9 @@
           {name: 'twitter:card', content: 'summary', hid: 'twitter:card'},
           {name: 'twitter:site', content: '@vitelabs', hid: 'twitter:site'},
           {name: 'twitter:title', content: title, hid: 'twitter:title'},
-          {
-            name: 'twitter:description',
-            content: description,
-            hid: 'twitter:description'
-          },
-          {
-            name: 'twitter:image:alt',
-            content: 'Vite Logo',
-            hid: 'twitter:image:alt'
-          },
-          {
-            name: 'twitter:image',
-            content: 'https://www.vite.org/logo_appstore.png'
-          }
+          {name: 'twitter:description', content: description, hid: 'twitter:description'},
+          {name: 'twitter:image', content: 'https://vitex.net/og-logo.png', hid: 'twitter:image'}
+          {name: 'twitter:image:alt', content: 'Vitex Logo', hid: 'twitter:image:alt'},
         ],
         __dangerouslyDisableSanitizers: ['script'],
         script: structuredData.map(item => {
