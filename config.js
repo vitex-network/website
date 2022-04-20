@@ -55,20 +55,20 @@ module.exports = {
     youtube: 'https://www.youtube.com/channel/UC8qft2rEzBnP9yJOGdsJBVg',
     testnet: 'https://buidl.vite.net',
     introduction: {
-      en: 'https://docs.vite.org/go-vite/introduction/',
-      zh: 'https://docs.vite.org/go-vite/introduction/',
+      en: 'https://docs.vite.org/vite-docs/dex/',
+      zh: 'https://docs.vite.org/vite-docs/dex/',
     },
     wiki: {
-      en: 'https://docs.vite.org/go-vite/introduction/',
-      zh: 'https://docs.vite.org/go-vite/introduction/'
+      en: 'https://docs.vite.org/vite-docs/dex/',
+      zh: 'https://docs.vite.org/vite-docs/dex/'
     },
     api: {
-      en: 'https://docs.vite.org/go-vite/api/rpc/',
-      zh: 'https://docs.vite.org/go-vite/api/rpc/'
+      en: 'https://docs.vite.org/vite-docs/api/rpc',
+      zh: 'https://docs.vite.org/vite-docs/api/rpc'
     },
     vitexapi: {
-      en: 'https://docs.vite.org/go-vite/dex/api/rest-api.html',
-      zh: 'https://docs.vite.org/go-vite/dex/api/rest-api.html'
+      en: 'https://docs.vite.org/vite-docs/dex/api/rest-api.html',
+      zh: 'https://docs.vite.org/vite-docs/dex/api/rest-api.html'
     },
     website: {
       en: 'http://vite.org/',
