@@ -152,6 +152,6 @@ module.exports = {
       login: 'https://x.vite.net/start',
       create: 'https://x.vite.net/startCreate'
     },
-    privacy: 'https://x.vite.net/privacy.html'
+    privacy: 'https://vite.org/privacy.html'
   }
 };
