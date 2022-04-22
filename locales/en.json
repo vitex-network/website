@@ -215,7 +215,8 @@
   },
   "about": {
     "api": "API",
-    "website": "Vite.org"
+    "website": "Vite.org",
+    "assets": "Brand Assets"
   },
   "user": {
     "listing": "Apply for Listing",
