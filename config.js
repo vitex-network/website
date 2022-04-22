@@ -76,7 +76,8 @@ module.exports = {
     },
     download: {
       app: 'https://app.vite.net',
-      desktop: 'https://github.com/vitelabs/vite-wallet/releases'
+      desktop: 'https://github.com/vitelabs/vite-wallet/releases',
+      brandAssets: '/brand-assets.zip'
     },
     blog: {
       en: 'https://vite.blog/',

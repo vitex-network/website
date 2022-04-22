@@ -105,6 +105,12 @@
               >
                 {{$t('about.website')}}
               </a>
+              <a
+                  :href="urls.download.brandAssets"
+                  class="content"
+              >
+                {{$t('about.assets')}}
+              </a>
             </div>
             <div class="item user">
               <div class="subtitle">{{$t('footer.user')}}</div>
