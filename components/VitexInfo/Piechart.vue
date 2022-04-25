@@ -47,7 +47,7 @@
               Market-making refers to placing orders on ViteX to boost liquidity on the platform. Even without an order execution, traders will be rewarded with VX. If and when the order is executed, users will receive trading-as-mining rewards. See the <strong>"Trading as Mining"</strong> section above for additional details.
             </li>
           </ol>
-          <p>You can find each mining method described in more detail <a href="https://medium.com/vitelabs/announcement-vx-mining-official-start-date-e66900b10888" target="_blank">here</a>​​.</p>
+          <p>You can find each mining method described in more detail <a href="https://docs.vite.org/vite-docs/dex/#mining-allocation" target="_blank">here</a>​​.</p>
           <div class="main-btn">
             <a
                 :href="piechart.urls.vitex[$i18n.locale]"
@@ -64,7 +64,7 @@
           </p>
           <div class="paragraph">
             <div class="bold">Trading, Referring and Listing</div>
-            <div>60% of VX released daily will be distributed to traders who mine within this category. There are currently four markets: BTC, ETH, VITE and USDT. Each market will account for 15% of the daily VX distribution.</div>
+            <div>55% of VX released daily will be distributed to traders who mine within this category. There are currently four markets: BTC, ETH, VITE and USDT. Each market will account for 13.75% of the daily VX distribution.</div>
           </div>
           <div class="paragraph">
             <div class="bold">Staking</div>
@@ -72,7 +72,7 @@
           </div>
           <div class="paragraph">
             <div class="bold">Market-Making</div>
-            <div>10% of VX released daily will be distributed to traders who create orders.</div>
+            <div>15% of VX released daily will be distributed to traders who create orders.</div>
           </div>
           <p>The remaining 10% goes towards the ​<span class="bold">ViteX Reserve.</span></p>
           <div class="piechart">
