@@ -63,10 +63,10 @@
       }
     },
     "dividend": {
-      "title": "VX Dividend Dashboard",
-      "currentPool": "Daily Dividend Pool",
+      "title": "VX Reward Dashboard",
+      "currentPool": "Daily Reward Pool",
       "totalPool": "Cumulative Distributed Value",
-      "subPool": "{symbol} in Daily Dividend Pool",
+      "subPool": "{symbol} in Daily Reward Pool",
       "predict": "1000 VX daily receive"
     },
     "vite_destory": {
@@ -105,7 +105,7 @@
     "more": "Learn More",
     "dex": {
       "title": "Truly Decentralized",
-      "content": "On-chain order matching and asset management. Dividend distributions through smart contracts. Locally stored private keys."
+      "content": "On-chain order matching and asset management. Rewards distribution through smart contracts. Locally stored private keys."
     },
     "performance": {
       "title": "Ultra-High Performance",
@@ -294,7 +294,7 @@
       {
         "question": "What is VX?",
         "answer": [
-          "ViteX Coin, VX, is the coin native to the ViteX platform. It is mined exclusively by the ViteX community and is used to allocate rewards back to the community. VX holders can receive daily ViteX Dividends from a shared dividend pool which aggregates all trading fees accumulated by ViteX and redistributes back to VX holders. VX has no pre-sale. The only way to get VX is through mining. The total supply of VX is 29328807.8 which will be completely distributed in eight years with zero inflation."
+          "ViteX Coin, VX, is the coin native to the ViteX platform. It is mined exclusively by the ViteX community and is used to allocate rewards back to the community. VX holders can receive daily ViteX Rewards from a shared dividend pool which aggregates all trading fees accumulated by ViteX and redistributes back to VX holders. VX has no pre-sale. The only way to get VX is through mining. The total supply of VX is 29328807.8 which will be completely distributed in eight years with zero inflation."
         ]
       },
       {
@@ -327,7 +327,7 @@
       {
         "question": "How much is paid out in rewards each day?",
         "answer": [
-          "The system distributes 1% of the total pool to all VX stakers proportional to the VX they have staked in the exchange. The initial dividend pool starts at 0 and will increase with fees collected by ViteX. Dividends are paid out in BTC, ETH, and USDT only."
+          "The system distributes 1% of the total pool to all VX stakers proportional to the VX they have staked in the exchange. The initial dividend pool starts at 0 and will increase with fees collected by ViteX. Rewards are paid out in BTC, ETH, and USDT only."
         ]
       },
       {
