@@ -49,17 +49,17 @@
       "minedRatio": "{ratio} Mined",
       "lockRatio": "{ratio} Staked",
       "tx": {
-        "title": "Trading as Mining Total Income",
+        "title": "Trading as Mining Total Rewards",
         "fee": "Live Trading Fees",
         "predict": "1 VX costs"
       },
       "pledge": {
-        "title": "Staking as Mining Total Income",
+        "title": "Staking as Mining Total Rewards",
         "current": "Current Accumulated Stake",
         "desc": "Staking 1000 VITE, you will get"
       },
       "order": {
-        "title": "Market-Making as Mining Total Income"
+        "title": "Market-Making as Mining Total Rewards"
       }
     },
     "dividend": {
