@@ -36,7 +36,7 @@
     "nuxt": "2.14.7",
     "nuxt-i18n": "6.15.4",
     "protobufjs": "^6.8.8",
-    "qs": "^6.8.0",
+    "qs": "^6.9.7",
     "scrollmonitor": "^1.2.4",
     "v-tooltip": "2.0.3",
     "vue-chartjs": "^3.5.1",
