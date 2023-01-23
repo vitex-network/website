@@ -268,7 +268,7 @@
       {
         "question": "What order types does ViteX support?",
         "answer": [
-          "ViteX currently supports limit orders. Market orders and stop orders will soon be supported too. Please be noted that limit orders (including partially-matched limit orders) have a 30-day validity period on the order book. Orders over 30 days will be automatically removed by the ViteX contract, and the removed orders due to expiration will show a \"Canceled\" status."
+          "ViteX currently supports limit orders. Market orders and stop orders will be supported soon."
         ]
       },
       {
