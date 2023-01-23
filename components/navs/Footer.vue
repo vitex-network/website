@@ -153,7 +153,7 @@
       </div>
       <div class="copyright">
         <span>
-          © 2018-{{thisYear}} VITE Labs. All Rights Reserved.
+          © 2018-{{thisYear}} Vite Labs Limited. All Rights Reserved.
         </span>
       </div>
     </footer>
