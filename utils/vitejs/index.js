@@ -6,7 +6,7 @@ import DexFund from './dexfund';
 // let env = process.env.CONTRACT_ENV;
 
 const goViteServer = {
-  production: 'wss://api.vitewallet.com/ws',
+  production: 'wss://node.vite.net/gvite/ws',
   test: 'wss://premainnet.vitewallet.com/test/ws',
   dev: 'wss://premainnet.vitewallet.com/test/ws'
 };

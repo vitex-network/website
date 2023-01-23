@@ -1492,15 +1492,15 @@
   resolved "https://registry.yarnpkg.com/@vite/vitejs-client/-/vitejs-client-2.2.10.tgz#407d5a1aeaf611ed5136ac88b94646defc5693bf"
   integrity sha512-kW8NBw8cTldw1xMZ+IGcfNbGiBDKHNR4p3WB0kRc3fN2xkM8ASwBiCwiqB4nHzBH1DUz2/IDUn+0oG2ehwxLjA==
 
-"@vite/vitejs-utils@^2.2.9":
-  version "2.3.11"
-  resolved "https://registry.yarnpkg.com/@vite/vitejs-utils/-/vitejs-utils-2.3.11.tgz#267b6b89dabf29cfb88d087ef29ae5b4e941836d"
-  integrity sha512-nvFfZr4tsYCLXHPPRpn1XpGDsN9uVjtFNEuGP8g7i+t99Egc0iusI+x/CYiyBuLAAx5zLHxvDjKXBhfPKFrp7g==
+"@vite/vitejs-utils@2.3.19":
+  version "2.3.19"
+  resolved "https://registry.yarnpkg.com/@vite/vitejs-utils/-/vitejs-utils-2.3.19.tgz#7ea26fe9878c00eb3226a1904941550fc9a604d5"
+  integrity sha512-C1c3gFTSa4KbQxg6SqBNpm9CuiyxDenC+az08OInrTy5BMUCDNJ+w2kRr82wmCATN8eV5ZaYWmc1HTtMbQr3UA==
 
-"@vite/vitejs-ws@^2.2.9":
-  version "2.3.11"
-  resolved "https://registry.yarnpkg.com/@vite/vitejs-ws/-/vitejs-ws-2.3.11.tgz#b2d553c8d943d9f8870ec8845b7561c374a49af1"
-  integrity sha512-ILGFSQ/ShWR1feNSNVa5pmf3yEM2JGMZ2MVwVGczxxI4sorGR1yd8rzLzT9wEWHLg6F3Gw6NV3mO7wE3sxogIQ==
+"@vite/vitejs-ws@2.3.19":
+  version "2.3.19"
+  resolved "https://registry.yarnpkg.com/@vite/vitejs-ws/-/vitejs-ws-2.3.19.tgz#4f428162bd7ff593bcc7b6ce0d91c24397c4ba36"
+  integrity sha512-o5oQviQutbvK9VXnY/en7nRyNybhWkvsADy88xHFC7KwoFFvzSKYkwkjjIwaHrndJpo9v7CptuNUJi7wEHJ/NA==
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.2.1":
   version "1.2.1"
@@ -5648,7 +5648,7 @@ is-typed-array@^1.1.3:
 is-typedarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
-  integrity sha1-5HnICFjfDBsR3dppQPlgEfzaSpo=
+  integrity sha512-cyA56iCMHAh5CdzjJIa4aohJyeO1YbwLi3Jc35MmRU6poroFjIGZzUzupGiRPOjgHg9TLu43xbpwXk523fMxKA==
 
 is-utf8@^0.2.0:
   version "0.2.1"
