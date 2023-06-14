@@ -1,3 +1,2 @@
 # ViteX Website
 
-ViteX Website
