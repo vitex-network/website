@@ -1,3 +1,3 @@
-# vitex-page
+# ViteX Website
 
-ViteX Official Website
+ViteX Website
